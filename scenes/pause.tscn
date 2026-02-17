@@ -1,0 +1,188 @@
+[gd_scene format=3 uid="uid://buu3nnoihwga2"]
+
+[ext_resource type="Shader" uid="uid://cmveq2wynv7m8" path="res://scripts/pause.gdshader" id="1_45vjg"]
+[ext_resource type="Script" uid="uid://byx270fiqwjs4" path="res://scripts/pause.gd" id="1_aq7p1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aq7p1"]
+shader = ExtResource("1_45vjg")
+shader_parameter/lod = 0.0
+
+[sub_resource type="Animation" id="Animation_aq7p1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_6eyaj"]
+resource_name = "blur"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.82800003933]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8u653"]
+_data = {
+&"RESET": SubResource("Animation_aq7p1"),
+&"blur": SubResource("Animation_6eyaj")
+}
+
+[node name="pause" type="Control" unique_id=887171936]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aq7p1")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=252835112]
+material = SubResource("ShaderMaterial_aq7p1")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1508962865]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -169.0
+offset_right = 136.0
+offset_bottom = 169.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="pause_menu" type="VBoxContainer" parent="PanelContainer" unique_id=1029588506]
+layout_mode = 2
+theme_override_constants/separation = 26
+alignment = 1
+
+[node name="resume" type="Button" parent="PanelContainer/pause_menu" unique_id=1000571120]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Resumir"
+
+[node name="settings" type="Button" parent="PanelContainer/pause_menu" unique_id=984516689]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Configurações"
+
+[node name="quit" type="Button" parent="PanelContainer/pause_menu" unique_id=1705915326]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Sair do Jogo"
+
+[node name="settings_menu" type="VBoxContainer" parent="PanelContainer" unique_id=841785270]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="back" type="Button" parent="PanelContainer/settings_menu" unique_id=645957933]
+layout_mode = 2
+text = "Voltar"
+
+[node name="settings_tab" type="TabContainer" parent="PanelContainer/settings_menu" unique_id=1006494410]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_vertical = 0
+current_tab = 0
+
+[node name="Sons" type="VBoxContainer" parent="PanelContainer/settings_menu/settings_tab" unique_id=1609503053]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="volMaster" type="HSlider" parent="PanelContainer/settings_menu/settings_tab/Sons" unique_id=1227205449]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Label" type="Label" parent="PanelContainer/settings_menu/settings_tab/Sons/volMaster" unique_id=2092405024]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Volume Principal"
+horizontal_alignment = 1
+
+[node name="volMusic" type="HSlider" parent="PanelContainer/settings_menu/settings_tab/Sons" unique_id=1687210582]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Label" type="Label" parent="PanelContainer/settings_menu/settings_tab/Sons/volMusic" unique_id=1178421573]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Volume da Música"
+horizontal_alignment = 1
+
+[node name="volSfx" type="HSlider" parent="PanelContainer/settings_menu/settings_tab/Sons" unique_id=1801076075]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Label" type="Label" parent="PanelContainer/settings_menu/settings_tab/Sons/volSfx" unique_id=1817885072]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(0.99775106, 1)
+text = "Volume de Efeitos Sonoros"
+horizontal_alignment = 1
+
+[node name="Gráficos" type="VBoxContainer" parent="PanelContainer/settings_menu/settings_tab" unique_id=1814261163]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="fullscreen" type="CheckBox" parent="PanelContainer/settings_menu/settings_tab/Gráficos" unique_id=405211523]
+layout_mode = 2
+text = "Modo Tela-cheia"
+
+[node name="Geral" type="VBoxContainer" parent="PanelContainer/settings_menu/settings_tab" unique_id=1257913691]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1216367356]
+libraries/ = SubResource("AnimationLibrary_8u653")
+
+[connection signal="pressed" from="PanelContainer/pause_menu/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/pause_menu/settings" to="." method="_on_configurations_pressed"]
+[connection signal="pressed" from="PanelContainer/pause_menu/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="PanelContainer/settings_menu/back" to="." method="_on_back_pressed"]
+[connection signal="value_changed" from="PanelContainer/settings_menu/settings_tab/Sons/volMaster" to="." method="_on_vol_master_value_changed"]
+[connection signal="value_changed" from="PanelContainer/settings_menu/settings_tab/Sons/volMusic" to="." method="_on_vol_music_value_changed"]
+[connection signal="value_changed" from="PanelContainer/settings_menu/settings_tab/Sons/volSfx" to="." method="_on_vol_sfx_value_changed"]
+[connection signal="toggled" from="PanelContainer/settings_menu/settings_tab/Gráficos/fullscreen" to="." method="_on_fullscreen_toggled"]
