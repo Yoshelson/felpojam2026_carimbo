@@ -7,6 +7,9 @@ var is_using:bool = false
 @onready var pc_control: Control = $ScreenMesh/SubViewport/PCControl
 @onready var sub_viewport: SubViewport = $ScreenMesh/SubViewport
 
+func interact(player_ref: Player):
+	toggle_use()
+
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
@@ -25,6 +28,9 @@ func toggle_use():
 
 func _input(event: InputEvent) -> void:
 	if !is_using:
+		return
+	
+	if player == null:
 		return
 	
 	if event is InputEventKey:

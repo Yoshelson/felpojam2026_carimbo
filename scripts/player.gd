@@ -34,10 +34,10 @@ func _unhandled_input(event: InputEvent) -> void:
 	#Uso do Seecast para interagir com ambiente apenas nos layers de colisão 3, ou seja o que se dá pra interagir
 	if Input.is_action_just_pressed("interact"):
 		if seecast.is_colliding():
-			var collided = seecast.get_collision_result()[0]["collider"]
-			print(collided)
-			if collided is PCStatic:
-				collided.toggle_use()
+			var collided = seecast.get_collider(0)
+			#Ao collidir com objeto contendo "interact", irá utilizar a função de interagir daquele objeto
+			if collided.has_method("interact"):
+				collided.interact(self)
 
 
 func _physics_process(delta: float) -> void:

@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://c0gk0v22vsjes"]
+
+[ext_resource type="Script" uid="uid://trxkw683tjtb" path="res://scripts/interactive/exemplo_interativo.gd" id="1_drblo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x2flj"]
+
+[sub_resource type="Animation" id="Animation_d5s8r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGCombiner3D/CSGBox3D/CSGBox3D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.24405873)]
+}
+
+[sub_resource type="Animation" id="Animation_drblo"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGCombiner3D/CSGBox3D/CSGBox3D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.6539472), Vector3(0, 0, 0.244)]
+}
+
+[sub_resource type="Animation" id="Animation_ppgkh"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGCombiner3D/CSGBox3D/CSGBox3D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.24405873), Vector3(0, 0, 0.6539472)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0bwvm"]
+_data = {
+&"RESET": SubResource("Animation_d5s8r"),
+&"close": SubResource("Animation_drblo"),
+&"open": SubResource("Animation_ppgkh")
+}
+
+[node name="ExemploInterativo" type="StaticBody3D" unique_id=756309383]
+collision_layer = 5
+script = ExtResource("1_drblo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=758545621]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_x2flj")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=704653429]
+use_collision = true
+collision_layer = 5
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1479681573]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D" unique_id=1219533505]
+transform = Transform3D(0.89852166, 0, 0, 0, 0.46265274, 0, 0, 0, 1, 0, 0, 0.22316808)
+operation = 2
+size = Vector3(1, 1, 0.6538086)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D" unique_id=1461392792]
+transform = Transform3D(0.8779787, 0, 0, 0, 0.4460941, 0, 0, 0, 1, 0, 0, 0.24405873)
+size = Vector3(1, 1, 0.6538086)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D/CSGBox3D2" unique_id=1112520242]
+transform = Transform3D(0.9379282, 0, 0, 0, 0.84638363, 0, 0, 0, 0.59878373, 0, 0.12706886, 0)
+operation = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=649787585]
+libraries/ = SubResource("AnimationLibrary_0bwvm")

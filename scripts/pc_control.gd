@@ -7,7 +7,6 @@ var pc_mouse_pos:Vector2 = Vector2.ZERO
 signal exit_requested
 
 @onready var exit_button: Button = $Quit
-var player:Player
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
