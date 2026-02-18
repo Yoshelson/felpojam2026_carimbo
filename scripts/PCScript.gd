@@ -1,15 +1,39 @@
 extends StaticBody3D
 class_name PCStatic
 
+@onready var screen_material: ShaderMaterial = $PCScreenMesh.material_override
+
+#Animação de ligar o pc pela primeira vez
+var boot_played := false
+
 var player:Player
 var is_using:bool = false
 @onready var camera_3d: Camera3D = $Camera3D
-@onready var pc_control: Control = $ScreenMesh/SubViewport/PCControl
-@onready var sub_viewport: SubViewport = $ScreenMesh/SubViewport
+@onready var pc_control: Control = $SubViewport/PCControl
+@onready var sub_viewport: SubViewport = $SubViewport
 
-func interact(player_ref: Player):
+func interact(_player_ref: Player):
 	toggle_use()
 
+func play_boot_effect():
+	if boot_played:
+		return
+	
+	boot_played = true
+	
+	screen_material.set_shader_parameter("power_on", 0.0)
+	
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_CUBIC)
+	tween.set_ease(Tween.EASE_OUT)
+	
+	tween.tween_method(
+		func(value):
+			screen_material.set_shader_parameter("power_on", value),
+		0.0,
+		1.0,
+		1.6  
+	)
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
@@ -24,6 +48,8 @@ func toggle_use():
 	player.input_locked = is_using
 	player.seecast.enabled = !is_using
 	
+	if is_using:
+		play_boot_effect()
 	
 
 func _input(event: InputEvent) -> void:

@@ -8,13 +8,16 @@
 load_path = "res://.godot/imported/Desliga.png-8dd33cd1ba57ca4c37b667835d7a4af0.ctex"
 
 [node name="PCControl" type="Control" unique_id=1199994050]
+custom_minimum_size = Vector2(800, 600)
 layout_mode = 3
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -352.0
+offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_236bd")
+metadata/_edit_use_anchors_ = true
 
 [node name="BG" type="TextureRect" parent="." unique_id=1827769649]
 modulate = Color(0.7524575, 0.75245756, 0.75245756, 1)
@@ -28,23 +31,43 @@ texture = ExtResource("2_236bd")
 
 [node name="Quit" type="Button" parent="." unique_id=1809219507]
 layout_mode = 0
-offset_top = 480.0
-offset_right = 328.0
-offset_bottom = 808.0
-scale = Vector2(0.5, 0.5)
+offset_left = 15.999999
+offset_top = 508.0
+offset_right = 344.0
+offset_bottom = 836.0
+scale = Vector2(0.2, 0.2)
 icon = SubResource("CompressedTexture2D_vgvgk")
 icon_alignment = 1
 
 [node name="Button" type="Button" parent="." unique_id=836174516]
 layout_mode = 0
-offset_left = 472.0
-offset_top = 273.0
-offset_right = 731.0
-offset_bottom = 354.0
+offset_left = 257.0
+offset_top = 281.0
+offset_right = 516.0
+offset_bottom = 362.0
 text = "botão teste"
 
 [node name="Mouse" type="Sprite2D" parent="." unique_id=200985795]
 top_level = true
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_2c1gn")
 centered = false
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=2023780787]
+layout_mode = 0
+offset_left = 471.0
+offset_top = 113.0
+offset_right = 785.0
+offset_bottom = 144.0
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=372058097]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 204.0
+offset_right = 211.0
+offset_bottom = 324.0
+
+[node name="Control" type="Control" parent="." unique_id=1312628652]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

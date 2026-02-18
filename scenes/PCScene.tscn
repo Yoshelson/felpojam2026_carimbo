@@ -2,30 +2,55 @@
 
 [ext_resource type="Script" uid="uid://b16i63ob1m2uo" path="res://scripts/PCScript.gd" id="1_8pqrt"]
 [ext_resource type="PackedScene" uid="uid://bckb4866dt45s" path="res://scenes/pc_control.tscn" id="2_ssrg0"]
+[ext_resource type="Shader" uid="uid://dyvd11yhqxfdp" path="res://scripts/shaders/CRT2.gdshader" id="2_tey20"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ssrg0"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_tey20"]
+sky_material = SubResource("ProceduralSkyMaterial_ssrg0")
+
+[sub_resource type="Environment" id="Environment_t6tsb"]
+background_mode = 2
+sky = SubResource("Sky_tey20")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_18hgq"]
 albedo_color = Color(0.11, 0.11, 0.11, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ssrg0"]
-viewport_path = NodePath("ScreenMesh/SubViewport")
+[sub_resource type="BoxShape3D" id="BoxShape3D_8pqrt"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tey20"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_tey20"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t6tsb"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_ssrg0")
+render_priority = 0
+shader = ExtResource("2_tey20")
+shader_parameter/tex = SubResource("ViewportTexture_tey20")
+shader_parameter/curvature = 0.06
+shader_parameter/chroma_offset = 0.0015
+shader_parameter/mask_strength = 0.5
+shader_parameter/vignette_strength = 0.35
+shader_parameter/power_on = 0.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_t6tsb"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_8pqrt"]
+size = Vector2(0.8, 0.6)
 
 [node name="PCScene" type="StaticBody3D" unique_id=794729469 groups=["Interactible"]]
 collision_layer = 5
 script = ExtResource("1_8pqrt")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=949285287]
+environment = SubResource("Environment_t6tsb")
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=917639128 groups=["Player"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5276447)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.021120273, 0.5276447)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1309187984]
-transform = Transform3D(1.2268332, 0, 0, 0, 0.80459464, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(0.9843237, 0, 0, 0, 0.69565946, 0, 0, 0, 1, 0, 0, 0)
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=499894308]
@@ -40,16 +65,21 @@ operation = 2
 transform = Transform3D(0.9999996, 0, 0, 0, -4.3711385e-08, 0.15442844, 0, -0.8081102, -5.4549716e-09, 0, -0.55719405, 0.3573216)
 material = SubResource("StandardMaterial3D_18hgq")
 
-[node name="ScreenMesh" type="MeshInstance3D" parent="." unique_id=1428759976]
-transform = Transform3D(1.006, 0, 0, 0, 0.704, 0, 0, 0, 1, 0, 0, -0.0047259033)
-material_override = SubResource("StandardMaterial3D_tey20")
-mesh = SubResource("QuadMesh_t6tsb")
-
-[node name="SubViewport" type="SubViewport" parent="ScreenMesh" unique_id=1882319868]
-size = Vector2i(1152, 648)
-
-[node name="PCControl" parent="ScreenMesh/SubViewport" unique_id=1199994050 instance=ExtResource("2_ssrg0")]
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1004467229]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.039527953, 0.25913388)
 shape = SubResource("BoxShape3D_8pqrt")
+
+[node name="PCScreenMesh" type="MeshInstance3D" parent="." unique_id=1428759976]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0017682314, 0.016594425)
+material_override = SubResource("ShaderMaterial_t6tsb")
+mesh = SubResource("QuadMesh_t6tsb")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1882319868]
+disable_3d = true
+size = Vector2i(800, 600)
+render_target_update_mode = 4
+
+[node name="PCControl" parent="SubViewport" unique_id=1199994050 instance=ExtResource("2_ssrg0")]
+anchors_preset = 15
+offset_right = 0.0
+offset_bottom = 0.0
