@@ -6,6 +6,8 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4flbx"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_3vyb7"]
+
 [node name="player" type="CharacterBody3D" unique_id=685818972]
 script = ExtResource("1_4flbx")
 
@@ -22,8 +24,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6392776, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0054457784)
 current = true
 
-[node name="SeeCast" type="RayCast3D" parent="head/Camera3D" unique_id=1091797157]
-transform = Transform3D(1, 0, 0, 0, -5.4634427e-08, -0.9999999, 0, 1.24989, -4.3711385e-08, 0, 0.0004594326, -0.008090496)
+[node name="SeeCast" type="ShapeCast3D" parent="head/Camera3D" unique_id=403067027]
+transform = Transform3D(0.355, 0, 0, 0, -1.5517543e-08, -0.355, 0, 0.355, -1.5517543e-08, 0, 0, -1.403)
+shape = SubResource("SphereShape3D_3vyb7")
+collision_mask = 4
 
 [node name="CanvasLayer" type="CanvasLayer" parent="head/Camera3D" unique_id=893455367]
 

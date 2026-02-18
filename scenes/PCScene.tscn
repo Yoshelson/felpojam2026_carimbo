@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://5y8rwm8yspg3"]
+
+[ext_resource type="Script" uid="uid://b16i63ob1m2uo" path="res://scripts/PCScript.gd" id="1_8pqrt"]
+[ext_resource type="PackedScene" uid="uid://bckb4866dt45s" path="res://scenes/pc_control.tscn" id="2_ssrg0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_18hgq"]
+albedo_color = Color(0.11, 0.11, 0.11, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ssrg0"]
+viewport_path = NodePath("ScreenMesh/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tey20"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_ssrg0")
+
+[sub_resource type="QuadMesh" id="QuadMesh_t6tsb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8pqrt"]
+
+[node name="PCScene" type="StaticBody3D" unique_id=794729469 groups=["Interactible"]]
+collision_layer = 5
+script = ExtResource("1_8pqrt")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=917639128 groups=["Player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5276447)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1309187984]
+transform = Transform3D(1.2268332, 0, 0, 0, 0.80459464, 0, 0, 0, 1, 0, 0, 0)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=499894308]
+transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.1247952, 0, 0, -0.06510258)
+material = SubResource("StandardMaterial3D_18hgq")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1849446731]
+transform = Transform3D(0.81372994, 0, 0, 0, 0.8694854, 0, 0, 0, 0.108479835, 0, 0, -0.050347418)
+operation = 2
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1502463246]
+transform = Transform3D(0.9999996, 0, 0, 0, -4.3711385e-08, 0.15442844, 0, -0.8081102, -5.4549716e-09, 0, -0.55719405, 0.3573216)
+material = SubResource("StandardMaterial3D_18hgq")
+
+[node name="ScreenMesh" type="MeshInstance3D" parent="." unique_id=1428759976]
+transform = Transform3D(1.006, 0, 0, 0, 0.704, 0, 0, 0, 1, 0, 0, -0.0047259033)
+material_override = SubResource("StandardMaterial3D_tey20")
+mesh = SubResource("QuadMesh_t6tsb")
+
+[node name="SubViewport" type="SubViewport" parent="ScreenMesh" unique_id=1882319868]
+size = Vector2i(1152, 648)
+
+[node name="PCControl" parent="ScreenMesh/SubViewport" unique_id=1199994050 instance=ExtResource("2_ssrg0")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1004467229]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.039527953, 0.25913388)
+shape = SubResource("BoxShape3D_8pqrt")
