@@ -20,7 +20,9 @@ func interact(_player: Player):
 func close_drawer():
 		opened = false
 		$AnimationPlayer.play("close")
-	
+	#Alternativamente dá pra por 
+	#$AnimationPlayer.play_backwards("open")
+
 func open_drawer():
 		opened = true
 		$AnimationPlayer.play("open")
