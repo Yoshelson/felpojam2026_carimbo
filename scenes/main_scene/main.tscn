@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cehfwrvmmvf66"]
+
+[ext_resource type="PackedScene" uid="uid://766jsikflxl" path="res://scenes/player.tscn" id="1_ib4vx"]
+[ext_resource type="PackedScene" uid="uid://buu3nnoihwga2" path="res://scenes/UI/pause.tscn" id="2_ec6ii"]
+[ext_resource type="PackedScene" uid="uid://5y8rwm8yspg3" path="res://scenes/interactables/computer/PCScene.tscn" id="3_owwxs"]
+[ext_resource type="PackedScene" uid="uid://c0gk0v22vsjes" path="res://scenes/objects/exemplo_interativo.tscn" id="4_5kb7d"]
+[ext_resource type="PackedScene" uid="uid://dxsd108dci26y" path="res://scenes/test/test_csg.tscn" id="5_7sxug"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tpea4"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_42dj3"]
+sky_material = SubResource("ProceduralSkyMaterial_tpea4")
+
+[sub_resource type="Environment" id="Environment_56f15"]
+background_mode = 2
+background_energy_multiplier = 1.05
+sky = SubResource("Sky_42dj3")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Main" type="Node3D" unique_id=959922866]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2079104516]
+environment = SubResource("Environment_56f15")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1026549574]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="player" parent="." unique_id=685818972 instance=ExtResource("1_ib4vx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9025381, 1.1926475, 3.1636274)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1732400982]
+
+[node name="pause" parent="CanvasLayer" unique_id=887171936 instance=ExtResource("2_ec6ii")]
+
+[node name="PCScene" parent="." unique_id=794729469 instance=ExtResource("3_owwxs")]
+transform = Transform3D(-0.97993165, 0, 0.19933385, 0, 1, 0, -0.19933385, 0, -0.97993165, -2.575565, 1.4884229, 4.8839025)
+
+[node name="ExemploInterativo" parent="." unique_id=756309383 instance=ExtResource("4_5kb7d")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 4.3410978e-07, 0.63247085, 4.5179787)
+
+[node name="Quarto" parent="." unique_id=1534463602 instance=ExtResource("5_7sxug")]

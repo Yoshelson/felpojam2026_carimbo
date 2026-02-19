@@ -32,7 +32,7 @@ func _ready():
 	$LoginScreen.login_success.connect(_on_login_success)
 	add_to_group("pc_control")
 	
-	open_window(preload("res://scenes/window_base.tscn"), "Teste")
+	
 
 func _on_login_success():
 	print("Login realizado")
