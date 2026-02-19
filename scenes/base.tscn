@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://c8kudlijksi80"]
 
 [ext_resource type="PackedScene" uid="uid://766jsikflxl" path="res://scenes/player.tscn" id="1_8rhti"]
-[ext_resource type="PackedScene" uid="uid://bump8r5wuvb8d" path="res://scenes/quarto.tscn" id="2_ohhpf"]
 [ext_resource type="PackedScene" uid="uid://5y8rwm8yspg3" path="res://scenes/PCScene.tscn" id="3_21bcp"]
 [ext_resource type="PackedScene" uid="uid://buu3nnoihwga2" path="res://scenes/pause.tscn" id="4_ohhpf"]
 [ext_resource type="PackedScene" uid="uid://c0gk0v22vsjes" path="res://scenes/objects/exemplo_interativo.tscn" id="5_40w10"]
+[ext_resource type="PackedScene" uid="uid://dxsd108dci26y" path="res://scenes/test_csg.tscn" id="5_xvvcp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tpea4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -30,17 +30,16 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="player" parent="." unique_id=685818972 instance=ExtResource("1_8rhti")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1427615, 3.1636274)
-
-[node name="quarto_CSG" parent="." unique_id=413973020 instance=ExtResource("2_ohhpf")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.7322115e-07, 0, 3.9628382)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9025381, 1.1926475, 3.1636274)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1732400982]
 
 [node name="pause" parent="CanvasLayer" unique_id=887171936 instance=ExtResource("4_ohhpf")]
 
 [node name="PCScene" parent="." unique_id=794729469 instance=ExtResource("3_21bcp")]
-transform = Transform3D(0.9483126, 0, 0.3173377, 0, 1, 0, -0.3173377, 0, 0.9483126, -6.0733095e-07, 1.7270427, -4.965637)
+transform = Transform3D(-0.97993165, 0, 0.19933385, 0, 1, 0, -0.19933385, 0, -0.97993165, -2.575565, 1.4884229, 4.8839025)
 
 [node name="ExemploInterativo" parent="." unique_id=756309383 instance=ExtResource("5_40w10")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.3410978e-07, 0.63247085, 6.9470563)
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 4.3410978e-07, 0.63247085, 4.5179787)
+
+[node name="Quarto" parent="." unique_id=1534463602 instance=ExtResource("5_xvvcp")]
