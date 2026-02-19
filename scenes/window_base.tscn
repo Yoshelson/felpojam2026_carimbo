@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://rvqk034i2ily"]
+
+[ext_resource type="Script" uid="uid://cwhc821jba5t3" path="res://scripts/pc/window_base.gd" id="1_thcwt"]
+
+[node name="WindowBase" type="Panel" unique_id=280367607]
+offset_right = 400.0
+offset_bottom = 300.0
+script = ExtResource("1_thcwt")
+
+[node name="Frame" type="TextureRect" parent="." unique_id=37177967]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 300.0
+
+[node name="TopBar" type="Panel" parent="." unique_id=1516810741]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 32.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="TitleLabel" type="Label" parent="TopBar" unique_id=1459730035]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 6.0
+offset_right = 310.0
+offset_bottom = 29.0
+
+[node name="Close" type="Button" parent="TopBar" unique_id=1715420035]
+layout_mode = 0
+offset_left = 370.0
+offset_top = 6.0
+offset_right = 390.0
+offset_bottom = 26.0
+
+[node name="Minimize" type="Button" parent="TopBar" unique_id=1492652197]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 6.0
+offset_right = 366.0
+offset_bottom = 26.0
+
+[node name="Content" type="Control" parent="." unique_id=1185580226]
+anchors_preset = 0
+offset_top = 32.0
+offset_right = 400.0
+offset_bottom = 300.0
+
+[connection signal="gui_input" from="TopBar" to="." method="_on_top_bar_gui_input"]

@@ -37,7 +37,6 @@ shader_parameter/vignette_strength = 0.35
 shader_parameter/power_on = 0.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_t6tsb"]
-size = Vector2(0.8, 0.6)
 
 [node name="PCScene" type="StaticBody3D" unique_id=794729469 groups=["Interactible"]]
 collision_layer = 5
@@ -47,7 +46,7 @@ script = ExtResource("1_8pqrt")
 environment = SubResource("Environment_t6tsb")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=917639128 groups=["Player"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.003775917, 0.5276447)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.003775917, 0.42129153)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1309187984]
 transform = Transform3D(0.9843237, 0, 0, 0, 0.69565946, 0, 0, 0, 1, 0, 0, 0)
@@ -70,7 +69,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.039527953, 0.25913388)
 shape = SubResource("BoxShape3D_8pqrt")
 
 [node name="PCScreenMesh" type="MeshInstance3D" parent="." unique_id=1428759976]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0017682314, -0.005542144)
+transform = Transform3D(0.8, 0, 0, 0, 0.6, 0, 0, 0, 1, 0, 0.0017682314, -0.005542144)
 material_override = SubResource("ShaderMaterial_t6tsb")
 mesh = SubResource("QuadMesh_t6tsb")
 
@@ -79,7 +78,12 @@ disable_3d = true
 size = Vector2i(800, 600)
 render_target_update_mode = 4
 
-[node name="PCControl" parent="SubViewport" unique_id=1199994050 instance=ExtResource("2_ssrg0")]
-anchors_preset = 15
-offset_right = 0.0
-offset_bottom = 0.0
+[node name="ViewportRoot" type="Control" parent="SubViewport" unique_id=1019498745]
+layout_mode = 3
+anchors_preset = 0
+pivot_offset = Vector2(800, 600)
+
+[node name="PCControl" parent="SubViewport/ViewportRoot" unique_id=1199994050 instance=ExtResource("2_ssrg0")]
+layout_mode = 1
+offset_right = 800.0
+offset_bottom = 600.0

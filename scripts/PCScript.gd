@@ -9,7 +9,7 @@ var boot_played := false
 var player:Player
 var is_using:bool = false
 @onready var camera_3d: Camera3D = $Camera3D
-@onready var pc_control: Control = $SubViewport/PCControl
+@onready var pc_control: Control = $SubViewport/ViewportRoot/PCControl
 @onready var sub_viewport: SubViewport = $SubViewport
 
 func interact(_player_ref: Player):

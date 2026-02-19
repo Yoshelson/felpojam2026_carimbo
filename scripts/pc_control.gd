@@ -1,6 +1,11 @@
 extends Control
 class_name PCControl
 
+
+@onready var window_layer = $Desktop_Root/DraggablePanel/WindowLayer
+@onready var taskbar_app_list = $Desktop_Root/Taskbar/AppContainer
+
+
 @onready var mouse_cursor: Sprite2D = $Mouse
 var pc_mouse_pos:Vector2 = Vector2.ZERO
 
@@ -8,20 +13,109 @@ var pc_mouse_pos:Vector2 = Vector2.ZERO
 
 signal exit_requested
 
-@onready var exit_button: Button = $Quit
+@onready var exit_button: Button = $Desktop_Test/Quit
 
-# Called when the node enters the scene tree for the first time.
+
+var top_z := 1
+
+func request_focus(panel):
+	top_z += 1
+	panel.z_index = top_z
+
+	# Marca botão da taskbar como ativo
+	var btn = panel.get_meta("taskbar_button")
+	if btn:
+		btn.button_pressed = true
+
 func _ready():
 	exit_button.pressed.connect(_on_exit_pressed)
+	$LoginScreen.login_success.connect(_on_login_success)
+	add_to_group("pc_control")
+	
+	open_window(preload("res://scenes/window_base.tscn"), "Teste")
+
+func _on_login_success():
+	print("Login realizado")
 
 func _on_exit_pressed():
 	emit_signal("exit_requested")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func update_cursor_pos():
 	mouse_cursor.position = pc_mouse_pos
+	
+	
+
+func open_window(scene: PackedScene, app_name: String):
+	# Fecha instância existente se houver
+	if open_windows.has(app_name):
+		var existing_window = open_windows[app_name]
+		if existing_window and existing_window.is_inside_tree():
+			existing_window.queue_free()
+
+	# Cria nova instância
+	var window = scene.instantiate()
+	window_layer.add_child(window)
+	window.set_title(app_name)
+
+	# Conecta sinais de minimizar e fechar
+	window.minimized.connect(_on_window_minimized)
+	window.tree_exited.connect(_on_window_closed.bind(app_name))
+
+	# Cria botão na taskbar
+	_add_taskbar_button(window, app_name)
+
+	# Foca a janela
+	request_focus(window)
+
+	# Salva no dicionário de instâncias
+	open_windows[app_name] = window
+
+var open_windows := {}
+
+func _on_window_minimized(window):
+	var btn = window.get_meta("taskbar_button")
+	if btn:
+		btn.button_pressed = false
+
+func _on_window_closed(app_name):
+	if open_windows.has(app_name):
+		var btn = open_windows[app_name].get_meta("taskbar_button")
+		if btn:
+			btn.queue_free()
+		open_windows.erase(app_name)
+
+
+func _add_taskbar_button(window, app_name: String):
+	var btn = Button.new()
+	btn.text = app_name
+	btn.toggle_mode = true
+	btn.button_pressed = true # toggle_mode habilitado para usar pressed
+
+	btn.pressed.connect(func():
+		if window.is_minimized:
+			window.restore()
+		else:
+			request_focus(window)
+	)
+	
+	# Salva o botão na janela
+	window.set_meta("taskbar_button", btn)
+	
+	# Adiciona à taskbar
+	taskbar_app_list.add_child(btn)
+
+
+
+#teste
+
+
+
+#func spawn_test_window():
+	#var window = preload("res://scenes/window_base.tscn").instantiate()
+	#$Desktop_Root/WindowLayer.add_child(window)
+#
+	#window.size = Vector2(400, 300)
+	#window.set_title("Teste")
+#
+	#window.position = -window.size * 0.5
