@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://5y8rwm8yspg3"]
 
-[ext_resource type="Script" uid="uid://b16i63ob1m2uo" path="res://scripts/PCScript.gd" id="1_8pqrt"]
-[ext_resource type="PackedScene" uid="uid://bckb4866dt45s" path="res://scenes/pc_control.tscn" id="2_ssrg0"]
+[ext_resource type="Script" uid="uid://b16i63ob1m2uo" path="res://scripts/pc/PCScript.gd" id="1_8pqrt"]
+[ext_resource type="PackedScene" uid="uid://bckb4866dt45s" path="res://scenes/interactables/computer/pc_control.tscn" id="2_ssrg0"]
 [ext_resource type="Shader" uid="uid://dyvd11yhqxfdp" path="res://scripts/shaders/CRT2.gdshader" id="2_tey20"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ssrg0"]

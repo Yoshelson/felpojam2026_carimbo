@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://dxsd108dci26y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u1p5w"]
+albedo_color = Color(0.49108773, 0.49108768, 0.49108768, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xu71n"]
+
+[node name="Quarto" type="MeshInstance3D" unique_id=1534463602]
+
+[node name="colisao" type="CSGCombiner3D" parent="." unique_id=695285880]
+use_collision = true
+
+[node name="Chao" type="CSGBox3D" parent="colisao" unique_id=1772823755]
+transform = Transform3D(12.599999, 0, 0, 0, 0.2, 0, 0, 0, 16.199999, -0.027671441, 0, -2.969171)
+material_override = SubResource("StandardMaterial3D_u1p5w")
+size = Vector3(1, 1, 1.0388184)
+
+[node name="teto" type="CSGBox3D" parent="colisao" unique_id=67669178]
+transform = Transform3D(12.599999, 0, 0, 0, 0.2, 0, 0, 0, 16.199999, -0.027671441, 4.2352495, -1.4444885)
+material_override = SubResource("StandardMaterial3D_u1p5w")
+size = Vector3(1, 1, 0.85058594)
+
+[node name="parede" type="CSGBox3D" parent="colisao" unique_id=1614128195]
+transform = Transform3D(0.33749998, 0, 0, 0, 5, 0, 0, 0, 13.809422, -6.327671, 1.65, -1.4914739)
+
+[node name="parede_banheiro" type="CSGBox3D" parent="colisao" unique_id=2068269753]
+transform = Transform3D(0.33749998, 0, 0, 0, 5, 0, 0, 0, 5.3999996, 0.9290285, 1.65, -5.904235)
+size = Vector3(1, 1, 0.90722656)
+
+[node name="porta_banheiro" type="CSGBox3D" parent="colisao/parede_banheiro" unique_id=891317550]
+transform = Transform3D(-1.0280955, 0, -4.6625482e-07, 0, 0.6, 0, 5.617435e-09, 0, -0.33333334, 0, 0, 0)
+operation = 2
+
+[node name="parede_banheiro2" type="CSGBox3D" parent="colisao" unique_id=1719372260]
+transform = Transform3D(-1.4752592e-08, 0, 7.4800005, 0, 5, 0, -0.33749998, 0, -3.2696119e-07, -2.6858976, 1.65, -3.2942348)
+size = Vector3(1, 1, 1.0111694)
+
+[node name="parede2" type="CSGBox3D" parent="colisao" unique_id=707690499]
+transform = Transform3D(0.33749998, 0, 0, 0, 5, 0, 0, 0, 13.809422, 6.2723284, 1.65, -1.4914739)
+
+[node name="parede3" type="CSGBox3D" parent="colisao" unique_id=1824496917]
+transform = Transform3D(-1.4752592e-08, 0, 13.251873, 0, 5, 0, -0.33749998, 0, -5.792578e-07, -0.027671441, 1.65, 5.563716)
+size = Vector3(1, 1, 0.9782715)
+
+[node name="janela" type="CSGBox3D" parent="colisao/parede3" unique_id=620209155]
+transform = Transform3D(1.2093251, 0, 0, 0, 0.4776623, 0, -1.110223e-16, 0, 0.37234023, 0, 0.16880581, 0.060481936)
+operation = 2
+size = Vector3(1, 1, 0.9782715)
+
+[node name="parede4" type="CSGBox3D" parent="colisao" unique_id=278096268]
+transform = Transform3D(-1.4752592e-08, 0, 24.849329, 0, 5, 0, -0.33749998, 0, -1.0861987e-06, -0.027671441, 1.65, -8.334234)
+size = Vector3(1, 1, 0.5214844)
+
+[node name="porta" type="CSGBox3D" parent="colisao/parede4" unique_id=1970357840]
+transform = Transform3D(1.0326836, 0, -2.842171e-14, 0, 0.6, 0, -5.551115e-17, 0, 0.07272727, 0, 0, 0.14876032)
+operation = 2
+
+[node name="cama" type="CSGBox3D" parent="colisao" unique_id=269051614]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 2.3000002, -3.7254834, 0.5465858, 0.642164)
+size = Vector3(1, 0.9012451, 0.9633789)
+
+[node name="armario" type="CSGBox3D" parent="colisao" unique_id=1818621474]
+transform = Transform3D(2.4, 0, 0, 0, 2.990375, 0, 0, 0, 1, -2.330143, 1.8028905, -2.6256344)
+size = Vector3(1, 1.1308594, 0.9580078)
+
+[node name="mesa" type="CSGBox3D" parent="colisao" unique_id=1062601074]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.664795, 0.55441785, 4.630094)
+size = Vector3(4.958496, 0.94921875, 1.5232391)
+
+[node name="subtracao" type="CSGBox3D" parent="colisao/mesa" unique_id=639893009]
+transform = Transform3D(0.9215839, 0, 0, 0, 1, 0, 0, 0, 1, -0.11410093, -0.055419922, 0)
+operation = 2
+size = Vector3(5.3910522, 0.8383789, 1.7218628)
+
+[node name="Player" type="MeshInstance3D" parent="." unique_id=340044032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3888645, 1.1933043, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_xu71n")

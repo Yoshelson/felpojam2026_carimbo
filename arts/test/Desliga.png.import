@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7v06o2apcbq0"
-path="res://.godot/imported/login_bg.png-392eb9fdf1a05f8cfe177ec8149ca630.ctex"
+uid="uid://b0w5g0u06p84s"
+path="res://.godot/imported/Desliga.png-32ab29413eac950bdad9fab69815e27a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://source/images/PC/login_bg.png"
-dest_files=["res://.godot/imported/login_bg.png-392eb9fdf1a05f8cfe177ec8149ca630.ctex"]
+source_file="res://arts/test/Desliga.png"
+dest_files=["res://.godot/imported/Desliga.png-32ab29413eac950bdad9fab69815e27a.ctex"]
 
 [params]
 

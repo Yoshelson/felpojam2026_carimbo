@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c0gk0v22vsjes"]
 
-[ext_resource type="Script" uid="uid://trxkw683tjtb" path="res://scripts/interactive/exemplo_interativo.gd" id="1_drblo"]
+[ext_resource type="Script" uid="uid://trxkw683tjtb" path="res://scripts/interactable/exemplo_interativo.gd" id="1_drblo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x2flj"]
 
