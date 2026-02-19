@@ -82,3 +82,11 @@ func _input(event: InputEvent) -> void:
 		pc_control.pc_mouse_pos.y = clamp(pc_control.pc_mouse_pos.y, 0.0, sub_viewport.size.y - 10.0)
 		pc_control.update_cursor_pos()
 		
+		var motion_event = InputEventMouseMotion.new()
+		
+		motion_event.position = pc_control.pc_mouse_pos
+		motion_event.global_position = pc_control.pc_mouse_pos
+		motion_event.button_mask = Input.get_mouse_button_mask()
+		motion_event.relative = event.relative
+		
+		sub_viewport.push_input(motion_event)

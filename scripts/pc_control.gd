@@ -4,6 +4,8 @@ class_name PCControl
 @onready var mouse_cursor: Sprite2D = $Mouse
 var pc_mouse_pos:Vector2 = Vector2.ZERO
 
+@export var panel_windows:Array[DraggablePanelContainer]
+
 signal exit_requested
 
 @onready var exit_button: Button = $Quit

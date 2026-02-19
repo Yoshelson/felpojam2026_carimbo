@@ -47,7 +47,7 @@ script = ExtResource("1_8pqrt")
 environment = SubResource("Environment_t6tsb")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=917639128 groups=["Player"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.021120273, 0.5276447)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.003775917, 0.5276447)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1309187984]
 transform = Transform3D(0.9843237, 0, 0, 0, 0.69565946, 0, 0, 0, 1, 0, 0, 0)
@@ -70,7 +70,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.039527953, 0.25913388)
 shape = SubResource("BoxShape3D_8pqrt")
 
 [node name="PCScreenMesh" type="MeshInstance3D" parent="." unique_id=1428759976]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0017682314, 0.016594425)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0017682314, -0.005542144)
 material_override = SubResource("ShaderMaterial_t6tsb")
 mesh = SubResource("QuadMesh_t6tsb")
 
