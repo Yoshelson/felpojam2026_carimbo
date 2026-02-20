@@ -5,24 +5,20 @@ class_name DesktopAppIcon
 @export var app_name: String
 @export var icon_texture: Texture2D
 
-@onready var icon: TextureRect = get_node("Icon")
-@onready var label: Label = get_node("Name")
+@onready var icon: TextureRect = $Icon
+@onready var label: Label = $Name
 
 func _ready():
-	icon.texture = icon_texture
+	if icon_texture:
+		icon.texture = icon_texture
 	label.text = app_name
 	mouse_filter = Control.MOUSE_FILTER_STOP
-	
 
 func _gui_input(event):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.double_click:
-			var pc := get_tree().get_first_node_in_group("pc_control") as PCControl
-			if pc:
-				pc.open_window(app_scene, app_name)
-				
+	if event is InputEventMouseButton \
+	and event.button_index == MOUSE_BUTTON_LEFT \
+	and event.double_click:
 
-func _open_app():
-	var pc := get_tree().get_first_node_in_group("pc_control") as PCControl
-	if pc:
-		pc.open_window(app_scene, app_name)
+		var pc := get_tree().get_first_node_in_group("pc_control") as PCControl
+		if pc and app_scene:
+			pc.open_window(app_scene, app_name)

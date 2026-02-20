@@ -85,5 +85,10 @@ pivot_offset = Vector2(1600, 1200)
 
 [node name="PCControl" parent="SubViewport/ViewportRoot" unique_id=1199994050 instance=ExtResource("2_ssrg0")]
 layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_right = 1600.0
 offset_bottom = 1200.0
+grow_horizontal = 1
+grow_vertical = 1

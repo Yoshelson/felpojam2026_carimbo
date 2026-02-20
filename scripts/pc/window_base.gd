@@ -31,6 +31,7 @@ func restore():
 func _ready():
 	close_button.pressed.connect(_on_close_pressed)
 	minimize_button.pressed.connect(minimize)
+	mouse_filter = Control.MOUSE_FILTER_STOP
 
 
 func set_title(text: String):

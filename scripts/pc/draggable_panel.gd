@@ -5,6 +5,7 @@ var dragging := false
 var drag_offset := Vector2.ZERO
 var is_focused: bool = false
 
+@onready var window_layer = $Desktop_root/WindowLayer
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
