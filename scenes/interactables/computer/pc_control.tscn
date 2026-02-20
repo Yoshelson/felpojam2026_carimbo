@@ -5,8 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://d3cbr6riwy1fj" path="res://arts/test/pcwallpaper_test.webp" id="2_236bd"]
 [ext_resource type="Script" uid="uid://satccet7bdls" path="res://scripts/pc/desktop_root.gd" id="3_pthp1"]
 [ext_resource type="Script" uid="uid://bk5mm50pnoq30" path="res://scripts/pc/draggable_panel.gd" id="4_vgvgk"]
+[ext_resource type="PackedScene" uid="uid://cjicl4epna208" path="res://scenes/interactables/computer/desktop_app_icons.tscn" id="6_rrfp6"]
+[ext_resource type="PackedScene" uid="uid://0vyut6dnqpa1" path="res://scenes/interactables/computer/arquivos_window.tscn" id="7_3d4qn"]
 [ext_resource type="Texture2D" uid="uid://c1mhjj4wyahjf" path="res://arts/test/Off_test.png" id="7_hbrv6"]
 [ext_resource type="Script" uid="uid://c12ysu4qxad5" path="res://scripts/pc/login_screen.gd" id="7_m7g4r"]
+[ext_resource type="Texture2D" uid="uid://11wllttmf6s3" path="res://arts/test/arquivos_test.png" id="8_egac1"]
 [ext_resource type="Texture2D" uid="uid://b7v06o2apcbq0" path="res://arts/test/login_bg.png" id="8_j70bi"]
 [ext_resource type="Texture2D" uid="uid://b86mvvv7wltwv" path="res://arts/test/User_Test.png" id="8_qu3oj"]
 [ext_resource type="Texture2D" uid="uid://baqvppm54ffb7" path="res://arts/test/confirm_test.png" id="9_j70bi"]
@@ -15,12 +18,12 @@
 load_path = "res://.godot/imported/Desliga.png-8dd33cd1ba57ca4c37b667835d7a4af0.ctex"
 
 [node name="PCControl" type="Control" unique_id=1199994050 node_paths=PackedStringArray("panel_windows")]
-custom_minimum_size = Vector2(800, 600)
+custom_minimum_size = Vector2(1600, 1200)
 layout_mode = 3
-anchor_right = 0.694
-anchor_bottom = 0.92600006
-offset_right = 0.5119629
-offset_bottom = -0.048034668
+anchor_right = 1.389
+anchor_bottom = 1.8520001
+offset_right = -0.12805176
+offset_bottom = -0.096069336
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_236bd")
@@ -105,10 +108,10 @@ anchor_left = 0.155
 anchor_top = 0.23200001
 anchor_right = 0.28500003
 anchor_bottom = 0.432
-offset_left = -124.0
-offset_top = -139.20001
-offset_right = -228.00002
-offset_bottom = -259.2
+offset_left = -248.0
+offset_top = -272.40002
+offset_right = -456.00003
+offset_bottom = -512.4
 script = ExtResource("4_vgvgk")
 
 [node name="WindowLayer" type="Control" parent="Desktop_Root/DraggablePanel" unique_id=1472503017]
@@ -121,21 +124,24 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -40.0
+offset_top = -80.0
 grow_horizontal = 2
 grow_vertical = 0
 
 [node name="OffButton" type="Button" parent="Desktop_Root/Taskbar" unique_id=760509438]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_right = 80.0
+offset_bottom = 80.0
 icon = ExtResource("7_hbrv6")
+icon_alignment = 1
+expand_icon = true
 
 [node name="AppContainer" type="HBoxContainer" parent="Desktop_Root/Taskbar" unique_id=780172760]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 0
-offset_left = 40.0
-offset_right = 80.0
-offset_bottom = 40.0
+offset_left = 80.0
+offset_right = 160.0
+offset_bottom = 80.0
 theme_override_constants/separation = 8
 
 [node name="Clock" type="Label" parent="Desktop_Root/Taskbar" unique_id=681408296]
@@ -143,10 +149,40 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -80.0
+offset_left = -158.0
+offset_top = -7.0
+offset_right = 2.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 32
 text = "21:61"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Desktop_Icons" type="GridContainer" parent="Desktop_Root" unique_id=1810797379]
+custom_minimum_size = Vector2(96, 110)
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 288.0
+offset_bottom = 174.0
+theme_override_constants/h_separation = 32
+theme_override_constants/v_separation = 32
+columns = 10
+
+[node name="Arquivos" parent="Desktop_Root/Desktop_Icons" unique_id=1924461812 instance=ExtResource("6_rrfp6")]
+layout_mode = 2
+app_scene = ExtResource("7_3d4qn")
+app_name = "Arquivos"
+icon_texture = ExtResource("8_egac1")
+
+[node name="Arquivos2" parent="Desktop_Root/Desktop_Icons" unique_id=491479298 instance=ExtResource("6_rrfp6")]
+layout_mode = 2
+app_scene = ExtResource("7_3d4qn")
+app_name = "Arquivos2"
+icon_texture = ExtResource("8_egac1")
 
 [node name="LoginScreen" type="Control" parent="." unique_id=1312628652]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -156,14 +192,14 @@ grow_vertical = 2
 script = ExtResource("7_m7g4r")
 
 [node name="Login_BG" type="TextureRect" parent="LoginScreen" unique_id=364165408]
-custom_minimum_size = Vector2(800, 600)
+custom_minimum_size = Vector2(1600, 1200)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset_ratio = Vector2(0.5, 0.5)
+pivot_offset_ratio = Vector2(0.5, 0)
 texture = ExtResource("8_j70bi")
 
 [node name="UserImage" type="TextureRect" parent="LoginScreen" unique_id=1719773582]
@@ -252,7 +288,7 @@ horizontal_alignment = 1
 [node name="Mouse" type="Sprite2D" parent="." unique_id=200985795]
 top_level = true
 z_index = 100
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_2c1gn")
 centered = false
 

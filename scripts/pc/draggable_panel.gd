@@ -30,7 +30,7 @@ func _gui_input(event: InputEvent) -> void:
 		var viewport_size = get_viewport().size
 
 		# Altura da taskbar (ajuste se mudar depois)
-		var taskbar_height := 30.0
+		var taskbar_height := 80.0
 
 		position.x = clamp(
 			position.x,

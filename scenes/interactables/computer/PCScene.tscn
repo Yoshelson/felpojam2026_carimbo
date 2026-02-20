@@ -75,15 +75,15 @@ mesh = SubResource("QuadMesh_t6tsb")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1882319868]
 disable_3d = true
-size = Vector2i(800, 600)
+size = Vector2i(1600, 1200)
 render_target_update_mode = 4
 
 [node name="ViewportRoot" type="Control" parent="SubViewport" unique_id=1019498745]
 layout_mode = 3
 anchors_preset = 0
-pivot_offset = Vector2(800, 600)
+pivot_offset = Vector2(1600, 1200)
 
 [node name="PCControl" parent="SubViewport/ViewportRoot" unique_id=1199994050 instance=ExtResource("2_ssrg0")]
 layout_mode = 1
-offset_right = 800.0
-offset_bottom = 600.0
+offset_right = 1600.0
+offset_bottom = 1200.0

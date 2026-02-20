@@ -32,7 +32,7 @@ func _ready():
 	$LoginScreen.login_success.connect(_on_login_success)
 	add_to_group("pc_control")
 	
-	
+	open_window(preload("res://scenes/interactables/computer/window_base.tscn"), "Meus Arquivos")
 
 func _on_login_success():
 	print("Login realizado")
@@ -86,11 +86,17 @@ func _on_window_closed(app_name):
 		open_windows.erase(app_name)
 
 
-func _add_taskbar_button(window, app_name: String):
+func _add_taskbar_button(window, _app_name: String):
 	var btn = Button.new()
-	btn.text = app_name
 	btn.toggle_mode = true
-	btn.button_pressed = true # toggle_mode habilitado para usar pressed
+	btn.button_pressed = true
+	btn.text = ""  
+	btn.flat = true
+	btn.custom_minimum_size = Vector2(48, 48)
+
+	if window.window_icon:
+		btn.icon = window.window_icon
+		btn.expand_icon = true
 
 	btn.pressed.connect(func():
 		if window.is_minimized:
@@ -98,11 +104,8 @@ func _add_taskbar_button(window, app_name: String):
 		else:
 			request_focus(window)
 	)
-	
-	# Salva o botão na janela
+
 	window.set_meta("taskbar_button", btn)
-	
-	# Adiciona à taskbar
 	taskbar_app_list.add_child(btn)
 
 

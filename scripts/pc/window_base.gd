@@ -7,6 +7,9 @@ class_name WindowBase
 @onready var content_container: Control = $Content
 @onready var minimize_button: Button = $TopBar/Minimize
 
+@export var window_icon: Texture2D
+
+
 var dragging := false
 var drag_offset := Vector2.ZERO
 
@@ -64,7 +67,7 @@ func _on_top_bar_gui_input(event):
 		position += event.relative
 
 		var viewport_size = get_viewport().size
-		var taskbar_height := 30.0
+		var taskbar_height := 80.0
 
 		position.x = clamp(position.x, 0, viewport_size.x - size.x)
 		position.y = clamp(position.y, 0, viewport_size.y - size.y - taskbar_height)
