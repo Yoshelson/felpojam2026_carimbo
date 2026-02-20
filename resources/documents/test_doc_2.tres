@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="DocumentData" format=3 uid="uid://cbrlx480bvv5q"]
+
+[ext_resource type="Texture2D" uid="uid://bn6ljhjkyrf3s" path="res://arts/test/AofHearts.png" id="1_n0khc"]
+[ext_resource type="Script" uid="uid://b6irqck1wko0p" path="res://scripts/inventory-system/documents/DocumentsData.gd" id="2_rd83x"]
+[ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="3_116dv"]
+[ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="4_u4epa"]
+
+[sub_resource type="Resource" id="Resource_1ux4f"]
+script = ExtResource("3_116dv")
+colors_needed = Array[String](["Red"])
+variant_sprite = ExtResource("4_u4epa")
+metadata/_custom_type_script = "uid://dhgwmkta7luru"
+
+[resource]
+script = ExtResource("2_rd83x")
+base_image = ExtResource("1_n0khc")
+id = "ace"
+transcripted_text = "ace is incredible"
+variations = Array[ExtResource("3_116dv")]([SubResource("Resource_1ux4f")])
+metadata/_custom_type_script = "uid://b6irqck1wko0p"

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bn6ljhjkyrf3s" path="res://arts/test/AofHearts.png" id="1_j63hw"]
 [ext_resource type="Script" uid="uid://brnkusy2gviae" path="res://scripts/UI/DocumentUIController.gd" id="1_jtc8e"]
+[ext_resource type="Script" uid="uid://uwqvtu5si77r" path="res://scripts/test/test_inventory.gd" id="3_s8hfk"]
 
 [sub_resource type="Theme" id="Theme_jtc8e"]
 
@@ -95,6 +96,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_j63hw")
 [node name="Transcription Btn" type="Button" parent="Right Buttons Margin/Right ButtonsVBox/Background Transcription Btn" unique_id=666848894]
 layout_mode = 2
 text = "Ler Transcrição"
+
+[node name="Node" type="Node" parent="." unique_id=1117516193]
+script = ExtResource("3_s8hfk")
 
 [connection signal="pressed" from="Return Button Margin/Brackground Return Btn/Return Btn" to="." method="_on_return_btn_pressed"]
 [connection signal="pressed" from="Right Buttons Margin/Right ButtonsVBox/Background Stamp Btn/Stamp Btn" to="." method="_on_stamp_btn_pressed"]

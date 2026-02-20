@@ -12,12 +12,13 @@ var _actual_zoom: float = 1
 var _is_panning: bool = false
 var _target_pos: Vector2
 
+var _actual_doc_id: String = ""
+var _actual_transcripted_text: String = ""
+
 func _ready() -> void:
-	#signal com document_data (linkar com setup_UI)
-	#_disable_UI()
-	var teste = load("res://test_doc.tres")
-	setup_UI(teste)
-	pass
+	_disable_UI()
+	#setup_UI("king")
+	InventoryManager.doc_inventory_changed.connect(_att_doc_UI)
 
 func _process(delta: float) -> void:
 	_actual_zoom = lerp(_actual_zoom, _target_zoom, zoom_smoothness * delta)
@@ -26,14 +27,29 @@ func _process(delta: float) -> void:
 	_pos_in_limits()
 	document_image.position = _target_pos
 
-func setup_UI(document_data: DocumentData):
-	document_image.texture = document_data.base_image
-	await get_tree().process_frame
-	_center_doc_pivot()
-	_target_zoom = 1
-	_actual_zoom = 1
-	_is_panning = false
-	visible = true
+func setup_UI(doc_id: String):
+	var document = InventoryManager.get_doc(doc_id)
+	if document:
+		document_image.texture = document._actual_image
+		_actual_doc_id = doc_id
+		_actual_transcripted_text = document._document_data.transcripted_text
+		await get_tree().process_frame
+		_center_doc_pivot()
+		_target_zoom = 1
+		_actual_zoom = 1
+		_is_panning = false
+		visible = true
+	else:
+		print("ERROR: Id de Documento enviado para UI não está no inventário")
+		
+func _att_doc_UI(doc_id: String):
+	if _actual_doc_id == doc_id:
+		var document = InventoryManager.get_doc(doc_id)
+		if document:
+			document_image.texture = document._actual_image
+			_actual_transcripted_text = document._document_data.transcripted_text
+		else:
+			push_error("ERROR: Id de Documento enviado para UI não está no inventário")
 
 func _disable_UI():
 	visible = false
@@ -99,8 +115,9 @@ func _on_return_btn_pressed() -> void:
 	_disable_UI()
 
 func _on_stamp_btn_pressed() -> void:
-	#Carimbo Code
+	#open color
 	pass
 
 func _on_transcription_btn_pressed() -> void:
-	pass # Replace with function body.
+	#transcription code
+	pass 

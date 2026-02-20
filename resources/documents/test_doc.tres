@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://b6irqck1wko0p" path="res://scripts/inventory-system/documents/DocumentsData.gd" id="1_7u24j"]
 [ext_resource type="Texture2D" uid="uid://cjkx821t7i4v3" path="res://arts/test/JofHearts.png" id="2_1ux4f"]
 [ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="2_ph6t2"]
-[ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="4_wybdf"]
+[ext_resource type="Texture2D" uid="uid://bn6ljhjkyrf3s" path="res://arts/test/AofHearts.png" id="4_b5o1t"]
 
-[sub_resource type="Resource" id="Resource_1ux4f"]
+[sub_resource type="Resource" id="Resource_b5o1t"]
 script = ExtResource("2_ph6t2")
-colors_needed = Array[String](["Red"])
-variant_sprite = ExtResource("4_wybdf")
+colors_needed = Array[String](["Blue", "R"])
+variant_sprite = ExtResource("4_b5o1t")
 metadata/_custom_type_script = "uid://dhgwmkta7luru"
 
 [resource]
@@ -16,5 +16,5 @@ script = ExtResource("1_7u24j")
 base_image = ExtResource("2_1ux4f")
 id = "king"
 transcripted_text = "the king is the coolest"
-variations = Array[ExtResource("2_ph6t2")]([SubResource("Resource_1ux4f")])
+variations = Array[ExtResource("2_ph6t2")]([SubResource("Resource_b5o1t")])
 metadata/_custom_type_script = "uid://b6irqck1wko0p"
