@@ -4,7 +4,7 @@ class_name PCControl
 @onready var window_layer: Control = $Desktop_Root/WindowLayer
 @onready var taskbar_app_list: HBoxContainer = $Desktop_Root/Taskbar/AppContainer
 @onready var mouse_cursor: Sprite2D = $Mouse
-@onready var login_screen: Control = $LoginScreen
+@onready var login_screen: Control = $Login
 @onready var exit_button: Button = $Desktop_Test/Quit
 
 signal exit_requested
@@ -84,7 +84,7 @@ func _add_taskbar_button(window: WindowBase):
 	btn.toggle_mode = true
 	btn.button_pressed = true
 	btn.flat = true
-	btn.custom_minimum_size = Vector2(48,48)
+	btn.custom_minimum_size = Vector2(72,72)
 
 	if window.window_icon:
 		btn.icon = window.window_icon

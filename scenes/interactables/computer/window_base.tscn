@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cpcptycu8s7w3" path="res://arts/test/close_test.png" id="5_ksnip"]
 
 [node name="WindowBase" type="Panel" unique_id=280367607]
+self_modulate = Color(1, 1, 1, 0)
 offset_right = 700.0
 offset_bottom = 500.0
 script = ExtResource("1_thcwt")
@@ -23,6 +24,7 @@ texture = ExtResource("2_oxeg8")
 expand_mode = 1
 
 [node name="TopBar" type="Panel" parent="." unique_id=1516810741]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 700.0
 offset_bottom = 48.0

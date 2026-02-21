@@ -26,13 +26,14 @@ offset_right = -0.12805176
 offset_bottom = -0.096069336
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 script = ExtResource("1_236bd")
 
 [node name="Desktop_Test" type="Control" parent="." unique_id=1408403905]
 visible = false
 anchors_preset = 0
-offset_right = 800.0
-offset_bottom = 600.0
+offset_right = 1600.0
+offset_bottom = 1200.0
 
 [node name="BG" type="TextureRect" parent="Desktop_Test" unique_id=1827769649]
 modulate = Color(0.7524575, 0.75245756, 0.75245756, 1)
@@ -117,7 +118,6 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="Bar" type="TextureRect" parent="Desktop_Root/Taskbar" unique_id=1062483664]
-visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -131,15 +131,6 @@ icon = ExtResource("7_hbrv6")
 flat = true
 icon_alignment = 1
 expand_icon = true
-
-[node name="AppContainer" type="HBoxContainer" parent="Desktop_Root/Taskbar" unique_id=780172760]
-z_index = 1
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 0
-offset_left = 104.0
-offset_right = 184.0
-offset_bottom = 80.0
-theme_override_constants/separation = 8
 
 [node name="Clock" type="Label" parent="Desktop_Root/Taskbar" unique_id=681408296]
 layout_mode = 1
@@ -155,6 +146,15 @@ text = "21:61"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="AppContainer" type="HBoxContainer" parent="Desktop_Root/Taskbar" unique_id=780172760]
+z_index = 1
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_left = 104.0
+offset_right = 184.0
+offset_bottom = 80.0
+theme_override_constants/separation = 8
+
 [node name="Desktop_Icons" type="GridContainer" parent="Desktop_Root" unique_id=1810797379]
 custom_minimum_size = Vector2(96, 110)
 layout_mode = 0
@@ -162,8 +162,8 @@ offset_left = 64.0
 offset_top = 64.0
 offset_right = 288.0
 offset_bottom = 174.0
-theme_override_constants/h_separation = 32
-theme_override_constants/v_separation = 32
+theme_override_constants/h_separation = 48
+theme_override_constants/v_separation = 46
 columns = 10
 
 [node name="Arquivos" parent="Desktop_Root/Desktop_Icons" unique_id=1924461812 instance=ExtResource("6_rrfp6")]
@@ -178,8 +178,7 @@ app_scene = ExtResource("7_3d4qn")
 app_name = "Arquivos2"
 icon_texture = ExtResource("8_egac1")
 
-[node name="LoginScreen" type="Control" parent="." unique_id=1312628652]
-visible = false
+[node name="Login" type="Control" parent="." unique_id=1312628652]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -188,99 +187,181 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("7_m7g4r")
 
-[node name="Login_BG" type="TextureRect" parent="LoginScreen" unique_id=364165408]
+[node name="LoginScreen" type="Control" parent="Login" unique_id=150900685]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Login_BG" type="TextureRect" parent="Login/LoginScreen" unique_id=364165408]
 custom_minimum_size = Vector2(1600, 1200)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 1560.0
+offset_bottom = 1160.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0)
 texture = ExtResource("8_j70bi")
 
-[node name="UserImage" type="TextureRect" parent="LoginScreen" unique_id=1719773582]
+[node name="UserImage" type="TextureRect" parent="Login/LoginScreen" unique_id=1719773582]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -32.0
-offset_top = -90.0
-offset_right = 32.0
-offset_bottom = -26.0
+offset_left = 720.0
+offset_top = 407.0
+offset_right = 848.0
+offset_bottom = 535.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("8_qu3oj")
 
-[node name="Username" type="Label" parent="LoginScreen" unique_id=1833596242]
+[node name="Username" type="Label" parent="Login/LoginScreen" unique_id=1833596242]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = -11.0
-offset_right = 60.0
-offset_bottom = 12.0
+offset_left = 658.0
+offset_top = 563.0
+offset_right = 898.0
+offset_bottom = 609.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 32
 text = "Monique"
 horizontal_alignment = 1
 
-[node name="Password" type="LineEdit" parent="LoginScreen" unique_id=1802271249]
+[node name="Password" type="LineEdit" parent="Login/LoginScreen" unique_id=1802271249]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -34.0
-offset_top = -15.0
-offset_right = 34.5
-offset_bottom = 16.0
+offset_left = 657.99994
+offset_top = 622.0
+offset_right = 877.99994
+offset_bottom = 664.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(2.4210527, 1.0581394)
-pivot_offset = Vector2(0, -500)
+scale = Vector2(1.1, 1.1)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 
-[node name="Confirm" type="Button" parent="LoginScreen" unique_id=1218315170]
+[node name="Confirm" type="Button" parent="Login/LoginScreen" unique_id=1218315170]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -36.0
-offset_top = 100.0
-offset_right = 36.0
-offset_bottom = 172.0
+offset_left = 742.0
+offset_top = 750.0
+offset_right = 814.0
+offset_bottom = 822.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 icon = ExtResource("9_j70bi")
 
-[node name="ErrorLabel" type="Label" parent="LoginScreen" unique_id=2118783386]
+[node name="ErrorLabel" type="Label" parent="Login/LoginScreen" unique_id=2118783386]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = 60.0
-offset_right = 50.0
-offset_bottom = 83.0
+offset_left = 730.0
+offset_top = 683.0
+offset_right = 830.0
+offset_bottom = 706.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.5, 1.5)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 horizontal_alignment = 1
+
+[node name="ForgotPassword" type="Button" parent="Login/LoginScreen" unique_id=109280586]
+layout_mode = 0
+offset_left = 918.0
+offset_top = 640.0
+offset_right = 960.0
+offset_bottom = 682.0
+scale = Vector2(1.1, 1.1)
+tooltip_text = "Esqueci a minha Senha."
+
+[node name="RecoveryScreen" type="Control" parent="Login" unique_id=2013830963]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Login_BG2" type="TextureRect" parent="Login/RecoveryScreen" unique_id=14258450]
+custom_minimum_size = Vector2(1600, 1200)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1560.0
+offset_bottom = 1160.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0)
+texture = ExtResource("8_j70bi")
+
+[node name="QuestionLabel" type="Label" parent="Login/RecoveryScreen" unique_id=359156779]
+layout_mode = 0
+offset_left = 604.0
+offset_top = 427.0
+offset_right = 1004.0
+offset_bottom = 480.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 38
+horizontal_alignment = 1
+
+[node name="AnswerLine" type="LineEdit" parent="Login/RecoveryScreen" unique_id=724218876]
+layout_mode = 0
+offset_left = 650.0
+offset_top = 600.0
+offset_right = 950.0
+offset_bottom = 652.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="ErrorLabel" type="Label" parent="Login/RecoveryScreen" unique_id=1992213391]
+layout_mode = 0
+offset_left = 740.0
+offset_top = 666.0
+offset_right = 840.0
+offset_bottom = 689.0
+scale = Vector2(1.5, 1.5)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="BackButton" type="Button" parent="Login/RecoveryScreen" unique_id=1053555446]
+layout_mode = 0
+offset_left = 541.0
+offset_top = 600.0
+offset_right = 593.0
+offset_bottom = 652.0
+
+[node name="ConfirmRecovery" type="Button" parent="Login/RecoveryScreen" unique_id=526202330]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 742.0
+offset_top = 710.0
+offset_right = 814.0
+offset_bottom = 782.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Mouse" type="Sprite2D" parent="." unique_id=200985795]
 top_level = true
@@ -289,4 +370,4 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_2c1gn")
 centered = false
 
-[connection signal="pressed" from="LoginScreen/Confirm" to="LoginScreen" method="_on_confirm_pressed"]
+[connection signal="pressed" from="Login/LoginScreen/Confirm" to="Login" method="_on_confirm_pressed"]
