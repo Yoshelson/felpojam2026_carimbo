@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bur6e222wm402"]
+
+[ext_resource type="Texture2D" uid="uid://bn6ljhjkyrf3s" path="res://arts/test/AofHearts.png" id="1_ud8ji"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_6m7nv"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ud8ji"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_6m7nv")
+
+[sub_resource type="QuadMesh" id="QuadMesh_s5abs"]
+material = SubResource("StandardMaterial3D_ud8ji")
+
+[node name="DocumentBoard" type="Node3D" unique_id=1488558304]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1029841168]
+transform = Transform3D(3.8400002, 0, 0, 0, 2.3000002, 0, 0, 0, 0.19999999, 0, 0, 0)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D" unique_id=937501904]
+transform = Transform3D(0.9409332, 0, 0, 0, 0.9123568, 0, 0, 0, 0.99999994, 0, 0, 0.35271943)
+operation = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1823412578]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6916417)
+mesh = SubResource("QuadMesh_s5abs")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=2086355270]
+size = Vector2i(1024, 512)
+
+[node name="Control" type="Control" parent="SubViewport" unique_id=1714824338]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="SubViewport/Control" unique_id=464566005]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
+
+[node name="Control" type="Control" parent="SubViewport/Control/GridContainer" unique_id=1858280965]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="SubViewport/Control/GridContainer/Control" unique_id=1772188464]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 120.0
+texture = ExtResource("1_ud8ji")
+expand_mode = 1
+
+[node name="Control2" type="Control" parent="SubViewport/Control/GridContainer" unique_id=1646990182]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="SubViewport/Control/GridContainer/Control2" unique_id=313763772]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 120.0
+texture = ExtResource("1_ud8ji")
+expand_mode = 1

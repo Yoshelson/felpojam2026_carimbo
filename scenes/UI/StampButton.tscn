@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b1tjlq0dyqey1"]
+
+[ext_resource type="Texture2D" uid="uid://bvf2jsswjqnqk" path="res://arts/test/Tinta2.png" id="1_sata4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qd52h"]
+bg_color = Color(1, 1, 1, 0.23529412)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Background Button" type="PanelContainer" unique_id=1791627071]
+theme_override_styles/panel = SubResource("StyleBoxFlat_qd52h")
+
+[node name="Stamp Button" type="TextureButton" parent="." unique_id=2031335345]
+layout_mode = 2
+texture_normal = ExtResource("1_sata4")

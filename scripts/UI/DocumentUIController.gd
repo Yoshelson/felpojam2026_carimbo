@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var document_container = $"Document Container"
 @onready var document_image = $"Document Container/Document Image"
+@onready var stamps_container = $StampsUI
 var min_zoom: float = 0.5
 var max_zoom: float = 3
 var step_zoom: float = 0.1
@@ -17,8 +18,8 @@ var _actual_transcripted_text: String = ""
 
 func _ready() -> void:
 	_disable_UI()
-	#setup_UI("king")
 	InventoryManager.doc_inventory_changed.connect(_att_doc_UI)
+	stamps_container.stamp_pressed.connect(_doc_stamped)
 
 func _process(delta: float) -> void:
 	_actual_zoom = lerp(_actual_zoom, _target_zoom, zoom_smoothness * delta)
@@ -111,12 +112,14 @@ func _center_doc_pivot():
 	document_image.position = (container_size/2) - (document_size / 2)
 	_target_pos = document_image.position
 
+func _doc_stamped(stamp_id: String):
+	InventoryManager.stamp_doc(_actual_doc_id, stamp_id)
+
 func _on_return_btn_pressed() -> void:
 	_disable_UI()
 
 func _on_stamp_btn_pressed() -> void:
-	#open color
-	pass
+	stamps_container.toggle_UI()
 
 func _on_transcription_btn_pressed() -> void:
 	#transcription code

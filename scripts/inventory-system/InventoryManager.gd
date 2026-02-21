@@ -1,12 +1,12 @@
 extends Node
 
 var _documents_inventory: Dictionary[String, DocumentState]
-var _stamp_inventory: Array[String]
+var _stamp_inventory: Array[StampData]
 
 signal doc_inventory_changed(id: String)
-signal stamp_inventory_changed
+signal stamp_inventory_changed()
 
-func add_document(document_data:DocumentData):
+func add_document(document_data: DocumentData):
 	var doc_id = document_data.id
 	if !(_documents_inventory.has(doc_id)):
 		var new_doc_state = DocumentState.new(Vector3(0,0,0), document_data)
@@ -15,16 +15,14 @@ func add_document(document_data:DocumentData):
 	else:
 		push_warning("Documento já adicionado: ", doc_id)
 
-func add_stamp_color(stamp_name:String):
-	if !(_stamp_inventory.has(stamp_name)):
-		_stamp_inventory.push_back(stamp_name)
-		_stamp_inventory.sort()
+func add_stamp_color(stamp_data: StampData):
+	if !(_stamp_inventory.has(stamp_data)):
+		_stamp_inventory.push_back(stamp_data)
+		_stamp_inventory.sort_custom(Callable(StampData, "sort_ascending"))
 		emit_signal("stamp_inventory_changed")
 	else:
-		push_warning("Carimbo já adicionado: ", stamp_name)
+		push_warning("Carimbo já adicionado: ", stamp_data.name)
 
-#Terminar após resolver a situação dos carimbos
-#garantir failproof de cor minuscula
 func stamp_doc(doc_id: String, new_color: String):
 	if _documents_inventory.has(doc_id):
 		var stamped_doc = _documents_inventory[doc_id]
@@ -40,4 +38,5 @@ func get_doc(doc_id: String) -> DocumentState:
 		return _documents_inventory[doc_id]
 	return null
 
-# Questao do Save
+func get_all_stamp_colors() -> Array[StampData]:
+	return _stamp_inventory

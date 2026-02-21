@@ -3,16 +3,16 @@
 [ext_resource type="Texture2D" uid="uid://bn6ljhjkyrf3s" path="res://arts/test/AofHearts.png" id="1_j63hw"]
 [ext_resource type="Script" uid="uid://brnkusy2gviae" path="res://scripts/UI/DocumentUIController.gd" id="1_jtc8e"]
 [ext_resource type="Script" uid="uid://uwqvtu5si77r" path="res://scripts/test/test_inventory.gd" id="3_s8hfk"]
+[ext_resource type="PackedScene" uid="uid://cqlioob2vxlrm" path="res://scenes/UI/StampsUI.tscn" id="4_r08wx"]
 
 [sub_resource type="Theme" id="Theme_jtc8e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j63hw"]
-bg_color = Color(0, 0, 0, 0.23529412)
+bg_color = Color(1, 1, 1, 0.23529412)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.66656864, 0.6665688, 0.6665684, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -20,6 +20,9 @@ corner_radius_bottom_left = 5
 
 [node name="DocumentsUi" type="CanvasLayer" unique_id=60002005]
 script = ExtResource("1_jtc8e")
+
+[node name="Node" type="Node" parent="." unique_id=1117516193]
+script = ExtResource("3_s8hfk")
 
 [node name="Background Color" type="ColorRect" parent="." unique_id=376951773]
 anchors_preset = 15
@@ -55,11 +58,11 @@ size_flags_horizontal = 8
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 30
 
-[node name="Brackground Return Btn" type="PanelContainer" parent="Return Button Margin" unique_id=12166107]
+[node name="Background Return Btn" type="PanelContainer" parent="Return Button Margin" unique_id=12166107]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_j63hw")
 
-[node name="Return Btn" type="Button" parent="Return Button Margin/Brackground Return Btn" unique_id=841261689]
+[node name="Return Btn" type="Button" parent="Return Button Margin/Background Return Btn" unique_id=841261689]
 layout_mode = 2
 text = "<- Voltar"
 
@@ -97,9 +100,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_j63hw")
 layout_mode = 2
 text = "Ler Transcrição"
 
-[node name="Node" type="Node" parent="." unique_id=1117516193]
-script = ExtResource("3_s8hfk")
+[node name="StampsUI" parent="." unique_id=1639411058 instance=ExtResource("4_r08wx")]
 
-[connection signal="pressed" from="Return Button Margin/Brackground Return Btn/Return Btn" to="." method="_on_return_btn_pressed"]
+[connection signal="pressed" from="Return Button Margin/Background Return Btn/Return Btn" to="." method="_on_return_btn_pressed"]
 [connection signal="pressed" from="Right Buttons Margin/Right ButtonsVBox/Background Stamp Btn/Stamp Btn" to="." method="_on_stamp_btn_pressed"]
 [connection signal="pressed" from="Right Buttons Margin/Right ButtonsVBox/Background Transcription Btn/Transcription Btn" to="." method="_on_transcription_btn_pressed"]

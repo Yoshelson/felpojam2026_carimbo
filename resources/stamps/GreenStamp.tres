@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="StampData" format=3 uid="uid://dikvow2hm7out"]
+
+[ext_resource type="Script" uid="uid://bhbswkhk13el6" path="res://scripts/inventory-system/stamps/StampsData.gd" id="1_bc3ld"]
+[ext_resource type="Texture2D" uid="uid://be3lw6mmd8q8v" path="res://arts/test/Tinta4.png" id="1_ugb6e"]
+
+[resource]
+script = ExtResource("1_bc3ld")
+ui_pos = 3
+name = "Verde"
+image = ExtResource("1_ugb6e")
+metadata/_custom_type_script = "uid://bhbswkhk13el6"

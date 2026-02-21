@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cqlioob2vxlrm"]
+
+[ext_resource type="Script" uid="uid://b7yntnnuyu1w3" path="res://scripts/UI/StampUIController.gd" id="1_dr43n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r08wx"]
+bg_color = Color(0, 0, 0, 0.627451)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="StampsUI" type="MarginContainer" unique_id=1639411058]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+theme_override_constants/margin_bottom = -5
+script = ExtResource("1_dr43n")
+
+[node name="Background" type="PanelContainer" parent="." unique_id=1378270392]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r08wx")
+
+[node name="MarginContainer" type="MarginContainer" parent="Background" unique_id=1412695247]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+
+[node name="Stamps" type="HBoxContainer" parent="Background/MarginContainer" unique_id=221278937]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
