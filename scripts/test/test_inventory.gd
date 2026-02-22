@@ -19,6 +19,8 @@ func _input(event: InputEvent) -> void:
 			var load_stamp1 = load("res://resources/stamps/BlackStamp.tres")
 			var load_stamp2 = load("res://resources/stamps/WhiteStamp.tres")
 			var load_stamp3 = load("res://resources/stamps/GreenStamp.tres")
+			var load_stamp4 = load("res://resources/stamps/BlueStamp.tres")
+			var load_stamp5 = load("res://resources/stamps/YellowStamp.tres")
 			#Testar Signal e GetDoc e UI
 			if (number < 1):
 				var document_UI = $".."
@@ -29,5 +31,9 @@ func _input(event: InputEvent) -> void:
 				InventoryManager.add_stamp_color(load_stamp2)
 			elif (number == 12):
 				InventoryManager.add_stamp_color(load_stamp3)
+			elif (number == 16):
+				InventoryManager.add_stamp_color(load_stamp4)
+			elif (number == 20):
+				InventoryManager.add_stamp_color(load_stamp5)
 			number+=1
 			

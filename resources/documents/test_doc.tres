@@ -3,12 +3,54 @@
 [ext_resource type="Script" uid="uid://b6irqck1wko0p" path="res://scripts/inventory-system/documents/DocumentsData.gd" id="1_7u24j"]
 [ext_resource type="Texture2D" uid="uid://cjkx821t7i4v3" path="res://arts/test/JofHearts.png" id="2_1ux4f"]
 [ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="2_ph6t2"]
+[ext_resource type="Texture2D" uid="uid://b86mvvv7wltwv" path="res://arts/test/User_Test.png" id="4_6v2ix"]
 [ext_resource type="Texture2D" uid="uid://bn6ljhjkyrf3s" path="res://arts/test/AofHearts.png" id="4_b5o1t"]
+[ext_resource type="Texture2D" uid="uid://diae5xkiuusn7" path="res://arts/test/Mouse.png" id="6_dno37"]
+[ext_resource type="Texture2D" uid="uid://x3hs6fr68n5n" path="res://arts/test/Tinta3.png" id="6_geele"]
+[ext_resource type="Texture2D" uid="uid://btivl501dvxyh" path="res://arts/test/R (1).jpeg" id="8_if86j"]
+[ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="9_vrbeu"]
+[ext_resource type="Texture2D" uid="uid://d3cbr6riwy1fj" path="res://arts/test/pcwallpaper_test.webp" id="10_if86j"]
 
 [sub_resource type="Resource" id="Resource_b5o1t"]
 script = ExtResource("2_ph6t2")
-colors_needed = Array[String](["Blue", "R"])
+colors_needed = Array[String](["Amarelo", "Preto", "Azul"])
 variant_sprite = ExtResource("4_b5o1t")
+metadata/_custom_type_script = "uid://dhgwmkta7luru"
+
+[sub_resource type="Resource" id="Resource_vrbeu"]
+script = ExtResource("2_ph6t2")
+colors_needed = Array[String](["Azul", "Amarelo"])
+variant_sprite = ExtResource("10_if86j")
+metadata/_custom_type_script = "uid://dhgwmkta7luru"
+
+[sub_resource type="Resource" id="Resource_rqn3f"]
+script = ExtResource("2_ph6t2")
+colors_needed = Array[String](["Preto", "Azul"])
+variant_sprite = ExtResource("4_6v2ix")
+metadata/_custom_type_script = "uid://dhgwmkta7luru"
+
+[sub_resource type="Resource" id="Resource_dku3m"]
+script = ExtResource("2_ph6t2")
+colors_needed = Array[String](["Preto", "Amarelo"])
+variant_sprite = ExtResource("6_geele")
+metadata/_custom_type_script = "uid://dhgwmkta7luru"
+
+[sub_resource type="Resource" id="Resource_if86j"]
+script = ExtResource("2_ph6t2")
+colors_needed = Array[String](["Preto"])
+variant_sprite = ExtResource("6_dno37")
+metadata/_custom_type_script = "uid://dhgwmkta7luru"
+
+[sub_resource type="Resource" id="Resource_bf5b2"]
+script = ExtResource("2_ph6t2")
+colors_needed = Array[String](["Azul"])
+variant_sprite = ExtResource("8_if86j")
+metadata/_custom_type_script = "uid://dhgwmkta7luru"
+
+[sub_resource type="Resource" id="Resource_o17wl"]
+script = ExtResource("2_ph6t2")
+colors_needed = Array[String](["Amarelo"])
+variant_sprite = ExtResource("9_vrbeu")
 metadata/_custom_type_script = "uid://dhgwmkta7luru"
 
 [resource]
@@ -16,5 +58,5 @@ script = ExtResource("1_7u24j")
 base_image = ExtResource("2_1ux4f")
 id = "king"
 transcripted_text = "the king is the coolest"
-variations = Array[ExtResource("2_ph6t2")]([SubResource("Resource_b5o1t")])
+variations = Array[ExtResource("2_ph6t2")]([SubResource("Resource_b5o1t"), SubResource("Resource_vrbeu"), SubResource("Resource_rqn3f"), SubResource("Resource_dku3m"), SubResource("Resource_if86j"), SubResource("Resource_bf5b2"), SubResource("Resource_o17wl")])
 metadata/_custom_type_script = "uid://b6irqck1wko0p"
