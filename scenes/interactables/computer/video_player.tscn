@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://ddvoeqv37mhyk"]
+
+[ext_resource type="PackedScene" uid="uid://rvqk034i2ily" path="res://scenes/interactables/computer/window_base.tscn" id="1_ns20s"]
+[ext_resource type="Script" uid="uid://bjm4mk7xlbsrb" path="res://scripts/pc/video_player.gd" id="2_cwr8x"]
+[ext_resource type="VideoStream" uid="uid://j32dexldld7w" path="res://arts/test/tacobel_test.ogv" id="3_jxjto"]
+
+[node name="VideoPlayer" unique_id=280367607 instance=ExtResource("1_ns20s")]
+script = ExtResource("2_cwr8x")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Content" parent_id_path=PackedInt32Array(1185580226) index="0" unique_id=1276256480]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("3_jxjto")
+expand = true
+
+[node name="Progress" type="HSlider" parent="Content" parent_id_path=PackedInt32Array(1185580226) index="1" unique_id=1191606790]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 346.0
+offset_right = 620.0
+offset_bottom = 382.0
+step = 0.01
+
+[node name="Panel" type="Panel" parent="Content" parent_id_path=PackedInt32Array(1185580226) index="2" unique_id=1320879032]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayPause" type="Button" parent="Content/Panel" index="0" unique_id=1189373079]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 354.0
+offset_right = 164.0
+offset_bottom = 418.0
+
+[node name="Stop" type="Button" parent="Content/Panel" index="1" unique_id=593874414]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 344.0
+offset_right = 82.0
+offset_bottom = 424.0
+
+[node name="Volume" type="HSlider" parent="Content/Panel" index="2" unique_id=1098624061]
+custom_minimum_size = Vector2(120, 20)
+layout_mode = 0
+offset_left = 180.0
+offset_top = 394.0
+offset_right = 300.0
+offset_bottom = 414.0
+min_value = -40.0
+max_value = 0.0
+step = 0.5
+value = -10.0

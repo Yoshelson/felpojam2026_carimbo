@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://b7v06o2apcbq0" path="res://arts/test/login_bg.png" id="8_j70bi"]
 [ext_resource type="Texture2D" uid="uid://b86mvvv7wltwv" path="res://arts/test/User_Test.png" id="8_qu3oj"]
 [ext_resource type="Texture2D" uid="uid://baqvppm54ffb7" path="res://arts/test/confirm_test.png" id="9_j70bi"]
+[ext_resource type="PackedScene" uid="uid://dwj16qslll4f1" path="res://scenes/interactables/computer/audio_player.tscn" id="10_q7ic0"]
+[ext_resource type="PackedScene" uid="uid://ddvoeqv37mhyk" path="res://scenes/interactables/computer/video_player.tscn" id="11_0syfu"]
+[ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="11_g0i7v"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vgvgk"]
 load_path = "res://.godot/imported/Desliga.png-8dd33cd1ba57ca4c37b667835d7a4af0.ctex"
@@ -101,12 +104,6 @@ mouse_filter = 2
 texture = ExtResource("2_236bd")
 expand_mode = 1
 
-[node name="WindowLayer" type="Control" parent="Desktop_Root" unique_id=1472503017]
-anchors_preset = 0
-offset_top = 6.0
-offset_bottom = 6.0
-mouse_filter = 1
-
 [node name="Taskbar" type="Control" parent="Desktop_Root" unique_id=1096995476]
 layout_mode = 1
 anchors_preset = 12
@@ -162,7 +159,7 @@ offset_left = 64.0
 offset_top = 64.0
 offset_right = 288.0
 offset_bottom = 174.0
-theme_override_constants/h_separation = 48
+theme_override_constants/h_separation = 60
 theme_override_constants/v_separation = 46
 columns = 10
 
@@ -178,7 +175,39 @@ app_scene = ExtResource("7_3d4qn")
 app_name = "Arquivos2"
 icon_texture = ExtResource("8_egac1")
 
+[node name="Arquivos3" parent="Desktop_Root/Desktop_Icons" unique_id=1369222952 instance=ExtResource("6_rrfp6")]
+layout_mode = 2
+app_scene = ExtResource("7_3d4qn")
+app_name = "Arquivos3"
+icon_texture = ExtResource("8_egac1")
+
+[node name="Arquivos4" parent="Desktop_Root/Desktop_Icons" unique_id=1670998579 instance=ExtResource("6_rrfp6")]
+layout_mode = 2
+app_scene = ExtResource("7_3d4qn")
+app_name = "Arquivos4"
+icon_texture = ExtResource("8_egac1")
+
+[node name="Arquivos5" parent="Desktop_Root/Desktop_Icons" unique_id=303190001 instance=ExtResource("6_rrfp6")]
+layout_mode = 2
+app_scene = ExtResource("10_q7ic0")
+app_name = "AudioPlayer"
+icon_texture = ExtResource("11_g0i7v")
+
+[node name="Arquivos6" parent="Desktop_Root/Desktop_Icons" unique_id=184865588 instance=ExtResource("6_rrfp6")]
+layout_mode = 2
+app_scene = ExtResource("11_0syfu")
+app_name = "VideoPlayer"
+icon_texture = ExtResource("11_g0i7v")
+
+[node name="WindowLayer" type="Control" parent="Desktop_Root" unique_id=1472503017]
+z_index = 1
+anchors_preset = 0
+offset_top = 6.0
+offset_bottom = 6.0
+mouse_filter = 1
+
 [node name="Login" type="Control" parent="." unique_id=1312628652]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -298,6 +327,7 @@ scale = Vector2(1.1, 1.1)
 tooltip_text = "Esqueci a minha Senha."
 
 [node name="RecoveryScreen" type="Control" parent="Login" unique_id=2013830963]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0

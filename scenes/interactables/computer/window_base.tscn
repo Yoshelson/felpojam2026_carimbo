@@ -70,8 +70,9 @@ expand_icon = true
 
 [node name="Content" type="Control" parent="." unique_id=1185580226]
 anchors_preset = 0
-offset_top = 48.0
-offset_right = 700.0
-offset_bottom = 486.0
+offset_left = 8.0
+offset_top = 55.0
+offset_right = 692.0
+offset_bottom = 491.0
 
 [connection signal="gui_input" from="TopBar" to="." method="_on_top_bar_gui_input"]

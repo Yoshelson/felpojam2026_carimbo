@@ -10,7 +10,6 @@ class_name PCControl
 signal exit_requested
 
 var pc_mouse_pos: Vector2 = Vector2.ZERO
-var top_z := 1
 var open_windows: Dictionary = {}
 
 func _ready():
@@ -28,9 +27,9 @@ func update_cursor_pos():
 	mouse_cursor.position = pc_mouse_pos
 
 func request_focus(window: Control):
-	top_z += 1
-	window.z_index = top_z
-	
+	if window.get_parent():
+		window.get_parent().move_child(window, -1)
+
 	var btn = window.get_meta("taskbar_button")
 	if btn:
 		btn.button_pressed = true
@@ -93,8 +92,7 @@ func _add_taskbar_button(window: WindowBase):
 	btn.pressed.connect(func():
 		if window.is_minimized:
 			window.restore()
-		else:
-			request_focus(window)
+		request_focus(window)
 	)
 
 	window.set_meta("taskbar_button", btn)

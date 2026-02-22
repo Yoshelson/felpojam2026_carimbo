@@ -26,12 +26,16 @@ func restore():
 	is_minimized = false
 	visible = true
 
+	var pc := get_tree().get_first_node_in_group("pc_control") as PCControl
+	if pc:
+		pc.request_focus(self)
 
 
 func _ready():
 	close_button.pressed.connect(_on_close_pressed)
 	minimize_button.pressed.connect(minimize)
-	mouse_filter = Control.MOUSE_FILTER_STOP
+	top_bar.gui_input.connect(_on_top_bar_gui_input)
+	mouse_filter = Control.MOUSE_FILTER_PASS
 
 
 func set_title(text: String):
