@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b7v06o2apcbq0" path="res://arts/test/login_bg.png" id="8_j70bi"]
 [ext_resource type="Texture2D" uid="uid://b86mvvv7wltwv" path="res://arts/test/User_Test.png" id="8_qu3oj"]
 [ext_resource type="Texture2D" uid="uid://baqvppm54ffb7" path="res://arts/test/confirm_test.png" id="9_j70bi"]
+[ext_resource type="PackedScene" uid="uid://cmor41gnd7hyr" path="res://scenes/interactables/computer/folder.tscn" id="9_q7ic0"]
 [ext_resource type="PackedScene" uid="uid://dwj16qslll4f1" path="res://scenes/interactables/computer/audio_player.tscn" id="10_q7ic0"]
 [ext_resource type="PackedScene" uid="uid://ddvoeqv37mhyk" path="res://scenes/interactables/computer/video_player.tscn" id="11_0syfu"]
 [ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="11_g0i7v"]
@@ -163,10 +164,10 @@ theme_override_constants/h_separation = 60
 theme_override_constants/v_separation = 46
 columns = 10
 
-[node name="Arquivos" parent="Desktop_Root/Desktop_Icons" unique_id=1924461812 instance=ExtResource("6_rrfp6")]
+[node name="Arquivos1" parent="Desktop_Root/Desktop_Icons" unique_id=1924461812 instance=ExtResource("6_rrfp6")]
 layout_mode = 2
 app_scene = ExtResource("7_3d4qn")
-app_name = "Arquivos"
+app_name = "O Rei"
 icon_texture = ExtResource("8_egac1")
 
 [node name="Arquivos2" parent="Desktop_Root/Desktop_Icons" unique_id=491479298 instance=ExtResource("6_rrfp6")]
@@ -183,17 +184,17 @@ icon_texture = ExtResource("8_egac1")
 
 [node name="Arquivos4" parent="Desktop_Root/Desktop_Icons" unique_id=1670998579 instance=ExtResource("6_rrfp6")]
 layout_mode = 2
-app_scene = ExtResource("7_3d4qn")
-app_name = "Arquivos4"
+app_scene = ExtResource("9_q7ic0")
+app_name = "O REI"
 icon_texture = ExtResource("8_egac1")
 
-[node name="Arquivos5" parent="Desktop_Root/Desktop_Icons" unique_id=303190001 instance=ExtResource("6_rrfp6")]
+[node name="AudioPlayer" parent="Desktop_Root/Desktop_Icons" unique_id=303190001 instance=ExtResource("6_rrfp6")]
 layout_mode = 2
 app_scene = ExtResource("10_q7ic0")
 app_name = "AudioPlayer"
 icon_texture = ExtResource("11_g0i7v")
 
-[node name="Arquivos6" parent="Desktop_Root/Desktop_Icons" unique_id=184865588 instance=ExtResource("6_rrfp6")]
+[node name="VídeoPlayer" parent="Desktop_Root/Desktop_Icons" unique_id=184865588 instance=ExtResource("6_rrfp6")]
 layout_mode = 2
 app_scene = ExtResource("11_0syfu")
 app_name = "VideoPlayer"

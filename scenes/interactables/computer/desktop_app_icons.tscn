@@ -3,11 +3,13 @@
 [ext_resource type="Script" uid="uid://dieqkyierwbr" path="res://scripts/pc/desktop_app_icons.gd" id="1_nnyjp"]
 
 [node name="DesktopAppIcons" type="Control" unique_id=1924461812]
-custom_minimum_size = Vector2(96, 110)
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1056.0
+offset_bottom = -552.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nnyjp")
@@ -16,18 +18,22 @@ script = ExtResource("1_nnyjp")
 unique_name_in_owner = true
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 1
-offset_right = 96.0
-offset_bottom = 96.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_right = 6.0
+grow_horizontal = 2
+grow_vertical = 2
 expand_mode = 1
 stretch_mode = 3
 
 [node name="Name" type="Label" parent="." unique_id=667697318]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -6.0
 offset_top = 95.0
-offset_right = 108.0
+offset_right = 114.0
 offset_bottom = 129.0
 theme_override_font_sizes/font_size = 22
 horizontal_alignment = 1
-autowrap_mode = 1
+autowrap_mode = 2

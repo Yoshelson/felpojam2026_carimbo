@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bul45se6e5dys"]
+
+[ext_resource type="PackedScene" uid="uid://rvqk034i2ily" path="res://scenes/interactables/computer/window_base.tscn" id="1_w6kf0"]
+[ext_resource type="Texture2D" uid="uid://bfh3x2kl6lwlk" path="res://arts/test/codigo_morse_test.jpg" id="2_apj0n"]
+
+[node name="ImageViewer" unique_id=280367607 instance=ExtResource("1_w6kf0")]
+
+[node name="TextureRect" type="TextureRect" parent="Content" parent_id_path=PackedInt32Array(1185580226) index="0" unique_id=1568109462]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -44.0
+offset_right = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_apj0n")
+expand_mode = 1

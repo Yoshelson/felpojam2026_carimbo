@@ -29,7 +29,7 @@ func update_cursor_pos():
 func request_focus(window: Control):
 	if window.get_parent():
 		window.get_parent().move_child(window, -1)
-
+	
 	var btn = window.get_meta("taskbar_button")
 	if btn:
 		btn.button_pressed = true
@@ -47,7 +47,7 @@ func open_window(scene: PackedScene, app_name: String):
 		# Se já está aberto, fecha
 		existing.queue_free()
 		return
-
+	
 	# Criar nova
 	var window = scene.instantiate()
 	window_layer.add_child(window)
@@ -94,6 +94,39 @@ func _add_taskbar_button(window: WindowBase):
 			window.restore()
 		request_focus(window)
 	)
-
+	
 	window.set_meta("taskbar_button", btn)
 	taskbar_app_list.add_child(btn)
+
+func show_alert(message: String):
+	var scene = preload("res://scenes/interactables/computer/alert_window.tscn")
+	var alert = scene.instantiate()
+	
+	window_layer.add_child(alert)
+	alert.set_title("Sistema")
+	alert.set_message(message)
+	
+	request_focus(alert)
+
+# app aparecendo no pc
+func install_toque_dourado_delayed(delay: float) -> void:
+	await get_tree().create_timer(delay).timeout
+	
+	show_alert("Toque Dourado foi instalado com sucesso.")
+	
+	spawn_new_desktop_file(
+		"Toque Dourado",
+		preload("res://scenes/interactables/computer/toque_dourado_app.tscn")
+	)
+
+
+func spawn_new_desktop_file(name: String, scene: PackedScene) -> void:
+	var icon_scene = preload("res://scenes/interactables/computer/desktop_app_icons.tscn")
+	var icon = icon_scene.instantiate() as DesktopAppIcon
+	
+	
+	icon.app_name = name
+	icon.app_scene = scene
+	icon.icon_texture = preload("res://arts/test/midastoque_test.png")
+	
+	$Desktop_Root/Desktop_Icons.add_child(icon)

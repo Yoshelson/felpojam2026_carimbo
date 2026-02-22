@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://qkveqg0bfxpe"]
+
+[ext_resource type="PackedScene" uid="uid://rvqk034i2ily" path="res://scenes/interactables/computer/window_base.tscn" id="1_yqq3k"]
+
+[node name="MidasTouch" unique_id=280367607 instance=ExtResource("1_yqq3k")]
