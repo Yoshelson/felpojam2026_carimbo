@@ -15,48 +15,65 @@
 script = ExtResource("2_ph6t2")
 colors_needed = Array[String](["Amarelo", "Preto", "Azul"])
 variant_sprite = ExtResource("4_b5o1t")
+variant_transcription = "O relatório indica que o [b][color=red]Suspeito Principal[/color][/b] deixou uma [u]ferramenta[/u] na cena do crime, mas a testemunha estava [i]visivelmente confusa[/i] e a placa do veículo foi [s]rasurada[/s] e alterada para [b][color=#00FF00]ABC-1234[/color][/b]."
 metadata/_custom_type_script = "uid://dhgwmkta7luru"
 
 [sub_resource type="Resource" id="Resource_vrbeu"]
 script = ExtResource("2_ph6t2")
 colors_needed = Array[String](["Azul", "Amarelo"])
 variant_sprite = ExtResource("10_if86j")
+variant_transcription = "BB"
 metadata/_custom_type_script = "uid://dhgwmkta7luru"
 
 [sub_resource type="Resource" id="Resource_rqn3f"]
 script = ExtResource("2_ph6t2")
 colors_needed = Array[String](["Preto", "Azul"])
 variant_sprite = ExtResource("4_6v2ix")
+variant_transcription = "CC"
 metadata/_custom_type_script = "uid://dhgwmkta7luru"
 
 [sub_resource type="Resource" id="Resource_dku3m"]
 script = ExtResource("2_ph6t2")
 colors_needed = Array[String](["Preto", "Amarelo"])
 variant_sprite = ExtResource("6_geele")
+variant_transcription = "DD"
 metadata/_custom_type_script = "uid://dhgwmkta7luru"
 
 [sub_resource type="Resource" id="Resource_if86j"]
 script = ExtResource("2_ph6t2")
 colors_needed = Array[String](["Preto"])
 variant_sprite = ExtResource("6_dno37")
+variant_transcription = "E"
 metadata/_custom_type_script = "uid://dhgwmkta7luru"
 
 [sub_resource type="Resource" id="Resource_bf5b2"]
 script = ExtResource("2_ph6t2")
 colors_needed = Array[String](["Azul"])
 variant_sprite = ExtResource("8_if86j")
+variant_transcription = "F"
 metadata/_custom_type_script = "uid://dhgwmkta7luru"
 
 [sub_resource type="Resource" id="Resource_o17wl"]
 script = ExtResource("2_ph6t2")
 colors_needed = Array[String](["Amarelo"])
 variant_sprite = ExtResource("9_vrbeu")
+variant_transcription = "G"
 metadata/_custom_type_script = "uid://dhgwmkta7luru"
 
 [resource]
 script = ExtResource("1_7u24j")
 base_image = ExtResource("2_1ux4f")
 id = "king"
-transcripted_text = "the king is the coolest"
+base_transcripted_text = "The King is the Coolest
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos."
 variations = Array[ExtResource("2_ph6t2")]([SubResource("Resource_b5o1t"), SubResource("Resource_vrbeu"), SubResource("Resource_rqn3f"), SubResource("Resource_dku3m"), SubResource("Resource_if86j"), SubResource("Resource_bf5b2"), SubResource("Resource_o17wl")])
 metadata/_custom_type_script = "uid://b6irqck1wko0p"

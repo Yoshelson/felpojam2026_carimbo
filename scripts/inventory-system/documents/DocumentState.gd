@@ -3,6 +3,7 @@ class_name DocumentState
 var _frame_pos: Vector3
 var _applied_colors: Array[String]
 var _actual_image: Texture2D
+var _actual_transcription: String
 var _document_data: DocumentData
 
 # Construtor para criar as instancias dos documentos no jogo. Para cria-lo, e
@@ -11,6 +12,7 @@ func _init(frame_pos: Vector3, document_data:DocumentData) -> void:
 	_frame_pos = frame_pos
 	_applied_colors = []
 	_actual_image = document_data.base_image
+	_actual_transcription = document_data.base_transcripted_text
 	_document_data = document_data
 	_document_data.variations.sort_custom(_sort_descending)
 	
@@ -40,3 +42,4 @@ func _has_required_colors (colors_needed: Array[String]) -> bool:
 	
 func _apply_transition (variation: DocColorCombination):
 	_actual_image = variation.variant_sprite
+	_actual_transcription = variation.variant_transcription

@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://md8i3d7u0ov2"]
+
+[ext_resource type="Script" uid="uid://d4kpdd42i2io" path="res://scenes/UI/TranscriptUi.gd" id="1_p776k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j63hw"]
+bg_color = Color(1, 1, 1, 0.23529412)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Transcript UI" type="Control" unique_id=311180170 node_paths=PackedStringArray("_text_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p776k")
+_text_label = NodePath("Transcript Background Color/ScrollContainer/RichTextLabel")
+
+[node name="Transcript Background Color" type="ColorRect" parent="." unique_id=337248749]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.54901963)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Transcript Background Color" unique_id=664757516]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.05
+anchor_right = 0.85
+anchor_bottom = 0.95
+mouse_filter = 0
+horizontal_scroll_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Transcript Background Color/ScrollContainer" unique_id=1092698]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "O relatório indica que o [b][color=red]Suspeito Principal[/color][/b] deixou uma [u]ferramenta[/u] na cena do crime, mas a testemunha estava [i]visivelmente confusa[/i] e a placa do veículo foi [s]rasurada[/s] e alterada para [b][color=#00FF00]ABC-1234[/color][/b]."
+fit_content = true
+autowrap_mode = 2
+horizontal_alignment = 1
+
+[node name="Return Button Margin" type="MarginContainer" parent="." unique_id=1180342546]
+layout_mode = 0
+offset_right = 99.0
+offset_bottom = 65.0
+size_flags_horizontal = 8
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+
+[node name="Background Return Btn" type="PanelContainer" parent="Return Button Margin" unique_id=1235641115]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_j63hw")
+
+[node name="Return Btn" type="Button" parent="Return Button Margin/Background Return Btn" unique_id=476911770]
+layout_mode = 2
+text = "<- Voltar"
+
+[connection signal="pressed" from="Return Button Margin/Background Return Btn/Return Btn" to="." method="_on_return_btn_pressed"]

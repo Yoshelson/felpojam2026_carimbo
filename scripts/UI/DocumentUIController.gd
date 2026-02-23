@@ -3,6 +3,7 @@ extends CanvasLayer
 @onready var document_container = $"Document Container"
 @onready var document_image = $"Document Container/Document Image"
 @onready var stamps_container = $StampsUI
+@onready var transcript_UI = $"Transcript UI"
 var min_zoom: float = 0.5
 var max_zoom: float = 3
 var step_zoom: float = 0.1
@@ -14,7 +15,6 @@ var _is_panning: bool = false
 var _target_pos: Vector2
 
 var _actual_doc_id: String = ""
-var _actual_transcripted_text: String = ""
 
 func _ready() -> void:
 	_disable_UI()
@@ -33,7 +33,7 @@ func setup_UI(doc_id: String):
 	if document:
 		document_image.texture = document._actual_image
 		_actual_doc_id = doc_id
-		_actual_transcripted_text = document._document_data.transcripted_text
+		transcript_UI.att_transcription(document._actual_transcription)
 		await get_tree().process_frame
 		_center_doc_pivot()
 		_target_zoom = 1
@@ -48,14 +48,14 @@ func _att_doc_UI(doc_id: String):
 		var document = InventoryManager.get_doc(doc_id)
 		if document:
 			document_image.texture = document._actual_image
-			_actual_transcripted_text = document._document_data.transcripted_text
+			transcript_UI.att_transcription(document._actual_transcription)
 		else:
 			push_error("ERROR: Id de Documento enviado para UI não está no inventário")
 
 func _disable_UI():
 	visible = false
 
-func _input(event: InputEvent):
+func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 			if (_target_zoom + step_zoom) > max_zoom:
@@ -119,8 +119,8 @@ func _on_return_btn_pressed() -> void:
 	_disable_UI()
 
 func _on_stamp_btn_pressed() -> void:
-	stamps_container.toggle_UI()
+	stamps_container.setup_UI()
 
 func _on_transcription_btn_pressed() -> void:
-	#transcription code
-	pass 
+	transcript_UI.setup_UI()
+	

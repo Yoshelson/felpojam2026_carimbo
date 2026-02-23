@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://brnkusy2gviae" path="res://scripts/UI/DocumentUIController.gd" id="1_jtc8e"]
 [ext_resource type="Script" uid="uid://uwqvtu5si77r" path="res://scripts/test/test_inventory.gd" id="3_s8hfk"]
 [ext_resource type="PackedScene" uid="uid://cqlioob2vxlrm" path="res://scenes/UI/StampsUI.tscn" id="4_r08wx"]
+[ext_resource type="PackedScene" uid="uid://md8i3d7u0ov2" path="res://scenes/UI/TranscriptUI.tscn" id="5_qd52h"]
 
 [sub_resource type="Theme" id="Theme_jtc8e"]
 
@@ -32,6 +33,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_jtc8e")
 color = Color(0, 0, 0, 0.39215687)
+metadata/_edit_use_anchors_ = true
 
 [node name="Document Container" type="Control" parent="." unique_id=1875101757]
 clip_contents = true
@@ -41,6 +43,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Document Image" type="TextureRect" parent="Document Container" unique_id=1568801539]
 layout_mode = 1
@@ -57,6 +61,7 @@ offset_bottom = 65.0
 size_flags_horizontal = 8
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 30
+metadata/_edit_use_anchors_ = true
 
 [node name="Background Return Btn" type="PanelContainer" parent="Return Button Margin" unique_id=12166107]
 layout_mode = 2
@@ -79,6 +84,7 @@ grow_vertical = 0
 size_flags_horizontal = 8
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 30
+metadata/_edit_use_anchors_ = true
 
 [node name="Right ButtonsVBox" type="VBoxContainer" parent="Right Buttons Margin" unique_id=1248856128]
 layout_mode = 2
@@ -101,6 +107,10 @@ layout_mode = 2
 text = "Ler Transcrição"
 
 [node name="StampsUI" parent="." unique_id=1639411058 instance=ExtResource("4_r08wx")]
+metadata/_edit_use_anchors_ = true
+
+[node name="Transcript UI" parent="." unique_id=311180170 instance=ExtResource("5_qd52h")]
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Return Button Margin/Background Return Btn/Return Btn" to="." method="_on_return_btn_pressed"]
 [connection signal="pressed" from="Right Buttons Margin/Right ButtonsVBox/Background Stamp Btn/Stamp Btn" to="." method="_on_stamp_btn_pressed"]
