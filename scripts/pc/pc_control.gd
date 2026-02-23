@@ -30,9 +30,10 @@ func request_focus(window: Control):
 	if window.get_parent():
 		window.get_parent().move_child(window, -1)
 	
-	var btn = window.get_meta("taskbar_button")
-	if btn:
-		btn.button_pressed = true
+	if window.has_meta("taskbar_button"):
+		var btn = window.get_meta("taskbar_button")
+		if btn:
+			btn.button_pressed = true
 
 func open_window(scene: PackedScene, app_name: String):
 
@@ -118,15 +119,25 @@ func install_toque_dourado_delayed(delay: float) -> void:
 		"Toque Dourado",
 		preload("res://scenes/interactables/computer/toque_dourado_app.tscn")
 	)
+	
+	spawn_new_desktop_file(
+	"Messenger",
+	preload("res://scenes/interactables/computer/messager.tscn"),
+	true 
+)
 
 
-func spawn_new_desktop_file(name: String, scene: PackedScene) -> void:
+func spawn_new_desktop_file(app_name: String, scene: PackedScene, hide_by_gold := false) -> void:
 	var icon_scene = preload("res://scenes/interactables/computer/desktop_app_icons.tscn")
 	var icon = icon_scene.instantiate() as DesktopAppIcon
 	
-	
-	icon.app_name = name
-	icon.app_scene = scene
-	icon.icon_texture = preload("res://arts/test/midastoque_test.png")
-	
 	$Desktop_Root/Desktop_Icons.add_child(icon)
+	
+	icon.setup(
+		scene,
+		app_name,
+		preload("res://arts/test/midastoque_test.png")
+	)
+	
+	if hide_by_gold:
+		icon.hide_by_gold()

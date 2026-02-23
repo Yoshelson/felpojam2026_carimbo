@@ -34,7 +34,8 @@ func restore():
 func _ready():
 	close_button.pressed.connect(_on_close_pressed)
 	minimize_button.pressed.connect(minimize)
-	top_bar.gui_input.connect(_on_top_bar_gui_input)
+	if not top_bar.gui_input.is_connected(_on_top_bar_gui_input):
+		top_bar.gui_input.connect(_on_top_bar_gui_input)
 	mouse_filter = Control.MOUSE_FILTER_PASS
 
 

@@ -2,17 +2,37 @@ extends Control
 class_name DesktopAppIcon
 
 @export var app_scene: PackedScene
-@export var app_name: String
+@export var app_name: String = ""
 @export var icon_texture: Texture2D
+@export var font_color: Color = Color.WHITE
 
 @onready var icon: TextureRect = $Icon
 @onready var label: Label = $Name
 
+# controle do puzzle toque de midas
+var hidden_by_gold := false
+
 func _ready():
-	if icon_texture:
+	_update_visual()
+
+
+func _update_visual():
+	if icon and icon_texture:
 		icon.texture = icon_texture
-	label.text = app_name
-	mouse_filter = Control.MOUSE_FILTER_STOP
+	
+	if label:
+		label.text = app_name
+		label.self_modulate = font_color
+
+
+func setup(scene: PackedScene, app_title: String, texture: Texture2D, color: Color = Color.WHITE):
+	app_scene = scene
+	app_name = app_title
+	icon_texture = texture
+	font_color = color
+	
+	_update_visual()
+
 
 func _gui_input(event):
 	if event is InputEventMouseButton \
@@ -20,5 +40,21 @@ func _gui_input(event):
 	and event.double_click:
 
 		var pc := get_tree().get_first_node_in_group("pc_control") as PCControl
-		if pc and app_scene:
+		if pc and app_scene and not hidden_by_gold:
 			pc.open_window(app_scene, app_name)
+
+
+# marca o ícone como escondido pela lente
+func hide_by_gold():
+	hidden_by_gold = true
+	modulate.a = 0.0
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_to_group("hidden_icons")
+
+
+# revela o ícone
+func reveal():
+	hidden_by_gold = false
+	modulate.a = 1.0
+	mouse_filter = Control.MOUSE_FILTER_STOP
+	remove_from_group("hidden_icons")

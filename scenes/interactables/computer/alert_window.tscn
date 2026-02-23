@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cigjnn74tj5df"]
 
 [ext_resource type="PackedScene" uid="uid://rvqk034i2ily" path="res://scenes/interactables/computer/window_base.tscn" id="1_qq1mr"]
-[ext_resource type="Script" uid="uid://ce5t8mygda5a5" path="res://scenes/interactables/computer/alert_window.gd" id="2_x540b"]
+[ext_resource type="Script" uid="uid://ce5t8mygda5a5" path="res://scripts/pc/alert_window.gd" id="2_x540b"]
 
 [node name="Alert" unique_id=280367607 instance=ExtResource("1_qq1mr")]
 offset_bottom = 300.0

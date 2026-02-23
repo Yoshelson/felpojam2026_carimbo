@@ -1,5 +1,20 @@
 [gd_scene format=3 uid="uid://qkveqg0bfxpe"]
 
 [ext_resource type="PackedScene" uid="uid://rvqk034i2ily" path="res://scenes/interactables/computer/window_base.tscn" id="1_yqq3k"]
+[ext_resource type="Script" uid="uid://c5kpi0jedhdrk" path="res://scripts/pc/toque_dourado_app.gd" id="2_cegss"]
 
 [node name="MidasTouch" unique_id=280367607 instance=ExtResource("1_yqq3k")]
+script = ExtResource("2_cegss")
+
+[node name="Frame" parent="." index="0" unique_id=37177967]
+visible = false
+
+[node name="Lens" type="ColorRect" parent="Content" parent_id_path=PackedInt32Array(1185580226) index="0" unique_id=1928604065]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 0, 0.2784314)
