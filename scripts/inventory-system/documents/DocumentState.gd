@@ -23,8 +23,25 @@ static func _sort_descending(a: DocColorCombination, b: DocColorCombination):
 	
 func add_new_color(new_color: String) -> bool:
 	if !(_applied_colors.has(new_color)):
-		_applied_colors.push_back(new_color)
-		return _check_transition()
+		if (_document_data.requires_color_order):
+			if (_check_color_order(new_color)):
+				_applied_colors.push_back(new_color)
+				return _check_transition()
+		else:
+			_applied_colors.push_back(new_color)
+			return _check_transition()
+	return false
+
+func _check_color_order(new_color: String) -> bool:
+	#Como existe apenas uma ordem correta e o array de variations esta em ordem
+	#decrescente, a sua primeira ocorrencia eh a correta
+	var new_color_index = _applied_colors.size()
+	var final_order = _document_data.variations[0].colors_needed
+	
+	#Garante que nao ocorra out-of-bounds e verifica se a prox cor eh a requerida
+	if (final_order.size() > new_color_index):
+		if (final_order[new_color_index] == new_color):
+			return true
 	return false
 
 func _check_transition() -> bool:

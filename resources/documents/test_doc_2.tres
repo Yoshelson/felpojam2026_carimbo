@@ -15,6 +15,6 @@ metadata/_custom_type_script = "uid://dhgwmkta7luru"
 script = ExtResource("2_rd83x")
 base_image = ExtResource("1_n0khc")
 id = "ace"
-transcripted_text = "ace is incredible"
+base_transcripted_text = "ace is incredible"
 variations = Array[ExtResource("3_116dv")]([SubResource("Resource_1ux4f")])
 metadata/_custom_type_script = "uid://b6irqck1wko0p"

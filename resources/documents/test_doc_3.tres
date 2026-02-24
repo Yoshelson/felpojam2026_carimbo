@@ -2,11 +2,61 @@
 
 [ext_resource type="Script" uid="uid://b6irqck1wko0p" path="res://scripts/inventory-system/documents/DocumentsData.gd" id="2_4nnnh"]
 [ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="3_8ld1e"]
+[ext_resource type="Texture2D" uid="uid://da3q4d4broif5" path="res://arts/test/white_eye.png" id="4_3v6tr"]
 [ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="4_5dmjr"]
+[ext_resource type="Texture2D" uid="uid://be3lw6mmd8q8v" path="res://arts/test/Tinta4.png" id="5_a2dnt"]
+[ext_resource type="Texture2D" uid="uid://x3hs6fr68n5n" path="res://arts/test/Tinta3.png" id="6_kcek8"]
+[ext_resource type="Texture2D" uid="uid://du015yetv2wxx" path="res://arts/test/Tinta5.png" id="7_3eyhy"]
+[ext_resource type="Texture2D" uid="uid://bvf2jsswjqnqk" path="res://arts/test/Tinta2.png" id="8_g2yrg"]
+[ext_resource type="Texture2D" uid="uid://cevu77w14dn7v" path="res://arts/test/Tinta1.png" id="9_0ofyx"]
+[ext_resource type="Texture2D" uid="uid://c1mhjj4wyahjf" path="res://arts/test/Off_test.png" id="10_7ujew"]
+
+[sub_resource type="Resource" id="Resource_y03wn"]
+script = ExtResource("3_8ld1e")
+colors_needed = Array[String](["Verde"])
+variant_sprite = ExtResource("5_a2dnt")
+metadata/_custom_type_script = "uid://dhgwmkta7luru"
+
+[sub_resource type="Resource" id="Resource_qmsm8"]
+script = ExtResource("3_8ld1e")
+colors_needed = Array[String](["Preto"])
+variant_sprite = ExtResource("6_kcek8")
+metadata/_custom_type_script = "uid://dhgwmkta7luru"
+
+[sub_resource type="Resource" id="Resource_2tfek"]
+script = ExtResource("3_8ld1e")
+colors_needed = Array[String](["Azul"])
+variant_sprite = ExtResource("7_3eyhy")
+metadata/_custom_type_script = "uid://dhgwmkta7luru"
+
+[sub_resource type="Resource" id="Resource_ohadh"]
+script = ExtResource("3_8ld1e")
+colors_needed = Array[String](["Branco"])
+variant_sprite = ExtResource("8_g2yrg")
+metadata/_custom_type_script = "uid://dhgwmkta7luru"
+
+[sub_resource type="Resource" id="Resource_atb7h"]
+script = ExtResource("3_8ld1e")
+colors_needed = Array[String](["Amarelo"])
+variant_sprite = ExtResource("9_0ofyx")
+metadata/_custom_type_script = "uid://dhgwmkta7luru"
+
+[sub_resource type="Resource" id="Resource_hj2pn"]
+script = ExtResource("3_8ld1e")
+colors_needed = Array[String](["Branco", "Verde"])
+variant_sprite = ExtResource("10_7ujew")
+metadata/_custom_type_script = "uid://dhgwmkta7luru"
+
+[sub_resource type="Resource" id="Resource_n7qcw"]
+script = ExtResource("3_8ld1e")
+colors_needed = Array[String](["Branco", "Verde", "Preto"])
+variant_sprite = ExtResource("4_3v6tr")
+metadata/_custom_type_script = "uid://dhgwmkta7luru"
 
 [resource]
 script = ExtResource("2_4nnnh")
 base_image = ExtResource("4_5dmjr")
 id = "godot"
-transcripted_text = "godot é a engine"
+variations = Array[ExtResource("3_8ld1e")]([SubResource("Resource_y03wn"), SubResource("Resource_qmsm8"), SubResource("Resource_2tfek"), SubResource("Resource_ohadh"), SubResource("Resource_atb7h"), SubResource("Resource_hj2pn"), SubResource("Resource_n7qcw")])
+requires_color_order = true
 metadata/_custom_type_script = "uid://b6irqck1wko0p"

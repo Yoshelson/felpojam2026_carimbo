@@ -24,7 +24,7 @@ func _input(event: InputEvent) -> void:
 			#Testar Signal e GetDoc e UI
 			if (number < 1):
 				var document_UI = $".."
-				document_UI.setup_UI("king")
+				document_UI.setup_UI("godot")
 			elif (number == 4):
 				InventoryManager.add_stamp_color(load_stamp1)
 			elif (number == 8):
