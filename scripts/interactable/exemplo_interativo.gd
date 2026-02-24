@@ -16,7 +16,7 @@ func interact(_interactor: Node3D):
 		
 		await $AnimationPlayer.animation_finished
 		
-		#Reativando efeitos depois da animação acabar
+		#Reativando efeitos depois da animacao acabar
 		is_interactable = true
 		if opened:
 			prompt_message = "Fechar Gaveta"

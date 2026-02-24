@@ -49,7 +49,7 @@ func _physics_process(delta: float) -> void:
 	if seecast.is_colliding():
 		var collided: Node3D = seecast.get_collider(0)
 		#Ao collidir com objeto contendo "interact", irá utilizar a função de interagir daquele objeto
-		if collided is Interactable:
+		if (collided is Interactable) and (collided.is_interactable):
 			if (_focused_object == collided):
 				pass
 			elif (_focused_object == null):
@@ -89,5 +89,4 @@ func _clear_focus():
 		emit_signal("focus_changed", "")
 		
 func _handle_prompt_changed(prompt: String):
-	print("Emitiram: ", prompt)
 	emit_signal("focus_changed", prompt)
