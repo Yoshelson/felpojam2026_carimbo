@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://766jsikflxl" path="res://scenes/player.tscn" id="1_8rhti"]
 [ext_resource type="PackedScene" uid="uid://5y8rwm8yspg3" path="res://scenes/interactables/computer/PCScene.tscn" id="3_21bcp"]
-[ext_resource type="PackedScene" uid="uid://buu3nnoihwga2" path="res://scenes/UI/pause.tscn" id="4_ohhpf"]
 [ext_resource type="PackedScene" uid="uid://c0gk0v22vsjes" path="res://scenes/objects/exemplo_interativo.tscn" id="5_40w10"]
+[ext_resource type="PackedScene" uid="uid://buu3nnoihwga2" path="res://scenes/UI/pause.tscn" id="5_hh5oj"]
 [ext_resource type="PackedScene" uid="uid://dxsd108dci26y" path="res://scenes/test/test_csg.tscn" id="5_xvvcp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tpea4"]
@@ -32,10 +32,6 @@ shadow_enabled = true
 [node name="player" parent="." unique_id=685818972 instance=ExtResource("1_8rhti")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9025381, 1.1926475, 3.1636274)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1732400982]
-
-[node name="pause" parent="CanvasLayer" unique_id=887171936 instance=ExtResource("4_ohhpf")]
-
 [node name="PCScene" parent="." unique_id=794729469 instance=ExtResource("3_21bcp")]
 transform = Transform3D(-0.97993165, 0, 0.19933385, 0, 1, 0, -0.19933385, 0, -0.97993165, -2.575565, 1.4884229, 4.8839025)
 
@@ -46,5 +42,11 @@ _mesh = NodePath("CSGCombiner3D")
 _prompt_message = "Abrir Gaveta"
 
 [node name="Quarto" parent="." unique_id=1534463602 instance=ExtResource("5_xvvcp")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=509726374]
+layer = 2
+
+[node name="pause" parent="CanvasLayer" unique_id=887171936 instance=ExtResource("5_hh5oj")]
+z_index = 5
 
 [editable path="ExemploInterativo"]
