@@ -1,29 +1,26 @@
-extends StaticBody3D
+extends Interactable
 
 var opened := false
 
-#O player tem o seecast que ao collidir com um objeto interativo E apertar um botão de interact (E, Enter ou Mouse esquerdo)
-#o script do player irá verificar se tem a func interact
-#Então, se for um objeto interativo, crie um script com a "func interact(_player: Player):" e em seguida coloque a interação
-#PS: Lembrando de por a layer 3 no formato de colisão que é a colisão de objetos interativos.
-#    pois é a única layer que o SeeCast vai ver.
-
-func interact(_player: Player):
-	print("interagiu")
+func interact(interactor: Node3D):
 	if opened:
 		close_drawer()
+		_prompt_message = "Abrir Gaveta"
 	else:
 		open_drawer()
+		_prompt_message = "Fechar Gaveta"
 	
-
-#Fiz umas animações pra ver visualmente funcionar e é bem simples
 func close_drawer():
-		opened = false
-		$AnimationPlayer.play("close")
-	#Alternativamente dá pra por 
-	#$AnimationPlayer.play_backwards("open")
+	opened = false
+	$AnimationPlayer.play("close")
 
 func open_drawer():
-		opened = true
-		$AnimationPlayer.play("open")
+	opened = true
+	$AnimationPlayer.play("open")
+	
+func on_focus_entered():
+	_mesh.material_overlay = _material_overlay
+
+func on_focus_exited():
+	_mesh.material_overlay = null
 	

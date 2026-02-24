@@ -10,14 +10,13 @@ const SENSITIVITY = 0.002
 
 #Prender personagem enquanto ele interage
 var input_locked:bool = false
+var _focused_object: Node3D = null
 
 func _ready() -> void:
 	add_to_group("Player")
 	#Começa o jogo com o mouse no centro da tela
 	#Ps: alterar depois que fizer o menu principal
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
-	
 
 func _unhandled_input(event: InputEvent) -> void:
 	if input_locked:
@@ -32,11 +31,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	#Uso do Seecast para interagir com ambiente apenas nos layers de colisão 3, ou seja o que se dá pra interagir
 	if Input.is_action_just_pressed("interact"):
-		if seecast.is_colliding():
-			var collided = seecast.get_collider(0)
-			#Ao collidir com objeto contendo "interact", irá utilizar a função de interagir daquele objeto
-			if collided.has_method("interact"):
-				collided.interact(self)
+		if !(_focused_object == null):
+			_focused_object.interact(self)
 
 
 func _physics_process(delta: float) -> void:
@@ -48,6 +44,24 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		return
 	
+	if seecast.is_colliding():
+		var collided: Node3D = seecast.get_collider(0)
+		#Ao collidir com objeto contendo "interact", irá utilizar a função de interagir daquele objeto
+		if collided is Interactable:
+			if (_focused_object == collided):
+				pass
+			elif (_focused_object == null):
+				_focused_object = collided
+				_focused_object.on_focus_entered()
+			else:
+				_focused_object.on_focus_exited()
+				_focused_object = collided
+				_focused_object.on_focus_entered()
+		else:
+			_clear_focus()
+	else:
+		_clear_focus()
+	
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
@@ -58,3 +72,8 @@ func _physics_process(delta: float) -> void:
 		velocity.z = 0.0
 
 	move_and_slide()
+
+func _clear_focus():
+	if !(_focused_object == null):
+		_focused_object.on_focus_exited()
+		_focused_object = null
