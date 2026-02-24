@@ -39,7 +39,7 @@ transform = Transform3D(-0.97993165, 0, 0.19933385, 0, 1, 0, -0.19933385, 0, -0.
 transform = Transform3D(-0.99999267, 0, 0.0038220552, 0, 1, 0, -0.0038220552, 0, -0.99999267, 4.3410978e-07, 0.63247085, 4.5179787)
 _id = "gaveta"
 _mesh = NodePath("CSGCombiner3D")
-_prompt_message = "Abrir Gaveta"
+prompt_message = "Abrir Gaveta"
 
 [node name="Quarto" parent="." unique_id=1534463602 instance=ExtResource("5_xvvcp")]
 

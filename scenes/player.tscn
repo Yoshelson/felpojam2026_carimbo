@@ -50,7 +50,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Panel" type="Panel" parent="head/Camera3D/CanvasLayer/Control" unique_id=1197148738]
+[node name="Dot" type="Panel" parent="head/Camera3D/CanvasLayer/Control" unique_id=1197148738]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -66,7 +66,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qhqgy")
 
-[node name="TextureRect" type="TextureRect" parent="head/Camera3D/CanvasLayer/Control" unique_id=225980086]
+[node name="Eye" type="TextureRect" parent="head/Camera3D/CanvasLayer/Control" unique_id=225980086]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

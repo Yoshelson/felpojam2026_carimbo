@@ -3,10 +3,11 @@ class_name Interactable
 
 @export var _id: String = ""
 @export var _mesh: Node3D = null
-@export var _prompt_message: String:
+@export var is_interactable = true
+@export var prompt_message: String:
 	set (value):
-		_prompt_message = value
-		emit_signal("prompt_changed", _prompt_message)
+		prompt_message = value
+		emit_signal("prompt_changed", prompt_message)
 @onready var _material_overlay = preload("res://scripts/shaders/test/highlight_test.tres")
 
 signal prompt_changed(new_prompt: String)
