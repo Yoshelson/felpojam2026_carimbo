@@ -22,11 +22,3 @@ func interact(_interactor: Node3D):
 			prompt_message = "Fechar Gaveta"
 		else:
 			prompt_message = "Abrir Gaveta"
-	
-func on_focus_entered():
-	if (is_interactable):
-		_mesh.material_overlay = _material_overlay
-
-func on_focus_exited():
-	_mesh.material_overlay = null
-	

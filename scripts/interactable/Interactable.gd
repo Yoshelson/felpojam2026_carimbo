@@ -16,7 +16,9 @@ func interact(interactor: Node3D):
 	push_warning("Método interact() não implementado em: ", name)
 
 func on_focus_entered():
-	pass
+	if (is_interactable):
+		_mesh.material_overlay = _material_overlay
 
 func on_focus_exited():
-	pass
+	_mesh.material_overlay = null
+	
