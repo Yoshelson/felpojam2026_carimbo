@@ -2,7 +2,7 @@ extends Interactable
 
 var opened := false
 
-func interact(interactor: Node3D):
+func interact(_interactor: Node3D):
 	if opened:
 		close_drawer()
 		_prompt_message = "Abrir Gaveta"

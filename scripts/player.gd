@@ -8,6 +8,8 @@ const SENSITIVITY = 0.002
 @onready var camera = $head/Camera3D
 @onready var seecast = $head/Camera3D/SeeCast
 
+signal focus_changed (new_prompt: String)
+
 #Prender personagem enquanto ele interage
 var input_locked:bool = false
 var _focused_object: Node3D = null
@@ -51,12 +53,10 @@ func _physics_process(delta: float) -> void:
 			if (_focused_object == collided):
 				pass
 			elif (_focused_object == null):
-				_focused_object = collided
-				_focused_object.on_focus_entered()
+				_new_focus(collided)
 			else:
 				_focused_object.on_focus_exited()
-				_focused_object = collided
-				_focused_object.on_focus_entered()
+				_new_focus(collided)
 		else:
 			_clear_focus()
 	else:
@@ -73,7 +73,21 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+func _new_focus(focus_obj : Node3D):
+	_focused_object = focus_obj
+	_focused_object.on_focus_entered()
+	_focused_object.prompt_changed.connect(_handle_prompt_changed)
+	emit_signal("focus_changed", _focused_object._prompt_message)
+
 func _clear_focus():
 	if !(_focused_object == null):
+		if _focused_object.prompt_changed.is_connected(_handle_prompt_changed):
+			_focused_object.prompt_changed.disconnect(_handle_prompt_changed)
+			
 		_focused_object.on_focus_exited()
 		_focused_object = null
+		emit_signal("focus_changed", "")
+		
+func _handle_prompt_changed(prompt: String):
+	print("Emitiram: ", prompt)
+	emit_signal("focus_changed", prompt)
