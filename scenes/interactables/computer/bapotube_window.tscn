@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://mq0hjth5gfos"]
+
+[ext_resource type="PackedScene" uid="uid://rvqk034i2ily" path="res://scenes/interactables/computer/window_base.tscn" id="1_var7b"]
+[ext_resource type="Script" uid="uid://cmyum2p27n16q" path="res://scripts/pc/bapotube_window.gd" id="2_47nx7"]
+
+[node name="WindowBase" unique_id=280367607 instance=ExtResource("1_var7b")]
+script = ExtResource("2_47nx7")
+
+[node name="Thumbnail" type="TextureRect" parent="Content" parent_id_path=PackedInt32Array(1185580226) index="0" unique_id=2012415060]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VideoTitle" type="Label" parent="Content" parent_id_path=PackedInt32Array(1185580226) index="1" unique_id=2011021267]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Description" type="RichTextLabel" parent="Content" parent_id_path=PackedInt32Array(1185580226) index="2" unique_id=816117702]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+text = "[color=blue]░░ ⚠ ░░[/color]  Cuidado com o que desejas"

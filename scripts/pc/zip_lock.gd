@@ -5,11 +5,12 @@ class_name ZipLockApp
 @onready var error_label: Label = $Content/Error
 @onready var open_button: Button = $Content/Open
 
-var correct_password := "SENHA"
+var correct_password := "REINOME"
 
 func _ready():
 	super._ready()
 	open_button.pressed.connect(_try_open)
+	input.text_submitted.connect(func(_t): _try_open())
 
 func set_password(password: String):
 	correct_password = password
@@ -22,16 +23,7 @@ func _try_open():
 
 func _open_reward():
 	var pc: PCControl = get_tree().get_first_node_in_group("pc_control")
-
 	var scene = preload("res://scenes/interactables/computer/image_viewer_reward.tscn")
-	var app = scene.instantiate()
-	pc.window_layer.add_child(app)
-
-	await get_tree().process_frame
-
-	var viewport_size = app.get_viewport_rect().size
-	app.position = (viewport_size - app.size) / 2.0
-
+	pc.open_window(scene, "Recompensa", Vector2(-1, -1))
 	pc.install_toque_dourado_delayed(2.0)
-
 	queue_free()

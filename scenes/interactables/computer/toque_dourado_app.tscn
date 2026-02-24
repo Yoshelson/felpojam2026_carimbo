@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://rvqk034i2ily" path="res://scenes/interactables/computer/window_base.tscn" id="1_yqq3k"]
 [ext_resource type="Script" uid="uid://c5kpi0jedhdrk" path="res://scripts/pc/toque_dourado_app.gd" id="2_cegss"]
+[ext_resource type="Texture2D" uid="uid://d7m51h35lqq7" path="res://arts/test/midaslens_test.png" id="3_jdduy"]
+[ext_resource type="Theme" uid="uid://kbhbn3rq2irb" path="res://arts/theme.tres" id="4_xusx6"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cegss"]
 particle_flag_disable_z = true
@@ -17,7 +19,7 @@ color = Color(1, 1, 0, 1)
 script = ExtResource("2_cegss")
 
 [node name="Frame" parent="." index="0" unique_id=37177967]
-visible = false
+texture = ExtResource("3_jdduy")
 
 [node name="Lens" type="ColorRect" parent="Content" parent_id_path=PackedInt32Array(1185580226) index="0" unique_id=1928604065]
 layout_mode = 1
@@ -34,3 +36,14 @@ speed_scale = 0.6
 visibility_rect = Rect2(-342, -218, 684, 436)
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_cegss")
+
+[node name="Label" type="Label" parent="." index="3" unique_id=1082827675]
+layout_mode = 0
+offset_top = 79.00001
+offset_right = 860.0
+offset_bottom = 124.00001
+scale = Vector2(0.8006795, 1.1122454)
+theme = ExtResource("4_xusx6")
+theme_override_font_sizes/font_size = 33
+text = "\"Para tudo que eu tocar com meu corpo converta-se em ouro brilhante\""
+horizontal_alignment = 1

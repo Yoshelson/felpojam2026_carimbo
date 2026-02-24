@@ -7,12 +7,12 @@ class_name PCControl
 @onready var login_screen: Control = $Login
 @onready var exit_button: Button = $Desktop_Test/Quit
 @onready var desktop_root: Control = $Desktop_Root
-@onready var desktop_bg: TextureRect = $Desktop_Root/Desktop_BG
 
 signal exit_requested
 
 var pc_mouse_pos: Vector2 = Vector2.ZERO
 var open_windows: Dictionary = {}
+var loose_icon_layer: Control
 
 const CASCADE_OFFSET := Vector2(26, 26)
 const CASCADE_START  := Vector2(60, 40)
@@ -24,6 +24,13 @@ func _ready():
 	add_to_group("pc_control")
 	exit_button.pressed.connect(_on_exit_pressed)
 	login_screen.login_success.connect(_on_login_success)
+
+	loose_icon_layer = Control.new()
+	loose_icon_layer.name = "LooseIconLayer"
+	loose_icon_layer.set_anchors_preset(Control.PRESET_FULL_RECT)
+	loose_icon_layer.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	desktop_root.add_child(loose_icon_layer)
+	desktop_root.move_child(loose_icon_layer, window_layer.get_index())
 
 func _on_login_success():
 	print("Login realizado")
@@ -42,6 +49,10 @@ func request_focus(window: Control):
 		if btn:
 			btn.button_pressed = true
 
+func get_center_spawn(window: Control) -> Vector2:
+	var viewport_size = get_viewport_rect().size
+	return (viewport_size - window.size) / 2.0
+
 func open_window(scene: PackedScene, app_name: String, spawn_pos := Vector2.ZERO):
 	if open_windows.has(app_name):
 		var existing = open_windows[app_name]
@@ -59,11 +70,14 @@ func open_window(scene: PackedScene, app_name: String, spawn_pos := Vector2.ZERO
 	window.tree_exited.connect(_on_window_closed.bind(app_name))
 	open_windows[app_name] = window
 
-	if spawn_pos != Vector2.ZERO:
-		window.position = spawn_pos
-	else:
+	if spawn_pos == Vector2.ZERO:
 		window.position = cascade_pos
 		_advance_cascade()
+	elif spawn_pos == Vector2(-1, -1):
+		await get_tree().process_frame
+		window.position = get_center_spawn(window)
+	else:
+		window.position = spawn_pos
 
 	_add_taskbar_button(window, app_name)
 	request_focus(window)
@@ -124,8 +138,7 @@ func show_alert(message: String, spawn_pos := Vector2.ZERO):
 		alert.position = spawn_pos
 	else:
 		await get_tree().process_frame
-		var viewport_size = get_viewport_rect().size
-		alert.position = (viewport_size - alert.size) / 2.0
+		alert.position = get_center_spawn(alert)
 
 	request_focus(alert)
 
@@ -140,7 +153,7 @@ func install_toque_dourado_delayed(delay: float) -> void:
 		"Messenger",
 		preload("res://scenes/interactables/computer/messager.tscn"),
 		true,
-		Vector2(820, 660)
+		Vector2(720, 420)
 	)
 
 func spawn_new_desktop_file(
@@ -153,7 +166,7 @@ func spawn_new_desktop_file(
 	var icon = icon_scene.instantiate() as DesktopAppIcon
 
 	if custom_position != Vector2.ZERO:
-		desktop_bg.add_child(icon)
+		loose_icon_layer.add_child(icon)
 		icon.position = custom_position
 		icon.custom_minimum_size = Vector2(96, 110)
 		icon.size = Vector2(96, 110)

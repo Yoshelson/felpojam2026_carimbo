@@ -141,7 +141,7 @@ offset_left = -158.0
 offset_top = -7.0
 offset_right = 2.0
 offset_bottom = 80.0
-theme_override_font_sizes/font_size = 42
+theme_override_font_sizes/font_size = 44
 text = "21:61"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -286,7 +286,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.1, 1.1)
 pivot_offset_ratio = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 33
 
 [node name="Confirm" type="Button" parent="Login/LoginScreen" unique_id=1218315170]
 layout_mode = 1
@@ -356,7 +356,7 @@ offset_top = 427.0
 offset_right = 1004.0
 offset_bottom = 480.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 38
+theme_override_font_sizes/font_size = 33
 horizontal_alignment = 1
 
 [node name="AnswerLine" type="LineEdit" parent="Login/RecoveryScreen" unique_id=724218876]
@@ -366,7 +366,7 @@ offset_top = 600.0
 offset_right = 950.0
 offset_bottom = 652.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 33
 
 [node name="ErrorLabel" type="Label" parent="Login/RecoveryScreen" unique_id=1992213391]
 layout_mode = 0

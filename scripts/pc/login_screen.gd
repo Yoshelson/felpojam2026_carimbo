@@ -50,6 +50,10 @@ func _ready():
 	recoverybutton.pressed.connect(_on_forgot_pressed)
 	confirm_recovery.pressed.connect(_on_confirm_recovery_pressed)
 	back_button.pressed.connect(_on_back_pressed)
+	
+	password.text_submitted.connect(func(_t): _on_confirm_pressed())
+	answer_field.text_submitted.connect(func(_t): _on_confirm_recovery_pressed())
+
 
 func _on_confirm_pressed():
 	if unlocked:

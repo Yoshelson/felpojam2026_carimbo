@@ -67,7 +67,7 @@ func _input(event: InputEvent) -> void:
 			sub_viewport.push_input(event)
 	
 	elif event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
+		if event.button_index == MOUSE_BUTTON_LEFT or MOUSE_BUTTON_WHEEL_DOWN or MOUSE_BUTTON_WHEEL_UP:
 			var mouse_event = InputEventMouseButton.new()
 			mouse_event.button_index = event.button_index
 			mouse_event.pressed = event.pressed
