@@ -1,8 +1,15 @@
 [gd_scene format=3 uid="uid://cjicl4epna208"]
 
 [ext_resource type="Script" uid="uid://dieqkyierwbr" path="res://scripts/pc/desktop_app_icons.gd" id="1_nnyjp"]
+[ext_resource type="Shader" uid="uid://cvegcchwqthrh" path="res://scripts/shaders/desktop_app_icons.gdshader" id="1_yyuu0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yyuu0"]
+shader = ExtResource("1_yyuu0")
+shader_parameter/lens_rect = Vector4(0, 0, 0, 0)
+shader_parameter/use_lens_clip = false
 
 [node name="DesktopAppIcons" type="Control" unique_id=1924461812]
+material = SubResource("ShaderMaterial_yyuu0")
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 3
 anchors_preset = 15
@@ -32,6 +39,6 @@ layout_mode = 0
 offset_top = 95.0
 offset_right = 114.0
 offset_bottom = 129.0
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 autowrap_mode = 2

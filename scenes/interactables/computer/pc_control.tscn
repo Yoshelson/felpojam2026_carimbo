@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bckb4866dt45s"]
 
 [ext_resource type="Script" uid="uid://wdap24m0shlh" path="res://scripts/pc/pc_control.gd" id="1_236bd"]
+[ext_resource type="Theme" uid="uid://kbhbn3rq2irb" path="res://arts/theme.tres" id="1_g0i7v"]
 [ext_resource type="Texture2D" uid="uid://diae5xkiuusn7" path="res://arts/test/Mouse.png" id="2_2c1gn"]
 [ext_resource type="Texture2D" uid="uid://d3cbr6riwy1fj" path="res://arts/test/pcwallpaper_test.webp" id="2_236bd"]
 [ext_resource type="Script" uid="uid://satccet7bdls" path="res://scripts/pc/desktop_root.gd" id="3_pthp1"]
@@ -31,6 +32,7 @@ offset_bottom = -0.096069336
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
+theme = ExtResource("1_g0i7v")
 script = ExtResource("1_236bd")
 
 [node name="Desktop_Test" type="Control" parent="." unique_id=1408403905]
@@ -139,7 +141,7 @@ offset_left = -158.0
 offset_top = -7.0
 offset_right = 2.0
 offset_bottom = 80.0
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 42
 text = "21:61"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -208,7 +210,6 @@ offset_bottom = 6.0
 mouse_filter = 1
 
 [node name="Login" type="Control" parent="." unique_id=1312628652]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -264,8 +265,9 @@ offset_right = 898.0
 offset_bottom = 609.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.002092, 0.99472225)
 pivot_offset_ratio = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 44
 text = "Monique"
 horizontal_alignment = 1
 
@@ -276,14 +278,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 657.99994
-offset_top = 622.0
-offset_right = 877.99994
-offset_bottom = 664.0
+offset_left = 637.0
+offset_top = 629.1
+offset_right = 857.0
+offset_bottom = 681.1
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.1, 1.1)
 pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 32
 
 [node name="Confirm" type="Button" parent="Login/LoginScreen" unique_id=1218315170]
 layout_mode = 1
@@ -320,10 +323,10 @@ horizontal_alignment = 1
 
 [node name="ForgotPassword" type="Button" parent="Login/LoginScreen" unique_id=109280586]
 layout_mode = 0
-offset_left = 918.0
-offset_top = 640.0
-offset_right = 960.0
-offset_bottom = 682.0
+offset_left = 904.0
+offset_top = 652.0
+offset_right = 946.0
+offset_bottom = 694.0
 scale = Vector2(1.1, 1.1)
 tooltip_text = "Esqueci a minha Senha."
 
@@ -363,6 +366,7 @@ offset_top = 600.0
 offset_right = 950.0
 offset_bottom = 652.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 32
 
 [node name="ErrorLabel" type="Label" parent="Login/RecoveryScreen" unique_id=1992213391]
 layout_mode = 0

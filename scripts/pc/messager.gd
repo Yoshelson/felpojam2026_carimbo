@@ -1,8 +1,8 @@
 extends WindowBase
 class_name MessengerApp
 
-@onready var contacts_list = $Content/HBoxContainer/ContactsPanel/VBoxContainer
-@onready var chat_history = $Content/HBoxContainer/ChatPanel/VBoxContainer/ChatHistory
+@onready var contacts_list = $Content/MarginContainer/HBoxContainer/PanelContainer/VBoxContainer
+@onready var chat_history = $Content/MarginContainer/HBoxContainer/PanelContainer2/VBoxContainer/RichTextLabel
 
 var conversations = {}
 var current_contact = ""
@@ -33,19 +33,17 @@ func setup_contacts():
 	]
 
 
-func add_contact(_contact_name):
+func add_contact(contact_name: String):
 	var btn = Button.new()
-	btn.text = name
+	btn.text = contact_name
 	btn.custom_minimum_size = Vector2(0, 40)
-	btn.pressed.connect(func(): open_conversation(name))
+	btn.pressed.connect(func(): open_conversation(contact_name))
 	contacts_list.add_child(btn)
 
-
-func open_conversation(_contact_name):
-	current_contact = name
+func open_conversation(contact_name: String):
+	current_contact = contact_name
 	chat_history.clear()
-	
-	for line in conversations[name]:
+	for line in conversations[contact_name]:
 		chat_history.append_text(line + "\n\n")
 
 
