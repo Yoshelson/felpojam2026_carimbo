@@ -7,7 +7,7 @@ const SENSITIVITY = 0.002
 @onready var head = $head
 @onready var camera = $head/Camera3D
 @onready var seecast = $head/Camera3D/SeeCast
-
+var camera_y_anchor: float = 0.0
 signal focus_changed (new_prompt: String)
 
 #Prender personagem enquanto ele interage (LEMBRAR DE REMOVER, EH INUTIL)
@@ -17,10 +17,19 @@ var _focused_object: Node3D = null
 func _ready() -> void:
 	add_to_group("Player")	
 
-func rotate_camera(relative_x: float, relative_y: float):
-	head.rotate_y(relative_x * SENSITIVITY)
+#Essa funcao rotaciona a cabeca do player com a posicao do mouse, o bool 
+#apply_clamp eh usado para travar a ate 180 graus com base no ultimo ponto de 
+#travamento da camera
+func rotate_camera(relative_x: float, relative_y: float, apply_clamp: bool = false):
 	camera.rotate_x(relative_y * SENSITIVITY)
 	camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-50), deg_to_rad(70))
+	
+	head.rotate_y(relative_x * SENSITIVITY)
+	
+	if apply_clamp:
+		var limite_min = camera_y_anchor - deg_to_rad(90)
+		var limite_max = camera_y_anchor + deg_to_rad(90)
+		head.rotation.y = clamp(head.rotation.y, limite_min, limite_max)
 
 func try_interact():
 	if !(_focused_object == null):
