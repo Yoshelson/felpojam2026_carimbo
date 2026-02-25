@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://c8kudlijksi80"]
 
 [ext_resource type="PackedScene" uid="uid://766jsikflxl" path="res://scenes/player.tscn" id="1_8rhti"]
+[ext_resource type="Script" uid="uid://ci6k4qpsorqb8" path="res://scripts/state-machine/StateMachine.gd" id="1_hh5oj"]
+[ext_resource type="Script" path="res://scripts/state-machine/WalkingState.gd" id="2_vqfsp"]
 [ext_resource type="PackedScene" uid="uid://5y8rwm8yspg3" path="res://scenes/interactables/computer/PCScene.tscn" id="3_21bcp"]
 [ext_resource type="PackedScene" uid="uid://c0gk0v22vsjes" path="res://scenes/objects/exemplo_interativo.tscn" id="5_40w10"]
 [ext_resource type="PackedScene" uid="uid://buu3nnoihwga2" path="res://scenes/UI/pause.tscn" id="5_hh5oj"]
@@ -21,6 +23,21 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="Main" type="Node3D" unique_id=959922866]
+
+[node name="State Machine" type="Node" parent="." unique_id=1936930652 node_paths=PackedStringArray("initial_state", "_player")]
+script = ExtResource("1_hh5oj")
+initial_state = NodePath("Walking State")
+_player = NodePath("../player")
+
+[node name="Walking State" type="Node" parent="State Machine" unique_id=1200833618]
+script = ExtResource("2_vqfsp")
+id = "walking"
+
+[node name="Desk State" type="Node" parent="State Machine" unique_id=1341546681]
+
+[node name="Computer State" type="Node" parent="State Machine" unique_id=1643149634]
+
+[node name="Board State" type="Node" parent="State Machine" unique_id=2019728320]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2079104516]
 environment = SubResource("Environment_56f15")

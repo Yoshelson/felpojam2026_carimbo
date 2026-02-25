@@ -8,9 +8,10 @@ var _actual_state: State
 func _ready() -> void:
 	var state_nodes = self.get_children()
 	for state in state_nodes:
-		states[state.id] = state
-		state.change_state.connect(_on_state_change)
-		state.player = _player
+		if state is State:
+			states[state.id] = state
+			state.change_state.connect(_on_state_change)
+			state.player = _player
 	
 	_actual_state = initial_state
 	_actual_state.enter_state()
@@ -22,7 +23,8 @@ func _physics_process(delta: float) -> void:
 	_actual_state.physics_update(delta)
 
 func _input(event: InputEvent) -> void:
-	_actual_state.inputs(event)
+	#_actual_state.inputs(event)
+	pass
 
 func _unhandled_input(event: InputEvent) -> void:
 	_actual_state.inputs(event)
