@@ -1,12 +1,21 @@
 extends State
+#Potencial gambiarra para funcionamento, verificar escalabilidade com cuidado
+#depois do termino da gamejam
+@export var desk_pos: Marker3D
+@export var walk_pos: Marker3D
 
 func enter_state():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	player.teleport_to(desk_pos.global_transform)
 
 func exit_state():
-	pass
+	player.teleport_to(walk_pos.global_transform)
 	
 func inputs(event: InputEvent):
+	if event is InputEventKey:
+		if Input.is_action_just_pressed("exit"):
+			GameEvents.change_player_state(GameEvents.player_states.walking)
+	
 	if event is InputEventMouseMotion:
 		player.rotate_camera(-event.relative.x, -event.relative.y, true)
 	

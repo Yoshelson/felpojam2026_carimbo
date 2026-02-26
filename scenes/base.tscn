@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://c0gk0v22vsjes" path="res://scenes/objects/exemplo_interativo.tscn" id="5_40w10"]
 [ext_resource type="PackedScene" uid="uid://buu3nnoihwga2" path="res://scenes/UI/pause.tscn" id="5_hh5oj"]
 [ext_resource type="PackedScene" uid="uid://dxsd108dci26y" path="res://scenes/test/test_csg.tscn" id="5_xvvcp"]
-[ext_resource type="PackedScene" uid="uid://d1va66oo4rpjs" path="res://scenes/UI/DocumentsUI.tscn" id="7_hh5oj"]
-[ext_resource type="PackedScene" uid="uid://co6hr5m513oq6" path="res://scenes/UI/InteractionUI.tscn" id="10_jn13j"]
+[ext_resource type="PackedScene" path="res://scenes/UI/DocumentsUI.tscn" id="7_hh5oj"]
+[ext_resource type="PackedScene" path="res://scenes/UI/InteractionUI.tscn" id="10_jn13j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tpea4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -24,6 +24,12 @@ glow_enabled = true
 
 [node name="Main" type="Node3D" unique_id=959922866]
 
+[node name="DeskPos" type="Marker3D" parent="." unique_id=1033451031]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3.515, 1.193, 2.88)
+
+[node name="WalkPos" type="Marker3D" parent="." unique_id=218376258]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2.439, 1.193, 2.88)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2079104516]
 environment = SubResource("Environment_56f15")
 
@@ -34,13 +40,19 @@ shadow_enabled = true
 [node name="player" parent="." unique_id=685818972 instance=ExtResource("1_8rhti")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9025381, 1.1926475, 3.1636274)
 
+[node name="Desk State" parent="player/State Machine" parent_id_path=PackedInt32Array(685818972, 198868825) index="1" unique_id=458221997 node_paths=PackedStringArray("desk_pos", "walk_pos")]
+desk_pos = NodePath("../../../DeskPos")
+walk_pos = NodePath("../../../WalkPos")
+
+[node name="Computer State" parent="player/State Machine" parent_id_path=PackedInt32Array(685818972, 198868825) index="3" unique_id=519582346 node_paths=PackedStringArray("computer")]
+computer = NodePath("../../../PCScene")
+
 [node name="PCScene" parent="." unique_id=794729469 instance=ExtResource("3_21bcp")]
 transform = Transform3D(-0.97993165, 0, 0.19933385, 0, 1, 0, -0.19933385, 0, -0.97993165, -2.575565, 1.4884229, 4.8839025)
 
-[node name="ExemploInterativo" parent="." unique_id=756309383 node_paths=PackedStringArray("_mesh") instance=ExtResource("5_40w10")]
+[node name="ExemploInterativo" parent="." unique_id=756309383 instance=ExtResource("5_40w10")]
 transform = Transform3D(-0.99999267, 0, 0.0038220552, 0, 1, 0, -0.0038220552, 0, -0.99999267, 4.3410978e-07, 0.63247085, 4.5179787)
 _id = "gaveta"
-_mesh = NodePath("CSGCombiner3D")
 prompt_message = "Abrir Gaveta"
 
 [node name="Quarto" parent="." unique_id=1534463602 instance=ExtResource("5_xvvcp")]
@@ -55,4 +67,5 @@ z_index = 5
 
 [node name="DocumentsUi" parent="." unique_id=60002005 instance=ExtResource("7_hh5oj")]
 
+[editable path="player"]
 [editable path="ExemploInterativo"]

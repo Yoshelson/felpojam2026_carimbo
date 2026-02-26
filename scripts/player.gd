@@ -9,8 +9,6 @@ const SENSITIVITY = 0.002
 @onready var seecast = $head/Camera3D/SeeCast
 signal focus_changed (new_prompt: String)
 
-#Prender personagem enquanto ele interage (LEMBRAR DE REMOVER, EH INUTIL)
-var input_locked:bool = false
 var _focused_object: Node3D = null
 
 func _ready() -> void:
@@ -49,6 +47,12 @@ func teleport_to(target_transform: Transform3D):
 	#rotacao pretendida
 	camera.global_rotation.x = euler.x
 	camera.global_rotation.z = 0.0
+
+func teleport_camera_to(target_transform: Transform3D) -> void:
+	camera.global_transform = target_transform
+
+func reset_camera_pos() -> void:
+	camera.transform = Transform3D.IDENTITY
 
 func try_interact():
 	if !(_focused_object == null):
@@ -109,7 +113,7 @@ func apply_gravity(delta: float):
 		velocity += get_gravity() * delta
 	
 func apply_movement(input_dir: Vector2):
-	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction = (head.global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED

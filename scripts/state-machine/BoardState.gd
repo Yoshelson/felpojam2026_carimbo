@@ -7,6 +7,10 @@ func exit_state():
 	pass
 	
 func inputs(event: InputEvent):	
+	if event is InputEventKey:
+		if Input.is_action_just_pressed("exit"):
+			GameEvents.change_player_state(GameEvents.player_states.desk)
+
 	if Input.is_action_just_pressed("interact"):
 		player.try_interact()
 	

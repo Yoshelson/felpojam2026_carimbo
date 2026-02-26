@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cd8jcjl7dsjf2"]
+[gd_scene format=3 uid="uid://b86g0bnvxh6fv"]
 
 [ext_resource type="Script" uid="uid://blqjnsi3084eq" path="res://scripts/interactable/TeleportInteractable.gd" id="1_kl2ly"]
 

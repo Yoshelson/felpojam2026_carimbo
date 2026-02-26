@@ -25,12 +25,17 @@ shader_parameter/power_on = 0.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_t6tsb"]
 
-[node name="PCScene" type="StaticBody3D" unique_id=794729469 groups=["Interactible"]]
+[node name="PCScene" type="StaticBody3D" unique_id=794729469 node_paths=PackedStringArray("camera_target_pos", "_mesh") groups=["Interactible"]]
 collision_layer = 5
 script = ExtResource("1_8pqrt")
+target_state = 3
+camera_target_pos = NodePath("Target Pos")
+_id = "computador"
+_mesh = NodePath("CSGCombiner3D")
+prompt_message = "Usar Computador"
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=917639128 groups=["Player"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.003775917, 0.42129153)
+[node name="Target Pos" type="Marker3D" parent="." unique_id=1589536893]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.004, 0.42)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1309187984]
 transform = Transform3D(0.9843237, 0, 0, 0, 0.69565946, 0, 0, 0, 1, 0, 0, 0)
