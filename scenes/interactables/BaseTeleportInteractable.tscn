@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cd8jcjl7dsjf2"]
+
+[ext_resource type="Script" uid="uid://blqjnsi3084eq" path="res://scripts/interactable/TeleportInteractable.gd" id="1_kl2ly"]
+
+[node name="BaseTeleportInteractable" type="StaticBody3D" unique_id=71267848 node_paths=PackedStringArray("target_pos")]
+script = ExtResource("1_kl2ly")
+target_pos = NodePath("Target Pos")
+
+[node name="Collision Shape" type="CollisionShape3D" parent="." unique_id=343647297]
+
+[node name="Target Pos" type="Marker3D" parent="." unique_id=1812789347]
+
+[node name="Visual Model" type="Node3D" parent="." unique_id=1226515085]

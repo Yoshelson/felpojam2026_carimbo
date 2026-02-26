@@ -7,7 +7,6 @@ const SENSITIVITY = 0.002
 @onready var head = $head
 @onready var camera = $head/Camera3D
 @onready var seecast = $head/Camera3D/SeeCast
-var camera_y_anchor: float = 0.0
 signal focus_changed (new_prompt: String)
 
 #Prender personagem enquanto ele interage (LEMBRAR DE REMOVER, EH INUTIL)
@@ -26,10 +25,30 @@ func rotate_camera(relative_x: float, relative_y: float, apply_clamp: bool = fal
 	
 	head.rotate_y(relative_x * SENSITIVITY)
 	
+	#Consideramos que a ancora é sempre a posição atual da camera, logo, 90 graus
+	#para cada lado partindo dela. Caso queiramos algo movel no futuro, devera ter
+	#uma ancora antes da soma ou subtracao com os "degree"
 	if apply_clamp:
-		var limite_min = camera_y_anchor - deg_to_rad(90)
-		var limite_max = camera_y_anchor + deg_to_rad(90)
+		var limite_min = -deg_to_rad(90)
+		var limite_max = deg_to_rad(90)
 		head.rotation.y = clamp(head.rotation.y, limite_min, limite_max)
+
+func teleport_to(target_transform: Transform3D):
+	#Garante que nenhuma movimentacao errada ocorra apos o teleporte
+	velocity = Vector3.ZERO
+	self.global_position = target_transform.origin
+	
+	var euler = target_transform.basis.get_euler()
+	#Movemos a entidade player inteira para a posicao desejada e depois resetamos
+	#a camera(cabeca) para ficar alinhada com a rotacao pretendida
+	self.global_rotation.y = euler.y
+	head.rotation.y = 0
+	head.rotation.z = 0.0
+	#Coloca a variavel de rotacao X da camera (a unica da camera que se move em
+	#rotate camera para a posicao desejada e depois resetamos para alinhar com a 
+	#rotacao pretendida
+	camera.global_rotation.x = euler.x
+	camera.global_rotation.z = 0.0
 
 func try_interact():
 	if !(_focused_object == null):
