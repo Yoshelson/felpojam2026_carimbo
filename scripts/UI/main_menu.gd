@@ -10,6 +10,7 @@ extends Control
 
 const HOVER_SCALE := 1.12
 const HOVER_SPEED := 10.0
+const PANEL_WIDTH := 1152.0
 
 var main_panel: Control
 var menu_buttons: Array = []
@@ -22,27 +23,22 @@ var base_position: Vector2
 func _ready():
 	viewport_size = get_viewport().size
 	current_panel = main_menu_panel
-
-	container.set_anchors_preset(Control.PRESET_FULL_RECT)
+	
 	container.clip_contents = true
-
-	for panel in [main_menu_panel, settings_panel, credits_panel]:
-		panel.set_anchors_preset(Control.PRESET_FULL_RECT)
-
-	await get_tree().process_frame
-	await get_tree().process_frame
-
-	for panel in [main_menu_panel, settings_panel, credits_panel]:
-		panel.set_anchors_preset(Control.PRESET_TOP_LEFT)
-		panel.size = viewport_size
-
+	
+	main_menu_panel.visible = true
+	settings_panel.visible = true
+	credits_panel.visible = true
+	
 	main_menu_panel.position = Vector2.ZERO
-	settings_panel.position = Vector2(viewport_size.x, 0)
-	credits_panel.position = Vector2(viewport_size.x, 0)
-
+	settings_panel.position = Vector2(PANEL_WIDTH, 0)
+	credits_panel.position = Vector2(PANEL_WIDTH, 0)
+	
+	await get_tree().process_frame
+	
 	main_panel = main_menu_panel.get_node("VBoxContainer")
 	base_position = main_panel.position
-
+	
 	_setup_settings()
 	_collect_buttons()
 	_connect_buttons()
@@ -191,32 +187,36 @@ func _input(event):
 		if event.is_action_pressed("ui_cancel"):
 			_on_back_pressed()
 
-func _slide_to(from: Control, to: Control, exit_right: bool) -> void:
+func _slide_to(from: Control, to: Control, going_right: bool) -> void:
 	if is_animating:
 		return
 	is_animating = true
-
-	var dist = viewport_size.x
-	var dir = 1 if not exit_right else -1
+	
+	var dist = PANEL_WIDTH
+	var dir = 1 if going_right else -1
+	
 	to.position.x = dist * dir
-
+	
 	var tween = create_tween().set_parallel(true)
 	tween.tween_property(from, "position:x", -dist * dir, 0.5).set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(from, "modulate:a", 0.0, 0.35).set_trans(Tween.TRANS_SINE)
 	tween.tween_property(to, "position:x", 0.0, 0.5).set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(to, "modulate:a", 1.0, 0.5).set_trans(Tween.TRANS_SINE)
 	await tween.finished
-
-	from.position.x = dist * dir
+	
+	from.modulate.a = 1.0
+	from.position.x = -dist * dir
 	current_panel = to
 	is_animating = false
 
 func _on_configurations_pressed():
-	_slide_to(main_menu_panel, settings_panel, false)
+	_slide_to(main_menu_panel, settings_panel, true)
 
 func _on_credits_pressed():
-	_slide_to(main_menu_panel, credits_panel, false)
+	_slide_to(main_menu_panel, credits_panel, true)
 
 func _on_back_pressed():
-	_slide_to(current_panel, main_menu_panel, true)
+	_slide_to(current_panel, main_menu_panel, false)
 
 func _on_start_pressed():
 	_fade_to("res://scenes/base.tscn")
