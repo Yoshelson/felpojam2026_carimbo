@@ -22,6 +22,7 @@ buses/default_bus_layout="uid://dyxtp740c3gs4"
 [autoload]
 
 InventoryManager="*uid://bvhno70r6ldra"
+GameEvents="*uid://coruphvadhjed"
 
 [global_group]
 

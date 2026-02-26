@@ -1,9 +1,8 @@
 extends Node
 class_name State
 
-@export var id: String
+@export var id: GameEvents.player_states
 var player: Player
-signal change_state(state: String)
 
 func enter_state():
 	pass

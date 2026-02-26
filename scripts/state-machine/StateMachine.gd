@@ -6,12 +6,12 @@ var _player: Player
 var _actual_state: State
 
 func _ready() -> void:
+	GameEvents.player_state_changed.connect(_on_state_change)
 	var state_nodes = self.get_children()
 	_player = get_parent()
 	for state in state_nodes:
 		if state is State:
 			states[state.id] = state
-			state.change_state.connect(_on_state_change)
 			state.player = _player
 	
 	_actual_state = initial_state
@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	_actual_state.inputs(event)
 
-func _on_state_change(state_id: String):
+func _on_state_change(state_id: GameEvents.player_states):
 	if (states.has(state_id)):
 		_actual_state.exit_state()
 		_actual_state = states[state_id]

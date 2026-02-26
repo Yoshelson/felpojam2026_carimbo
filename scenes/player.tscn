@@ -22,26 +22,25 @@ initial_state = NodePath("Walking State")
 
 [node name="Walking State" type="Node" parent="State Machine" unique_id=729717889]
 script = ExtResource("3_fjrip")
-id = "walking"
 
 [node name="Desk State" type="Node" parent="State Machine" unique_id=458221997]
 script = ExtResource("4_smehm")
-id = "desk"
+id = 1
 
 [node name="Board State" type="Node" parent="State Machine" unique_id=1402789960]
 script = ExtResource("5_ur7pv")
-id = "board"
+id = 2
 
 [node name="Computer State" type="Node" parent="State Machine" unique_id=519582346]
 
 [node name="Document UI State" type="Node" parent="State Machine" unique_id=2083336626]
 script = ExtResource("6_y4r1p")
-id = "doc_ui"
+id = 4
 
 [node name="Cinematic State" type="Node" parent="State Machine" unique_id=1012775463]
 script = ExtResource("6_y4r1p")
 hide_mouse = true
-id = "cinematic_ui"
+id = 5
 
 [node name="Monster State" type="Node" parent="State Machine" unique_id=1962491049]
 
