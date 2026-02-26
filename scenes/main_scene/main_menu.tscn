@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://3bi2ab77as2t" path="res://scripts/UI/menu_cam.gd" id="2_yk05y"]
 [ext_resource type="Script" uid="uid://cydne1y5g2a2m" path="res://scenes/main_scene/canvas_layer.gd" id="3_yk05y"]
 [ext_resource type="FontFile" uid="uid://dlyiu417bqwyb" path="res://arts/Unutterable-Regular.ttf" id="4_mwb2c"]
+[ext_resource type="Script" uid="uid://cgqy2gy58tbsm" path="res://scripts/UI/main_menu.gd" id="5_menu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7qib0"]
 sky_top_color = Color(0.21235585, 0.26064983, 0.32498953, 1)
@@ -41,14 +42,16 @@ script = ExtResource("2_yk05y")
 script = ExtResource("3_yk05y")
 
 [node name="Menu" type="Control" parent="CanvasLayer" unique_id=1157331522]
+clip_contents = true
 layout_mode = 3
-anchors_preset = 0
-offset_left = 554.0
-offset_top = 276.0
-offset_right = 594.0
-offset_bottom = 316.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_menu")
 
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Menu" unique_id=2113711415]
+[node name="PanelContainer" type="Control" parent="CanvasLayer/Menu" unique_id=127332157]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -57,12 +60,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Menu/PanelContainer" unique_id=1703966013]
-layout_mode = 2
+[node name="main_menu" type="Control" parent="CanvasLayer/Menu/PanelContainer" unique_id=410065409]
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Menu/PanelContainer/main_menu" unique_id=1703966013]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Button" type="Button" parent="CanvasLayer/Menu/PanelContainer/VBoxContainer" unique_id=388241404]
+[node name="Button" type="Button" parent="CanvasLayer/Menu/PanelContainer/main_menu/VBoxContainer" unique_id=388241404]
 modulate = Color(1, 1, 0.26666668, 1)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -73,7 +90,7 @@ theme_override_font_sizes/font_size = 33
 text = "Começar"
 flat = true
 
-[node name="Button2" type="Button" parent="CanvasLayer/Menu/PanelContainer/VBoxContainer" unique_id=1828304612]
+[node name="Button2" type="Button" parent="CanvasLayer/Menu/PanelContainer/main_menu/VBoxContainer" unique_id=1828304612]
 modulate = Color(1, 1, 0.26666668, 1)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -84,7 +101,7 @@ theme_override_font_sizes/font_size = 33
 text = "Configurações"
 flat = true
 
-[node name="Button3" type="Button" parent="CanvasLayer/Menu/PanelContainer/VBoxContainer" unique_id=668958275]
+[node name="Button3" type="Button" parent="CanvasLayer/Menu/PanelContainer/main_menu/VBoxContainer" unique_id=668958275]
 modulate = Color(1, 1, 0.26666668, 1)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -95,7 +112,7 @@ theme_override_font_sizes/font_size = 33
 text = "Créditos"
 flat = true
 
-[node name="Button4" type="Button" parent="CanvasLayer/Menu/PanelContainer/VBoxContainer" unique_id=2082901241]
+[node name="Button4" type="Button" parent="CanvasLayer/Menu/PanelContainer/main_menu/VBoxContainer" unique_id=2082901241]
 modulate = Color(1, 1, 0.26666668, 1)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -104,4 +121,187 @@ theme_override_constants/outline_size = 14
 theme_override_fonts/font = ExtResource("4_mwb2c")
 theme_override_font_sizes/font_size = 33
 text = "Sair do Jogo"
+flat = true
+
+[node name="settings_menu" type="Control" parent="CanvasLayer/Menu/PanelContainer" unique_id=410065410]
+visible = false
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Menu/PanelContainer/settings_menu" unique_id=410065411]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="settings_tab" type="TabContainer" parent="CanvasLayer/Menu/PanelContainer/settings_menu/VBoxContainer" unique_id=410065412]
+self_modulate = Color(2.293641, 2.293641, 0, 1)
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 2
+current_tab = 0
+
+[node name="Gráficos" type="Control" parent="CanvasLayer/Menu/PanelContainer/settings_menu/VBoxContainer/settings_tab" unique_id=410065413]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer/Menu/PanelContainer/settings_menu/VBoxContainer/settings_tab/Gráficos" unique_id=410065414]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 10.0
+offset_right = -11.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="HBox" type="HBoxContainer" parent="CanvasLayer/Menu/PanelContainer/settings_menu/VBoxContainer/settings_tab/Gráficos/VBox" unique_id=410065415]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/PanelContainer/settings_menu/VBoxContainer/settings_tab/Gráficos/VBox/HBox" unique_id=410065416]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_mwb2c")
+theme_override_font_sizes/font_size = 28
+text = "tela Cheia"
+
+[node name="fullscreen" type="CheckButton" parent="CanvasLayer/Menu/PanelContainer/settings_menu/VBoxContainer/settings_tab/Gráficos/VBox/HBox" unique_id=410065417]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_mwb2c")
+theme_override_font_sizes/font_size = 22
+
+[node name="Sons" type="Control" parent="CanvasLayer/Menu/PanelContainer/settings_menu/VBoxContainer/settings_tab" unique_id=410065418]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer/Menu/PanelContainer/settings_menu/VBoxContainer/settings_tab/Sons" unique_id=410065419]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 16.0
+offset_right = -10.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="HBoxMaster" type="HBoxContainer" parent="CanvasLayer/Menu/PanelContainer/settings_menu/VBoxContainer/settings_tab/Sons/VBox" unique_id=410065420]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/PanelContainer/settings_menu/VBoxContainer/settings_tab/Sons/VBox/HBoxMaster" unique_id=410065421]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_mwb2c")
+theme_override_font_sizes/font_size = 28
+text = "Master"
+
+[node name="volMaster" type="HSlider" parent="CanvasLayer/Menu/PanelContainer/settings_menu/VBoxContainer/settings_tab/Sons/VBox/HBoxMaster" unique_id=410065422]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="HBoxMusic" type="HBoxContainer" parent="CanvasLayer/Menu/PanelContainer/settings_menu/VBoxContainer/settings_tab/Sons/VBox" unique_id=410065423]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/PanelContainer/settings_menu/VBoxContainer/settings_tab/Sons/VBox/HBoxMusic" unique_id=410065424]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_mwb2c")
+theme_override_font_sizes/font_size = 28
+text = "Música"
+
+[node name="volMusic" type="HSlider" parent="CanvasLayer/Menu/PanelContainer/settings_menu/VBoxContainer/settings_tab/Sons/VBox/HBoxMusic" unique_id=410065425]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="HBoxSfx" type="HBoxContainer" parent="CanvasLayer/Menu/PanelContainer/settings_menu/VBoxContainer/settings_tab/Sons/VBox" unique_id=410065426]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/PanelContainer/settings_menu/VBoxContainer/settings_tab/Sons/VBox/HBoxSfx" unique_id=410065427]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_mwb2c")
+theme_override_font_sizes/font_size = 28
+text = "Efeitos"
+
+[node name="volSfx" type="HSlider" parent="CanvasLayer/Menu/PanelContainer/settings_menu/VBoxContainer/settings_tab/Sons/VBox/HBoxSfx" unique_id=410065428]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="BtnVoltar" type="Button" parent="CanvasLayer/Menu/PanelContainer/settings_menu/VBoxContainer" unique_id=410065429]
+modulate = Color(1, 1, 0.26666668, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_mwb2c")
+theme_override_font_sizes/font_size = 33
+text = "Voltar"
+flat = true
+
+[node name="credits_menu" type="Control" parent="CanvasLayer/Menu/PanelContainer" unique_id=410065430]
+visible = false
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Menu/PanelContainer/credits_menu" unique_id=410065431]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -332.0
+offset_top = -175.0
+offset_right = 332.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 26
+alignment = 1
+
+[node name="CreditsLabel" type="Label" parent="CanvasLayer/Menu/PanelContainer/credits_menu/VBoxContainer" unique_id=410065432]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_mwb2c")
+theme_override_font_sizes/font_size = 28
+text = "Créditos
+
+Sipony - Direção, Documentos e Roteiro
+Yoshe - Programação
+Eattron - Programação
+Lipex - Artista 3d
+Gege - Música e Sprites"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="BtnVoltar" type="Button" parent="CanvasLayer/Menu/PanelContainer/credits_menu/VBoxContainer" unique_id=410065433]
+modulate = Color(1, 1, 0.26666668, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_mwb2c")
+theme_override_font_sizes/font_size = 33
+text = "Voltar"
 flat = true
