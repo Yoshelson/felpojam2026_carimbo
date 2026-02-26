@@ -12,8 +12,22 @@ var is_using:bool = false
 @onready var pc_control: Control = $SubViewport/ViewportRoot/PCControl
 @onready var sub_viewport: SubViewport = $SubViewport
 
-func interact(_player_ref: Player):
+func interact(_interactor: Node3D):
 	toggle_use()
+	
+
+
+#Função de começar a usar o pc
+func toggle_use():
+	is_using = !is_using
+	camera_3d.current = is_using
+	player.camera.current = !is_using
+	player.input_locked = is_using
+	player.seecast.enabled = !is_using
+	
+	if is_using:
+		play_boot_effect()
+	
 
 func play_boot_effect():
 	if boot_played:
@@ -40,17 +54,7 @@ func _ready() -> void:
 	print("Player")
 	pc_control.exit_requested.connect(toggle_use)
 
-#Função de começar a usar o pc
-func toggle_use():
-	is_using = !is_using
-	camera_3d.current = is_using
-	player.camera.current = !is_using
-	player.input_locked = is_using
-	player.seecast.enabled = !is_using
-	
-	if is_using:
-		play_boot_effect()
-	
+
 
 func _input(event: InputEvent) -> void:
 	if !is_using:

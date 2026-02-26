@@ -56,9 +56,12 @@ _data = {
 &"open": SubResource("Animation_ppgkh")
 }
 
-[node name="ExemploInterativo" type="StaticBody3D" unique_id=756309383]
+[node name="ExemploInterativo" type="StaticBody3D" unique_id=756309383 node_paths=PackedStringArray("_mesh")]
 collision_layer = 5
 script = ExtResource("1_drblo")
+_id = "13234"
+_mesh = NodePath("CSGCombiner3D")
+prompt_message = "jorge"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=758545621]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)

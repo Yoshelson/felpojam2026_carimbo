@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://bg32jcbmnp3f6"]
+
+[ext_resource type="PackedScene" uid="uid://dxsd108dci26y" path="res://scenes/test_csg.tscn" id="1_7qib0"]
+[ext_resource type="Script" uid="uid://3bi2ab77as2t" path="res://scripts/UI/menu_cam.gd" id="2_yk05y"]
+[ext_resource type="Script" uid="uid://cydne1y5g2a2m" path="res://scenes/main_scene/canvas_layer.gd" id="3_yk05y"]
+[ext_resource type="FontFile" uid="uid://dlyiu417bqwyb" path="res://arts/Unutterable-Regular.ttf" id="4_mwb2c"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7qib0"]
+sky_top_color = Color(0.21235585, 0.26064983, 0.32498953, 1)
+sky_horizon_color = Color(0.45973596, 0.46405947, 0.47114438, 1)
+ground_horizon_color = Color(0.45973596, 0.46405947, 0.47114438, 1)
+
+[sub_resource type="Sky" id="Sky_yk05y"]
+sky_material = SubResource("ProceduralSkyMaterial_7qib0")
+
+[sub_resource type="Environment" id="Environment_mwb2c"]
+background_mode = 2
+sky = SubResource("Sky_yk05y")
+tonemap_mode = 2
+
+[node name="MainMenu" type="Node3D" unique_id=463534159]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1976865124]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=621556404]
+environment = SubResource("Environment_mwb2c")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=152307255]
+
+[node name="Quarto" parent="Node3D" unique_id=1534463602 instance=ExtResource("1_7qib0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4114044, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Node3D" unique_id=1594509389]
+transform = Transform3D(-0.9907336, -0.017102635, -0.13473831, 1.10084475e-08, 0.99204016, -0.12592195, 0.13581942, -0.12475511, -0.9828475, -2.7008684, 0, 2.0816402)
+fov = 67.37313
+script = ExtResource("2_yk05y")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1889838800]
+script = ExtResource("3_yk05y")
+
+[node name="Menu" type="Control" parent="CanvasLayer" unique_id=1157331522]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 554.0
+offset_top = 276.0
+offset_right = 594.0
+offset_bottom = 316.0
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Menu" unique_id=2113711415]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Menu/PanelContainer" unique_id=1703966013]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/Menu/PanelContainer/VBoxContainer" unique_id=388241404]
+modulate = Color(1, 1, 0.26666668, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("4_mwb2c")
+theme_override_font_sizes/font_size = 33
+text = "Começar"
+flat = true
+
+[node name="Button2" type="Button" parent="CanvasLayer/Menu/PanelContainer/VBoxContainer" unique_id=1828304612]
+modulate = Color(1, 1, 0.26666668, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("4_mwb2c")
+theme_override_font_sizes/font_size = 33
+text = "Configurações"
+flat = true
+
+[node name="Button3" type="Button" parent="CanvasLayer/Menu/PanelContainer/VBoxContainer" unique_id=668958275]
+modulate = Color(1, 1, 0.26666668, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("4_mwb2c")
+theme_override_font_sizes/font_size = 33
+text = "Créditos"
+flat = true
+
+[node name="Button4" type="Button" parent="CanvasLayer/Menu/PanelContainer/VBoxContainer" unique_id=2082901241]
+modulate = Color(1, 1, 0.26666668, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("4_mwb2c")
+theme_override_font_sizes/font_size = 33
+text = "Sair do Jogo"
+flat = true

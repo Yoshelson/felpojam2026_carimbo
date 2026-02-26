@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://rvqk034i2ily" path="res://scenes/interactables/computer/window_base.tscn" id="1_var7b"]
 [ext_resource type="Script" uid="uid://cmyum2p27n16q" path="res://scripts/pc/bapotube_window.gd" id="2_47nx7"]
-[ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="3_qnkkg"]
+[ext_resource type="Texture2D" uid="uid://bm4jehr86wh3y" path="res://arts/images/PC/Azul.png" id="3_qnkkg"]
 
 [node name="BapoTube" unique_id=280367607 instance=ExtResource("1_var7b")]
 offset_right = 900.0

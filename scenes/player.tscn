@@ -18,7 +18,7 @@ script = ExtResource("1_4flbx")
 
 [node name="State Machine" type="Node" parent="." unique_id=198868825 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_tuyoq")
-initial_state = NodePath("Document UI State")
+initial_state = NodePath("Walking State")
 
 [node name="Walking State" type="Node" parent="State Machine" unique_id=729717889]
 script = ExtResource("3_fjrip")
