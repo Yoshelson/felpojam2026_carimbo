@@ -5,6 +5,7 @@ var dragging := false
 var drag_offset := Vector2.ZERO
 var is_focused: bool = false
 
+@onready var window_layer = $Desktop_root/WindowLayer
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -30,7 +31,7 @@ func _gui_input(event: InputEvent) -> void:
 		var viewport_size = get_viewport().size
 
 		# Altura da taskbar (ajuste se mudar depois)
-		var taskbar_height := 30.0
+		var taskbar_height := 80.0
 
 		position.x = clamp(
 			position.x,

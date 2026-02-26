@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://0vyut6dnqpa1"]
+
+[ext_resource type="PackedScene" uid="uid://rvqk034i2ily" path="res://scenes/interactables/computer/window_base.tscn" id="1_50kj1"]
+[ext_resource type="Script" uid="uid://bs45ihuogamoo" path="res://scripts/pc/arquivos_window.gd" id="2_07ebe"]
+[ext_resource type="Texture2D" uid="uid://11wllttmf6s3" path="res://arts/test/arquivos_test.png" id="3_50kj1"]
+
+[node name="WindowBase" unique_id=280367607 instance=ExtResource("1_50kj1")]
+script = ExtResource("2_07ebe")
+window_icon = ExtResource("3_50kj1")

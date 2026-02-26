@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://wdsmsdeyjpj2"]
+
+[ext_resource type="PackedScene" uid="uid://rvqk034i2ily" path="res://scenes/interactables/computer/window_base.tscn" id="1_fpgyo"]
+[ext_resource type="Script" uid="uid://ojv3bg51q1wd" path="res://scripts/pc/lixo.gd" id="2_46ahv"]
+[ext_resource type="PackedScene" uid="uid://cjicl4epna208" path="res://scenes/interactables/computer/desktop_app_icons.tscn" id="3_2aek1"]
+
+[node name="Lixo" unique_id=280367607 instance=ExtResource("1_fpgyo")]
+script = ExtResource("2_46ahv")
+
+[node name="GridContainer" type="GridContainer" parent="Content" parent_id_path=PackedInt32Array(1185580226) index="0" unique_id=700697331]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Meme1" parent="Content/GridContainer" index="0" unique_id=1924461812 instance=ExtResource("3_2aek1")]
+layout_mode = 2

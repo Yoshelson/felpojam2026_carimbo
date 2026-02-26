@@ -1,0 +1,251 @@
+[gd_scene format=3 uid="uid://18s1clere73x"]
+
+[ext_resource type="PackedScene" uid="uid://rvqk034i2ily" path="res://scenes/interactables/computer/window_base.tscn" id="1_bw"]
+[ext_resource type="Script" uid="uid://b8irmp1slfc1w" path="res://scripts/pc/browser_window.gd" id="2_bw"]
+
+[node name="Browser" unique_id=280367607 instance=ExtResource("1_bw")]
+offset_right = 1200.0
+offset_bottom = 900.0
+script = ExtResource("2_bw")
+
+[node name="Frame" parent="." index="0" unique_id=37177967]
+modulate = Color(0.10796725, 0.10796725, 0.10796725, 1)
+
+[node name="Content" parent="." index="1" unique_id=1185580226]
+offset_left = 0.0
+offset_top = 48.0
+offset_right = 1200.0
+offset_bottom = 900.0
+
+[node name="VBox" type="VBoxContainer" parent="Content" index="0" unique_id=-1294967295]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -17.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="BrowserBar" type="PanelContainer" parent="Content/VBox" index="0" unique_id=-1294967294]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="BarHBox" type="HBoxContainer" parent="Content/VBox/BrowserBar" index="0" unique_id=-1294967293]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BackBtn" type="Button" parent="Content/VBox/BrowserBar/BarHBox" index="0" unique_id=-1294967292]
+custom_minimum_size = Vector2(44, 0)
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 22
+text = "◄"
+
+[node name="ForwardBtn" type="Button" parent="Content/VBox/BrowserBar/BarHBox" index="1" unique_id=-1294967291]
+custom_minimum_size = Vector2(44, 0)
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 22
+text = "►"
+
+[node name="URLPrefix" type="Label" parent="Content/VBox/BrowserBar/BarHBox" index="2" unique_id=-1589934591]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_font_sizes/font_size = 22
+text = "www.lanoceu.tem/"
+
+[node name="URLInput" type="LineEdit" parent="Content/VBox/BrowserBar/BarHBox" index="3" unique_id=-1294967290]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 33
+placeholder_text = "..."
+
+[node name="URLFixed" type="Label" parent="Content/VBox/BrowserBar/BarHBox" index="4" unique_id=-1589934590]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+
+[node name="SearchBtn" type="Button" parent="Content/VBox/BrowserBar/BarHBox" index="6" unique_id=1705032705]
+custom_minimum_size = Vector2(52, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "→"
+
+[node name="PageScroll" type="ScrollContainer" parent="Content/VBox" index="1" unique_id=-1294967289]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="PageVBox" type="VBoxContainer" parent="Content/VBox/PageScroll" index="0" unique_id=-1294967288]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="PoemPage" type="MarginContainer" parent="Content/VBox/PageScroll/PageVBox" index="0" unique_id=-1294967287]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 80
+
+[node name="PoemLabel" type="Label" parent="Content/VBox/PageScroll/PageVBox/PoemPage" index="0" unique_id=-1294967282]
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+text = "Tão grande é meu amor, que nem todo ouro que me pertence se compara a um fio de teus cachos. Sei que em teu mundo há somente um vasto mar, onde nem a luz do Sol pode iluminar tal magnitude. Pois então lembre-se, coração, que ao seguir o pôr do sol continuarei te esperando num campo de Alecrins, pois apenas juntos a escuridão desaparece, e apenas com teu carinho minha lua nasce."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="MonochromePage" type="MarginContainer" parent="Content/VBox/PageScroll/PageVBox" index="1" unique_id=1705032706]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 120
+
+[node name="MonoVBox" type="VBoxContainer" parent="Content/VBox/PageScroll/PageVBox/MonochromePage" index="0" unique_id=1705032707]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="SymbolBtn" type="Button" parent="Content/VBox/PageScroll/PageVBox/MonochromePage/MonoVBox" index="0" unique_id=6000000004]
+layout_mode = 2
+theme_override_font_sizes/font_size = 66
+text = "░"
+horizontal_alignment = 1
+flat = true
+
+[node name="MonoLabel" type="Label" parent="Content/VBox/PageScroll/PageVBox/MonochromePage/MonoVBox" index="1" unique_id=6000000005]
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+text = "Me deste cor em um mundo monocromático,\nMas agora tudo se apagou."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="PuzzlePage" type="MarginContainer" parent="Content/VBox/PageScroll/PageVBox" index="2" unique_id=1705032710]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 60
+
+[node name="PuzzleMargin" type="VBoxContainer" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage" index="0" unique_id=1705032711]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="PuzzleHint" type="Label" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin" index="0" unique_id=1705032712]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_font_sizes/font_size = 22
+text = "Selecione a sequência correta."
+horizontal_alignment = 1
+
+[node name="PuzzleCenter" type="HBoxContainer" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin" index="1" unique_id=1705032713]
+layout_mode = 2
+alignment = 1
+
+[node name="Grid" type="GridContainer" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter" index="0" unique_id=1705032714]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 3
+
+[node name="Animal1" type="Button" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid" index="0" unique_id=1705032715]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "[ animal 1 ]"
+
+[node name="Animal2" type="Button" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid" index="1" unique_id=1705032716]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "[ animal 2 ]"
+
+[node name="Animal3" type="Button" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid" index="2" unique_id=1705032717]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "[ animal 3 ]"
+
+[node name="Animal4" type="Button" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid" index="3" unique_id=1705032718]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "[ animal 4 ]"
+
+[node name="Animal5" type="Button" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid" index="4" unique_id=1705032719]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "[ animal 5 ]"
+
+[node name="Animal6" type="Button" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid" index="5" unique_id=1705032720]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "[ animal 6 ]"
+
+[node name="Animal7" type="Button" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid" index="6" unique_id=1705032721]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "[ animal 7 ]"
+
+[node name="Animal8" type="Button" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid" index="7" unique_id=1705032722]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "[ animal 8 ]"
+
+[node name="Animal9" type="Button" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid" index="8" unique_id=1705032723]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "[ animal 9 ]"
+
+[node name="FinalPage" type="MarginContainer" parent="Content/VBox/PageScroll/PageVBox" index="3" unique_id=1705032724]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 120
+
+[node name="FinalVBox" type="VBoxContainer" parent="Content/VBox/PageScroll/PageVBox/FinalPage" index="0" unique_id=1705032725]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="FinalLabel" type="Label" parent="Content/VBox/PageScroll/PageVBox/FinalPage/FinalVBox" index="0" unique_id=1705032726]
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+text = "Coordenadas"
+horizontal_alignment = 1
+
+[node name="CoordLabel" type="Label" parent="Content/VBox/PageScroll/PageVBox/FinalPage/FinalVBox" index="1" unique_id=1705032727]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.6, 1, 1)
+theme_override_font_sizes/font_size = 44
+text = "-23.5489° S, 46.6388° O"
+horizontal_alignment = 1
+
+[node name="TopBar" parent="." index="2" unique_id=1516810741]
+offset_right = 1200.0
+
+[node name="Minimize" parent="TopBar" index="2" unique_id=1492652197]
+offset_left = 1094.0
+offset_right = 1134.0
+
+[node name="Close" parent="TopBar" index="3" unique_id=1715420035]
+offset_left = 1148.0
+offset_right = 1188.0

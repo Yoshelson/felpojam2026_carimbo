@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://xruarfepbkb7"]
+
+[ext_resource type="PackedScene" uid="uid://ddvoeqv37mhyk" path="res://scenes/interactables/computer/video_player.tscn" id="1_pept1"]
+
+[node name="VideoPlayer" unique_id=280367607 instance=ExtResource("1_pept1")]
