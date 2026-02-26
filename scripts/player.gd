@@ -35,6 +35,24 @@ func try_interact():
 	if !(_focused_object == null):
 		_focused_object.interact(self)
 
+func get_mouse_hit_node() -> Node3D:
+	var space_state = get_world_3d().direct_space_state
+	var mouse_position = get_viewport().get_mouse_position()
+	
+	var origin = camera.project_ray_origin(mouse_position)
+	var end = camera.project_ray_normal(mouse_position) * 50
+	
+	var query = PhysicsRayQueryParameters3D.create(origin, end)
+	query.collision_mask = 4 #Layer dos colliders
+	
+	var result = space_state.intersect_ray(query)
+	
+	if result:
+		if result.collider:
+			#garantindo a tipagem para evitar bugs esquisitos
+			return result.collider as Node3D 
+	return null
+
 func get_seecast_hit_node() -> Node3D:
 	if seecast.is_colliding():
 		return seecast.get_collider(0)

@@ -5,9 +5,11 @@
 [ext_resource type="Script" path="res://scripts/state-machine/WalkingState.gd" id="2_vqfsp"]
 [ext_resource type="PackedScene" uid="uid://5y8rwm8yspg3" path="res://scenes/interactables/computer/PCScene.tscn" id="3_21bcp"]
 [ext_resource type="Script" uid="uid://dbioldbdcgc7e" path="res://scripts/state-machine/DeskState.gd" id="3_vqfsp"]
+[ext_resource type="Script" path="res://scripts/state-machine/BoardState.gd" id="4_i6jx3"]
 [ext_resource type="PackedScene" uid="uid://c0gk0v22vsjes" path="res://scenes/objects/exemplo_interativo.tscn" id="5_40w10"]
 [ext_resource type="PackedScene" uid="uid://buu3nnoihwga2" path="res://scenes/UI/pause.tscn" id="5_hh5oj"]
 [ext_resource type="PackedScene" uid="uid://dxsd108dci26y" path="res://scenes/test/test_csg.tscn" id="5_xvvcp"]
+[ext_resource type="PackedScene" uid="uid://co6hr5m513oq6" path="res://scenes/UI/InteractionUI.tscn" id="10_jn13j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tpea4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -41,6 +43,8 @@ id = "desk"
 [node name="Computer State" type="Node" parent="State Machine" unique_id=1643149634]
 
 [node name="Board State" type="Node" parent="State Machine" unique_id=2019728320]
+script = ExtResource("4_i6jx3")
+id = "board"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2079104516]
 environment = SubResource("Environment_56f15")
@@ -68,5 +72,7 @@ layer = 2
 
 [node name="pause" parent="CanvasLayer" unique_id=887171936 instance=ExtResource("5_hh5oj")]
 z_index = 5
+
+[node name="Interaction UI" parent="." unique_id=628371208 instance=ExtResource("10_jn13j")]
 
 [editable path="ExemploInterativo"]

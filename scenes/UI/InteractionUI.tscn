@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://co6hr5m513oq6"]
+
+[ext_resource type="Script" uid="uid://cx1eoqq0qrnfn" path="res://scripts/UI/InteracUIController.gd" id="1_deck3"]
+[ext_resource type="Texture2D" uid="uid://da3q4d4broif5" path="res://arts/test/white_eye.png" id="2_xh4oc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhqgy"]
+bg_color = Color(0.7529412, 0.7529412, 0.7529412, 0.39215687)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="Interaction UI" type="CanvasLayer" unique_id=628371208]
+script = ExtResource("1_deck3")
+
+[node name="Control" type="Control" parent="." unique_id=432063756]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+
+[node name="Dot" type="Panel" parent="Control" unique_id=1360325759]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qhqgy")
+
+[node name="Eye" type="TextureRect" parent="Control" unique_id=75780257]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_xh4oc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control" unique_id=1501668428]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = 13.5
+offset_right = 0.5
+offset_bottom = 36.5
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
