@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dxsd108dci26y"]
 
+[ext_resource type="PackedScene" uid="uid://duqsgli1qytj" path="res://arts/test/QUARTO HOTEL teste.glb" id="1_v6myo"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u1p5w"]
 albedo_color = Color(0.49108773, 0.49108768, 0.49108768, 1)
 
@@ -8,6 +10,7 @@ albedo_color = Color(0.49108773, 0.49108768, 0.49108768, 1)
 [node name="Quarto" type="MeshInstance3D" unique_id=1534463602]
 
 [node name="colisao" type="CSGCombiner3D" parent="." unique_id=695285880]
+visible = false
 use_collision = true
 
 [node name="Chao" type="CSGBox3D" parent="colisao" unique_id=1772823755]
@@ -76,3 +79,5 @@ size = Vector3(5.3910522, 0.8383789, 1.7218628)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3888645, 1.1933043, 0)
 visible = false
 mesh = SubResource("CapsuleMesh_xu71n")
+
+[node name="QUARTO HOTEL teste" parent="." unique_id=1257169994 instance=ExtResource("1_v6myo")]

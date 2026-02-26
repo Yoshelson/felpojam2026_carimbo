@@ -83,19 +83,19 @@ custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
 color = Color(0.15, 0.15, 0.15, 1)
 
-[node name="ThumbnailLabel" type="Label" parent="Content/VBox/PageScroll/PageVBox/Thumbnail" index="0" unique_id=2000000010]
+[node name="TextureRect" type="TextureRect" parent="Content/VBox/PageScroll/PageVBox/Thumbnail" index="0" unique_id=1528692539]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -133.0
+offset_top = -128.0
+offset_right = 113.0
+offset_bottom = 118.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
-theme_override_font_sizes/font_size = 33
-text = "[ placeholder ]"
-horizontal_alignment = 1
 
 [node name="InfoMargin" type="MarginContainer" parent="Content/VBox/PageScroll/PageVBox" index="1" unique_id=2000000011]
 layout_mode = 2
