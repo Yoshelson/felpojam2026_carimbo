@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://bul45se6e5dys"]
 
 [ext_resource type="PackedScene" uid="uid://rvqk034i2ily" path="res://scenes/interactables/computer/window_base.tscn" id="1_w6kf0"]
+[ext_resource type="Texture2D" uid="uid://wnlu6puligwl" path="res://arts/images/PC/WXP - Ícone Pasta Img.png" id="2_5fkah"]
 [ext_resource type="Texture2D" uid="uid://bfh3x2kl6lwlk" path="res://arts/test/codigo_morse_test.jpg" id="2_apj0n"]
 
 [node name="ImageViewer" unique_id=280367607 instance=ExtResource("1_w6kf0")]
+window_icon = ExtResource("2_5fkah")
 
 [node name="TextureRect" type="TextureRect" parent="Content" parent_id_path=PackedInt32Array(1185580226) index="0" unique_id=1568109462]
 layout_mode = 1

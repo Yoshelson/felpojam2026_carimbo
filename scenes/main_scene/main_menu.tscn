@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cydne1y5g2a2m" path="res://scenes/main_scene/canvas_layer.gd" id="3_yk05y"]
 [ext_resource type="FontFile" uid="uid://dlyiu417bqwyb" path="res://arts/Unutterable-Regular.ttf" id="4_mwb2c"]
 [ext_resource type="Script" uid="uid://cgqy2gy58tbsm" path="res://scripts/UI/main_menu.gd" id="5_menu"]
+[ext_resource type="AudioStream" uid="uid://bt8htxx4ukppu" path="res://arts/sounds/music/Menu 1.2.wav" id="6_ns74n"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7qib0"]
 sky_top_color = Color(0.21235585, 0.26064983, 0.32498953, 1)
@@ -305,3 +306,6 @@ theme_override_fonts/font = ExtResource("4_mwb2c")
 theme_override_font_sizes/font_size = 33
 text = "Voltar"
 flat = true
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Menu" unique_id=1033464764]
+stream = ExtResource("6_ns74n")

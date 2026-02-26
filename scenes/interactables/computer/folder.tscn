@@ -4,9 +4,11 @@
 [ext_resource type="Script" uid="uid://dlq7xcanr16om" path="res://scripts/pc/folder.gd" id="2_ulhb3"]
 [ext_resource type="PackedScene" uid="uid://cjicl4epna208" path="res://scenes/interactables/computer/desktop_app_icons.tscn" id="3_q2rd5"]
 [ext_resource type="PackedScene" uid="uid://dwj16qslll4f1" path="res://scenes/interactables/computer/audio_player.tscn" id="4_b0277"]
-[ext_resource type="Texture2D" uid="uid://11wllttmf6s3" path="res://arts/test/arquivos_test.png" id="5_b0277"]
+[ext_resource type="Texture2D" uid="uid://f6uy73uevlt5" path="res://arts/images/PC/WXP - Ícone Pasta Áudio.png" id="5_g74th"]
 [ext_resource type="PackedScene" uid="uid://bul45se6e5dys" path="res://scenes/interactables/computer/image_viewer_morse.tscn" id="6_6afcr"]
 [ext_resource type="PackedScene" uid="uid://c2n45j8clc10k" path="res://scenes/interactables/computer/zip_lock.tscn" id="7_6afcr"]
+[ext_resource type="Texture2D" uid="uid://wnlu6puligwl" path="res://arts/images/PC/WXP - Ícone Pasta Img.png" id="7_nqk5f"]
+[ext_resource type="Texture2D" uid="uid://c73tpc58vyuqs" path="res://arts/images/PC/WXP - Ícone Pasta Zip.png" id="9_4ou4l"]
 
 [node name="Folder" unique_id=280367607 instance=ExtResource("1_usgkk")]
 script = ExtResource("2_ulhb3")
@@ -28,19 +30,19 @@ columns = 5
 layout_mode = 2
 app_scene = ExtResource("4_b0277")
 app_name = "Escute-me"
-icon_texture = ExtResource("5_b0277")
+icon_texture = ExtResource("5_g74th")
 font_color = Color(0, 0, 0, 1)
 
 [node name="Morse" parent="Content/GridContainer" index="1" unique_id=408754873 instance=ExtResource("3_q2rd5")]
 layout_mode = 2
 app_scene = ExtResource("6_6afcr")
 app_name = "."
-icon_texture = ExtResource("5_b0277")
+icon_texture = ExtResource("7_nqk5f")
 font_color = Color(0, 0, 0, 1)
 
 [node name="Zip" parent="Content/GridContainer" index="2" unique_id=2037195995 instance=ExtResource("3_q2rd5")]
 layout_mode = 2
 app_scene = ExtResource("7_6afcr")
 app_name = "amarelo.zip"
-icon_texture = ExtResource("5_b0277")
+icon_texture = ExtResource("9_4ou4l")
 font_color = Color(0, 0, 0, 1)

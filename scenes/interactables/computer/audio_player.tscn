@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://rvqk034i2ily" path="res://scenes/interactables/computer/window_base.tscn" id="1_kea4t"]
 [ext_resource type="Script" uid="uid://y8nmq6j00l4n" path="res://scripts/pc/audio_player.gd" id="2_bdkjk"]
 [ext_resource type="AudioStream" uid="uid://d3b2hakcfwqr5" path="res://arts/test/testemusica.mp3" id="3_bdkjk"]
-[ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="4_douos"]
+[ext_resource type="Texture2D" uid="uid://f6uy73uevlt5" path="res://arts/images/PC/WXP - Ícone Pasta Áudio.png" id="4_douos"]
 
 [node name="AudioPlayer" unique_id=280367607 instance=ExtResource("1_kea4t")]
 offset_right = 600.0
