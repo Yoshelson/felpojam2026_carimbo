@@ -22,18 +22,14 @@ func _input(event: InputEvent) -> void:
 			var load_stamp4 = load("res://resources/stamps/BlueStamp.tres")
 			var load_stamp5 = load("res://resources/stamps/YellowStamp.tres")
 			#Testar Signal e GetDoc e UI
-			if (number < 1):
+			if (number > 2):
 				var document_UI = $".."
 				document_UI.setup_UI("godot")
-			elif (number == 4):
+			else:
 				InventoryManager.add_stamp_color(load_stamp1)
-			elif (number == 8):
 				InventoryManager.add_stamp_color(load_stamp2)
-			elif (number == 12):
 				InventoryManager.add_stamp_color(load_stamp3)
-			elif (number == 16):
 				InventoryManager.add_stamp_color(load_stamp4)
-			elif (number == 20):
 				InventoryManager.add_stamp_color(load_stamp5)
-			number+=1
+				number += 1
 			

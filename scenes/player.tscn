@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://766jsikflxl"]
 
 [ext_resource type="Script" uid="uid://duft28gepd4yh" path="res://scripts/player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://ci6k4qpsorqb8" path="res://scripts/state-machine/StateMachine.gd" id="2_tuyoq"]
+[ext_resource type="Script" uid="uid://wglcxkb5jw2n" path="res://scripts/state-machine/WalkingState.gd" id="3_fjrip"]
+[ext_resource type="Script" uid="uid://dbioldbdcgc7e" path="res://scripts/state-machine/DeskState.gd" id="4_smehm"]
+[ext_resource type="Script" uid="uid://dxw1ys0o7h2yj" path="res://scripts/state-machine/BoardState.gd" id="5_ur7pv"]
+[ext_resource type="Script" uid="uid://c27rjirg86lk2" path="res://scripts/state-machine/StaticUIState.gd" id="6_y4r1p"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
 
@@ -10,6 +15,35 @@
 
 [node name="player" type="CharacterBody3D" unique_id=685818972]
 script = ExtResource("1_4flbx")
+
+[node name="State Machine" type="Node" parent="." unique_id=198868825 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_tuyoq")
+initial_state = NodePath("Document UI State")
+
+[node name="Walking State" type="Node" parent="State Machine" unique_id=729717889]
+script = ExtResource("3_fjrip")
+id = "walking"
+
+[node name="Desk State" type="Node" parent="State Machine" unique_id=458221997]
+script = ExtResource("4_smehm")
+id = "desk"
+
+[node name="Board State" type="Node" parent="State Machine" unique_id=1402789960]
+script = ExtResource("5_ur7pv")
+id = "board"
+
+[node name="Computer State" type="Node" parent="State Machine" unique_id=519582346]
+
+[node name="Document UI State" type="Node" parent="State Machine" unique_id=2083336626]
+script = ExtResource("6_y4r1p")
+id = "doc_ui"
+
+[node name="Cinematic State" type="Node" parent="State Machine" unique_id=1012775463]
+script = ExtResource("6_y4r1p")
+hide_mouse = true
+id = "cinematic_ui"
+
+[node name="Monster State" type="Node" parent="State Machine" unique_id=1962491049]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1262310398]
 mesh = SubResource("CapsuleMesh_sh265")

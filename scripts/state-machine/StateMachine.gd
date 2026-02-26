@@ -2,11 +2,12 @@ extends Node
 
 var states: Dictionary = {}
 @export var initial_state: State
-@export var _player: Player
+var _player: Player
 var _actual_state: State
 
 func _ready() -> void:
 	var state_nodes = self.get_children()
+	_player = get_parent()
 	for state in state_nodes:
 		if state is State:
 			states[state.id] = state
@@ -21,10 +22,6 @@ func _process(delta: float) -> void:
 	
 func _physics_process(delta: float) -> void:
 	_actual_state.physics_update(delta)
-
-func _input(event: InputEvent) -> void:
-	#_actual_state.inputs(event)
-	pass
 
 func _unhandled_input(event: InputEvent) -> void:
 	_actual_state.inputs(event)

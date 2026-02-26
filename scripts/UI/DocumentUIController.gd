@@ -17,7 +17,7 @@ var _target_pos: Vector2
 var _actual_doc_id: String = ""
 
 func _ready() -> void:
-	_disable_UI()
+	self.hide()
 	InventoryManager.doc_inventory_changed.connect(_att_doc_UI)
 	stamps_container.stamp_pressed.connect(_doc_stamped)
 
@@ -51,9 +51,6 @@ func _att_doc_UI(doc_id: String):
 			transcript_UI.att_transcription(document._actual_transcription)
 		else:
 			push_error("ERROR: Id de Documento enviado para UI não está no inventário")
-
-func _disable_UI():
-	visible = false
 
 func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseButton:
@@ -116,7 +113,7 @@ func _doc_stamped(stamp_id: String):
 	InventoryManager.stamp_doc(_actual_doc_id, stamp_id)
 
 func _on_return_btn_pressed() -> void:
-	_disable_UI()
+	self.hide()
 
 func _on_stamp_btn_pressed() -> void:
 	stamps_container.setup_UI()
