@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://bg32jcbmnp3f6"]
+[gd_scene format=3 uid="uid://bwtxbpfg33bix"]
 
-[ext_resource type="PackedScene" uid="uid://dxsd108dci26y" path="res://scenes/test_csg.tscn" id="1_7qib0"]
-[ext_resource type="Script" uid="uid://3bi2ab77as2t" path="res://scripts/UI/menu_cam.gd" id="2_yk05y"]
-[ext_resource type="Script" uid="uid://cydne1y5g2a2m" path="res://scenes/main_scene/canvas_layer.gd" id="3_yk05y"]
+[ext_resource type="PackedScene" uid="uid://dxsd108dci26y" path="res://scenes/test/test_csg.tscn" id="1_7qib0"]
+[ext_resource type="Script" path="res://scripts/UI/menu_cam.gd" id="2_yk05y"]
+[ext_resource type="Script" path="res://scenes/main_scene/canvas_layer.gd" id="3_yk05y"]
 [ext_resource type="FontFile" uid="uid://dlyiu417bqwyb" path="res://arts/Unutterable-Regular.ttf" id="4_mwb2c"]
 [ext_resource type="Script" uid="uid://cgqy2gy58tbsm" path="res://scripts/UI/main_menu.gd" id="5_menu"]
 [ext_resource type="AudioStream" uid="uid://bt8htxx4ukppu" path="res://arts/sounds/music/Menu 1.2.wav" id="6_ns74n"]
@@ -51,6 +51,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("5_menu")
+menu_music = ExtResource("6_ns74n")
 
 [node name="PanelContainer" type="Control" parent="CanvasLayer/Menu" unique_id=127332157]
 self_modulate = Color(1, 1, 1, 0)
@@ -306,6 +307,3 @@ theme_override_fonts/font = ExtResource("4_mwb2c")
 theme_override_font_sizes/font_size = 33
 text = "Voltar"
 flat = true
-
-[node name="MusicPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Menu" unique_id=1033464764]
-stream = ExtResource("6_ns74n")

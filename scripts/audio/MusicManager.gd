@@ -37,10 +37,12 @@ func crossfade_to(new_music: AudioStream, crossfade_time: float = 2):
 func _on_fade_end (player: AudioStreamPlayer) -> void:
 	player.stop()
 	
-func stop_music(fade_out_time: float = 1):
+func stop_music(fade_out_time: float = 1) -> Tween:
 	if !(_active_player.playing):
 		return
 	
 	var tween = create_tween()
 	tween.tween_property(_active_player, "volume_db", -80, fade_out_time)
 	tween.finished.connect(_on_fade_end.bind(_active_player))
+	
+	return tween
