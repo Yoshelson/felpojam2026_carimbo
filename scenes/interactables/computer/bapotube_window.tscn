@@ -2,22 +2,291 @@
 
 [ext_resource type="PackedScene" uid="uid://rvqk034i2ily" path="res://scenes/interactables/computer/window_base.tscn" id="1_var7b"]
 [ext_resource type="Script" uid="uid://cmyum2p27n16q" path="res://scripts/pc/bapotube_window.gd" id="2_47nx7"]
+[ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="3_qnkkg"]
 
-[node name="WindowBase" unique_id=280367607 instance=ExtResource("1_var7b")]
+[node name="BapoTube" unique_id=280367607 instance=ExtResource("1_var7b")]
+offset_right = 900.0
+offset_bottom = 700.0
 script = ExtResource("2_47nx7")
 
-[node name="Thumbnail" type="TextureRect" parent="Content" parent_id_path=PackedInt32Array(1185580226) index="0" unique_id=2012415060]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Frame" parent="." index="0" unique_id=37177967]
+modulate = Color(0.3143893, 0.3143893, 0.31438926, 1)
 
-[node name="VideoTitle" type="Label" parent="Content" parent_id_path=PackedInt32Array(1185580226) index="1" unique_id=2011021267]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Content" parent="." index="1" unique_id=1185580226]
+offset_left = 10.0
+offset_top = 58.0
+offset_right = 888.0
+offset_bottom = 688.0
 
-[node name="Description" type="RichTextLabel" parent="Content" parent_id_path=PackedInt32Array(1185580226) index="2" unique_id=816117702]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-text = "[color=blue]░░ ⚠ ░░[/color]  Cuidado com o que desejas"
+[node name="VBox" type="VBoxContainer" parent="Content" index="0" unique_id=2000000001]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="BrowserBar" type="PanelContainer" parent="Content/VBox" index="0" unique_id=2000000002]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="BarHBox" type="HBoxContainer" parent="Content/VBox/BrowserBar" index="0" unique_id=2000000003]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="BackBtn" type="Button" parent="Content/VBox/BrowserBar/BarHBox" index="0" unique_id=2000000004]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 22
+text = "◄"
+
+[node name="ForwardBtn" type="Button" parent="Content/VBox/BrowserBar/BarHBox" index="1" unique_id=2000000005]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 22
+text = "►"
+
+[node name="URLBar" type="LineEdit" parent="Content/VBox/BrowserBar/BarHBox" index="2" unique_id=2000000006]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_font_sizes/font_size = 22
+text = "bapotube.com/watch?v=xX_r31n4m3"
+editable = false
+
+[node name="PageScroll" type="ScrollContainer" parent="Content/VBox" index="1" unique_id=2000000007]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="PageVBox" type="VBoxContainer" parent="Content/VBox/PageScroll" index="0" unique_id=2000000008]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 14
+
+[node name="Thumbnail" type="ColorRect" parent="Content/VBox/PageScroll/PageVBox" index="0" unique_id=2000000009]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+color = Color(0.15, 0.15, 0.15, 1)
+
+[node name="ThumbnailLabel" type="Label" parent="Content/VBox/PageScroll/PageVBox/Thumbnail" index="0" unique_id=2000000010]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
+theme_override_font_sizes/font_size = 33
+text = "[ placeholder ]"
+horizontal_alignment = 1
+
+[node name="InfoMargin" type="MarginContainer" parent="Content/VBox/PageScroll/PageVBox" index="1" unique_id=2000000011]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 0
+
+[node name="InfoVBox" type="VBoxContainer" parent="Content/VBox/PageScroll/PageVBox/InfoMargin" index="0" unique_id=2000000012]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="VideoTitle" type="Label" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox" index="0" unique_id=2000000013]
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+text = "descrição."
+autowrap_mode = 2
+
+[node name="ChannelRow" type="HBoxContainer" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox" index="1" unique_id=2000000014]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ChannelIcon" type="ColorRect" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox/ChannelRow" index="0" unique_id=2000000015]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="ChannelName" type="Label" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox/ChannelRow" index="1" unique_id=2000000016]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_font_sizes/font_size = 22
+text = "veja-me"
+
+[node name="ViewsRow" type="HBoxContainer" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox" index="2" unique_id=2000000090]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ViewsLabel" type="Label" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox/ViewsRow" index="0" unique_id=2000000091]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_font_sizes/font_size = 22
+text = "??? visualizações  •  ???"
+
+[node name="LikeBtn" type="Button" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox/ViewsRow" index="1" unique_id=2000000092]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 22
+text = "▲  ???"
+
+[node name="DislikeBtn" type="Button" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox/ViewsRow" index="2" unique_id=2000000093]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 22
+text = "▼"
+
+[node name="ShareBtn" type="Button" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox/ViewsRow" index="3" unique_id=2000000094]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 22
+text = "⇗  Compartilhar"
+
+[node name="DescPanel" type="PanelContainer" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox" index="3" unique_id=2000000095]
+layout_mode = 2
+
+[node name="DescVBox" type="VBoxContainer" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox/DescPanel" index="0" unique_id=2000000096]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="PubLabel" type="Label" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox/DescPanel/DescVBox" index="0" unique_id=2000000097]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_font_sizes/font_size = 22
+text = "Publicado em ???"
+
+[node name="MostrarMaisBtn" type="Button" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox/DescPanel/DescVBox" index="1" unique_id=2000000098]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Mostrar mais ▼"
+flat = true
+alignment = 0
+
+[node name="ExpandedVBox" type="VBoxContainer" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox/DescPanel/DescVBox" index="2" unique_id=2000000099]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="SymbolBtn" type="Button" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox/DescPanel/DescVBox/ExpandedVBox" index="0" unique_id=2000000100]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.4, 1, 1)
+theme_override_font_sizes/font_size = 33
+icon = ExtResource("3_qnkkg")
+flat = true
+icon_alignment = 1
+
+[node name="DescFullLabel" type="Label" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox/DescPanel/DescVBox/ExpandedVBox" index="1" unique_id=2000000101]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Cuidado com o que desejas.
+
+Para abrir os arquivos confidenciais utilize 125"
+autowrap_mode = 2
+
+[node name="HSep1" type="HSeparator" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox" index="4" unique_id=2000000017]
+layout_mode = 2
+
+[node name="CommentsLabel" type="Label" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox" index="5" unique_id=2000000020]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Comentários"
+
+[node name="C1" type="HBoxContainer" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox" index="6" unique_id=2000000030]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Icon" type="ColorRect" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox/C1" index="0" unique_id=2000000031]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+color = Color(0.1, 0.3, 0.9, 1)
+
+[node name="Text" type="Label" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox/C1" index="1" unique_id=2000000032]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+text = "ERR_0x4f2:  ele sabe. ele sempre soube."
+autowrap_mode = 2
+
+[node name="C2" type="HBoxContainer" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox" index="7" unique_id=2000000040]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Icon" type="ColorRect" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox/C2" index="0" unique_id=2000000041]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+color = Color(0.1, 0.3, 0.9, 1)
+
+[node name="Text" type="Label" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox/C2" index="1" unique_id=2000000042]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+text = "NULL_USER_77:  assisti 1.000.000 de vezes. cada vez é diferente."
+autowrap_mode = 2
+
+[node name="C3" type="HBoxContainer" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox" index="8" unique_id=2000000050]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Icon" type="ColorRect" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox/C3" index="0" unique_id=2000000051]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+color = Color(0.1, 0.3, 0.9, 1)
+
+[node name="Text" type="Label" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox/C3" index="1" unique_id=2000000052]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+text = "0xDEAD_FEFE:  por que a descrição me olha de volta"
+autowrap_mode = 2
+
+[node name="C4" type="HBoxContainer" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox" index="9" unique_id=2000000060]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Icon" type="ColorRect" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox/C4" index="0" unique_id=2000000061]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+color = Color(0.1, 0.3, 0.9, 1)
+
+[node name="Text" type="Label" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox/C4" index="1" unique_id=2000000062]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+text = "sys.ghost:  meu favorito é quando termina"
+autowrap_mode = 2
+
+[node name="C5" type="HBoxContainer" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox" index="10" unique_id=2000000070]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Icon" type="ColorRect" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox/C5" index="0" unique_id=2000000071]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+color = Color(0.1, 0.3, 0.9, 1)
+
+[node name="Text" type="Label" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox/C5" index="1" unique_id=2000000072]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+text = "_VEJA_ME_:  vocÊ nÃo dEvEriA eStAr AquI"
+autowrap_mode = 2
+
+[node name="TopBar" parent="." index="2" unique_id=1516810741]
+offset_right = 900.0
+
+[node name="Minimize" parent="TopBar" index="2" unique_id=1492652197]
+offset_left = 794.0
+offset_right = 834.0
+
+[node name="Close" parent="TopBar" index="3" unique_id=1715420035]
+offset_left = 848.0
+offset_right = 888.0

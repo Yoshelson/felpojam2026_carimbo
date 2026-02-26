@@ -1,95 +1,76 @@
 extends WindowBase
 class_name VideoPlayerApp
 
-@onready var video: VideoStreamPlayer = $Content/VideoStreamPlayer
-@onready var play_button: Button = $Content/Panel/PlayPause
-@onready var stop_button: Button = $Content/Panel/Stop
-@onready var volume_slider: HSlider = $Content/Panel/Volume
-@onready var progress_bar: HSlider = $Content/Progress
+@onready var video: VideoStreamPlayer = $Content/VBox/VideoStreamPlayer
+@onready var progress: HSlider = $Content/VBox/Controls/Progress
+@onready var time_label: Label = $Content/VBox/Controls/Buttons/TimeLabel
+@onready var play_btn: Button = $Content/VBox/Controls/Buttons/PlayPause
+@onready var stop_btn: Button = $Content/VBox/Controls/Buttons/Stop
+@onready var vol_slider: HSlider = $Content/VBox/Controls/Buttons/Volume
 
 var is_seeking := false
-var video_length := 0.0
 
 func _ready():
 	super._ready()
+	play_btn.pressed.connect(_on_play)
+	stop_btn.pressed.connect(_on_stop)
+	vol_slider.value_changed.connect(func(v): video.volume_db = v)
+	progress.drag_started.connect(func(): is_seeking = true)
+	progress.drag_ended.connect(_on_seek_end)
+	video.finished.connect(_on_finished)
 
-	play_button.pressed.connect(_on_play_pressed)
-	stop_button.pressed.connect(_on_stop_pressed)
-	volume_slider.value_changed.connect(_on_volume_changed)
-
-	progress_bar.drag_started.connect(_on_seek_start)
-	progress_bar.drag_ended.connect(_on_seek_end)
-
-	video.finished.connect(_on_video_finished)
-
-	set_process(true)
-
-
-func load_video(stream: VideoStream):
-	video.stream = stream
-	progress_bar.value = 0
-
-	# Força o vídeo a calcular duração corretamente
-	video.play()
-	await get_tree().process_frame
-	video.paused = true
-
-	video_length = video.get_stream_length()
-
-	if video_length <= 0:
-		video_length = 1.0  # evita divisão por zero
-
-	progress_bar.max_value = video_length
-
+	if video.stream:
+		var length = video.get_stream_length()
+		time_label.text = "0:00 / " + _fmt(length)
+		progress.max_value = length if length > 0 else 1.0
+		video.play()
+		await get_tree().process_frame
+		await get_tree().process_frame
+		video.paused = true
 
 func _process(_delta):
-	if video.stream and video.is_playing() and not video.paused and not is_seeking:
-		progress_bar.value = video.stream_position
-
-
-func _on_play_pressed():
 	if not video.stream:
 		return
+	var length = video.get_stream_length()
+	if length > 0 and video.is_playing() and not is_seeking:
+		progress.max_value = length
+		progress.value = video.stream_position
+		time_label.text = _fmt(video.stream_position) + " / " + _fmt(length)
 
-	# Se terminou, reinicia
-	if video.stream_position >= video_length:
-		video.stream_position = 0
-
-	if video.is_playing() and not video.paused:
-		video.paused = true
-		play_button.text = "Play"
+func _on_play():
+	if not video.stream:
+		return
+	if video.is_playing():
+		video.paused = not video.paused
+		play_btn.text = "▐▐" if not video.paused else "▶"
 	else:
 		video.play()
-		video.paused = false
-		play_button.text = "Pause"
+		play_btn.text = "▐▐"
 
-
-func _on_stop_pressed():
+func _on_stop():
 	if not video.stream:
 		return
-
 	video.stop()
-	video.stream_position = 0
-	progress_bar.value = 0
-	play_button.text = "Play"
-
-
-func _on_volume_changed(value):
-	video.volume_db = value
-
-
-func _on_seek_start():
-	is_seeking = true
-
+	progress.value = 0
+	time_label.text = "0:00 / " + _fmt(video.get_stream_length())
+	play_btn.text = "▶"
 
 func _on_seek_end(_changed):
 	if not video.stream:
 		return
-
-	video.stream_position = progress_bar.value
+	var was_playing = video.is_playing()
+	video.stop()
+	video.play()
+	video.stream_position = progress.value
+	if not was_playing:
+		video.paused = true
+		play_btn.text = "▶"
 	is_seeking = false
 
+func _on_finished():
+	play_btn.text = "▶"
+	progress.value = 0
 
-func _on_video_finished():
-	play_button.text = "Play"
-	progress_bar.value = video_length
+func _fmt(seconds: float) -> String:
+	var s = int(seconds)
+	return "%d:%02d" % [s / 60, s % 60]

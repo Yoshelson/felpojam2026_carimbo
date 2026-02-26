@@ -37,11 +37,12 @@ visibility_rect = Rect2(-342, -218, 684, 436)
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_cegss")
 
-[node name="Label" type="Label" parent="." index="3" unique_id=1082827675]
+[node name="Label" type="Label" parent="Content" parent_id_path=PackedInt32Array(1185580226) index="1" unique_id=1082827675]
 layout_mode = 0
-offset_top = 79.00001
-offset_right = 860.0
-offset_bottom = 124.00001
+offset_left = -2.9999995
+offset_top = 362.00003
+offset_right = 857.0
+offset_bottom = 407.00003
 scale = Vector2(0.8006795, 1.1122454)
 theme = ExtResource("4_xusx6")
 theme_override_font_sizes/font_size = 33

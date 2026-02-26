@@ -5,58 +5,94 @@
 [ext_resource type="VideoStream" uid="uid://j32dexldld7w" path="res://arts/test/tacobel_test.ogv" id="3_jxjto"]
 
 [node name="VideoPlayer" unique_id=280367607 instance=ExtResource("1_ns20s")]
+offset_right = 720.0
+offset_bottom = 580.0
 script = ExtResource("2_cwr8x")
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Content" parent_id_path=PackedInt32Array(1185580226) index="0" unique_id=1276256480]
+[node name="Frame" parent="." index="0" unique_id=37177967]
+modulate = Color(0.2988321, 0.29883212, 0.29883212, 1)
+
+[node name="Content" parent="." index="1" unique_id=1185580226]
+offset_left = 0.0
+offset_top = 48.0
+offset_right = 720.0
+offset_bottom = 580.0
+
+[node name="VBox" type="VBoxContainer" parent="Content" index="0" unique_id=-294967295]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -100.0
+offset_left = 27.0
+offset_top = 19.0
+offset_right = -25.0
+offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Content/VBox" index="0" unique_id=1276256480]
+layout_mode = 2
+size_flags_vertical = 3
 stream = ExtResource("3_jxjto")
 expand = true
 
-[node name="Progress" type="HSlider" parent="Content" parent_id_path=PackedInt32Array(1185580226) index="1" unique_id=1191606790]
-layout_mode = 0
-offset_left = 180.0
-offset_top = 346.0
-offset_right = 620.0
-offset_bottom = 382.0
+[node name="Controls" type="VBoxContainer" parent="Content/VBox" index="1" unique_id=-294967294]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 4
+
+[node name="Progress" type="HSlider" parent="Content/VBox/Controls" index="0" unique_id=1191606790]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
 step = 0.01
 
-[node name="Panel" type="Panel" parent="Content" parent_id_path=PackedInt32Array(1185580226) index="2" unique_id=1320879032]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Buttons" type="HBoxContainer" parent="Content/VBox/Controls" index="1" unique_id=-294967293]
+layout_mode = 2
+theme_override_constants/separation = 8
 
-[node name="PlayPause" type="Button" parent="Content/Panel" index="0" unique_id=1189373079]
-layout_mode = 0
-offset_left = 100.0
-offset_top = 354.0
-offset_right = 164.0
-offset_bottom = 418.0
+[node name="PlayPause" type="Button" parent="Content/VBox/Controls/Buttons" index="0" unique_id=1189373079]
+custom_minimum_size = Vector2(52, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "▶"
 
-[node name="Stop" type="Button" parent="Content/Panel" index="1" unique_id=593874414]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 344.0
-offset_right = 82.0
-offset_bottom = 424.0
+[node name="Stop" type="Button" parent="Content/VBox/Controls/Buttons" index="1" unique_id=593874414]
+custom_minimum_size = Vector2(52, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "■"
 
-[node name="Volume" type="HSlider" parent="Content/Panel" index="2" unique_id=1098624061]
-custom_minimum_size = Vector2(120, 20)
-layout_mode = 0
-offset_left = 180.0
-offset_top = 394.0
-offset_right = 300.0
-offset_bottom = 414.0
+[node name="TimeLabel" type="Label" parent="Content/VBox/Controls/Buttons" index="2" unique_id=-294967292]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "0:00 / 0:00"
+
+[node name="VolIcon" type="Label" parent="Content/VBox/Controls/Buttons" index="3" unique_id=-294967291]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "🔊"
+
+[node name="Volume" type="HSlider" parent="Content/VBox/Controls/Buttons" index="4" unique_id=1098624061]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 0
 min_value = -40.0
 max_value = 0.0
 step = 0.5
 value = -10.0
+
+[node name="TopBar" parent="." index="2" unique_id=1516810741]
+offset_right = 720.0
+
+[node name="Minimize" parent="TopBar" index="2" unique_id=1492652197]
+offset_left = 614.0
+offset_right = 654.0
+
+[node name="Close" parent="TopBar" index="3" unique_id=1715420035]
+offset_left = 668.0
+offset_right = 708.0

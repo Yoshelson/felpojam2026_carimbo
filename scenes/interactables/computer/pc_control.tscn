@@ -184,22 +184,22 @@ app_scene = ExtResource("7_3d4qn")
 app_name = "Arquivos3"
 icon_texture = ExtResource("8_egac1")
 
-[node name="Arquivos4" parent="Desktop_Root/Desktop_Icons" unique_id=1670998579 instance=ExtResource("6_rrfp6")]
+[node name="ORei" parent="Desktop_Root/Desktop_Icons" unique_id=1670998579 instance=ExtResource("6_rrfp6")]
 layout_mode = 2
 app_scene = ExtResource("9_q7ic0")
 app_name = "O REI"
 icon_texture = ExtResource("8_egac1")
 
-[node name="AudioPlayer" parent="Desktop_Root/Desktop_Icons" unique_id=303190001 instance=ExtResource("6_rrfp6")]
-layout_mode = 2
-app_scene = ExtResource("10_q7ic0")
-app_name = "AudioPlayer"
-icon_texture = ExtResource("11_g0i7v")
-
 [node name="VídeoPlayer" parent="Desktop_Root/Desktop_Icons" unique_id=184865588 instance=ExtResource("6_rrfp6")]
 layout_mode = 2
 app_scene = ExtResource("11_0syfu")
 app_name = "VideoPlayer"
+icon_texture = ExtResource("11_g0i7v")
+
+[node name="AudioPlayer" parent="Desktop_Root/Desktop_Icons" unique_id=1380005108 instance=ExtResource("6_rrfp6")]
+layout_mode = 2
+app_scene = ExtResource("10_q7ic0")
+app_name = "AudioPlayer"
 icon_texture = ExtResource("11_g0i7v")
 
 [node name="WindowLayer" type="Control" parent="Desktop_Root" unique_id=1472503017]
@@ -210,6 +210,7 @@ offset_bottom = 6.0
 mouse_filter = 1
 
 [node name="Login" type="Control" parent="." unique_id=1312628652]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

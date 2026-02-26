@@ -8,6 +8,9 @@ offset_right = 750.0
 offset_bottom = 620.0
 script = ExtResource("2_2kdtp")
 
+[node name="Frame" parent="." index="0" unique_id=37177967]
+modulate = Color(0.25912, 0.47537482, 0.9874632, 1)
+
 [node name="Content" parent="." index="1" unique_id=1185580226]
 offset_left = 0.0
 offset_top = 48.0
@@ -72,7 +75,6 @@ theme_override_constants/separation = 8
 [node name="ContactNameLabel" type="Label" parent="Content/HBoxContainer/ChatPanel/ChatMargin/ChatVBox" index="0" unique_id=1000000002]
 layout_mode = 2
 theme_override_font_sizes/font_size = 33
-text = ""
 
 [node name="HSeparator" type="HSeparator" parent="Content/HBoxContainer/ChatPanel/ChatMargin/ChatVBox" index="1" unique_id=1000000003]
 layout_mode = 2

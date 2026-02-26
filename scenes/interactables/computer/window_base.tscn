@@ -49,11 +49,11 @@ texture = ExtResource("3_5o1cm")
 
 [node name="TitleLabel" type="Label" parent="TopBar" unique_id=1459730035]
 layout_mode = 0
-offset_left = 10.0
-offset_top = 6.0
-offset_right = 590.0
-offset_bottom = 40.0
-theme_override_font_sizes/font_size = 22
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 591.0
+offset_bottom = 47.0
+theme_override_font_sizes/font_size = 26
 
 [node name="Minimize" type="Button" parent="TopBar" unique_id=1492652197]
 layout_mode = 0

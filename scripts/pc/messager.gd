@@ -26,6 +26,7 @@ const CONVERSATIONS = {
 		{"from": "aureli0_934", "text": "boa, você precisa"},
 	],
 	"maria": [
+		{"from": "maria", "text": "veja-me"},
 		{"from": "maria", "text": "[url=bapotube]https://bapotube.com/watch?v=xX_r31n4m3[/url]", "is_link": true},
 	],
 }
@@ -48,12 +49,12 @@ func _ready():
 func _open_conversation(contact_name: String):
 	contact_name_label.text = contact_name
 	chat_history.clear()
-
+	
 	for msg in CONVERSATIONS[contact_name]:
 		var is_link = msg.get("is_link", false)
 		var from = msg["from"]
 		var text = msg["text"]
-
+		
 		if is_link:
 			chat_history.append_text("[color=blue]" + text + "[/color]\n\n")
 		elif from == "eu":

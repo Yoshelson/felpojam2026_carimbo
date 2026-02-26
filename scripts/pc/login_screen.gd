@@ -3,20 +3,20 @@ extends Control
 signal login_success
 
 #Senha principal
-@export var correct_password : String = "1995"
+@export var correct_password : String = "2009"
 #Respostas do "esqueci minha senha" em ordem
 @export var recovery_questions := [
 	{
 		"question": "Data de Aniversário",
-		"answer": "123"
+		"answer": "16/02/1984"
 	},
 	{
 		"question": "Cidade Natal",
-		"answer": "pirarucu"
+		"answer": "SAO PAULO"
 	},
 	{
 		"question": "Meu maior arrependimento",
-		"answer": "1/1/1"
+		"answer": "13"
 	}
 ]
 
@@ -36,7 +36,6 @@ signal login_success
 var unlocked := false
 var current_question := 0
 
-
 func _ready():
 	errorlabel.visible = false
 	password.secret = true
@@ -51,9 +50,19 @@ func _ready():
 	confirm_recovery.pressed.connect(_on_confirm_recovery_pressed)
 	back_button.pressed.connect(_on_back_pressed)
 	
+	
 	password.text_submitted.connect(func(_t): _on_confirm_pressed())
 	answer_field.text_submitted.connect(func(_t): _on_confirm_recovery_pressed())
-
+	
+	password.text_changed.connect(func(t):
+		password.text = t.to_upper()
+		password.caret_column = password.text.length()
+	)
+	answer_field.text_changed.connect(func(t):
+		answer_field.text = t.to_upper()
+		answer_field.caret_column = answer_field.text.length()
+	)
+	
 
 func _on_confirm_pressed():
 	if unlocked:
@@ -75,9 +84,6 @@ func show_error():
 	password.grab_focus()
 	
 
-#
-#Tela de recuperação
-#
 
 func _on_forgot_pressed():
 	login_panel.visible = false
@@ -105,7 +111,7 @@ func _show_password_reset():
 
 func _on_confirm_recovery_pressed():
 
-	var player_answer = answer_field.text.strip_edges().to_lower()
+	var player_answer = answer_field.text.strip_edges()
 	var correct_answer = recovery_questions[current_question]["answer"]
 	
 	if player_answer != correct_answer:

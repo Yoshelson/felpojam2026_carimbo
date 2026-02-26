@@ -6,34 +6,83 @@
 [ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="4_douos"]
 
 [node name="AudioPlayer" unique_id=280367607 instance=ExtResource("1_kea4t")]
-offset_bottom = 200.0
+offset_right = 600.0
+offset_bottom = 180.0
 script = ExtResource("2_bdkjk")
 audio_stream = ExtResource("3_bdkjk")
 window_icon = ExtResource("4_douos")
 
-[node name="Content" parent="." index="2" unique_id=1185580226]
-offset_top = 51.0
-offset_bottom = 196.0
+[node name="Content" parent="." index="1" unique_id=1185580226]
+offset_left = 0.0
+offset_top = 48.0
+offset_right = 600.0
+offset_bottom = 180.0
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Content" index="0" unique_id=185136908]
+[node name="VBox" type="VBoxContainer" parent="Content" index="0" unique_id=705032705]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 11.0
+offset_right = -16.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Content" index="1" unique_id=2095401064]
-layout_mode = 0
-offset_left = 58.0
-offset_top = 52.0
-offset_right = 587.0
-offset_bottom = 92.0
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Content/VBox" index="0" unique_id=185136908]
 
-[node name="PlayPause" type="Button" parent="Content/HBoxContainer" index="0" unique_id=1160298341]
+[node name="Controls" type="VBoxContainer" parent="Content/VBox" index="1" unique_id=705032706]
 layout_mode = 2
-text = "Play"
+size_flags_vertical = 3
+theme_override_constants/separation = 6
 
-[node name="TimeSlider" type="HSlider" parent="Content/HBoxContainer" index="1" unique_id=294981278]
-custom_minimum_size = Vector2(400, 0)
+[node name="TimeSlider" type="HSlider" parent="Content/VBox/Controls" index="0" unique_id=294981278]
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VolumeSlider" type="HSlider" parent="Content/HBoxContainer" index="2" unique_id=1248342456]
-custom_minimum_size = Vector2(80, 0)
+[node name="Buttons" type="HBoxContainer" parent="Content/VBox/Controls" index="1" unique_id=705032707]
 layout_mode = 2
-step = 0.01
+theme_override_constants/separation = 8
+
+[node name="PlayPause" type="Button" parent="Content/VBox/Controls/Buttons" index="0" unique_id=1160298341]
+custom_minimum_size = Vector2(52, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "▶"
+
+[node name="TimeLabel" type="Label" parent="Content/VBox/Controls/Buttons" index="1" unique_id=705032708]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "0:00 / 0:00"
+
+[node name="VolIcon" type="Label" parent="Content/VBox/Controls/Buttons" index="2" unique_id=705032709]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "🔊"
+
+[node name="Volume" type="HSlider" parent="Content/VBox/Controls/Buttons" index="3" unique_id=1248342456]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+min_value = -40.0
+max_value = 0.0
+step = 0.5
+
+[node name="TopBar" parent="." index="2" unique_id=1516810741]
+offset_right = 600.0
+
+[node name="Bar" parent="TopBar" index="0" unique_id=945113787]
+expand_mode = 1
+
+[node name="Minimize" parent="TopBar" index="2" unique_id=1492652197]
+offset_left = 494.0
+offset_right = 534.0
+
+[node name="Close" parent="TopBar" index="3" unique_id=1715420035]
+offset_left = 548.0
+offset_right = 588.0

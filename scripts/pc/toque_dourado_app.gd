@@ -27,21 +27,21 @@ func _update_lens(delta: float):
 	var lens_rect = lens.get_global_rect()
 	var hidden_icons = get_tree().get_nodes_in_group("hidden_icons")
 	var blocking_rects = _get_blocking_window_rects()
-
+	
 	var shader_rects: Array[Vector4] = []
 	for r in blocking_rects:
 		shader_rects.append(Vector4(r.position.x, r.position.y, r.size.x, r.size.y))
 	while shader_rects.size() < 8:
 		shader_rects.append(Vector4(0, 0, 0, 0))
-
+	
 	for icon in mirrors.keys():
 		if not hidden_icons.has(icon):
 			mirrors[icon].queue_free()
 			mirrors.erase(icon)
-
+	
 	for icon in hidden_icons:
 		var icon_rect = icon.get_global_rect()
-
+		
 		if not mirrors.has(icon):
 			var mirror = TextureRect.new()
 			mirror.texture = icon.icon_texture
@@ -53,16 +53,16 @@ func _update_lens(delta: float):
 			mirror.material = mat
 			lens.add_child(mirror)
 			mirrors[icon] = mirror
-
+		
 		var mirror: TextureRect = mirrors[icon]
 		mirror.position = icon_rect.position - lens_rect.position
 		mirror.size = icon_rect.size
-
+		
 		var mat := mirror.material as ShaderMaterial
 		if mat:
 			mat.set_shader_parameter("window_rects", shader_rects)
 			mat.set_shader_parameter("window_count", blocking_rects.size())
-
+		
 		if lens_rect.intersects(icon_rect):
 			var intersection = lens_rect.intersection(icon_rect)
 			var coverage = (intersection.size.x * intersection.size.y) / (icon_rect.size.x * icon_rect.size.y)
@@ -111,28 +111,27 @@ func _trigger_finish_effect():
 	if effect_finished:
 		return
 	effect_finished = true
-
+	
 	if not particles:
 		return
-
+	
 	var mat := particles.process_material as ParticleProcessMaterial
-
-	# Para o contínuo e faz o flash final
+	
 	particles.one_shot = true
 	particles.amount = 80
 	particles.lifetime = 0.4
 	particles.explosiveness = 1.0
 	particles.emitting = true
-
+	
 	await get_tree().create_timer(0.15).timeout
-
+	
 	var t := 0.0
 	while t < 1.0:
 		t += get_process_delta_time() * 3.0
 		if mat:
 			mat.color = Color(1.0, 0.9, 0.2, 1.0 - t)
 		await get_tree().process_frame
-
+	
 	particles.emitting = false
 	particles.visible = false
 	if mat:
