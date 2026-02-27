@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="DocColorCombination" format=3 uid="uid://bosg7ucevtuh"]
+
+[ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="1_42y1w"]
+[ext_resource type="Texture2D" uid="uid://d1feumun0mcyu" path="res://arts/images/Documents/Jornal/Amarelo.png" id="2_7gk3s"]
+
+[resource]
+script = ExtResource("1_42y1w")
+colors_needed = Array[String](["Amarelo"])
+variant_sprite = ExtResource("2_7gk3s")
+variant_transcription = "[font_size=24][u][color=#FFD700]M[/color][/u][/font_size]
+
+[u][color=#FFD700]n[/color][/u]                               [u][color=#FFD700]m[/color][/u]
+
+
+
+[u][color=#FFD700]s[/color][/u]
+
+
+
+
+[font_size=24][u][color=#FFD700]F[/color][/u][/font_size]
+
+
+
+
+
+[u][color=#FFD700]r[/color][/u]"
+metadata/_custom_type_script = "uid://dhgwmkta7luru"

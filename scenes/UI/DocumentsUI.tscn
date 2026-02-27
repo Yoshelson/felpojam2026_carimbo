@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://bn6ljhjkyrf3s" path="res://arts/test/AofHearts.png" id="1_j63hw"]
 [ext_resource type="Script" uid="uid://brnkusy2gviae" path="res://scripts/UI/DocumentUIController.gd" id="1_jtc8e"]
-[ext_resource type="Script" uid="uid://uwqvtu5si77r" path="res://scripts/test/test_inventory.gd" id="3_s8hfk"]
 [ext_resource type="PackedScene" uid="uid://cqlioob2vxlrm" path="res://scenes/UI/StampsUI.tscn" id="4_r08wx"]
 [ext_resource type="PackedScene" uid="uid://md8i3d7u0ov2" path="res://scenes/UI/TranscriptUI.tscn" id="5_qd52h"]
 
@@ -21,9 +20,6 @@ corner_radius_bottom_left = 5
 
 [node name="DocumentsUi" type="CanvasLayer" unique_id=60002005]
 script = ExtResource("1_jtc8e")
-
-[node name="Node" type="Node" parent="." unique_id=1117516193]
-script = ExtResource("3_s8hfk")
 
 [node name="Background Color" type="ColorRect" parent="." unique_id=376951773]
 anchors_preset = 15

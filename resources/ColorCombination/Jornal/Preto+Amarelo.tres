@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="DocColorCombination" format=3 uid="uid://wdo4fkobho26"]
+
+[ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="1_imlrm"]
+[ext_resource type="Texture2D" uid="uid://cclmlo551orp8" path="res://arts/images/Documents/Jornal/Preto + Amarelo.png" id="2_8c14c"]
+
+[resource]
+script = ExtResource("1_imlrm")
+colors_needed = Array[String](["Preto", "Amarelo"])
+variant_sprite = ExtResource("2_8c14c")
+variant_transcription = "[center][font_size=24]FOLHA DE S. PAULO[/font_size][/center]
+[font_size=12][center]São Paulo, domingo, 12 de novembro de 2006[/center][/font_size]
+
+[font_size=12]DIRETOR DE REDAÇÃO: RICARDO MILOS ★★★ UM JORNAL A SERVIÇO DO BRASIL ★ MORRINHOS, 413 ★ ANO 06 ★ R$ 2.00[/font_size]
+--------------------------------------------------------------------------------
+[center][font_size=24]CEO CO[color=#FFD700]M[/color] TOQUE DE OURO[/font_size][/center]
+
+Midas Sales, co[color=#FFD700]n[/color]tinua a expandir co[color=#FFD700]m[/color] acordos internacionais. Em apenas alguns anos sua pequena empresa se estabelece como um polo econômico nacional.
+Parceiros do empresário brincam que \"O nome não é apena[color=#FFD700]s[/color] coincidência\" e que seus projetos sempre traziam lucro quando marcados pelo mesmo.
+
+
+
+[center][font_size=24]REVOLTAS [color=#FFD700]F[/color]ORA DO CONTROLE[/font_size][/center]
+Grupo de trabalhadores vão as ruas e realizam p[color=#FFD700]r[/color]ática de motins, vandalismo e incentivam greves locais em pequenos estabelecimentos. A polícia civil afirma estar ciente da situação e que as medidas cabíveis serão tomadas rapidamente.
+-------------------------------
+Midas Sales some após a confirmação da morte de sua esposa. Investidores se preocupam com o abandono de sua posição no ápice de sua carreira."
+metadata/_custom_type_script = "uid://dhgwmkta7luru"

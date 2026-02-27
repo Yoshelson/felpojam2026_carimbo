@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="DocColorCombination" format=3 uid="uid://bwrsdhn2t5jfv"]
+
+[ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="1_cjtlx"]
+[ext_resource type="Texture2D" uid="uid://bbjpawa26syqh" path="res://arts/images/Documents/Jornal/Preto + Azul.png" id="2_nrce4"]
+
+[resource]
+script = ExtResource("1_cjtlx")
+colors_needed = Array[String](["Preto", "Azul"])
+variant_sprite = ExtResource("2_nrce4")
+variant_transcription = "[center][font_size=24]FOLHA DE S. PAULO[/font_size][/center]
+[font_size=12][center]São Paulo, domingo, 12 de novembro de 2006[/center][/font_size]
+
+[font_size=12]DIRETOR DE REDAÇÃO: RICARDO MILOS ★★★ UM JORNAL A SERVIÇO DO BRASIL ★ MORRINHOS, 413 ★ ANO 06 ★ R$ 2.00[/font_size]
+--------------------------------------------------------------------------------
+[center][font_size=24]CEO COM TOQU[u][color=#75C3FF]E[/color][/u] DE O[u][color=#75C3FF]U[/color][/u]RO[/font_size][/center]
+
+Midas Sales, continua a expandir c[u][color=#75C3FF]o[/color][/u]m acordos int[u][color=#75C3FF]e[/color][/u]rnacionais. Em apenas alguns anos sua pequena empresa se estabelece como um polo econômico nacional.
+Parceiros do empresário brincam que \"O nome não [u][color=#75C3FF]é[/color][/u] apenas coincidênci[u][color=#75C3FF]a[/color][/u]\" e que seus projetos sempre traziam lucro quando marcados pelo mesmo.
+
+
+
+[center][font_size=24]REVOLTAS FORA DO CONTROLE[/font_size][/center]
+Grupo de trabalhadores vão as ruas e real[u][color=#75C3FF]i[/color][/u]zam prátic[u][color=#75C3FF]a[/color][/u] de motins, vandalismo e incentivam greves locais em pequenos estabelecimentos. A polícia civil afirma estar ciente da situação e que as medidas cabíveis serão tomadas rapidamente.
+-------------------------------
+Midas Sales some após a confirmação da morte de sua esposa. Investidores se preocupam com o abandono de sua posição no ápice de sua carreira.
+
+[u][color=#75C3FF]E[/color][/u]"
+metadata/_custom_type_script = "uid://dhgwmkta7luru"
