@@ -2,12 +2,16 @@
 
 [ext_resource type="Script" uid="uid://blqjnsi3084eq" path="res://scripts/interactable/TeleportInteractable.gd" id="1_kl2ly"]
 
-[node name="BaseTeleportInteractable" type="StaticBody3D" unique_id=71267848 node_paths=PackedStringArray("target_pos")]
+[node name="BaseTeleportInteractable" type="StaticBody3D" unique_id=71267848 node_paths=PackedStringArray("camera_target_pos", "audio_player")]
 script = ExtResource("1_kl2ly")
-target_pos = NodePath("Target Pos")
+camera_target_pos = NodePath("Target Pos")
+audio_player = NodePath("SFX")
 
 [node name="Collision Shape" type="CollisionShape3D" parent="." unique_id=343647297]
 
 [node name="Target Pos" type="Marker3D" parent="." unique_id=1812789347]
 
 [node name="Visual Model" type="Node3D" parent="." unique_id=1226515085]
+
+[node name="SFX" type="AudioStreamPlayer3D" parent="." unique_id=1890244742]
+bus = &"SFX"

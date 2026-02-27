@@ -7,7 +7,8 @@ extends Control
 @onready var main_menu_panel: Control = $PanelContainer/main_menu
 @onready var settings_panel: Control = $PanelContainer/settings_menu
 @onready var credits_panel: Control = $PanelContainer/credits_menu
-@onready var music: AudioStreamPlayer = $MusicPlayer
+
+@export var menu_music: AudioStream
 
 const HOVER_SCALE := 1.12
 const HOVER_SPEED := 10.0
@@ -44,18 +45,7 @@ func _ready():
 	_collect_buttons()
 	_connect_buttons()
 	_apply_menu_style_to_settings()
-	_fade_music_in()
-
-func _fade_music_in() -> void:
-	music.volume_db = -80.0
-	music.play()
-	var tween = create_tween()
-	tween.tween_property(music, "volume_db", -10.0, 2.0).set_trans(Tween.TRANS_SINE)
-
-func _fade_music_out() -> Tween:
-	var tween = create_tween()
-	tween.tween_property(music, "volume_db", -80.0, 0.8).set_trans(Tween.TRANS_SINE)
-	return tween
+	MusicManager.crossfade_to(menu_music, 2)
 
 func _setup_settings():
 	settings_panel.get_node("VBoxContainer/settings_tab/Gráficos/VBox/HBox/fullscreen").button_pressed = \
@@ -241,22 +231,26 @@ func _fade_to(scene_path: String) -> void:
 	if is_animating:
 		return
 	is_animating = true
-	var music_tween = _fade_music_out()
+	
 	var overlay = _create_overlay()
 	var tween = create_tween()
 	tween.tween_property(overlay, "color", Color(0, 0, 0, 1), 0.6)
+	
 	await tween.finished
-	await music_tween.finished
 	get_tree().change_scene_to_file(scene_path)
 
 func _fade_out_and_quit() -> void:
 	if is_animating:
 		return
+	
 	is_animating = true
-	var music_tween = _fade_music_out()
+	
+	var music_tween = MusicManager.stop_music(1)
+	
 	var overlay = _create_overlay()
 	var tween = create_tween()
 	tween.tween_property(overlay, "color", Color(0, 0, 0, 1), 0.6)
+	
 	await tween.finished
 	await music_tween.finished
 	get_tree().quit()

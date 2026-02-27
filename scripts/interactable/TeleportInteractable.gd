@@ -14,6 +14,8 @@ func interact(interactor: Node3D):
 		_mesh.material_overlay = null
 		prompt_message = ""
 		
+		play_sfx()
+		
 		if interactor is Player:
 			GameEvents.change_player_state(target_state)
 			interactor.teleport_camera_to(camera_target_pos.global_transform)
