@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d1va66oo4rpjs"]
+[gd_scene format=3 uid="uid://c2cm5y7vx075f"]
 
 [ext_resource type="Texture2D" uid="uid://bn6ljhjkyrf3s" path="res://arts/test/AofHearts.png" id="1_j63hw"]
 [ext_resource type="Script" uid="uid://brnkusy2gviae" path="res://scripts/UI/DocumentUIController.gd" id="1_jtc8e"]
