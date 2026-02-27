@@ -7,10 +7,10 @@
 script = ExtResource("1_7stup")
 colors_needed = Array[String](["Preto"])
 variant_sprite = ExtResource("2_h28vr")
-variant_transcription = "INSTITUTO MÉDICO LEGAL
-Av. [bgcolor=black]                                                          [/bgcolor] , SÃO PAULO
+variant_transcription = "[center]INSTITUTO MÉDICO LEGAL[/center]
+[center]Av. [bgcolor=black]                                                          [/bgcolor] , SÃO PAULO[/center]
 
-AUTOPSIA POR MEDICO LEGISTA ENCARREGADO
+[center]AUTOPSIA POR MEDICO LEGISTA ENCARREGADO[/center]
 
 [b]Falecido(a):[/b] Maria Sales Barbosa...................................................... 
 [b]Raça:[/b] Branca 

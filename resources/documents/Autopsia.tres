@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://oxie1tm2wypw" path="res://resources/ColorCombination/Autopsia/Preto.tres" id="5_mye07"]
 [ext_resource type="Resource" uid="uid://boorj34hk6igd" path="res://resources/ColorCombination/Autopsia/Amarelo.tres" id="6_sv020"]
 [ext_resource type="Resource" uid="uid://btphestrk3afg" path="res://resources/ColorCombination/Autopsia/Preto+Azul.tres" id="7_jsljq"]
-[ext_resource type="Resource" uid="uid://cffguu40ua5d6" path="res://resources/ColorCombination/Autopsia/Azul+Amarelo.tres" id="8_srvg0"]
+[ext_resource type="Resource" uid="uid://cffguu40ua5d6" path="res://resources/ColorCombination/Autopsia/Amarelo+Azul.tres" id="8_1mjfo"]
 [ext_resource type="Resource" uid="uid://cxf3dkj1khu48" path="res://resources/ColorCombination/Autopsia/Preto+Amarelo.tres" id="9_jmdxf"]
 [ext_resource type="Resource" uid="uid://c0o8hombtr57" path="res://resources/ColorCombination/Autopsia/Preto+Amarelo+Azul.tres" id="10_f47mr"]
 
@@ -16,5 +16,5 @@ script = ExtResource("1_ii4ir")
 base_image = ExtResource("1_hpgyy")
 id = "autopsia"
 base_transcripted_text = "[font_size=32][center]Documento Vazio[/center][/font_size]"
-variations = Array[ExtResource("2_ufohu")]([ExtResource("4_1mjfo"), ExtResource("5_mye07"), ExtResource("6_sv020"), ExtResource("7_jsljq"), ExtResource("8_srvg0"), ExtResource("9_jmdxf"), ExtResource("10_f47mr")])
+variations = Array[ExtResource("2_ufohu")]([ExtResource("4_1mjfo"), ExtResource("5_mye07"), ExtResource("6_sv020"), ExtResource("7_jsljq"), ExtResource("8_1mjfo"), ExtResource("9_jmdxf"), ExtResource("10_f47mr")])
 metadata/_custom_type_script = "uid://b6irqck1wko0p"
