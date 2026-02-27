@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dcfi3m2wivif6"]
+
+[ext_resource type="Script" uid="uid://bpdaycmgmteyg" path="res://scripts/interactable/DocumentInteractable.gd" id="1_7f6wx"]
+[ext_resource type="AudioStream" uid="uid://bkv3q3ktkxy6u" path="res://arts/sounds/sfx/paper_sfx.wav" id="2_c2ydx"]
+
+[node name="DocBase" type="StaticBody3D" unique_id=1947719615 node_paths=PackedStringArray("_mesh", "audio_player")]
+collision_layer = 16
+script = ExtResource("1_7f6wx")
+_mesh = NodePath("Sprite3D")
+prompt_message = "Ler Documento"
+audio_player = NodePath("SFX")
+sfx_audio = ExtResource("2_c2ydx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=396168558]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=358381614]
+double_sided = false
+
+[node name="SFX" type="AudioStreamPlayer3D" parent="." unique_id=648326558]

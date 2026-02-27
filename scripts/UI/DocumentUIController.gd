@@ -19,6 +19,7 @@ var _actual_doc_id: String = ""
 func _ready() -> void:
 	self.hide()
 	InventoryManager.doc_inventory_changed.connect(_att_doc_UI)
+	GameEvents.document_UI_requested.connect(setup_UI)
 	stamps_container.stamp_pressed.connect(_doc_stamped)
 
 func _process(delta: float) -> void:
@@ -114,6 +115,7 @@ func _doc_stamped(stamp_id: String):
 
 func _on_return_btn_pressed() -> void:
 	self.hide()
+	GameEvents.player_state_changed.emit(GameEvents.player_states.board)
 
 func _on_stamp_btn_pressed() -> void:
 	stamps_container.setup_UI()
