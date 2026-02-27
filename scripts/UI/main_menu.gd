@@ -10,9 +10,9 @@ extends Control
 
 @export var menu_music: AudioStream
 
-const HOVER_SCALE := 1.12
-const HOVER_SPEED := 10.0
-const PANEL_WIDTH := 1152.0
+const HOVER_SCALE := 1.15
+const HOVER_SPEED := 11.0
+const PANEL_WIDTH := 1366.0
 
 var main_panel: Control
 var menu_buttons: Array = []

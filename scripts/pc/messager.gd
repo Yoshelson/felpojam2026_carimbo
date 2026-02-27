@@ -64,6 +64,7 @@ func _open_conversation(contact_name: String):
 
 func _on_link_clicked(_meta):
 	var pc := get_tree().get_first_node_in_group("pc_control") as PCControl
+	GameEvents.subtitle_requested.emit("Monique:", "Um link..?", 3.5)
 	if pc:
 		pc.open_window(
 			preload("res://scenes/interactables/computer/bapotube_window.tscn"),

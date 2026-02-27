@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="felpojam2026_carimbo"
-run/main_scene="uid://bg32jcbmnp3f6"
+run/main_scene="uid://bwtxbpfg33bix"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -24,6 +24,13 @@ buses/default_bus_layout="uid://dyxtp740c3gs4"
 InventoryManager="*uid://bvhno70r6ldra"
 GameEvents="*uid://coruphvadhjed"
 MusicManager="*uid://bxhrqi604vf5a"
+
+[display]
+
+window/size/viewport_width=1366
+window/size/viewport_height=780
+window/size/mode=3
+window/size/borderless=true
 
 [global_group]
 

@@ -1,15 +1,16 @@
 [gd_scene format=3 uid="uid://c8kudlijksi80"]
 
 [ext_resource type="PackedScene" uid="uid://766jsikflxl" path="res://scenes/player.tscn" id="1_8rhti"]
-[ext_resource type="Script" uid="uid://b32es5oq0huua" path="res://scripts/MainLevel.gd" id="1_vqfsp"]
+[ext_resource type="Script" path="res://scripts/MainLevel.gd" id="1_vqfsp"]
 [ext_resource type="AudioStream" uid="uid://yt2iyk7nvx4j" path="res://arts/sounds/music/Quarto de Hotel 1.2.wav" id="2_i6jx3"]
 [ext_resource type="PackedScene" uid="uid://5y8rwm8yspg3" path="res://scenes/interactables/computer/PCScene.tscn" id="3_21bcp"]
 [ext_resource type="PackedScene" uid="uid://c0gk0v22vsjes" path="res://scenes/objects/exemplo_interativo.tscn" id="5_40w10"]
 [ext_resource type="PackedScene" uid="uid://buu3nnoihwga2" path="res://scenes/UI/pause.tscn" id="5_hh5oj"]
-[ext_resource type="PackedScene" uid="uid://dxsd108dci26y" path="res://scenes/test/test_csg.tscn" id="5_xvvcp"]
-[ext_resource type="PackedScene" path="res://scenes/UI/DocumentsUI.tscn" id="7_hh5oj"]
+[ext_resource type="PackedScene" uid="uid://dxsd108dci26y" path="res://scenes/test_csg.tscn" id="5_xvvcp"]
+[ext_resource type="PackedScene" uid="uid://d1va66oo4rpjs" path="res://scenes/UI/DocumentsUI.tscn" id="7_hh5oj"]
 [ext_resource type="PackedScene" uid="uid://dd54j0okltw3d" path="res://scenes/UI/SubtitlesUI.tscn" id="10_6irmp"]
-[ext_resource type="PackedScene" path="res://scenes/UI/InteractionUI.tscn" id="10_jn13j"]
+[ext_resource type="PackedScene" uid="uid://co6hr5m513oq6" path="res://scenes/UI/InteractionUI.tscn" id="10_jn13j"]
+[ext_resource type="Script" uid="uid://cv00o1o2ylifc" path="res://scripts/test/teste_fala_1tv.gd" id="11_6irmp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tpea4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -24,6 +25,8 @@ background_energy_multiplier = 1.05
 sky = SubResource("Sky_42dj3")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dmaw2"]
 
 [node name="Main" type="Node3D" unique_id=959922866]
 script = ExtResource("1_vqfsp")
@@ -73,6 +76,19 @@ z_index = 5
 [node name="DocumentsUi" parent="." unique_id=60002005 instance=ExtResource("7_hh5oj")]
 
 [node name="SubtitlesUI" parent="." unique_id=1123747730 instance=ExtResource("10_6irmp")]
+
+[node name="TesteFala1TV" type="StaticBody3D" parent="." unique_id=743430463 node_paths=PackedStringArray("_mesh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9339516, 1.7303303, 0)
+collision_layer = 5
+script = ExtResource("11_6irmp")
+_id = "2673526"
+_mesh = NodePath("CSGBox3D")
+prompt_message = "TV"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TesteFala1TV" unique_id=532878736]
+shape = SubResource("BoxShape3D_dmaw2")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="TesteFala1TV" unique_id=544904726]
 
 [editable path="player"]
 [editable path="ExemploInterativo"]
