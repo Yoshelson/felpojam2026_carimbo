@@ -1,10 +1,11 @@
-extends Interactable
+extends TeleportInteractable
 
 var board_docs: Dictionary[String, DocumentInteractable] = {}
 @onready var docs_container = $DocumentsContainer
 
 func _ready() -> void:
 	InventoryManager.doc_inventory_changed.connect(_on_inventory_changed)
+	original_prompt = prompt_message
 
 func _on_inventory_changed(doc_id: String):
 	if board_docs.has(doc_id):

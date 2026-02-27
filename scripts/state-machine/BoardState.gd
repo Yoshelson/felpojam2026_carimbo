@@ -11,7 +11,7 @@ func inputs(event: InputEvent):
 	if event is InputEventKey:
 		if Input.is_action_just_pressed("exit"):
 			GameEvents.change_player_state(GameEvents.player_states.desk)
-
+			player.reset_camera_pos()
 	if Input.is_action_just_pressed("interact"):
 		player.try_interact()
 	

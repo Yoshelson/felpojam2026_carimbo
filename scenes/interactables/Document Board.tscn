@@ -5,21 +5,26 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_6m7nv"]
 size = Vector3(3.9199219, 2.385376, 0.29418945)
 
-[node name="DocumentBoard" type="StaticBody3D" unique_id=977597654 node_paths=PackedStringArray("_mesh")]
+[node name="DocumentBoard" type="StaticBody3D" unique_id=977597654 node_paths=PackedStringArray("camera_target_pos", "_mesh")]
 collision_layer = 5
 script = ExtResource("1_ud8ji")
+target_state = 2
+camera_target_pos = NodePath("Target Pos")
 _id = "doc_board"
-_mesh = NodePath("CSGBox3D")
+_mesh = NodePath("Visual Model")
 prompt_message = "Ver Quadro de Documentos"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=765198054]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001953125, -0.0036010742, -0.008911133)
 shape = SubResource("BoxShape3D_6m7nv")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1029841168]
+[node name="Target Pos" type="Marker3D" parent="." unique_id=2083969742]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+
+[node name="Visual Model" type="CSGBox3D" parent="." unique_id=1029841168]
 transform = Transform3D(3.8400002, 0, 0, 0, 2.3000002, 0, 0, 0, 0.19999999, 0, 0, 0)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D" unique_id=937501904]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Visual Model" unique_id=937501904]
 transform = Transform3D(0.9409332, 0, 0, 0, 0.9123568, 0, 0, 0, 0.99999994, 0, 0, 0.35271943)
 operation = 2
 

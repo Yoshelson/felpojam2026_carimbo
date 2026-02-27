@@ -56,9 +56,13 @@ func teleport_to(target_transform: Transform3D):
 
 func set_interaction_layers(world_layer: bool, desk_layer: bool, board_layer: bool) -> void:
 	if seecast:
-		seecast.set_collision_mask_value(3, world_layer)
-		seecast.set_collision_mask_value(4, desk_layer)
-		seecast.set_collision_mask_value(5, board_layer)
+		seecast.collision_mask = 0
+		
+		if world_layer: seecast.set_collision_mask_value(3, true)
+		if desk_layer:  seecast.set_collision_mask_value(4, true)
+		if board_layer: seecast.set_collision_mask_value(5, true)
+		
+		seecast.force_shapecast_update()
 
 func teleport_camera_to(target_transform: Transform3D) -> void:
 	camera.global_transform = target_transform
@@ -78,7 +82,7 @@ func get_mouse_hit_node() -> Node3D:
 	var end = camera.project_ray_normal(mouse_position) * 50
 	
 	var query = PhysicsRayQueryParameters3D.create(origin, end)
-	query.collision_mask = 4 #Layer dos colliders
+	query.collision_mask = seecast.collision_mask
 	
 	var result = space_state.intersect_ray(query)
 	

@@ -56,11 +56,15 @@ walk_pos = NodePath("../../../WalkPos")
 [node name="Computer State" parent="player/State Machine" parent_id_path=PackedInt32Array(685818972, 198868825) index="3" unique_id=519582346 node_paths=PackedStringArray("computer")]
 computer = NodePath("../../../PCScene")
 
+[node name="MeshInstance3D" parent="player" index="1" unique_id=1262310398]
+visible = false
+
 [node name="PCScene" parent="." unique_id=794729469 instance=ExtResource("3_21bcp")]
 transform = Transform3D(-0.97993165, 0, 0.19933385, 0, 1, 0, -0.19933385, 0, -0.97993165, -2.575565, 1.4884229, 4.8839025)
 
 [node name="ExemploInterativo" parent="." unique_id=756309383 instance=ExtResource("5_40w10")]
 transform = Transform3D(-0.99999267, 0, 0.0038220552, 0, 1, 0, -0.0038220552, 0, -0.99999267, 4.3410978e-07, 0.63247085, 4.5179787)
+collision_layer = 9
 _id = "gaveta"
 prompt_message = "Abrir Gaveta"
 
@@ -93,7 +97,7 @@ shape = SubResource("BoxShape3D_dmaw2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.41026223)
 
 [node name="DocumentBoard" parent="." unique_id=977597654 instance=ExtResource("12_dmaw2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6359091, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3.9813704, 2.5411818, 5.228351)
 
 [editable path="player"]
 [editable path="ExemploInterativo"]
