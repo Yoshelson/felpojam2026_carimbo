@@ -77,5 +77,6 @@ Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapi
 
 Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos."
 variations = Array[ExtResource("2_ph6t2")]([SubResource("Resource_b5o1t"), SubResource("Resource_vrbeu"), SubResource("Resource_rqn3f"), SubResource("Resource_dku3m"), SubResource("Resource_if86j"), SubResource("Resource_bf5b2"), SubResource("Resource_o17wl")])
+board_pos = Vector3(-1.225, 0.342, 0.01)
 prefab_scene = ExtResource("2_vrbeu")
 metadata/_custom_type_script = "uid://b6irqck1wko0p"

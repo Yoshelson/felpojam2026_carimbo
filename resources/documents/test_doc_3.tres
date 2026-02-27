@@ -60,5 +60,6 @@ base_image = ExtResource("4_5dmjr")
 id = "godot"
 variations = Array[ExtResource("3_8ld1e")]([SubResource("Resource_y03wn"), SubResource("Resource_qmsm8"), SubResource("Resource_2tfek"), SubResource("Resource_ohadh"), SubResource("Resource_atb7h"), SubResource("Resource_hj2pn"), SubResource("Resource_n7qcw")])
 requires_color_order = true
+board_pos = Vector3(1.225, 0.342, 0.01)
 prefab_scene = ExtResource("2_a2dnt")
 metadata/_custom_type_script = "uid://b6irqck1wko0p"

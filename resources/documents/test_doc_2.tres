@@ -18,5 +18,6 @@ base_image = ExtResource("1_n0khc")
 id = "ace"
 base_transcripted_text = "ace is incredible"
 variations = Array[ExtResource("3_116dv")]([SubResource("Resource_1ux4f")])
+board_pos = Vector3(0, 0.502, 0.01)
 prefab_scene = ExtResource("2_116dv")
 metadata/_custom_type_script = "uid://b6irqck1wko0p"
