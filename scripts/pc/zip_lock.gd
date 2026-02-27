@@ -31,4 +31,5 @@ func _open_reward():
 	var pc: PCControl = get_tree().get_first_node_in_group("pc_control")
 	var scene = preload("res://scenes/interactables/computer/image_viewer_reward.tscn")
 	pc.open_window(scene, "Recompensa", Vector2(-1, -1))
+	GameEvents.subtitle_requested.emit("Monique:", "Esse [color=yellow]símbolo[/color] me é famíliar", 3)
 	queue_free()

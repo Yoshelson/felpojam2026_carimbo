@@ -2,20 +2,19 @@
 
 [ext_resource type="PackedScene" uid="uid://rvqk034i2ily" path="res://scenes/interactables/computer/window_base.tscn" id="1_kea4t"]
 [ext_resource type="Script" uid="uid://y8nmq6j00l4n" path="res://scripts/pc/audio_player.gd" id="2_bdkjk"]
-[ext_resource type="AudioStream" uid="uid://d3b2hakcfwqr5" path="res://arts/test/testemusica.mp3" id="3_bdkjk"]
+[ext_resource type="AudioStream" uid="uid://ctinwrbrpv8c2" path="res://arts/sounds/morse.wav" id="3_douos"]
 [ext_resource type="Texture2D" uid="uid://f6uy73uevlt5" path="res://arts/images/PC/WXP - Ícone Pasta Áudio.png" id="4_douos"]
 
 [node name="AudioPlayer" unique_id=280367607 instance=ExtResource("1_kea4t")]
 offset_right = 600.0
 offset_bottom = 180.0
 script = ExtResource("2_bdkjk")
-audio_stream = ExtResource("3_bdkjk")
+audio_stream = ExtResource("3_douos")
 window_icon = ExtResource("4_douos")
 
 [node name="Content" parent="." index="1" unique_id=1185580226]
-offset_left = 0.0
 offset_top = 48.0
-offset_right = 600.0
+offset_right = 592.0
 offset_bottom = 180.0
 
 [node name="VBox" type="VBoxContainer" parent="Content" index="0" unique_id=705032705]
@@ -36,12 +35,13 @@ theme_override_constants/separation = 6
 [node name="Controls" type="VBoxContainer" parent="Content/VBox" index="1" unique_id=705032706]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/separation = 6
+theme_override_constants/separation = 7
 
 [node name="TimeSlider" type="HSlider" parent="Content/VBox/Controls" index="0" unique_id=294981278]
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_horizontal = 3
+step = 0.1
 
 [node name="Buttons" type="HBoxContainer" parent="Content/VBox/Controls" index="1" unique_id=705032707]
 layout_mode = 2

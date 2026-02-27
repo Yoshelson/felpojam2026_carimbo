@@ -45,7 +45,8 @@ func _ready():
 	_collect_buttons()
 	_connect_buttons()
 	_apply_menu_style_to_settings()
-	MusicManager.crossfade_to(menu_music, 2)
+	await get_tree().create_timer(1).timeout
+	MusicManager.crossfade_to(menu_music, 1)
 
 func _setup_settings():
 	settings_panel.get_node("VBoxContainer/settings_tab/Gráficos/VBox/HBox/fullscreen").button_pressed = \

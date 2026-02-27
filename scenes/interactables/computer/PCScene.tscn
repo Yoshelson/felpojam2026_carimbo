@@ -25,6 +25,12 @@ shader_parameter/power_on = 0.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_t6tsb"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wm2ak"]
+albedo_color = Color(1, 1, 0.21568628, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_wm2ak"]
+material = SubResource("StandardMaterial3D_wm2ak")
+
 [node name="PCScene" type="StaticBody3D" unique_id=794729469 node_paths=PackedStringArray("camera_target_pos", "_mesh") groups=["Interactible"]]
 collision_layer = 5
 script = ExtResource("1_8pqrt")
@@ -81,3 +87,13 @@ offset_right = 1600.0
 offset_bottom = 1200.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=382032235]
+transform = Transform3D(0.09530847, -0.030270243, 0, 0.030270243, 0.09530847, 0, 0, 0, 1, -0.46196434, 0.25344107, 0)
+mesh = SubResource("QuadMesh_wm2ak")
+
+[node name="Label3D" type="Label3D" parent="MeshInstance3D" unique_id=1650074465]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00036509335)
+text = "Aperte Q
+para sair"
+font_size = 28

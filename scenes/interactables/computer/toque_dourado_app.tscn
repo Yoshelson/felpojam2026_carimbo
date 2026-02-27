@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://rvqk034i2ily" path="res://scenes/interactables/computer/window_base.tscn" id="1_yqq3k"]
 [ext_resource type="Script" uid="uid://c5kpi0jedhdrk" path="res://scripts/pc/toque_dourado_app.gd" id="2_cegss"]
+[ext_resource type="Texture2D" uid="uid://ky6tbdkt6shb" path="res://arts/test/midastoque_test.png" id="3_g4did"]
 [ext_resource type="Texture2D" uid="uid://b2yuk1kpiplfq" path="res://arts/test/midaslens_test-export.png" id="3_xusx6"]
 [ext_resource type="Theme" uid="uid://kbhbn3rq2irb" path="res://arts/theme.tres" id="4_xusx6"]
 
@@ -17,6 +18,7 @@ color = Color(1, 1, 0, 1)
 
 [node name="MidasTouch" unique_id=280367607 instance=ExtResource("1_yqq3k")]
 script = ExtResource("2_cegss")
+window_icon = ExtResource("3_g4did")
 
 [node name="Frame" parent="." index="0" unique_id=37177967]
 texture = ExtResource("3_xusx6")

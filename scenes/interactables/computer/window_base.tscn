@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://cwhc821jba5t3" path="res://scripts/pc/window_base.gd" id="1_thcwt"]
 [ext_resource type="Texture2D" uid="uid://p5x72tuqw0fv" path="res://arts/test/janelapc_teste.png" id="2_oxeg8"]
 [ext_resource type="Texture2D" uid="uid://be5o7lraqwj88" path="res://arts/test/topbar_test.png" id="3_5o1cm"]
-[ext_resource type="Texture2D" uid="uid://cbmfcpayyno8y" path="res://arts/test/minimize_test.png" id="4_60f7c"]
-[ext_resource type="Texture2D" uid="uid://cpcptycu8s7w3" path="res://arts/test/close_test.png" id="5_ksnip"]
+[ext_resource type="Texture2D" uid="uid://bipb2e558fkxt" path="res://arts/images/PC/MinimizarJanela.png" id="4_5o1cm"]
+[ext_resource type="Texture2D" uid="uid://owoiya6i0vnp" path="res://arts/images/PC/FecharJanela.png" id="5_60f7c"]
 
 [node name="WindowBase" type="Panel" unique_id=280367607]
 self_modulate = Color(1, 1, 1, 0)
@@ -61,17 +61,19 @@ offset_left = 601.0
 offset_top = 6.0
 offset_right = 641.0
 offset_bottom = 46.0
-icon = ExtResource("4_60f7c")
+scale = Vector2(1.1, 1.1)
+icon = ExtResource("4_5o1cm")
 flat = true
 expand_icon = true
 
 [node name="Close" type="Button" parent="TopBar" unique_id=1715420035]
 layout_mode = 0
-offset_left = 655.0
-offset_top = 6.0
-offset_right = 695.0
+offset_left = 651.0
+offset_top = 5.9999995
+offset_right = 691.0
 offset_bottom = 46.0
-icon = ExtResource("5_ksnip")
+scale = Vector2(1.1, 1.1)
+icon = ExtResource("5_60f7c")
 flat = true
 expand_icon = true
 
