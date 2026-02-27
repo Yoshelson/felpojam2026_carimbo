@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://pivovmade6um"]
+
+[ext_resource type="Shader" uid="uid://drsmiger457my" path="res://scripts/shaders/psx_filter.gdshader" id="1_8rea7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x4uxa"]
+shader = ExtResource("1_8rea7")
+shader_parameter/pixel_size = 1.400000019
+shader_parameter/color_depth = 32.0000014725
+shader_parameter/scanline_intensity = 0.12
+shader_parameter/scanline_count = 120.0
+shader_parameter/dither_strength = 0.06
+shader_parameter/aberration = 0.002000000095
+shader_parameter/screen_size = Vector2(1280, 720)
+
+[node name="PsxFilter" type="CanvasLayer" unique_id=1720110643]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2053768061]
+material = SubResource("ShaderMaterial_x4uxa")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

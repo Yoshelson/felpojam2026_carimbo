@@ -1,6 +1,7 @@
 extends Control
 
 
+
 func _ready():
 	hide()
 	$AnimationPlayer.play("RESET")
@@ -61,8 +62,12 @@ func _on_fullscreen_toggled(toggled_on: bool) -> void:
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 
-
-
+func _on_psxfiltro_toggled(toggled_on: bool) -> void:
+	var psx = get_tree().root.get_node_or_null("PsxFilter")
+	if toggled_on:
+		psx.visible = true
+	else:
+		psx.visible = false
 
 func _on_vol_master_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Master"), value)

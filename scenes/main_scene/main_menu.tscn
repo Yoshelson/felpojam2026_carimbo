@@ -127,7 +127,6 @@ text = "Sair do Jogo"
 flat = true
 
 [node name="settings_menu" type="Control" parent="CanvasLayer/Menu/PanelContainer" unique_id=410065410]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -173,7 +172,7 @@ theme_override_constants/separation = 16
 [node name="HBox" type="HBoxContainer" parent="CanvasLayer/Menu/PanelContainer/settings_menu/VBoxContainer/settings_tab/Gráficos/VBox" unique_id=410065415]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Menu/PanelContainer/settings_menu/VBoxContainer/settings_tab/Gráficos/VBox/HBox" unique_id=410065416]
+[node name="fullscreenLabel" type="Label" parent="CanvasLayer/Menu/PanelContainer/settings_menu/VBoxContainer/settings_tab/Gráficos/VBox/HBox" unique_id=410065416]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("4_mwb2c")
@@ -184,6 +183,19 @@ text = "tela Cheia"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_mwb2c")
 theme_override_font_sizes/font_size = 22
+
+[node name="HBoxPSX" type="HBoxContainer" parent="CanvasLayer/Menu/PanelContainer/settings_menu/VBoxContainer/settings_tab/Gráficos/VBox" unique_id=771733811]
+layout_mode = 2
+
+[node name="psxLabel" type="Label" parent="CanvasLayer/Menu/PanelContainer/settings_menu/VBoxContainer/settings_tab/Gráficos/VBox/HBoxPSX" unique_id=585565273]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_mwb2c")
+theme_override_font_sizes/font_size = 28
+text = "filtro psx"
+
+[node name="psx" type="CheckButton" parent="CanvasLayer/Menu/PanelContainer/settings_menu/VBoxContainer/settings_tab/Gráficos/VBox/HBoxPSX" unique_id=1643475809]
+layout_mode = 2
 
 [node name="Sons" type="Control" parent="CanvasLayer/Menu/PanelContainer/settings_menu/VBoxContainer/settings_tab" unique_id=410065418]
 visible = false

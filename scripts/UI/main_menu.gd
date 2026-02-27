@@ -12,7 +12,7 @@ extends Control
 
 const HOVER_SCALE := 1.15
 const HOVER_SPEED := 11.0
-const PANEL_WIDTH := 1366.0
+const PANEL_WIDTH := 1280.0
 
 var main_panel: Control
 var menu_buttons: Array = []
@@ -57,6 +57,10 @@ func _setup_settings():
 		db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("MUSIC")))
 	settings_panel.get_node("VBoxContainer/settings_tab/Sons/VBox/HBoxSfx/volSfx").value = \
 		db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SFX")))
+	var psx = get_tree().root.get_node_or_null("PsxFilter")
+	settings_panel.get_node("VBoxContainer/settings_tab/Gráficos/VBox/HBoxPSX/psx").button_pressed = \
+	psx.visible if psx else true
+	
 
 func _collect_buttons():
 	menu_buttons.clear()
@@ -92,6 +96,11 @@ func _connect_buttons():
 	)
 	settings_panel.get_node("VBoxContainer/settings_tab/Sons/VBox/HBoxSfx/volSfx").value_changed.connect(func(v):
 		AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("SFX"), v)
+	)
+	settings_panel.get_node("VBoxContainer/settings_tab/Gráficos/VBox/HBoxPSX/psx").toggled.connect(func(on):
+		var psx = get_tree().root.get_node_or_null("PsxFilter")
+		if psx:
+			psx.visible = on
 	)
 
 func _apply_menu_style_to_settings():

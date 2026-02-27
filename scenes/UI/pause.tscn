@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://buu3nnoihwga2"]
 
-[ext_resource type="Shader" path="res://scripts/shaders/pause.gdshader" id="1_45vjg"]
+[ext_resource type="Shader" uid="uid://cmveq2wynv7m8" path="res://scripts/shaders/pause.gdshader" id="1_45vjg"]
 [ext_resource type="Script" uid="uid://byx270fiqwjs4" path="res://scripts/UI/pause.gd" id="1_aq7p1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aq7p1"]
@@ -99,7 +99,6 @@ size_flags_horizontal = 4
 text = "Sair do Jogo"
 
 [node name="settings_menu" type="VBoxContainer" parent="PanelContainer" unique_id=841785270]
-visible = false
 layout_mode = 2
 theme_override_constants/separation = 7
 
@@ -170,6 +169,10 @@ metadata/_tab_index = 1
 layout_mode = 2
 text = "Modo Tela-cheia"
 
+[node name="psxfiltro" type="CheckBox" parent="PanelContainer/settings_menu/settings_tab/Gráficos" unique_id=1098258211]
+layout_mode = 2
+text = "Filtro de PSX"
+
 [node name="Geral" type="VBoxContainer" parent="PanelContainer/settings_menu/settings_tab" unique_id=1257913691]
 visible = false
 layout_mode = 2
@@ -186,3 +189,4 @@ libraries/ = SubResource("AnimationLibrary_8u653")
 [connection signal="value_changed" from="PanelContainer/settings_menu/settings_tab/Sons/volMusic" to="." method="_on_vol_music_value_changed"]
 [connection signal="value_changed" from="PanelContainer/settings_menu/settings_tab/Sons/volSfx" to="." method="_on_vol_sfx_value_changed"]
 [connection signal="toggled" from="PanelContainer/settings_menu/settings_tab/Gráficos/fullscreen" to="." method="_on_fullscreen_toggled"]
+[connection signal="toggled" from="PanelContainer/settings_menu/settings_tab/Gráficos/psxfiltro" to="." method="_on_psxfiltro_toggled"]
