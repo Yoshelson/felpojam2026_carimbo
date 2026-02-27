@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://buu3nnoihwga2" path="res://scenes/UI/pause.tscn" id="5_hh5oj"]
 [ext_resource type="PackedScene" uid="uid://dxsd108dci26y" path="res://scenes/test/test_csg.tscn" id="5_xvvcp"]
 [ext_resource type="PackedScene" path="res://scenes/UI/DocumentsUI.tscn" id="7_hh5oj"]
+[ext_resource type="PackedScene" uid="uid://dd54j0okltw3d" path="res://scenes/UI/SubtitlesUI.tscn" id="10_6irmp"]
 [ext_resource type="PackedScene" path="res://scenes/UI/InteractionUI.tscn" id="10_jn13j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tpea4"]
@@ -70,6 +71,8 @@ z_index = 5
 [node name="Interaction UI" parent="." unique_id=628371208 instance=ExtResource("10_jn13j")]
 
 [node name="DocumentsUi" parent="." unique_id=60002005 instance=ExtResource("7_hh5oj")]
+
+[node name="SubtitlesUI" parent="." unique_id=1123747730 instance=ExtResource("10_6irmp")]
 
 [editable path="player"]
 [editable path="ExemploInterativo"]
