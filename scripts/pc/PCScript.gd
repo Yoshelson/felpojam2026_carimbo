@@ -3,6 +3,16 @@ class_name PCStatic
 
 @onready var screen_material: ShaderMaterial = $PCScreenMesh.material_override
 
+@onready var click_players: Array = [
+	$ClickSFX1, $ClickSFX2, $ClickSFX3
+	]
+var _click_idx: int = 0
+
+func _on_mouse_click():
+	var player = click_players[_click_idx]
+	player.play()
+	_click_idx = (_click_idx + 1) % click_players.size()
+
 #Animação de ligar o pc pela primeira vez
 var boot_played := false
 
@@ -60,6 +70,9 @@ func handle_mouse_btn_press(event: InputEventMouseButton):
 		mouse_event.position = pc_control.pc_mouse_pos
 		mouse_event.global_position = pc_control.pc_mouse_pos
 		sub_viewport.push_input(mouse_event)
+		
+		if event is InputEventMouseButton and event.pressed:
+			_on_mouse_click()
 
 func handle_key_press(event: InputEventKey) :
 	sub_viewport.push_input(event)

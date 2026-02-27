@@ -6,28 +6,25 @@ class_name MessengerApp
 @onready var chat_history = $Content/HBoxContainer/ChatPanel/ChatMargin/ChatVBox/ChatHistory
 
 const CONVERSATIONS = {
-	"Felpo": [
-		{"from": "Felpo",  "text": "cara você viu aquele vídeo de lontra de ontem"},
-		{"from": "Felpo",  "text": "a lontra abraçou o filhote dela e eu chorei"},
-		{"from": "eu",     "text": "kkkkkk que isso"},
-		{"from": "Felpo",  "text": "não to brincando, lontras são o animal mais fofo da terra"},
-		{"from": "eu",     "text": "concordo honestamente"},
-		{"from": "Felpo",  "text": "pesquisei e elas ficam de mãos dadas pra não se perder no rio"},
-		{"from": "eu",     "text": "para eu não aguento"},
+	"Contato 1": [
+		{"from": "Desconhecido",  "text": "Você acha que não sei o que está fazendo?"},
+		{"from": "Desconhecido",  "text": "Pode ter certeza que vou fazer você se arrepender."},
 	],
-	"aureli0_934": [
-		{"from": "aureli0_934", "text": "oi sumida"},
-		{"from": "eu",          "text": "oi! tava ocupada essa semana"},
-		{"from": "aureli0_934", "text": "tudo bem por aí?"},
-		{"from": "eu",          "text": "mais ou menos, o trabalho tá pesado"},
-		{"from": "aureli0_934", "text": "imagina, aqui igual"},
-		{"from": "aureli0_934", "text": "pelo menos o fim de semana tá chegando"},
-		{"from": "eu",          "text": "é verdade, vou sair um pouco pelo menos"},
-		{"from": "aureli0_934", "text": "boa, você precisa"},
+	"Contato 2": [
+		{"from": "gisele_09", "text": "não aguento mais essa sua fase"},
+		{"from": "gisele_09", "text": "entendo quando vc ainda era criança Monique, mas e isso agora?"},
+		{"from": "gisele_09", "text": "2 anos tendo que te ouvir numa cela e lidando com a burrada que você fez?"},
+		{"from": "gisele_09", "text": "e aí o que?"},
+		{"from": "gisele_09", "text": "que um abraço, 'te amo, irmã' e tudo se resolve?"},
+		{"from": "gisele_09", "text": "pra mim já chega, vc que aprenda as consequências e não tente me ligar mais."},
+		{"from": "gisele_09", "text": "é verdade, vou sair um pouco pelo menos"},
+		{"from": "gisele_09", "text": "eu quero ter uma vida"},
+		{"from": "eu", "text": "Eu sei que eu fui egoísta mas um dia vou te fazer entender tudo."},
+		{"from": "eu", "text": "Eu prometo."}
 	],
-	"maria": [
-		{"from": "maria", "text": "veja-me"},
-		{"from": "maria", "text": "[url=bapotube]https://bapotube.com/watch?v=xX_r31n4m3[/url]", "is_link": true},
+	"Contato 3": [
+		{"from": "observe", "text": "veja-me"},
+		{"from": "observe", "text": "[url=bapotube]https://bapotube.com/watch?v=xX_r31n4m3[/url]", "is_link": true},
 	],
 }
 
@@ -64,7 +61,7 @@ func _open_conversation(contact_name: String):
 
 func _on_link_clicked(_meta):
 	var pc := get_tree().get_first_node_in_group("pc_control") as PCControl
-	GameEvents.subtitle_requested.emit("Monique:", "Um link..?", 3.5)
+	GameEvents.subtitle_requested.emit("Você", "Um link..?", 3.5)
 	if pc:
 		pc.open_window(
 			preload("res://scenes/interactables/computer/bapotube_window.tscn"),

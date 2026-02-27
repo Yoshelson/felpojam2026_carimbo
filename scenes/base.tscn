@@ -1,17 +1,21 @@
 [gd_scene format=3 uid="uid://c8kudlijksi80"]
 
 [ext_resource type="PackedScene" uid="uid://766jsikflxl" path="res://scenes/player.tscn" id="1_8rhti"]
-[ext_resource type="Script" uid="uid://b32es5oq0huua" path="res://scripts/MainLevel.gd" id="1_vqfsp"]
+[ext_resource type="Script" path="res://scripts/MainLevel.gd" id="1_vqfsp"]
 [ext_resource type="AudioStream" uid="uid://yt2iyk7nvx4j" path="res://arts/sounds/music/Quarto de Hotel 1.2.wav" id="2_i6jx3"]
 [ext_resource type="PackedScene" uid="uid://5y8rwm8yspg3" path="res://scenes/interactables/computer/PCScene.tscn" id="3_21bcp"]
 [ext_resource type="PackedScene" uid="uid://c0gk0v22vsjes" path="res://scenes/objects/exemplo_interativo.tscn" id="5_40w10"]
 [ext_resource type="PackedScene" uid="uid://buu3nnoihwga2" path="res://scenes/UI/pause.tscn" id="5_hh5oj"]
-[ext_resource type="PackedScene" uid="uid://dxsd108dci26y" path="res://scenes/test/test_csg.tscn" id="5_xvvcp"]
-[ext_resource type="PackedScene" path="res://scenes/UI/DocumentsUI.tscn" id="7_hh5oj"]
+[ext_resource type="PackedScene" uid="uid://dxsd108dci26y" path="res://scenes/test_csg.tscn" id="5_xvvcp"]
+[ext_resource type="PackedScene" uid="uid://d1va66oo4rpjs" path="res://scenes/UI/DocumentsUI.tscn" id="7_hh5oj"]
 [ext_resource type="PackedScene" uid="uid://dd54j0okltw3d" path="res://scenes/UI/SubtitlesUI.tscn" id="10_6irmp"]
-[ext_resource type="PackedScene" path="res://scenes/UI/InteractionUI.tscn" id="10_jn13j"]
+[ext_resource type="PackedScene" uid="uid://co6hr5m513oq6" path="res://scenes/UI/InteractionUI.tscn" id="10_jn13j"]
 [ext_resource type="Script" uid="uid://cv00o1o2ylifc" path="res://scripts/test/teste_fala_1tv.gd" id="11_6irmp"]
-[ext_resource type="PackedScene" uid="uid://bvngn27lmrqjo" path="res://scenes/interactables/Document Board.tscn" id="12_dmaw2"]
+[ext_resource type="PackedScene" uid="uid://bur6e222wm402" path="res://scenes/interactables/Document Board.tscn" id="12_dmaw2"]
+[ext_resource type="Script" uid="uid://crthgse5je3ih" path="res://scripts/cutscenes/intro.gd" id="13_517kj"]
+[ext_resource type="AudioStream" uid="uid://bbf5687ki66ub" path="res://arts/sounds/sfx/door_sfx.mp3" id="14_ot4hf"]
+[ext_resource type="Script" uid="uid://lugfhpkx3kk3" path="res://scripts/interactable/doorEvent.gd" id="15_ot4hf"]
+[ext_resource type="Script" uid="uid://bnyrk4uyrt2uy" path="res://scenes/test/caixa_teste.gd" id="15_vciil"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tpea4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -28,6 +32,70 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dmaw2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vciil"]
+size = Vector3(1.3615723, 1.3408203, 1.6936035)
+
+[sub_resource type="Animation" id="Animation_ycryd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(3.6477408, 1.5244087, -8.287095)]
+}
+
+[sub_resource type="Animation" id="Animation_ystrd"]
+resource_name = "door_open"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.3439385, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(3.6477408, 1.5244087, -8.287095), Vector3(2.9922562, 1.5244087, -9.211214)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_isyof"]
+_data = {
+&"RESET": SubResource("Animation_ycryd"),
+&"door_open": SubResource("Animation_ystrd")
+}
 
 [node name="Main" type="Node3D" unique_id=959922866]
 script = ExtResource("1_vqfsp")
@@ -47,7 +115,7 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="player" parent="." unique_id=685818972 instance=ExtResource("1_8rhti")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9025381, 1.1926475, 3.1636274)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.8917732, 1.056793, 3.3833268)
 
 [node name="Desk State" parent="player/State Machine" parent_id_path=PackedInt32Array(685818972, 198868825) index="1" unique_id=458221997 node_paths=PackedStringArray("desk_pos", "walk_pos")]
 desk_pos = NodePath("../../../DeskPos")
@@ -61,6 +129,7 @@ visible = false
 
 [node name="PCScene" parent="." unique_id=794729469 instance=ExtResource("3_21bcp")]
 transform = Transform3D(-0.97993165, 0, 0.19933385, 0, 1, 0, -0.19933385, 0, -0.97993165, -2.575565, 1.4884229, 4.8839025)
+visible = false
 
 [node name="ExemploInterativo" parent="." unique_id=756309383 instance=ExtResource("5_40w10")]
 transform = Transform3D(-0.99999267, 0, 0.0038220552, 0, 1, 0, -0.0038220552, 0, -0.99999267, 4.3410978e-07, 0.63247085, 4.5179787)
@@ -98,6 +167,58 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.41026223)
 
 [node name="DocumentBoard" parent="." unique_id=977597654 instance=ExtResource("12_dmaw2")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3.9813704, 2.5411818, 5.228351)
+
+[node name="Intro" type="Node" parent="." unique_id=299101364]
+script = ExtResource("13_517kj")
+som_porta = ExtResource("14_ot4hf")
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=868719040]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AudioIntro" type="AudioStreamPlayer3D" parent="." unique_id=1277722317]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7839062, 1.8548911, -8.435036)
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="CaixaTeste" type="StaticBody3D" parent="." unique_id=2045782870 node_paths=PackedStringArray("_mesh")]
+transform = Transform3D(0.7438451, 0, -0.66835207, 0, 1, 0, 0.66835207, 0, 0.7438451, 4.6759577, 0.73125446, -9.74609)
+collision_layer = 5
+script = ExtResource("15_vciil")
+_id = "124123"
+_mesh = NodePath("CSGBox3D")
+prompt_message = "Pegar Caixa"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CaixaTeste" unique_id=199562770]
+shape = SubResource("BoxShape3D_dmaw2")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CaixaTeste" unique_id=1118105249]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.41026223)
+
+[node name="PortaIntroTest" type="StaticBody3D" parent="." unique_id=524762901 node_paths=PackedStringArray("_mesh")]
+transform = Transform3D(1.3097181, 0, 0, 0, 2.385632, 0, 0, 0, 0.1228472, 3.6477408, 1.5244087, -8.287095)
+collision_layer = 5
+script = ExtResource("15_ot4hf")
+_id = "512315"
+_mesh = NodePath("CSGBox3D")
+prompt_message = "Atender"
+
+[node name="CSGBox3D" type="CSGBox3D" parent="PortaIntroTest" unique_id=1967183587]
+transform = Transform3D(1, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000076, 0, 0, 0)
+size = Vector3(1.3635254, 1.2723389, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PortaIntroTest" unique_id=1215387610]
+transform = Transform3D(1, 0, 0, 0, 0.9999995, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_vciil")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PortaIntroTest" unique_id=983720648]
+libraries/ = SubResource("AnimationLibrary_isyof")
 
 [editable path="player"]
 [editable path="ExemploInterativo"]

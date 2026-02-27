@@ -18,6 +18,7 @@ const CORRECT_SEQUENCE = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 var current_sequence: Array = []
 var puzzle_solved := false
 var navigated := false
+var hint := true
 
 func _ready():
 	super._ready()
@@ -45,7 +46,18 @@ func _ready():
 			btn.pressed.connect(_on_animal_pressed.bind(i))
 
 func _on_close_pressed():
+	GameEvents.subtitle_requested.emit("Você", "Não quer fechar.", 2)
 	pass
+
+
+
+func puzzle_hint():
+	if hint:
+		GameEvents.subtitle_requested.emit("Você", "Um poema?", 2)
+		GameEvents.subtitle_requested.emit("Você", "Talvez seja melhor eu rever os [color=yellow]documentos[/color].", 3.5)
+		hint = false
+	else:
+		return
 
 func _on_navigate(text: String):
 	if navigated:
@@ -97,3 +109,8 @@ func _on_animal_pressed(index: int):
 		final_page.visible = true
 		url_fixed.text = "www.pontodeencontro.aqui/fim"
 		page_scroll.scroll_vertical = 0
+
+
+func _on_url_input_focus_entered() -> void:
+	puzzle_hint()
+	pass

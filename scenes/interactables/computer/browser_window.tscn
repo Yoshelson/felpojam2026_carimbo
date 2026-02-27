@@ -110,7 +110,8 @@ theme_override_constants/margin_bottom = 80
 [node name="PoemLabel" type="Label" parent="Content/VBox/PageScroll/PageVBox/PoemPage" index="0" unique_id=-1294967282]
 layout_mode = 2
 theme_override_font_sizes/font_size = 33
-text = "Tão grande é meu amor, que nem todo ouro que me pertence se compara a um fio de teus cachos. Sei que em teu mundo há somente um vasto mar, onde nem a luz do Sol pode iluminar tal magnitude. Pois então lembre-se, coração, que ao seguir o pôr do sol continuarei te esperando num campo de Alecrins, pois apenas juntos a escuridão desaparece, e apenas com teu carinho minha lua nasce."
+text = "Tão grande é meu amor, que nem todo ouro que me pertence se compara a um fio de teus cachos. Sei que em teu mundo há somente um vasto mar, onde nem a luz do Sol pode iluminar tal magnitude. 
+Pois então lembre-se, coração, que ao seguir o pôr do sol continuarei te esperando num campo de Alecrins, pois apenas juntos a escuridão desaparece, e apenas com teu carinho minha lua nasce."
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -260,3 +261,5 @@ offset_right = 1134.0
 [node name="Close" parent="TopBar" index="3" unique_id=1715420035]
 offset_left = 1148.0
 offset_right = 1188.0
+
+[connection signal="focus_entered" from="Content/VBox/BrowserBar/BarHBox/URLInput" to="." method="_on_url_input_focus_entered"]

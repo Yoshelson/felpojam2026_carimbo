@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cyjf5qqyugxgb"]
+
+[node name="Skipbar" type="Control" unique_id=1557614795]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=395664602]
+layout_mode = 0
+offset_left = -244.0
+offset_right = 1.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="VBox" unique_id=2070888763]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Segure qualquer botão para Pular"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="VBox" unique_id=808163178]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+show_percentage = false

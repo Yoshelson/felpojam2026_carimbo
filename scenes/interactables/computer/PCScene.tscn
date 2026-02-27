@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b16i63ob1m2uo" path="res://scripts/pc/PCScript.gd" id="1_8pqrt"]
 [ext_resource type="PackedScene" uid="uid://bckb4866dt45s" path="res://scenes/interactables/computer/pc_control.tscn" id="2_ssrg0"]
 [ext_resource type="Shader" uid="uid://dyvd11yhqxfdp" path="res://scripts/shaders/CRT2.gdshader" id="2_tey20"]
+[ext_resource type="AudioStream" uid="uid://cqulakvhf2nwf" path="res://arts/sounds/sfx/mouse_click_sfx.mp3" id="4_0owjm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_18hgq"]
 albedo_color = Color(0.11, 0.11, 0.11, 1)
@@ -94,6 +95,32 @@ mesh = SubResource("QuadMesh_wm2ak")
 
 [node name="Label3D" type="Label3D" parent="MeshInstance3D" unique_id=1650074465]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00036509335)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
 text = "Aperte Q
 para sair"
 font_size = 28
+
+[node name="ClickSFX1" type="AudioStreamPlayer3D" parent="." unique_id=1860131777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7973298, -0.33822533, 0.37002802)
+stream = ExtResource("4_0owjm")
+volume_db = -16.0
+max_db = -8.0
+pitch_scale = 0.9
+bus = &"SFX"
+
+[node name="ClickSFX2" type="AudioStreamPlayer3D" parent="." unique_id=1895242254]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7973298, -0.33822533, 0.37002802)
+stream = ExtResource("4_0owjm")
+volume_db = -16.0
+max_db = -8.0
+pitch_scale = 0.9
+bus = &"SFX"
+
+[node name="ClickSFX3" type="AudioStreamPlayer3D" parent="." unique_id=448524982]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7973298, -0.33822533, 0.37002802)
+stream = ExtResource("4_0owjm")
+volume_db = -16.0
+max_db = -8.0
+pitch_scale = 0.9
+bus = &"SFX"
