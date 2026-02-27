@@ -7,6 +7,7 @@ extends State
 func enter_state():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	player.teleport_to(desk_pos.global_transform)
+	player.set_interaction_layers(false, true, false)
 
 func exit_state():
 	player.teleport_to(walk_pos.global_transform)

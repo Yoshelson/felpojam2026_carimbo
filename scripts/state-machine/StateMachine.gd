@@ -5,10 +5,10 @@ var states: Dictionary = {}
 var _player: Player
 var _actual_state: State
 
-func _ready() -> void:
+func start_machine(player: Player) -> void:
+	_player = player
 	GameEvents.player_state_changed.connect(_on_state_change)
 	var state_nodes = self.get_children()
-	_player = get_parent()
 	for state in state_nodes:
 		if state is State:
 			states[state.id] = state

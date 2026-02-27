@@ -2,6 +2,7 @@ extends State
 
 func enter_state():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	player.set_interaction_layers(false, false, true)
 
 func exit_state():
 	pass

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://biitnp42nihwe"]
+
+[ext_resource type="Script" uid="uid://d2klyrrjjygpw" path="res://scripts/interactable/SimpleInteractable.gd" id="1_esi7u"]
+
+[node name="BaseSimpleInteractable" type="StaticBody3D" unique_id=1770591915 node_paths=PackedStringArray("audio_player")]
+collision_layer = 5
+script = ExtResource("1_esi7u")
+audio_player = NodePath("SFX")
+
+[node name="Collision Shape" type="CollisionShape3D" parent="." unique_id=1803360816]
+
+[node name="Visual Model" type="Node3D" parent="." unique_id=1399008943]
+
+[node name="SFX" type="AudioStreamPlayer3D" parent="." unique_id=733867886]
+bus = &"SFX"

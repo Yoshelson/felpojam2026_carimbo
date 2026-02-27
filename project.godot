@@ -85,7 +85,9 @@ exit={
 
 3d_physics/layer_1="world"
 3d_physics/layer_2="player"
-3d_physics/layer_3="interactive"
+3d_physics/layer_3="interactive-world"
+3d_physics/layer_4="interactive-desk"
+3d_physics/layer_5="interactive-board"
 
 [physics]
 

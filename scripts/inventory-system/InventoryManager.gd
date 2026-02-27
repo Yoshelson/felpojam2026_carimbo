@@ -6,6 +6,17 @@ var _stamp_inventory: Array[StampData]
 signal doc_inventory_changed(id: String)
 signal stamp_inventory_changed()
 
+func _ready() -> void:
+	GameEvents.add_item_to_inventory.connect(handle_new_resource)
+
+func handle_new_resource(new_item: Resource):
+	if new_item is DocumentData:
+		add_document(new_item)
+	elif new_item is StampData:
+		add_stamp_color(new_item)
+	else:
+		push_warning("O item adicionado é de um tipo não existente: ", new_item)
+
 func add_document(document_data: DocumentData):
 	var doc_id = document_data.id
 	if !(_documents_inventory.has(doc_id)):

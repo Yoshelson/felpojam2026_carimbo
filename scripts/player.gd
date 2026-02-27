@@ -17,7 +17,8 @@ signal focus_changed (new_prompt: String)
 var _focused_object: Node3D = null
 
 func _ready() -> void:
-	add_to_group("Player")	
+	add_to_group("Player")
+	$"State Machine".start_machine(self)
 
 #Essa funcao rotaciona a cabeca do player com a posicao do mouse, o bool 
 #apply_clamp eh usado para travar a ate 180 graus com base no ultimo ponto de 
@@ -52,6 +53,12 @@ func teleport_to(target_transform: Transform3D):
 	#rotacao pretendida
 	camera.global_rotation.x = euler.x
 	camera.global_rotation.z = 0.0
+
+func set_interaction_layers(world_layer: bool, desk_layer: bool, board_layer: bool) -> void:
+	if seecast:
+		seecast.set_collision_mask_value(3, world_layer)
+		seecast.set_collision_mask_value(4, desk_layer)
+		seecast.set_collision_mask_value(5, board_layer)
 
 func teleport_camera_to(target_transform: Transform3D) -> void:
 	camera.global_transform = target_transform
