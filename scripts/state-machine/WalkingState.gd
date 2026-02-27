@@ -22,3 +22,4 @@ func physics_update(delta: float):
 	
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	player.apply_movement(input_dir)
+	player.sound_steps(delta)

@@ -26,7 +26,7 @@ func crossfade_to(new_music: AudioStream, crossfade_time: float = 2):
 	var tween = create_tween()
 	tween.set_parallel(true)
 	tween.tween_property(_active_player, "volume_db", -80.0, crossfade_time).set_trans(Tween.TRANS_SINE)
-	tween.tween_property(_inactive_player, "volume_db", 0.0, crossfade_time).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(_inactive_player, "volume_db", -15, crossfade_time).set_trans(Tween.TRANS_SINE)
 	
 	tween.finished.connect(_on_fade_end.bind(_active_player))
 	

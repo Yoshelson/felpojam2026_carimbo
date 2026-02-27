@@ -4,11 +4,16 @@ class_name Player
 const SPEED = 5.0
 const SENSITIVITY = 0.002
 
+# Distância andada para cada efeito SFX de passos
+const STEP_DISTANCE: float = 2.5
+var distance_walked: float = 0.0
+
 @onready var head = $head
 @onready var camera = $head/Camera3D
 @onready var seecast = $head/Camera3D/SeeCast
-signal focus_changed (new_prompt: String)
+@onready var sfx_player = $SFX
 
+signal focus_changed (new_prompt: String)
 var _focused_object: Node3D = null
 
 func _ready() -> void:
@@ -121,6 +126,17 @@ func apply_movement(input_dir: Vector2):
 		velocity.x = 0.0
 		velocity.z = 0.0
 	move_and_slide()
+
+func sound_steps(delta: float):
+	if is_on_floor() and velocity.length_squared() > 0.1:
+		var horizontal_velocity = Vector2(velocity.x, velocity.z)
+		distance_walked += horizontal_velocity.length() * delta
+		
+		if distance_walked > STEP_DISTANCE:
+			sfx_player.play()
+			distance_walked = 0
+	else:
+		distance_walked = 0
 
 func _handle_prompt_changed(prompt: String):
 	emit_signal("focus_changed", prompt)
