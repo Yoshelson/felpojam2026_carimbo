@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="DocColorCombination" format=3 uid="uid://btphestrk3afg"]
+
+[ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="1_2adsq"]
+[ext_resource type="Texture2D" uid="uid://1kr731okksd8" path="res://arts/images/Documents/Autopsia/Preto + Azul.png" id="2_b1g06"]
+
+[resource]
+script = ExtResource("1_2adsq")
+colors_needed = Array[String](["Preto", "Azul"])
+variant_sprite = ExtResource("2_b1g06")
+variant_transcription = "[center]INSTITUTO [u][color=#75C3FF]M[/color][/u]ÉDICO L[u][color=#75C3FF]E[/color][/u]GAL[/center]
+[center]Av. [bgcolor=black]                                                          [/bgcolor] , SÃO PAULO[/center]
+
+[center]A[u][color=#75C3FF]U[/color][/u]TOPSIA POR MEDICO LEGISTA ENCARREGAD[u][color=#75C3FF]O[/color][/u][/center]
+
+[b]Falecido(a):[/b] Maria Sal[u][color=#75C3FF]e[/color][/u]s Barbosa...................................................... 
+[b]Raça:[/b] Branca 
+[b]Sexo:[/b] F 
+[b]Idade:[/b] 47
+
+[b]Endereço:[/b] [bgcolor=black]                                                          [/bgcolor]
+
+
+[b]Tipo de morte:[/b] violenta [X] casualidade [ ] de repente mesmo com saúde [ ] cremado [ ] encontrado morto [X] suspeito, anormal ou incomum [ ]
+
+[b]Olhos:[/b] Azuis 
+[b]Cabelo:[/b] loiro, liso 
+[b]Peso:[/b] 65kg 
+[b]Tamanho:[/b] 1,65 
+[b]Temp. Corporal:[/b] 16°C
+
+[b]Rigor mortis:[/b] [X] [ ] 
+[b]Hora/data de morte:[/b] 19:00 de 14/07/07
+[bgcolor=black][/bgcolor]
+[b]Marcas e ferimentos:[/b] não foram notados quaisquer danos externos e interno. A Tinta preta foi encontrada embaixo das unhas e dentro dos pulmões, boca e nariz. At[u][color=#75C3FF]é[/color][/u] então, a ingestão forçada do líq[u][color=#75C3FF]u[/color][/u]ido se demonstr[u][color=#75C3FF]a[/color][/u] a causa de morte mais provável.
+
+[b]Causa da morte:[/b] Asfixia por ingestão de tinta
+[b]Maneira de morrer:[/b] acidente[ ] natural [ ] homicídio [ ] desconhecido [ ] Em andamento [ ]
+[b]Disposição do caso:[/b] [bgcolor=black]                                                                                                    [/bgcolor]
+
+"
+metadata/_custom_type_script = "uid://dhgwmkta7luru"
