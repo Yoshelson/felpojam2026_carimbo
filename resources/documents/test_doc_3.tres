@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="DocumentData" format=3 uid="uid://d4kylpdjimc2n"]
 
 [ext_resource type="Script" uid="uid://b6irqck1wko0p" path="res://scripts/inventory-system/documents/DocumentsData.gd" id="2_4nnnh"]
+[ext_resource type="PackedScene" uid="uid://dcfi3m2wivif6" path="res://scenes/interactables/documents/doc_base.tscn" id="2_a2dnt"]
 [ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="3_8ld1e"]
 [ext_resource type="Texture2D" uid="uid://da3q4d4broif5" path="res://arts/test/white_eye.png" id="4_3v6tr"]
 [ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="4_5dmjr"]
@@ -59,4 +60,5 @@ base_image = ExtResource("4_5dmjr")
 id = "godot"
 variations = Array[ExtResource("3_8ld1e")]([SubResource("Resource_y03wn"), SubResource("Resource_qmsm8"), SubResource("Resource_2tfek"), SubResource("Resource_ohadh"), SubResource("Resource_atb7h"), SubResource("Resource_hj2pn"), SubResource("Resource_n7qcw")])
 requires_color_order = true
+prefab_scene = ExtResource("2_a2dnt")
 metadata/_custom_type_script = "uid://b6irqck1wko0p"

@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="DocumentData" format=3 uid="uid://cbrlx480bvv5q"]
 
 [ext_resource type="Texture2D" uid="uid://bn6ljhjkyrf3s" path="res://arts/test/AofHearts.png" id="1_n0khc"]
+[ext_resource type="PackedScene" uid="uid://dcfi3m2wivif6" path="res://scenes/interactables/documents/doc_base.tscn" id="2_116dv"]
 [ext_resource type="Script" uid="uid://b6irqck1wko0p" path="res://scripts/inventory-system/documents/DocumentsData.gd" id="2_rd83x"]
 [ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="3_116dv"]
 [ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="4_u4epa"]
@@ -17,4 +18,5 @@ base_image = ExtResource("1_n0khc")
 id = "ace"
 base_transcripted_text = "ace is incredible"
 variations = Array[ExtResource("3_116dv")]([SubResource("Resource_1ux4f")])
+prefab_scene = ExtResource("2_116dv")
 metadata/_custom_type_script = "uid://b6irqck1wko0p"

@@ -7,3 +7,5 @@ class_name DocumentData
 @export_multiline var base_transcripted_text: String
 @export var variations: Array[DocColorCombination]
 @export var requires_color_order: bool
+@export var board_pos: Vector3
+@export var prefab_scene: PackedScene

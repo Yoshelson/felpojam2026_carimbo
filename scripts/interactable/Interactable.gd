@@ -27,6 +27,6 @@ func on_focus_exited():
 	_mesh.material_overlay = null
 	
 func play_sfx():
-	if sfx_audio:
+	if sfx_audio and audio_player:
 		audio_player.stream = sfx_audio
 		audio_player.play()

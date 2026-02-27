@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b6irqck1wko0p" path="res://scripts/inventory-system/documents/DocumentsData.gd" id="1_7u24j"]
 [ext_resource type="Texture2D" uid="uid://cjkx821t7i4v3" path="res://arts/test/JofHearts.png" id="2_1ux4f"]
 [ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="2_ph6t2"]
+[ext_resource type="PackedScene" uid="uid://dcfi3m2wivif6" path="res://scenes/interactables/documents/doc_base.tscn" id="2_vrbeu"]
 [ext_resource type="Texture2D" uid="uid://b86mvvv7wltwv" path="res://arts/test/User_Test.png" id="4_6v2ix"]
 [ext_resource type="Texture2D" uid="uid://bn6ljhjkyrf3s" path="res://arts/test/AofHearts.png" id="4_b5o1t"]
 [ext_resource type="Texture2D" uid="uid://diae5xkiuusn7" path="res://arts/test/Mouse.png" id="6_dno37"]
@@ -76,4 +77,5 @@ Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapi
 
 Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos."
 variations = Array[ExtResource("2_ph6t2")]([SubResource("Resource_b5o1t"), SubResource("Resource_vrbeu"), SubResource("Resource_rqn3f"), SubResource("Resource_dku3m"), SubResource("Resource_if86j"), SubResource("Resource_bf5b2"), SubResource("Resource_o17wl")])
+prefab_scene = ExtResource("2_vrbeu")
 metadata/_custom_type_script = "uid://b6irqck1wko0p"

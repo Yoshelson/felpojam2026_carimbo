@@ -9,7 +9,7 @@ var _document_data: DocumentData
 # Construtor para criar as instancias dos documentos no jogo. Para cria-lo, e
 # necessario fazer o calculo de posicao antes
 func _init(frame_pos: Vector3, document_data:DocumentData) -> void:
-	_frame_pos = frame_pos
+	_frame_pos = document_data.board_pos
 	_applied_colors = []
 	_actual_image = document_data.base_image
 	_actual_transcription = document_data.base_transcripted_text
