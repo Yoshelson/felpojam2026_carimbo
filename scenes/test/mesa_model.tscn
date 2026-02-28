@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cwcoh4rau3ieo"]
+
+[ext_resource type="PackedScene" uid="uid://ro08ioesw2ap" path="res://arts/test/mesa com colisão e animação teste.glb" id="1_3l3an"]
+
+[node name="mesaModel" unique_id=1060498271 instance=ExtResource("1_3l3an")]
+
+[node name="GAVETA" parent="." index="1" unique_id=719159399]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0372996, 0.9868163, 3.8803144)

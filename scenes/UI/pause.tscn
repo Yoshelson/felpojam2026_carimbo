@@ -99,6 +99,7 @@ size_flags_horizontal = 4
 text = "Sair do Jogo"
 
 [node name="settings_menu" type="VBoxContainer" parent="PanelContainer" unique_id=841785270]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 7
 

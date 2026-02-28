@@ -16,6 +16,8 @@
 [ext_resource type="AudioStream" uid="uid://bbf5687ki66ub" path="res://arts/sounds/sfx/door_sfx.mp3" id="14_ot4hf"]
 [ext_resource type="Script" uid="uid://lugfhpkx3kk3" path="res://scripts/interactable/doorEvent.gd" id="15_ot4hf"]
 [ext_resource type="Script" uid="uid://bnyrk4uyrt2uy" path="res://scenes/test/caixa_teste.gd" id="15_vciil"]
+[ext_resource type="PackedScene" uid="uid://cwcoh4rau3ieo" path="res://scenes/test/mesa_model.tscn" id="17_ystrd"]
+[ext_resource type="Script" uid="uid://c147e6hm6frqw" path="res://scenes/test/gaveta.gd" id="18_isyof"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tpea4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -96,6 +98,9 @@ _data = {
 &"RESET": SubResource("Animation_ycryd"),
 &"door_open": SubResource("Animation_ystrd")
 }
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ystrd"]
+size = Vector3(1.1005249, 0.37939453, 1.0830078)
 
 [node name="Main" type="Node3D" unique_id=959922866]
 script = ExtResource("1_vqfsp")
@@ -220,5 +225,23 @@ shape = SubResource("BoxShape3D_vciil")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PortaIntroTest" unique_id=983720648]
 libraries/ = SubResource("AnimationLibrary_isyof")
 
+[node name="mesaModel" parent="." unique_id=1060498271 instance=ExtResource("17_ystrd")]
+
+[node name="GAVETA" parent="mesaModel" index="1" unique_id=719159399]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0372996, 0.9868163, 4.492727)
+layers = 5
+
+[node name="StaticBody3D" parent="mesaModel/GAVETA" index="0" unique_id=447532645 node_paths=PackedStringArray("_mesh")]
+collision_layer = 5
+script = ExtResource("18_isyof")
+_id = "125123523"
+_mesh = NodePath("..")
+prompt_message = "Abrir"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mesaModel" unique_id=900837453]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.027928, 1.0244821, 4.417144)
+shape = SubResource("BoxShape3D_ystrd")
+
 [editable path="player"]
 [editable path="ExemploInterativo"]
+[editable path="mesaModel"]
