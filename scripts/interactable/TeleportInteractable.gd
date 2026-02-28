@@ -18,7 +18,8 @@ func interact(interactor: Node3D):
 		
 		if interactor is Player:
 			GameEvents.change_player_state(target_state)
-			interactor.teleport_camera_to(camera_target_pos.global_transform)
+			if camera_target_pos:
+				interactor.teleport_camera_to(camera_target_pos.global_transform)
 		
 		is_interactable = true
 		prompt_message = original_prompt

@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://bnyrk4uyrt2uy" path="res://scenes/test/caixa_teste.gd" id="15_vciil"]
 [ext_resource type="PackedScene" uid="uid://cwcoh4rau3ieo" path="res://scenes/test/mesa_model.tscn" id="17_ystrd"]
 [ext_resource type="Script" path="res://scenes/test/gaveta.gd" id="18_isyof"]
+[ext_resource type="Script" uid="uid://blqjnsi3084eq" path="res://scripts/interactable/TeleportInteractable.gd" id="19_b085t"]
 [ext_resource type="PackedScene" uid="uid://dqd6sulpprq7w" path="res://scenes/test/quarto_teste_col.tscn" id="20_uo6h6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tpea4"]
@@ -104,6 +105,9 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_ystrd"]
 size = Vector3(1.1005249, 0.37939453, 1.0830078)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_0id1l"]
+size = Vector3(2.088623, 11.965332, 1)
+
 [node name="Main" type="Node3D" unique_id=959922866]
 script = ExtResource("1_vqfsp")
 level_music = ExtResource("2_i6jx3")
@@ -116,7 +120,7 @@ script = ExtResource("13_517kj")
 som_porta = ExtResource("14_ot4hf")
 
 [node name="DeskPos" type="Marker3D" parent="." unique_id=1033451031]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3.515, 1.193, 2.88)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3.3721156, 1.8137392, 3.3833268)
 
 [node name="WalkPos" type="Marker3D" parent="." unique_id=218376258]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2.439, 1.193, 2.88)
@@ -143,6 +147,7 @@ visible = false
 
 [node name="PCScene" parent="." unique_id=794729469 instance=ExtResource("3_21bcp")]
 transform = Transform3D(-0.9998004, 0, 0.019982815, 0, 1, 0, -0.019982815, 0, -0.9998004, -3.140166, 1.7074635, 4.9046597)
+collision_layer = 9
 
 [node name="ExemploInterativo" parent="." unique_id=756309383 instance=ExtResource("5_40w10")]
 transform = Transform3D(-0.99999267, 0, 0.0038220552, 0, 1, 0, -0.0038220552, 0, -0.99999267, 4.3410978e-07, 0.63247085, 4.5179787)
@@ -182,6 +187,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.41026223)
 
 [node name="DocumentBoard" parent="." unique_id=977597654 instance=ExtResource("12_dmaw2")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3.9813704, 2.5411818, 5.228351)
+collision_layer = 9
 
 [node name="Overlay" type="ColorRect" parent="." unique_id=868719040]
 visible = false
@@ -235,6 +241,14 @@ libraries/ = SubResource("AnimationLibrary_isyof")
 
 [node name="mesaModel" parent="." unique_id=1060498271 instance=ExtResource("17_ystrd")]
 
+[node name="StaticBody3D" parent="mesaModel/MESA" parent_id_path=PackedInt32Array(1060498271, 786727236) index="0" unique_id=1475620873 node_paths=PackedStringArray("_mesh")]
+collision_layer = 5
+script = ExtResource("19_b085t")
+target_state = 1
+_id = "mesa"
+_mesh = NodePath("..")
+prompt_message = "Usar a Mesa"
+
 [node name="GAVETA" parent="mesaModel" index="1" unique_id=1336875824]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0372996, 0.9868163, 4.492727)
 layers = 5
@@ -254,6 +268,18 @@ shape = SubResource("BoxShape3D_ystrd")
 
 [node name="PORTA" parent="quarto_teste_col" index="26" unique_id=250610336]
 transform = Transform3D(-0.26741934, 0, 0.071495555, 0, 1.4298409, 0, 0.7769506, 0, 0.02460812, 2.8722875, 1.5127364, -8.170072)
+
+[node name="StaticBody3D" parent="quarto_teste_col/CADEIRA" parent_id_path=PackedInt32Array(619317496, 600156880) index="0" unique_id=934191473 node_paths=PackedStringArray("_mesh")]
+collision_layer = 5
+script = ExtResource("19_b085t")
+target_state = 1
+_id = "cadeira_computador"
+_mesh = NodePath("..")
+prompt_message = "Sentar na Cadeira"
+
+[node name="CollisionShape3D" parent="quarto_teste_col/CADEIRA/StaticBody3D" index="0" unique_id=642592760]
+transform = Transform3D(1.0000008, 0, 0, 0, 1.0000002, 0, 0, 0, 1, 0.00012111664, -1.8015184, 0)
+shape = SubResource("BoxShape3D_0id1l")
 
 [editable path="player"]
 [editable path="ExemploInterativo"]
