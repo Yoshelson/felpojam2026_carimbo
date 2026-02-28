@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b1tjlq0dyqey1"]
 
-[ext_resource type="Texture2D" uid="uid://bvf2jsswjqnqk" path="res://arts/test/Tinta2.png" id="1_sata4"]
+[ext_resource type="Texture2D" uid="uid://cng1ca8ypwcsr" path="res://arts/images/Stamp/azul.png" id="1_sata4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qd52h"]
 bg_color = Color(1, 1, 1, 0.23529412)

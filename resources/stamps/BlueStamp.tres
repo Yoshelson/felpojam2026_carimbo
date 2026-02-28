@@ -1,11 +1,15 @@
 [gd_resource type="Resource" script_class="StampData" format=3 uid="uid://rws42boo75iu"]
 
 [ext_resource type="Script" uid="uid://bhbswkhk13el6" path="res://scripts/inventory-system/stamps/StampsData.gd" id="1_1i5yc"]
-[ext_resource type="Texture2D" uid="uid://du015yetv2wxx" path="res://arts/test/Tinta5.png" id="1_vqryd"]
+[ext_resource type="Texture2D" uid="uid://cswyay8mdpr20" path="res://arts/images/Stamp/azul_hover.png" id="1_mn00r"]
+[ext_resource type="Texture2D" uid="uid://cng1ca8ypwcsr" path="res://arts/images/Stamp/azul.png" id="1_vqryd"]
+[ext_resource type="Texture2D" uid="uid://34dkpvovdqrt" path="res://arts/images/Stamp/azul_pressed.png" id="3_aaoar"]
 
 [resource]
 script = ExtResource("1_1i5yc")
 ui_pos = 2
 name = "Azul"
 image = ExtResource("1_vqryd")
+hover = ExtResource("1_mn00r")
+pressed = ExtResource("3_aaoar")
 metadata/_custom_type_script = "uid://bhbswkhk13el6"

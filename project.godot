@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://dyxtp740c3gs4"
 InventoryManager="*uid://bvhno70r6ldra"
 GameEvents="*uid://coruphvadhjed"
 MusicManager="*uid://bxhrqi604vf5a"
+PsxFilter="*uid://pivovmade6um"
 
 [display]
 
