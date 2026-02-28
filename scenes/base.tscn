@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://766jsikflxl" path="res://scenes/player.tscn" id="1_8rhti"]
 [ext_resource type="Script" path="res://scripts/MainLevel.gd" id="1_vqfsp"]
 [ext_resource type="AudioStream" uid="uid://yt2iyk7nvx4j" path="res://arts/sounds/music/Quarto de Hotel 1.2.wav" id="2_i6jx3"]
+[ext_resource type="Script" uid="uid://uwqvtu5si77r" path="res://scripts/test/test_inventory.gd" id="3_1xxg6"]
 [ext_resource type="PackedScene" uid="uid://5y8rwm8yspg3" path="res://scenes/interactables/computer/PCScene.tscn" id="3_21bcp"]
 [ext_resource type="PackedScene" uid="uid://c0gk0v22vsjes" path="res://scenes/objects/exemplo_interativo.tscn" id="5_40w10"]
 [ext_resource type="PackedScene" uid="uid://buu3nnoihwga2" path="res://scenes/UI/pause.tscn" id="5_hh5oj"]
@@ -105,6 +106,9 @@ size = Vector3(1.1005249, 0.37939453, 1.0830078)
 [node name="Main" type="Node3D" unique_id=959922866]
 script = ExtResource("1_vqfsp")
 level_music = ExtResource("2_i6jx3")
+
+[node name="TESTE" type="Node" parent="." unique_id=318255686]
+script = ExtResource("3_1xxg6")
 
 [node name="DeskPos" type="Marker3D" parent="." unique_id=1033451031]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3.515, 1.193, 2.88)

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cqlioob2vxlrm"]
 
 [ext_resource type="Script" uid="uid://b7yntnnuyu1w3" path="res://scripts/UI/StampUIController.gd" id="1_dr43n"]
+[ext_resource type="Texture2D" uid="uid://b5437dsuue46d" path="res://arts/test/Hand_Stamp.png" id="2_o3hse"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_plnnd"]
 bg_color = Color(1, 1, 1, 0.23529412)
@@ -83,5 +84,18 @@ theme_override_constants/margin_right = 10
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 10
+
+[node name="Hand Stamp" type="TextureRect" parent="." unique_id=1476758213]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.711
+anchor_top = 0.8
+anchor_right = 0.87000006
+anchor_bottom = 1.05
+pivot_offset = Vector2(120.7, 54.799927)
+texture = ExtResource("2_o3hse")
+expand_mode = 1
+stretch_mode = 5
 
 [connection signal="pressed" from="Return Button Margin/Background Return Btn/Return Btn" to="." method="_on_return_btn_pressed"]

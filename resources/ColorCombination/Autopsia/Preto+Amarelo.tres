@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="DocColorCombination" format=3 uid="uid://cxf3dkj1khu48"]
+
+[ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="1_efcn8"]
+[ext_resource type="Texture2D" uid="uid://bhqtpwedr4uwy" path="res://arts/images/Documents/Autopsia/Preto + Amarelo.png" id="2_4k1a7"]
+
+[resource]
+script = ExtResource("1_efcn8")
+colors_needed = Array[String](["Preto", "Amarelo"])
+variant_sprite = ExtResource("2_4k1a7")
+variant_transcription = "[center]INSTITUTO [u][color=#FFD700]M[/color][/u]ÉDICO LEGAL[/center]
+
+[center]Av. [bgcolor=black]                                                          [/bgcolor] , SÃO PAULO[/center]
+
+[center]AUTOPSIA POR MEDICO LEGISTA E[u][color=#FFD700]N[/color][/u]CARREGADO[/center]
+
+[b]Falecido(a):[/b] [u][color=#FFD700]M[/color][/u]aria Sales Barbosa...................................................... 
+[b]Raça:[/b] Branca 
+[b]Sexo:[/b] F 
+[b]Idade:[/b] 47
+
+[b]Endereço:[/b] [bgcolor=black]                                                          [/bgcolor]
+
+
+[b]Tipo de morte:[/b] violenta [X] casualidade [ ] de repente mesmo com saúde [ ] cremado [ ] encontrado morto [X] suspeito, anormal ou incomum [ ]
+
+[b]Olhos:[/b] Azuis 
+[b]Cabelo:[/b] loiro, liso 
+[b]Peso:[/b] 65kg 
+[b]Tamanho:[/b] 1,65 
+[b]Temp. Corporal:[/b] 16°C
+
+[b]Rigor mortis:[/b] [X] [ ] 
+[b]Hora/data de morte:[/b] 19:00 de 14/07/07
+
+[b]Marcas e ferimentos:[/b] não foram notados quaisquer danos externos e interno. A Tinta preta foi encontrada embaixo das unhas e dentro dos pulmões, boca e nariz. Até então, a ingestão forçada do [u][color=#FFD700]l[/color][/u]íquido se demonstra a causa de morte mais provável.
+
+[b]Causa da morte:[/b] Asfixia por ingestão de tinta
+[b]Maneira de morrer:[/b] acidente[ ] natural [ ] homicídio [ ] desconhecido [ ] Em andamento [ ]
+[b]Disposição do caso:[/b] [bgcolor=black]                                                                                                    [/bgcolor]
+"
+metadata/_custom_type_script = "uid://dhgwmkta7luru"

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="DocumentData" format=3 uid="uid://dtd72i2ttcytd"]
+
+[ext_resource type="Script" uid="uid://b6irqck1wko0p" path="res://scripts/inventory-system/documents/DocumentsData.gd" id="1_5cik6"]
+[ext_resource type="Texture2D" uid="uid://bcpcsfea871nf" path="res://arts/images/Documents/Relatorio de Homicidio/Base.png" id="1_acy0m"]
+[ext_resource type="PackedScene" uid="uid://bskh7cf5n0xvu" path="res://scenes/interactables/documents/doc_rect.tscn" id="2_772r0"]
+[ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="2_uv0ot"]
+[ext_resource type="Resource" uid="uid://i1rlpya8gxwj" path="res://resources/ColorCombination/Relatorio do Homicidio/Preto.tres" id="4_772r0"]
+[ext_resource type="Resource" uid="uid://behu4f8vvcoay" path="res://resources/ColorCombination/Relatorio do Homicidio/Azul.tres" id="5_macym"]
+[ext_resource type="Resource" uid="uid://ijllvlt7cq3d" path="res://resources/ColorCombination/Relatorio do Homicidio/Amarelo.tres" id="6_mvagl"]
+[ext_resource type="Resource" uid="uid://6w260bauey44" path="res://resources/ColorCombination/Relatorio do Homicidio/Preto+Amarelo.tres" id="7_t7la7"]
+[ext_resource type="Resource" uid="uid://c43y0cj6a7hlg" path="res://resources/ColorCombination/Relatorio do Homicidio/Preto+Azul.tres" id="8_dq4y4"]
+[ext_resource type="Resource" uid="uid://s2y5s303ciao" path="res://resources/ColorCombination/Relatorio do Homicidio/Amarelo+Azul.tres" id="9_5flhv"]
+[ext_resource type="Resource" uid="uid://d2hrybtvt55td" path="res://resources/ColorCombination/Relatorio do Homicidio/Preto+Amarelo+Azul.tres" id="10_bl8ax"]
+
+[resource]
+script = ExtResource("1_5cik6")
+base_image = ExtResource("1_acy0m")
+id = "relatorio_homicidio"
+base_transcripted_text = "[font_size=32][center]Documento Vazio[/center][/font_size]"
+variations = Array[ExtResource("2_uv0ot")]([ExtResource("4_772r0"), ExtResource("5_macym"), ExtResource("6_mvagl"), ExtResource("7_t7la7"), ExtResource("8_dq4y4"), ExtResource("9_5flhv"), ExtResource("10_bl8ax")])
+board_pos = Vector3(-1.225, 0.342, 0.01)
+prefab_scene = ExtResource("2_772r0")
+metadata/_custom_type_script = "uid://b6irqck1wko0p"

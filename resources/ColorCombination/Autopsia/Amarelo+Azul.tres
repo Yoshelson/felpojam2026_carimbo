@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DocColorCombination" format=3 uid="uid://cffguu40ua5d6"]
+
+[ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="1_igaas"]
+[ext_resource type="Texture2D" uid="uid://dchsnxff0jle3" path="res://arts/images/Documents/Autopsia/Amarelo + Azul.png" id="2_xmic6"]
+
+[resource]
+script = ExtResource("1_igaas")
+colors_needed = Array[String](["Amarelo", "Azul"])
+variant_sprite = ExtResource("2_xmic6")
+variant_transcription = "[center][bgcolor=#0B1F0B][b][font_size=60][color=#72BF6A]L  U  A[/color][/font_size][/b][/bgcolor][/center]"
+metadata/_custom_type_script = "uid://dhgwmkta7luru"

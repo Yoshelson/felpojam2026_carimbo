@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DocColorCombination" format=3 uid="uid://d2hrybtvt55td"]
+
+[ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="1_fpkeu"]
+[ext_resource type="Texture2D" uid="uid://0j1irhxes5v4" path="res://arts/images/Documents/Relatorio de Homicidio/Preto + Azul + Amarelo.png" id="2_nren4"]
+
+[resource]
+script = ExtResource("1_fpkeu")
+colors_needed = Array[String](["Preto", "Amarelo", "Azul"])
+variant_sprite = ExtResource("2_nren4")
+variant_transcription = "[center][bgcolor=#0B1F0B][b][font_size=60][color=#72BF6A]A[/color][/font_size][/b][/bgcolor][/center]"
+metadata/_custom_type_script = "uid://dhgwmkta7luru"

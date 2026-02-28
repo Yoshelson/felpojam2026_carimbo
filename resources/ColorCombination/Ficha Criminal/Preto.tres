@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="DocColorCombination" format=3 uid="uid://blbbbdvasvlas"]
+
+[ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="1_nf8lq"]
+[ext_resource type="Texture2D" uid="uid://bekhcimys4a1l" path="res://arts/images/Documents/Ficha Criminal/Preto.png" id="2_1ym2f"]
+
+[resource]
+script = ExtResource("1_nf8lq")
+colors_needed = Array[String](["Preto"])
+variant_sprite = ExtResource("2_1ym2f")
+variant_transcription = "[b]Nome:[/b] Monique Lima.............................................................. 
+[b]Idade:[/b] 23 anos. [b]Nasc.em:[/b] 16/02/1984
+[b]Natural de:[/b] São Paulo - SP................ Cor: Branca
+[b]Profissão:[/b] Desempregada
+[b]Filiação:[/b] Orfanato Limoeiro - tel: ([bgcolor=black]        [/bgcolor]). Irmã: Gisele Lima - tel: ([bgcolor=black]        [/bgcolor])
+[b]Residência:[/b]  [bgcolor=black]                                                                                                    [/bgcolor]
+[b]Altura:[/b] 1,61 m 
+[b]Peso:[/b] 52 kg 
+[b]Sexo:[/b] Feminino
+[b]RG:[/b] [bgcolor=black]                     [/bgcolor]
+[b]CPF:[/b] [bgcolor=black]                             [/bgcolor]
+[b]Data:[/b] 13 / 05 / 2007
+
+[b]Vulgo:[/b]  [bgcolor=black]                             [/bgcolor]
+[b]Olhos:[/b] Castanhos 
+[b]Cabelos:[/b] Curto-liso-marrom
+[b]Cicatrizes:[/b] Lacerações nos punhos e corte no lábio superior
+[b]Tatuagens:[/b] Galhadas azul no pescoço
+[b]Anomalias digitais:[/b]
+[b]Informações adicionais:[/b] Sujeito se manteve em silêncio nas interrogações, a liberação está prevista para 2 anos.
+[b]Motivo:[/b] Vandalismo. Dano qualificado."
+metadata/_custom_type_script = "uid://dhgwmkta7luru"

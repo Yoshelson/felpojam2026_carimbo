@@ -15,6 +15,7 @@ var _is_panning: bool = false
 var _target_pos: Vector2
 
 var _actual_doc_id: String = ""
+var _last_stamp_used: Color = Color.BLACK
 
 func _ready() -> void:
 	self.hide()
@@ -48,8 +49,10 @@ func _att_doc_UI(doc_id: String):
 	if _actual_doc_id == doc_id:
 		var document = InventoryManager.get_doc(doc_id)
 		if document:
-			document_image.texture = document._actual_image
+			var doc_texture = document._actual_image
+			#document_image.texture = doc_texture
 			transcript_UI.att_transcription(document._actual_transcription)
+			_update_doc_anim(doc_texture)
 		else:
 			push_error("ERROR: Id de Documento enviado para UI não está no inventário")
 
@@ -111,8 +114,32 @@ func _center_doc_pivot():
 	_target_pos = document_image.position
 
 func _doc_stamped(stamp_id: String):
+	match (stamp_id):
+		"Azul":
+			_last_stamp_used = Color.BLUE
+		"Amarelo":
+			_last_stamp_used = Color.YELLOW
+		"Verde":
+			_last_stamp_used = Color.GREEN
+		"Preto":
+			_last_stamp_used = Color.BLACK
+		"Branco":
+			_last_stamp_used = Color.SNOW
+		_:
+			push_error("ERROR: Carimbo de ID nao identificado foi pressionado: ", stamp_id)
 	InventoryManager.stamp_doc(_actual_doc_id, stamp_id)
 
+func _update_doc_anim(new_texture: Texture2D):
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	
+	#tween.tween_property(document_image, "modulate:a", 0.0, 0.2)
+	tween.tween_property(document_image, "texture", new_texture, 0.0)
+	tween.tween_property(document_image, "self_modulate", _last_stamp_used.lerp(Color.WHITE, 0.4), 0.0)
+	tween.tween_property(document_image, "modulate:a", 1.0, 0.5)
+	tween.tween_property(document_image, "self_modulate", Color.WHITE, 0.8)
+	
 func _on_return_btn_pressed() -> void:
 	self.hide()
 	GameEvents.player_state_changed.emit(GameEvents.player_states.board)
