@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="DocColorCombination" format=3 uid="uid://bnqe0kfxybe16"]
+
+[ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="1_888or"]
+[ext_resource type="Texture2D" uid="uid://wu54o326qmlh" path="res://arts/images/Documents/Fotos/Preto + Amarelo + Azul + Verde + Branco.png" id="2_f0cot"]
+
+[resource]
+script = ExtResource("1_888or")
+colors_needed = Array[String](["Preto", "Amarelo", "Azul", "Verde", "Branco"])
+variant_sprite = ExtResource("2_f0cot")
+variant_transcription = "[b]Foto 1[/b] - [i][color=#72BF6A]É um peixe voraz de São Francisco[/color][/i]
+[u][color=#72BF6A]É[/color][/u]ok[u][color=#72BF6A]u[/color][/u]y[u][color=#72BF6A]m[/color][/u] [u][color=#72BF6A]p[/color][/u]fl[u][color=#72BF6A]e[/color][/u]rg[u][color=#72BF6A]i[/color][/u]f[u][color=#72BF6A]x[/color][/u][u][color=#72BF6A]e[/color][/u] [u][color=#72BF6A]v[/color][/u][u][color=#72BF6A]o[/color][/u]red[u][color=#72BF6A]r[/color][/u][u][color=#72BF6A]a[/color][/u]oy[u][color=#72BF6A]z[/color][/u]
+Dgj[u][color=#72BF6A]d[/color][/u][u][color=#72BF6A]e[/color][/u] d[u][color=#72BF6A]s[/color][/u][u][color=#72BF6A]ã[/color][/u]ge[u][color=#72BF6A]o[/color][/u] [u][color=#72BF6A]F[/color][/u]sdf[u][color=#72BF6A]r[/color][/u]grg[u][color=#72BF6A]a[/color][/u]qw[u][color=#72BF6A]nc[/color][/u]myt[u][color=#72BF6A]i[/color][/u][u][color=#72BF6A]s[/color][/u]qwe[u][color=#72BF6A]c[/color][/u][u][color=#72BF6A]o[/color][/u]
+[b][color=#FFFAFA]15:00 25/8/2009[/color][/b]
+
+[b]Foto 2[/b] - [i][color=#72BF6A]Maior canídeo das Américas[/color][/i]
+[u][color=#72BF6A]M[/color][/u][u][color=#72BF6A]e[/color][/u]w[u][color=#72BF6A]ai[/color][/u]qwe[u][color=#72BF6A]o[/color][/u][u][color=#72BF6A]r[/color][/u] [u][color=#72BF6A]c[/color][/u][u][color=#72BF6A]a[/color][/u]dfe[u][color=#72BF6A]n[/color][/u][u][color=#72BF6A]í[/color][/u]qw[u][color=#72BF6A]d[/color][/u]d[u][color=#72BF6A]eo[/color][/u] [u][color=#72BF6A]d[/color][/u]wfcd[u][color=#72BF6A]a[/color][/u][u][color=#72BF6A]s[/color][/u]
+kjg[u][color=#72BF6A]a[/color][/u][u][color=#72BF6A]m[/color][/u]yun[u][color=#72BF6A]é[/color][/u]ky[u][color=#72BF6A]r[/color][/u][u][color=#72BF6A]i[/color][/u]sdes[u][color=#72BF6A]c[/color][/u]li[u][color=#72BF6A]a[/color][/u]qw[u][color=#72BF6A]s[/color][/u]
+[b][color=#FFFAFA]17:00 25/8/2009[/color][/b]
+
+[b]Foto 3[/b] - [i][color=#72BF6A]Alisa meu pelo[/color][/i]
+[u][color=#72BF6A]A[/color][/u]gr[u][color=#72BF6A]l[/color][/u][u][color=#72BF6A]i[/color][/u]dq[u][color=#72BF6A]s[/color][/u]lo[u][color=#72BF6A]a[/color][/u] [u][color=#72BF6A]m[/color][/u]frf[u][color=#72BF6A]eu[/color][/u]ho h[u][color=#72BF6A]p[/color][/u]f[u][color=#72BF6A]e[/color][/u]we[u][color=#72BF6A]l[/color][/u]wde[u][color=#72BF6A]o[/color][/u]
+[b][color=#FFFAFA]16:00 25/8/2009[/color][/b]
+
+[b]Foto 4[/b] - [i][color=#72BF6A]Rato grande[/color][/i]
+[u][color=#72BF6A]R[/color][/u]xqwd[u][color=#72BF6A]a[/color][/u]vw[u][color=#72BF6A]t[/color][/u][u][color=#72BF6A]o[/color][/u] [u][color=#72BF6A]g[/color][/u]myu[u][color=#72BF6A]r[/color][/u][u][color=#72BF6A]a[/color][/u]xA[u][color=#72BF6A]nd[/color][/u]PI[u][color=#72BF6A]e[/color][/u]
+[b][color=#FFFAFA]11:00 25/8/2009[/color][/b]
+
+[b]Foto 5[/b] - [i][color=#72BF6A]Melhor amigo da Ana Maria Braga[/color][/i]
+[u][color=#72BF6A]m[/color][/u]vrs[u][color=#72BF6A]e[/color][/u]rgsz[u][color=#72BF6A]l[/color][/u]hfewc[u][color=#72BF6A]o[/color][/u][u][color=#72BF6A]r[/color][/u] [u][color=#72BF6A]a[/color][/u]vtrv[u][color=#72BF6A]m[/color][/u]c[u][color=#72BF6A]i[/color][/u][u][color=#72BF6A]g[/color][/u]fg[u][color=#72BF6A]o[/color][/u]
+[u][color=#72BF6A]d[/color][/u]qr[u][color=#72BF6A]a[/color][/u] [u][color=#72BF6A]a[/color][/u]bydn[u][color=#72BF6A]n[/color][/u][u][color=#72BF6A]a[/color][/u] [u][color=#72BF6A]M[/color][/u]frs[u][color=#72BF6A]a[/color][/u]jk[u][color=#72BF6A]r[/color][/u][u][color=#72BF6A]ia[/color][/u] [u][color=#72BF6A]B[/color][/u]çoy[u][color=#72BF6A]r[/color][/u][u][color=#72BF6A]a[/color][/u]v srf[u][color=#72BF6A]g[/color][/u]j[u][color=#72BF6A]a[/color][/u]
+[b][color=#FFFAFA]9:00 25/8/2009[/color][/b]
+
+[b]Foto 6[/b] - [i][color=#72BF6A]Lenda folclórica[/color][/i]
+gh[u][color=#72BF6A]l[/color][/u][u][color=#72BF6A]e[/color][/u][u][color=#72BF6A]n[/color][/u]g[u][color=#72BF6A]d[/color][/u][u][color=#72BF6A]a[/color][/u] [u][color=#72BF6A]f[/color][/u]vres[u][color=#72BF6A]o[/color][/u][u][color=#72BF6A]l[/color][/u]es[u][color=#72BF6A]cl[/color][/u]ky[u][color=#72BF6A]ó[/color][/u]ce[u][color=#72BF6A]r[/color][/u][u][color=#72BF6A]i[/color][/u][u][color=#72BF6A]c[/color][/u][u][color=#72BF6A]a[/color][/u]cpa
+[b][color=#FFFAFA]13:00 25/8/2009[/color][/b]
+
+[b]Foto 7[/b] - [i][color=#72BF6A]Mascote da copa[/color][/i]
+[u][color=#72BF6A]M[/color][/u]wdw[u][color=#72BF6A]a[/color][/u][u][color=#72BF6A]s[/color][/u]qwe[u][color=#72BF6A]c[/color][/u][u][color=#72BF6A]o[/color][/u]d[u][color=#72BF6A]t[/color][/u]htl[u][color=#72BF6A]e[/color][/u]
+sc[u][color=#72BF6A]d[/color][/u]vsa[u][color=#72BF6A]a[/color][/u] [u][color=#72BF6A]c[/color][/u]abr[u][color=#72BF6A]o[/color][/u]qwf[u][color=#72BF6A]p[/color][/u]br[u][color=#72BF6A]a[/color][/u]
+[b][color=#FFFAFA]14:00 25/8/2009[/color][/b]
+
+[b]Foto 8[/b] - [i][color=#72BF6A]Nham Nhamh formiga[/color][/i]
+[u][color=#72BF6A]n[/color][/u]xWA[u][color=#72BF6A]h[/color][/u][u][color=#72BF6A]a[/color][/u]SD[u][color=#72BF6A]m[/color][/u] [u][color=#72BF6A]nh[/color][/u]v[u][color=#72BF6A]a[/color][/u]ea[u][color=#72BF6A]mh[/color][/u]
+[u][color=#72BF6A]f[/color][/u][u][color=#72BF6A]o[/color][/u]uik[u][color=#72BF6A]rm[/color][/u]afe[u][color=#72BF6A]i[/color][/u][u][color=#72BF6A]g[/color][/u]qxw[u][color=#72BF6A]a[/color][/u]
+[b][color=#FFFAFA]12:00 25/8/2009[/color][/b]
+
+[b]Foto 9[/b] - [i][color=#72BF6A]Cururu na beira do rio[/color][/i]
+[u][color=#72BF6A]c[/color][/u]gh[u][color=#72BF6A]u[/color][/u][u][color=#72BF6A]r[/color][/u]qd[u][color=#72BF6A]u[/color][/u][u][color=#72BF6A]r[/color][/u]ky[u][color=#72BF6A]u[/color][/u] [u][color=#72BF6A]n[/color][/u]wd[u][color=#72BF6A]a[/color][/u] [u][color=#72BF6A]b[/color][/u]rs[u][color=#72BF6A]ei[/color][/u]qwe[u][color=#72BF6A]r[/color][/u][u][color=#72BF6A]a[/color][/u]
+[u][color=#72BF6A]d[/color][/u]wqx[u][color=#72BF6A]o[/color][/u] [u][color=#72BF6A]r[/color][/u]qd[u][color=#72BF6A]i[/color][/u]luy[u][color=#72BF6A]o[/color][/u]
+[b][color=#FFFAFA]10:00 25/8/2009[/color][/b]"
+metadata/_custom_type_script = "uid://dhgwmkta7luru"

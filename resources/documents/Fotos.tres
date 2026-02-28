@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="DocumentData" format=3 uid="uid://b7ybgxfkgyr2u"]
+
+[ext_resource type="Texture2D" uid="uid://0e4i5jcrf577" path="res://arts/images/Documents/Fotos/Base.png" id="1_oe8cf"]
+[ext_resource type="Script" uid="uid://b6irqck1wko0p" path="res://scripts/inventory-system/documents/DocumentsData.gd" id="1_ykrbf"]
+[ext_resource type="PackedScene" uid="uid://bskh7cf5n0xvu" path="res://scenes/interactables/documents/doc_rect.tscn" id="2_dp5hu"]
+[ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="2_j03rx"]
+[ext_resource type="Resource" uid="uid://c8qc1teekb6qp" path="res://resources/ColorCombination/Fotos/Preto.tres" id="5_jjvst"]
+[ext_resource type="Resource" uid="uid://bnyvm8v424c87" path="res://resources/ColorCombination/Fotos/Preto + Amarelo.tres" id="6_kg25p"]
+[ext_resource type="Resource" uid="uid://ca3uawclqedb8" path="res://resources/ColorCombination/Fotos/Preto + Amarelo + Azul.tres" id="7_yw3y0"]
+[ext_resource type="Resource" uid="uid://bfrory7wiyik0" path="res://resources/ColorCombination/Fotos/Preto + Amarelo + Azul + Verde.tres" id="8_tylaq"]
+[ext_resource type="Resource" uid="uid://bnqe0kfxybe16" path="res://resources/ColorCombination/Fotos/Preto + Amarelo + Azul + Verde + Branco.tres" id="9_7bfyg"]
+
+[resource]
+script = ExtResource("1_ykrbf")
+base_image = ExtResource("1_oe8cf")
+id = "fotos"
+base_transcripted_text = "[font_size=32][center]Documento Vazio[/center][/font_size]"
+variations = Array[ExtResource("2_j03rx")]([ExtResource("5_jjvst"), ExtResource("6_kg25p"), ExtResource("7_yw3y0"), ExtResource("8_tylaq"), ExtResource("9_7bfyg")])
+requires_color_order = true
+board_pos = Vector3(0.596, -0.415, 0.01)
+prefab_scene = ExtResource("2_dp5hu")
+metadata/_custom_type_script = "uid://b6irqck1wko0p"

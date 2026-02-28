@@ -9,10 +9,12 @@ func _input(event: InputEvent) -> void:
 			var load_doc2 = load("res://resources/documents/Ficha_Criminal.tres")
 			var load_doc3 = load("res://resources/documents/Relatorio_Homicidio.tres")
 			var load_doc4 = load("res://resources/documents/Jornal.tres")
+			var load_doc5 = load("res://resources/documents/Fotos.tres")
 			InventoryManager.add_document(load_doc1)
 			InventoryManager.add_document(load_doc2)
 			InventoryManager.add_document(load_doc3)
 			InventoryManager.add_document(load_doc4)
+			InventoryManager.add_document(load_doc5)
 
 			var load_stamp1 = load("res://resources/stamps/BlackStamp.tres")
 			var load_stamp2 = load("res://resources/stamps/WhiteStamp.tres")

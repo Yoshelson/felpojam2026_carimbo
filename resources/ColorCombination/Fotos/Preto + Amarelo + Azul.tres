@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="DocColorCombination" format=3 uid="uid://ca3uawclqedb8"]
+
+[ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="1_qybfa"]
+[ext_resource type="Texture2D" uid="uid://cv2rrqfeux6at" path="res://arts/images/Documents/Fotos/Preto + Amarelo + Azul.png" id="2_xfd2j"]
+
+[resource]
+script = ExtResource("1_qybfa")
+colors_needed = Array[String](["Preto", "Amarelo", "Azul"])
+variant_sprite = ExtResource("2_xfd2j")
+variant_transcription = "[b]Foto 1[/b] -
+[u][color=#FFD700]É[/color][/u]ok[u][color=#FFD700]u[/color][/u]y[u][color=#75C3FF]m[/color][/u] [u][color=#75C3FF]p[/color][/u]fl[u][color=#FFD700]e[/color][/u]rg[u][color=#FFD700]i[/color][/u]f[u][color=#75C3FF]x[/color][/u][u][color=#FFD700]e[/color][/u] [u][color=#75C3FF]v[/color][/u][u][color=#FFD700]o[/color][/u]red[u][color=#75C3FF]r[/color][/u][u][color=#FFD700]a[/color][/u]oy[u][color=#75C3FF]z[/color][/u]
+Dgj[u][color=#75C3FF]d[/color][/u][u][color=#FFD700]e[/color][/u] d[u][color=#75C3FF]s[/color][/u][u][color=#FFD700]ã[/color][/u]ge[u][color=#FFD700]o[/color][/u] [u][color=#75C3FF]F[/color][/u]sdf[u][color=#75C3FF]r[/color][/u]grg[u][color=#FFD700]a[/color][/u]qw[u][color=#75C3FF]nc[/color][/u]myt[u][color=#FFD700]i[/color][/u][u][color=#75C3FF]s[/color][/u]qwe[u][color=#75C3FF]c[/color][/u][u][color=#FFD700]o[/color][/u]
+
+[b]Foto 2[/b] -
+[u][color=#75C3FF]M[/color][/u][u][color=#FFD700]e[/color][/u]w[u][color=#FFD700]ai[/color][/u]qwe[u][color=#FFD700]o[/color][/u][u][color=#75C3FF]r[/color][/u] [u][color=#75C3FF]c[/color][/u][u][color=#FFD700]a[/color][/u]dfe[u][color=#75C3FF]n[/color][/u][u][color=#FFD700]í[/color][/u]qw[u][color=#75C3FF]d[/color][/u]d[u][color=#FFD700]eo[/color][/u] [u][color=#75C3FF]d[/color][/u]wfcd[u][color=#FFD700]a[/color][/u][u][color=#75C3FF]s[/color][/u]
+kjg[u][color=#FFD700]a[/color][/u][u][color=#75C3FF]m[/color][/u]yun[u][color=#FFD700]é[/color][/u]ky[u][color=#75C3FF]r[/color][/u][u][color=#FFD700]i[/color][/u]sdes[u][color=#75C3FF]c[/color][/u]li[u][color=#FFD700]a[/color][/u]qw[u][color=#75C3FF]s[/color][/u]
+
+[b]Foto 3[/b] -
+[u][color=#FFD700]A[/color][/u]gr[u][color=#75C3FF]l[/color][/u][u][color=#FFD700]i[/color][/u]dq[u][color=#75C3FF]s[/color][/u]lo[u][color=#FFD700]a[/color][/u] [u][color=#75C3FF]m[/color][/u]frf[u][color=#FFD700]eu[/color][/u]ho h[u][color=#75C3FF]p[/color][/u]f[u][color=#FFD700]e[/color][/u]we[u][color=#75C3FF]l[/color][/u]wde[u][color=#FFD700]o[/color][/u]
+
+[b]Foto 4[/b] -
+[u][color=#75C3FF]R[/color][/u]xqwd[u][color=#FFD700]a[/color][/u]vw[u][color=#75C3FF]t[/color][/u][u][color=#FFD700]o[/color][/u] [u][color=#75C3FF]g[/color][/u]myu[u][color=#75C3FF]r[/color][/u][u][color=#FFD700]a[/color][/u]xA[u][color=#75C3FF]nd[/color][/u]PI[u][color=#FFD700]e[/color][/u]
+
+[b]Foto 5[/b] -
+[u][color=#75C3FF]m[/color][/u]vrs[u][color=#FFD700]e[/color][/u]rgsz[u][color=#75C3FF]l[/color][/u]hfewc[u][color=#FFD700]o[/color][/u][u][color=#75C3FF]r[/color][/u] [u][color=#FFD700]a[/color][/u]vtrv[u][color=#75C3FF]m[/color][/u]c[u][color=#FFD700]i[/color][/u][u][color=#75C3FF]g[/color][/u]fg[u][color=#FFD700]o[/color][/u]
+[u][color=#75C3FF]d[/color][/u]qr[u][color=#FFD700]a[/color][/u] [u][color=#FFD700]a[/color][/u]bydn[u][color=#75C3FF]n[/color][/u][u][color=#FFD700]a[/color][/u] [u][color=#75C3FF]M[/color][/u]frs[u][color=#FFD700]a[/color][/u]jk[u][color=#75C3FF]r[/color][/u][u][color=#FFD700]ia[/color][/u] [u][color=#75C3FF]B[/color][/u]çoy[u][color=#75C3FF]r[/color][/u][u][color=#FFD700]a[/color][/u]v srf[u][color=#75C3FF]g[/color][/u]j[u][color=#FFD700]a[/color][/u]
+
+[b]Foto 6[/b] -
+gh[u][color=#75C3FF]l[/color][/u][u][color=#FFD700]e[/color][/u][u][color=#75C3FF]n[/color][/u]g[u][color=#75C3FF]d[/color][/u][u][color=#FFD700]a[/color][/u] [u][color=#75C3FF]f[/color][/u]vres[u][color=#FFD700]o[/color][/u][u][color=#75C3FF]l[/color][/u]es[u][color=#75C3FF]cl[/color][/u]ky[u][color=#FFD700]ó[/color][/u]ce[u][color=#75C3FF]r[/color][/u][u][color=#FFD700]i[/color][/u][u][color=#75C3FF]c[/color][/u][u][color=#FFD700]a[/color][/u]cpa
+
+[b]Foto 7[/b] -
+[u][color=#75C3FF]M[/color][/u]wdw[u][color=#FFD700]a[/color][/u][u][color=#75C3FF]s[/color][/u]qwe[u][color=#75C3FF]c[/color][/u][u][color=#FFD700]o[/color][/u]d[u][color=#75C3FF]t[/color][/u]htl[u][color=#FFD700]e[/color][/u]
+sc[u][color=#75C3FF]d[/color][/u]vsa[u][color=#FFD700]a[/color][/u] [u][color=#75C3FF]c[/color][/u]abr[u][color=#FFD700]o[/color][/u]qwf[u][color=#75C3FF]p[/color][/u]br[u][color=#FFD700]a[/color][/u]
+
+[b]Foto 8[/b] -
+[u][color=#75C3FF]n[/color][/u]xWA[u][color=#75C3FF]h[/color][/u][u][color=#FFD700]a[/color][/u]SD[u][color=#75C3FF]m[/color][/u] [u][color=#75C3FF]nh[/color][/u]v[u][color=#FFD700]a[/color][/u]ea[u][color=#75C3FF]mh[/color][/u]
+[u][color=#75C3FF]f[/color][/u][u][color=#FFD700]o[/color][/u]uik[u][color=#75C3FF]rm[/color][/u]afe[u][color=#FFD700]i[/color][/u][u][color=#75C3FF]g[/color][/u]qxw[u][color=#FFD700]a[/color][/u]
+
+[b]Foto 9[/b] -
+[u][color=#75C3FF]c[/color][/u]gh[u][color=#FFD700]u[/color][/u][u][color=#75C3FF]r[/color][/u]qd[u][color=#FFD700]u[/color][/u][u][color=#75C3FF]r[/color][/u]ky[u][color=#FFD700]u[/color][/u] [u][color=#75C3FF]n[/color][/u]wd[u][color=#FFD700]a[/color][/u] [u][color=#75C3FF]b[/color][/u]rs[u][color=#FFD700]ei[/color][/u]qwe[u][color=#75C3FF]r[/color][/u][u][color=#FFD700]a[/color][/u]
+[u][color=#75C3FF]d[/color][/u]wqx[u][color=#FFD700]o[/color][/u] [u][color=#75C3FF]r[/color][/u]qd[u][color=#FFD700]i[/color][/u]luy[u][color=#FFD700]o[/color][/u]"
+metadata/_custom_type_script = "uid://dhgwmkta7luru"

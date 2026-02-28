@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="DocColorCombination" format=3 uid="uid://bnyvm8v424c87"]
+
+[ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="1_mlpo1"]
+[ext_resource type="Texture2D" uid="uid://dpatuumnla7eq" path="res://arts/images/Documents/Fotos/Preto + Amarelo.png" id="2_s6q62"]
+
+[resource]
+script = ExtResource("1_mlpo1")
+colors_needed = Array[String](["Preto", "Amarelo"])
+variant_sprite = ExtResource("2_s6q62")
+variant_transcription = "[b]Foto 1[/b] -
+[u][color=#FFD700]É[/color][/u]ok[u][color=#FFD700]u[/color][/u]ym pfl[u][color=#FFD700]e[/color][/u]rg[u][color=#FFD700]i[/color][/u]fx[u][color=#FFD700]e[/color][/u] v[u][color=#FFD700]o[/color][/u]redr[u][color=#FFD700]a[/color][/u]oyz
+Dgjd[u][color=#FFD700]e[/color][/u] ds[u][color=#FFD700]ã[/color][/u]ge[u][color=#FFD700]o[/color][/u] Fsdfrgrg[u][color=#FFD700]a[/color][/u]qwncmyt[u][color=#FFD700]i[/color][/u]sqwec[u][color=#FFD700]o[/color][/u]
+
+[b]Foto 2[/b] -
+M[u][color=#FFD700]e[/color][/u]w[u][color=#FFD700]ai[/color][/u]qwe[u][color=#FFD700]o[/color][/u]r c[u][color=#FFD700]a[/color][/u]dfen[u][color=#FFD700]í[/color][/u]qwdd[u][color=#FFD700]eo[/color][/u] dwfcd[u][color=#FFD700]a[/color][/u]s
+kjg[u][color=#FFD700]a[/color][/u]myun[u][color=#FFD700]é[/color][/u]kyr[u][color=#FFD700]i[/color][/u]sdescli[u][color=#FFD700]a[/color][/u]qws
+
+[b]Foto 3[/b] -
+[u][color=#FFD700]A[/color][/u]grl[u][color=#FFD700]i[/color][/u]dqslo[u][color=#FFD700]a[/color][/u] mfrf[u][color=#FFD700]eu[/color][/u]ho hpf[u][color=#FFD700]e[/color][/u]welwde[u][color=#FFD700]o[/color][/u]
+
+[b]Foto 4[/b] -
+Rxqwd[u][color=#FFD700]a[/color][/u]vwt[u][color=#FFD700]o[/color][/u] gmyur[u][color=#FFD700]a[/color][/u]xAndPI[u][color=#FFD700]e[/color][/u]
+
+[b]Foto 5[/b] -
+mvrs[u][color=#FFD700]e[/color][/u]rgszlhfewc[u][color=#FFD700]o[/color][/u]r [u][color=#FFD700]a[/color][/u]vtrvmc[u][color=#FFD700]i[/color][/u]gfg[u][color=#FFD700]o[/color][/u]
+dqr[u][color=#FFD700]a[/color][/u] [u][color=#FFD700]a[/color][/u]bydnn[u][color=#FFD700]a[/color][/u] Mfrs[u][color=#FFD700]a[/color][/u]jkr[u][color=#FFD700]ia[/color][/u] Bçoyr[u][color=#FFD700]a[/color][/u]v srfgj[u][color=#FFD700]a[/color][/u]
+
+[b]Foto 6[/b] -
+ghl[u][color=#FFD700]e[/color][/u]ngd[u][color=#FFD700]a[/color][/u] fvres[u][color=#FFD700]o[/color][/u]lesclky[u][color=#FFD700]ó[/color][/u]cer[u][color=#FFD700]i[/color][/u]c[u][color=#FFD700]a[/color][/u]cpa
+
+[b]Foto 7[/b] -
+Mwdw[u][color=#FFD700]a[/color][/u]sqwec[u][color=#FFD700]o[/color][/u]dthtl[u][color=#FFD700]e[/color][/u]
+scdvsa[u][color=#FFD700]a[/color][/u] cabr[u][color=#FFD700]o[/color][/u]qwfpbr[u][color=#FFD700]a[/color][/u]
+
+[b]Foto 8[/b] -
+nxWAh[u][color=#FFD700]a[/color][/u]SDm nhv[u][color=#FFD700]a[/color][/u]eamh
+f[u][color=#FFD700]o[/color][/u]uikrmafe[u][color=#FFD700]i[/color][/u]gqxw[u][color=#FFD700]a[/color][/u]
+
+[b]Foto 9[/b] -
+cgh[u][color=#FFD700]u[/color][/u]rqd[u][color=#FFD700]u[/color][/u]rky[u][color=#FFD700]u[/color][/u] nwd[u][color=#FFD700]a[/color][/u] brs[u][color=#FFD700]ei[/color][/u]qwer[u][color=#FFD700]a[/color][/u]
+dwqx[u][color=#FFD700]o[/color][/u] rqd[u][color=#FFD700]i[/color][/u]luy[u][color=#FFD700]o[/color][/u]"
+metadata/_custom_type_script = "uid://dhgwmkta7luru"

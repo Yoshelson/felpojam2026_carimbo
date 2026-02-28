@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="DocColorCombination" format=3 uid="uid://c8qc1teekb6qp"]
+
+[ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="1_ffq65"]
+[ext_resource type="Texture2D" uid="uid://cmq2rtvj1e7jl" path="res://arts/images/Documents/Fotos/Preto.png" id="2_m0r8c"]
+
+[resource]
+script = ExtResource("1_ffq65")
+colors_needed = Array[String](["Preto"])
+variant_sprite = ExtResource("2_m0r8c")
+variant_transcription = "[b]Foto 1[/b] -
+Éokuym pflergifxe voredraoyz
+Dgjde dsãgeo Fsdfrgrgaqwncmytisqweco
+
+[b]Foto 2[/b] -
+Mewaiqweor cadfeníqwddeo dwfcdas
+kjgamyunékyrisdescliaqws
+
+[b]Foto 3[/b] -
+Agrlidqsloa mfrfeuho hpfewelwdeo
+
+[b]Foto 4[/b] -
+Rxqwdavwto gmyuraxAndPIe
+
+[b]Foto 5[/b] -
+mvrsergszlhfewcor avtrvmcigfgo
+dqra abydnna Mfrsajkria Bçoyrav srfgja
+
+[b]Foto 6[/b] -
+ghlengda fvresolesclkyócericacpa
+
+[b]Foto 7[/b] -
+Mwdwasqwecodthtle
+scdvsaa cabroqwfpbra
+
+[b]Foto 8[/b] -
+nxWAhaSDm nhvaeamh
+fouikrmafeigqxwa
+
+[b]Foto 9[/b] -
+cghurqdurkyu nwda brseiqwera
+dwqxo rqdiluyo"
+metadata/_custom_type_script = "uid://dhgwmkta7luru"
