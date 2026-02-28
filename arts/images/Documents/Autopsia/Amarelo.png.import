@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b77ow2tt56c07"
-path="res://.godot/imported/Amarelo.png-595d76c2529b4cccd35df6445060acbf.ctex"
+path="res://.godot/imported/Amarelo.png-42ac2f28895a82c21be636b131d152e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/images/documents/Autopsia/Amarelo.png"
-dest_files=["res://.godot/imported/Amarelo.png-595d76c2529b4cccd35df6445060acbf.ctex"]
+source_file="res://arts/images/Documents/Autopsia/Amarelo.png"
+dest_files=["res://.godot/imported/Amarelo.png-42ac2f28895a82c21be636b131d152e4.ctex"]
 
 [params]
 

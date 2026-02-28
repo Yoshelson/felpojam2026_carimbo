@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cgbuf51wtdnil"
-path="res://.godot/imported/Azul.png-f4345e2163fe1ff3c5dbe490e73f3d45.ctex"
+path="res://.godot/imported/Azul.png-db1036f37c5af60ee989c43e54d01e1e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/images/documents/Jornal/Azul.png"
-dest_files=["res://.godot/imported/Azul.png-f4345e2163fe1ff3c5dbe490e73f3d45.ctex"]
+source_file="res://arts/images/Documents/Jornal/Azul.png"
+dest_files=["res://.godot/imported/Azul.png-db1036f37c5af60ee989c43e54d01e1e.ctex"]
 
 [params]
 
