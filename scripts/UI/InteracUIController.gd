@@ -18,7 +18,7 @@ func _ready() -> void:
 		player.focus_changed.connect(_on_player_focus_changed)
 	_hide_UI()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	#Essa funcao garante que o tooltip de interacao sempre esteja no local certo
 	#Quando o mouse esta capturado, o tooltip fica no centro da tela
 	#Quando o mouse nao esta, ele usa a posicao do mouse

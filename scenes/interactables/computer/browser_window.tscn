@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://rvqk034i2ily" path="res://scenes/interactables/computer/window_base.tscn" id="1_bw"]
 [ext_resource type="Script" uid="uid://b8irmp1slfc1w" path="res://scripts/pc/browser_window.gd" id="2_bw"]
+[ext_resource type="Texture2D" uid="uid://cysvucwfo0xxy" path="res://arts/images/PC/browser_icon.png" id="3_1puip"]
 [ext_resource type="Shader" uid="uid://bhooocmfuu5t7" path="res://scripts/shaders/glow_outline.gdshader" id="3_kn830"]
 [ext_resource type="Texture2D" uid="uid://cmxurbdsh3xgf" path="res://arts/images/PC/Branco.png" id="3_pnrpq"]
 
@@ -16,6 +17,7 @@ shader_parameter/pulse_speed = 1.70000008075
 offset_right = 1200.0
 offset_bottom = 900.0
 script = ExtResource("2_bw")
+window_icon = ExtResource("3_1puip")
 
 [node name="Frame" parent="." index="0" unique_id=37177967]
 modulate = Color(0.10796725, 0.10796725, 0.10796725, 1)
@@ -173,58 +175,247 @@ theme_override_constants/v_separation = 8
 columns = 3
 
 [node name="Animal1" type="Button" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid" index="0" unique_id=1705032715]
-custom_minimum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(138, 128)
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "[ animal 1 ]"
+flat = true
+icon_alignment = 1
+
+[node name="icon" type="TextureRect" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid/Animal1" index="0" unique_id=1634702339]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="icon_on" type="TextureRect" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid/Animal1" index="1" unique_id=544783374]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="Animal2" type="Button" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid" index="1" unique_id=1705032716]
-custom_minimum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(138, 128)
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "[ animal 2 ]"
+flat = true
+icon_alignment = 1
+
+[node name="icon" type="TextureRect" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid/Animal2" index="0" unique_id=777055111]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="icon_on" type="TextureRect" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid/Animal2" index="1" unique_id=754919403]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="Animal3" type="Button" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid" index="2" unique_id=1705032717]
-custom_minimum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(138, 128)
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "[ animal 3 ]"
+flat = true
+icon_alignment = 1
+
+[node name="icon" type="TextureRect" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid/Animal3" index="0" unique_id=1103957207]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="icon_on" type="TextureRect" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid/Animal3" index="1" unique_id=1783403244]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="Animal4" type="Button" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid" index="3" unique_id=1705032718]
-custom_minimum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(138, 128)
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "[ animal 4 ]"
+flat = true
+icon_alignment = 1
+
+[node name="icon" type="TextureRect" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid/Animal4" index="0" unique_id=557500583]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="icon_on" type="TextureRect" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid/Animal4" index="1" unique_id=99095743]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="Animal5" type="Button" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid" index="4" unique_id=1705032719]
-custom_minimum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(138, 128)
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "[ animal 5 ]"
+flat = true
+icon_alignment = 1
+
+[node name="icon" type="TextureRect" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid/Animal5" index="0" unique_id=359911977]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="icon_on" type="TextureRect" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid/Animal5" index="1" unique_id=1949007643]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="Animal6" type="Button" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid" index="5" unique_id=1705032720]
-custom_minimum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(138, 128)
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "[ animal 6 ]"
+flat = true
+icon_alignment = 1
+
+[node name="icon" type="TextureRect" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid/Animal6" index="0" unique_id=340992895]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="icon_on" type="TextureRect" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid/Animal6" index="1" unique_id=135882714]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="Animal7" type="Button" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid" index="6" unique_id=1705032721]
-custom_minimum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(138, 128)
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "[ animal 7 ]"
+flat = true
+icon_alignment = 1
+
+[node name="icon" type="TextureRect" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid/Animal7" index="0" unique_id=1539003980]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="icon_on" type="TextureRect" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid/Animal7" index="1" unique_id=710962210]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="Animal8" type="Button" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid" index="7" unique_id=1705032722]
-custom_minimum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(138, 128)
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "[ animal 8 ]"
+flat = true
+icon_alignment = 1
+
+[node name="icon" type="TextureRect" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid/Animal8" index="0" unique_id=301422761]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="icon_on" type="TextureRect" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid/Animal8" index="1" unique_id=1543852472]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="Animal9" type="Button" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid" index="8" unique_id=1705032723]
-custom_minimum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(138, 128)
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "[ animal 9 ]"
+flat = true
+icon_alignment = 1
+
+[node name="icon" type="TextureRect" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid/Animal9" index="0" unique_id=1150885246]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="icon_on" type="TextureRect" parent="Content/VBox/PageScroll/PageVBox/PuzzlePage/PuzzleMargin/PuzzleCenter/Grid/Animal9" index="1" unique_id=1571462076]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="FinalPage" type="MarginContainer" parent="Content/VBox/PageScroll/PageVBox" index="3" unique_id=1705032724]
 layout_mode = 2

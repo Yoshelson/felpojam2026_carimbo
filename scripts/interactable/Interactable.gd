@@ -16,7 +16,7 @@ class_name Interactable
 
 signal prompt_changed(new_prompt: String)
 
-func interact(interactor: Node3D):
+func interact(_interactor: Node3D):
 	push_warning("Método interact() não implementado em: ", name)
 
 func on_focus_entered():

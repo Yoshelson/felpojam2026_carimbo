@@ -12,8 +12,8 @@ emission_shape = 3
 emission_box_extents = Vector3(341, 218, 1)
 spread = 180.0
 gravity = Vector3(0, 98, 0)
-scale_min = 1.5
-scale_max = 2.5
+scale_min = 2.0
+scale_max = 3.0
 color = Color(1, 1, 0, 1)
 
 [node name="MidasTouch" unique_id=280367607 instance=ExtResource("1_yqq3k")]

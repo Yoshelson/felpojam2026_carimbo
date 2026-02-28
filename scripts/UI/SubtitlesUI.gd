@@ -26,6 +26,7 @@ var is_showing: bool = false
 var _waiting_click: bool = false
 
 func _ready() -> void:
+	add_to_group("subtitle_ui")
 	set_process_input(false)
 	control.modulate.a = 0.0
 	_apply_style()

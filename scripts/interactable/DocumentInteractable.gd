@@ -6,7 +6,7 @@ var _doc_id: String
 var max_world_size: float = 0.6
 
 func _ready() -> void:
-	_id = "Document " + _doc_id
+	pass
 
 func interact(_interactor: Node3D):
 	if (is_interactable):		
@@ -16,6 +16,7 @@ func interact(_interactor: Node3D):
 
 func set_id(doc_id: String):
 	_doc_id = doc_id
+	_id = "Document " + _doc_id
 
 func set_image(new_texture: Texture2D):
 	sprite.texture = new_texture

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://depd8ecdet2ht"
-path="res://.godot/imported/Amarelo.png-ea2cfd438c398c54d4528992ae076b90.ctex"
+path="res://.godot/imported/Amarelo.png-347b00639ac0a0cd50aeeb25be57e17b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/images/Documents/Relatorio de Homicidio/Amarelo.png"
-dest_files=["res://.godot/imported/Amarelo.png-ea2cfd438c398c54d4528992ae076b90.ctex"]
+source_file="res://arts/images/documents/Relatorio de Homicidio/Amarelo.png"
+dest_files=["res://.godot/imported/Amarelo.png-347b00639ac0a0cd50aeeb25be57e17b.ctex"]
 
 [params]
 

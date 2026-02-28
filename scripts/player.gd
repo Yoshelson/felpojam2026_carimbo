@@ -109,10 +109,11 @@ func update_focus(collided: Node3D):
 	else:
 		_clear_focus()
 
-func _new_focus(focus_obj : Node3D):
+func _new_focus(focus_obj: Node3D):
 	_focused_object = focus_obj
 	_focused_object.on_focus_entered()
-	_focused_object.prompt_changed.connect(_handle_prompt_changed)
+	if not _focused_object.prompt_changed.is_connected(_handle_prompt_changed):
+		_focused_object.prompt_changed.connect(_handle_prompt_changed)
 	emit_signal("focus_changed", _focused_object.prompt_message)
 
 func _clear_focus():

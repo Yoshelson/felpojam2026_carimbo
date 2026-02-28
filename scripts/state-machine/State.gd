@@ -10,11 +10,11 @@ func enter_state():
 func exit_state():
 	pass
 	
-func inputs(event: InputEvent):
+func inputs(_event: InputEvent):
 	pass
 	
-func update(delta: float):
+func update(_delta: float):
 	pass
 	
-func physics_update(delta: float):
+func physics_update(_delta: float):
 	pass

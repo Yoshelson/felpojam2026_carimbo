@@ -28,19 +28,19 @@ func _trigger_alert():
 	if not pc:
 		return
 	var scene = preload("res://scenes/interactables/computer/alert_window.tscn")
-	var alert = scene.instantiate()
-	pc.window_layer.add_child(alert)
-	alert.set_title("Aviso")
-	alert.set_message("A pista está na maleta dele, o código é 125.")
+	pc.open_window(scene, "Aviso", Vector2(-1, -1))
 	await get_tree().process_frame
-	alert.position = pc.get_center_spawn(alert)
-	pc.request_focus(alert)
+	var alert := pc.open_windows.get("Aviso") as AlertWindow
+	if not alert:
+		return
+	alert.set_message("A pista está na maleta dele, o código é 125.")
 	alert.tree_exited.connect(_open_browser)
 	GameEvents.dialogue_requested.emit([
 	{speaker = "Você:", text = "Ah, me lembro desta senha."},
 	{speaker = "Você", text = "É da maleta no meu armário"},
 	])
 	await GameEvents.dialogue_finished
+	GameManager.set_flag("puzzle3_done", true)
 	
 
 func _open_browser():

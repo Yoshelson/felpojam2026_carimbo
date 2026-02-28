@@ -38,11 +38,13 @@ func _on_fade_end (player: AudioStreamPlayer) -> void:
 	player.stop()
 	
 func stop_music(fade_out_time: float = 1) -> Tween:
-	if !(_active_player.playing):
-		return
-	
 	var tween = create_tween()
-	tween.tween_property(_active_player, "volume_db", -80, fade_out_time)
-	tween.finished.connect(_on_fade_end.bind(_active_player))
+	
+	if _active_player.playing:
+		tween.tween_property(_active_player, "volume_db", -80, fade_out_time)
+		tween.finished.connect(_on_fade_end.bind(_active_player))
+	else:
+		# Tween vazio garante que o await em main_menu nao crasha
+		tween.tween_interval(0.0)
 	
 	return tween

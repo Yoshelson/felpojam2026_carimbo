@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://bul45se6e5dys"]
 
 [ext_resource type="PackedScene" uid="uid://rvqk034i2ily" path="res://scenes/interactables/computer/window_base.tscn" id="1_w6kf0"]
-[ext_resource type="Texture2D" uid="uid://wnlu6puligwl" path="res://arts/images/PC/WXP - Ícone Pasta Img.png" id="2_5fkah"]
-[ext_resource type="Texture2D" uid="uid://bfh3x2kl6lwlk" path="res://arts/test/codigo_morse_test.jpg" id="2_apj0n"]
+[ext_resource type="Texture2D" uid="uid://drjssty00qf0p" path="res://arts/test/Ícone Pasta Img.png" id="2_apj0n"]
+[ext_resource type="Texture2D" uid="uid://mgor1tdsro4w" path="res://arts/images/PC/codigo_morse-export.png" id="3_5fkah"]
 
 [node name="ImageViewer" unique_id=280367607 instance=ExtResource("1_w6kf0")]
-window_icon = ExtResource("2_5fkah")
+window_icon = ExtResource("2_apj0n")
 
 [node name="Content" parent="." index="1" unique_id=1185580226]
 offset_top = 57.0
@@ -17,9 +17,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -2.0
-offset_top = -44.0
+offset_top = -40.0
 offset_right = -3.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_apj0n")
+texture = ExtResource("3_5fkah")
 expand_mode = 1

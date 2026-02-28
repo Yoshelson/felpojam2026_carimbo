@@ -3,7 +3,7 @@ extends Interactable
 @export var document_rewards: Array[DocumentData]
 @export var stamp_rewards: Array[StampData]
 
-func interact(interactor: Node3D):
+func interact(_interactor: Node3D):
 	if (is_interactable):
 		
 		is_interactable = false

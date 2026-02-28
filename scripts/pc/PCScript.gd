@@ -47,6 +47,11 @@ func _ready() -> void:
 	pass
 
 func handle_mouse_mov(event: InputEventMouseMotion) :
+	# Bloqueia movimento do mouse enquanto um diálogo prioritário estiver ativo
+	var subtitle_ui = get_tree().get_first_node_in_group("subtitle_ui")
+	if subtitle_ui and subtitle_ui.is_processing_input():
+		return
+	
 	pc_control.pc_mouse_pos += event.relative
 	pc_control.pc_mouse_pos.x = clamp(pc_control.pc_mouse_pos.x, 0.0, sub_viewport.size.x - 10.0)
 	pc_control.pc_mouse_pos.y = clamp(pc_control.pc_mouse_pos.y, 0.0, sub_viewport.size.y - 10.0)
@@ -62,7 +67,11 @@ func handle_mouse_mov(event: InputEventMouseMotion) :
 	sub_viewport.push_input(motion_event)
 
 func handle_mouse_btn_press(event: InputEventMouseButton):
-	if event.button_index == MOUSE_BUTTON_LEFT or MOUSE_BUTTON_WHEEL_DOWN or MOUSE_BUTTON_WHEEL_UP:
+	var subtitle_ui = get_tree().get_first_node_in_group("subtitle_ui")
+	if subtitle_ui and subtitle_ui._waiting_click:
+		return
+
+	if event.button_index == MOUSE_BUTTON_LEFT or event.button_index == MOUSE_BUTTON_WHEEL_DOWN or event.button_index == MOUSE_BUTTON_WHEEL_UP:
 		var mouse_event = InputEventMouseButton.new()
 		mouse_event.button_index = event.button_index
 		mouse_event.pressed = event.pressed
@@ -71,7 +80,8 @@ func handle_mouse_btn_press(event: InputEventMouseButton):
 		mouse_event.global_position = pc_control.pc_mouse_pos
 		sub_viewport.push_input(mouse_event)
 		
-		if event is InputEventMouseButton and event.pressed:
+		
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			_on_mouse_click()
 
 func handle_key_press(event: InputEventKey) :

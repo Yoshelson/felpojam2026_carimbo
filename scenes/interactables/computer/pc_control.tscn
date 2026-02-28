@@ -14,10 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://chi5f0mc843bk" path="res://arts/images/PC/Pasta export.png" id="9_8v45t"]
 [ext_resource type="PackedScene" uid="uid://cmor41gnd7hyr" path="res://scenes/interactables/computer/folder.tscn" id="9_q7ic0"]
 [ext_resource type="PackedScene" uid="uid://d141ex1uj0igd" path="res://scenes/interactables/computer/text_app.tscn" id="10_fpmpa"]
-[ext_resource type="PackedScene" uid="uid://dwj16qslll4f1" path="res://scenes/interactables/computer/audio_player.tscn" id="10_q7ic0"]
-[ext_resource type="PackedScene" uid="uid://ddvoeqv37mhyk" path="res://scenes/interactables/computer/video_player.tscn" id="11_0syfu"]
 [ext_resource type="Texture2D" uid="uid://dtckiexoicubj" path="res://arts/images/PC/Texto-export.png" id="11_fpmpa"]
-[ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="11_g0i7v"]
 [ext_resource type="StyleBox" uid="uid://dhoky5h165xju" path="res://scripts/pc/lineedit1classic.tres" id="15_77gr0"]
 [ext_resource type="Texture2D" uid="uid://c3epuxs7y77he" path="res://arts/images/PC/Confirmar1.png" id="15_q7ic0"]
 [ext_resource type="Texture2D" uid="uid://fgf5qfrj6jsb" path="res://arts/images/PC/EsqueciSenha.png" id="16_g0i7v"]
@@ -185,18 +182,6 @@ app_scene = ExtResource("10_fpmpa")
 app_name = "foco"
 icon_texture = ExtResource("11_fpmpa")
 
-[node name="VídeoPlayer" parent="Desktop_Root/Desktop_Icons" unique_id=184865588 instance=ExtResource("6_rrfp6")]
-layout_mode = 2
-app_scene = ExtResource("11_0syfu")
-app_name = "VideoPlayer"
-icon_texture = ExtResource("11_g0i7v")
-
-[node name="AudioPlayer" parent="Desktop_Root/Desktop_Icons" unique_id=1380005108 instance=ExtResource("6_rrfp6")]
-layout_mode = 2
-app_scene = ExtResource("10_q7ic0")
-app_name = "AudioPlayer"
-icon_texture = ExtResource("11_g0i7v")
-
 [node name="WindowLayer" type="Control" parent="Desktop_Root" unique_id=1472503017]
 z_index = 1
 anchors_preset = 0
@@ -360,7 +345,7 @@ offset_top = 427.0
 offset_right = 1004.0
 offset_bottom = 480.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 33
+theme_override_font_sizes/font_size = 44
 horizontal_alignment = 1
 
 [node name="AnswerLine" type="LineEdit" parent="Login/RecoveryScreen" unique_id=724218876]
@@ -370,6 +355,7 @@ offset_top = 600.0
 offset_right = 950.0
 offset_bottom = 652.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 33
 theme_override_styles/normal = ExtResource("15_77gr0")
 

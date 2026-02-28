@@ -27,12 +27,24 @@ func _ready():
 	tween.tween_property(overlay, "color:a", 0.0, fade_duration)
 	await tween.finished
 	
-	GameEvents.dialogue_requested.emit([
-	{speaker = "Você:", text = "Hm... que barulho foi esse?"},
-	{speaker = "[color=cyan]Entregador[/color]", text = "Entrega chegou!"},
-	{speaker = "Você", text = "Melhor ir ver."},
-	])
-	await GameEvents.dialogue_finished
+	GameManager.set_flag("caixa_inicial_aberta", true)
+	
+	GameManager.set_flag("has_black_stamp", true)
+	GameManager.set_flag("has_ficha_criminal", true)
+	GameManager.set_flag("has_fotos_animais", true)
+	GameManager.set_flag("has_caixa_carimbo", true)
+	
+	GameEvents.emit_signal("add_item_to_inventory", load("res://resources/documents/Ficha_Criminal.tres"))
+	GameEvents.emit_signal("add_item_to_inventory", load("res://resources/documents/Fotos_Animais.tres"))
+	GameEvents.emit_signal("add_item_to_inventory", load("res://resources/stamps/BlackStamp.tres"))
+	
+	#
+	#GameEvents.dialogue_requested.emit([
+	#{speaker = "Você:", text = "Hm... que barulho foi esse?"},
+	#{speaker = "[color=cyan]Entregador[/color]", text = "Entrega chegou!"},
+	#{speaker = "Você", text = "Melhor ir ver."},
+	#])
+	#await GameEvents.dialogue_finished
 	
 	
 	#GameEvents.subtitle_requested.emit("Você", "Hm... que barulho foi esse?", 2.0)

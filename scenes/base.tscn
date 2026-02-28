@@ -7,26 +7,25 @@
 [ext_resource type="PackedScene" uid="uid://5y8rwm8yspg3" path="res://scenes/interactables/computer/PCScene.tscn" id="3_21bcp"]
 [ext_resource type="PackedScene" uid="uid://c0gk0v22vsjes" path="res://scenes/objects/exemplo_interativo.tscn" id="5_40w10"]
 [ext_resource type="PackedScene" uid="uid://buu3nnoihwga2" path="res://scenes/UI/pause.tscn" id="5_hh5oj"]
-[ext_resource type="PackedScene" uid="uid://dxsd108dci26y" path="res://scenes/test/test_csg.tscn" id="5_xvvcp"]
 [ext_resource type="PackedScene" uid="uid://d1va66oo4rpjs" path="res://scenes/UI/DocumentsUI.tscn" id="7_hh5oj"]
 [ext_resource type="PackedScene" uid="uid://dd54j0okltw3d" path="res://scenes/UI/SubtitlesUI.tscn" id="10_6irmp"]
 [ext_resource type="PackedScene" uid="uid://do5ewfy1brqr" path="res://scenes/UI/InteractionUI.tscn" id="10_jn13j"]
 [ext_resource type="Script" uid="uid://cv00o1o2ylifc" path="res://scripts/test/teste_fala_1tv.gd" id="11_6irmp"]
-[ext_resource type="PackedScene" uid="uid://bvngn27lmrqjo" path="res://scenes/interactables/Document Board.tscn" id="12_dmaw2"]
+[ext_resource type="PackedScene" uid="uid://bur6e222wm402" path="res://scenes/interactables/Document Board.tscn" id="12_dmaw2"]
 [ext_resource type="Script" uid="uid://crthgse5je3ih" path="res://scripts/cutscenes/intro.gd" id="13_517kj"]
 [ext_resource type="AudioStream" uid="uid://bbf5687ki66ub" path="res://arts/sounds/sfx/door_sfx.mp3" id="14_ot4hf"]
-[ext_resource type="Script" path="res://scripts/interactable/doorEvent.gd" id="15_ot4hf"]
+[ext_resource type="Script" uid="uid://lugfhpkx3kk3" path="res://scripts/interactable/doorEvent.gd" id="15_ot4hf"]
 [ext_resource type="Script" uid="uid://bnyrk4uyrt2uy" path="res://scenes/test/caixa_teste.gd" id="15_vciil"]
 [ext_resource type="PackedScene" uid="uid://cwcoh4rau3ieo" path="res://scenes/test/mesa_model.tscn" id="17_ystrd"]
-[ext_resource type="Script" path="res://scenes/test/gaveta.gd" id="18_isyof"]
+[ext_resource type="Script" uid="uid://c147e6hm6frqw" path="res://scenes/test/gaveta.gd" id="18_isyof"]
 [ext_resource type="Script" uid="uid://blqjnsi3084eq" path="res://scripts/interactable/TeleportInteractable.gd" id="19_b085t"]
 [ext_resource type="PackedScene" uid="uid://dqd6sulpprq7w" path="res://scenes/test/quarto_teste_col.tscn" id="20_uo6h6"]
 [ext_resource type="PackedScene" uid="uid://c2o68nh53eb1o" path="res://scenes/interactables/objects/Armario.tscn" id="21_aomoi"]
 [ext_resource type="Script" uid="uid://d2klyrrjjygpw" path="res://scripts/interactable/SimpleInteractable.gd" id="22_33mrd"]
 [ext_resource type="Script" uid="uid://b6irqck1wko0p" path="res://scripts/inventory-system/documents/DocumentsData.gd" id="22_c8kgi"]
-[ext_resource type="Resource" uid="uid://buvrpbrf0y7ex" path="res://resources/documents/Autopsia.tres" id="23_pmwj3"]
-[ext_resource type="Resource" uid="uid://drc0dujkuk3b5" path="res://resources/documents/Jornal.tres" id="24_82vju"]
-[ext_resource type="Resource" uid="uid://dtd72i2ttcytd" path="res://resources/documents/Relatorio_Homicidio.tres" id="25_vs80n"]
+[ext_resource type="Resource" path="res://resources/documents/Autopsia.tres" id="23_pmwj3"]
+[ext_resource type="Resource" path="res://resources/documents/Jornal.tres" id="24_82vju"]
+[ext_resource type="Resource" path="res://resources/documents/Relatorio_Homicidio.tres" id="25_vs80n"]
 [ext_resource type="Script" uid="uid://bhbswkhk13el6" path="res://scripts/inventory-system/stamps/StampsData.gd" id="26_s6kkj"]
 [ext_resource type="Resource" uid="uid://rws42boo75iu" path="res://resources/stamps/BlueStamp.tres" id="27_rtpsq"]
 
@@ -163,9 +162,6 @@ collision_layer = 9
 _id = "gaveta"
 prompt_message = "Abrir Gaveta"
 
-[node name="Quarto" parent="." unique_id=1534463602 instance=ExtResource("5_xvvcp")]
-visible = false
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=509726374]
 layer = 2
 
@@ -249,7 +245,7 @@ libraries/ = SubResource("AnimationLibrary_isyof")
 
 [node name="mesaModel" parent="." unique_id=1060498271 instance=ExtResource("17_ystrd")]
 
-[node name="StaticBody3D" parent="mesaModel/MESA" parent_id_path=PackedInt32Array(1060498271, 786727236) index="0" unique_id=1475620873 node_paths=PackedStringArray("_mesh")]
+[node name="StaticBody3D" parent="mesaModel/MESA" parent_id_path=PackedInt32Array(1060498271, 2138117484) index="0" unique_id=279445829 node_paths=PackedStringArray("_mesh")]
 collision_layer = 5
 script = ExtResource("19_b085t")
 target_state = 1
@@ -257,11 +253,11 @@ _id = "mesa"
 _mesh = NodePath("..")
 prompt_message = "Usar a Mesa"
 
-[node name="GAVETA" parent="mesaModel" index="1" unique_id=1336875824]
+[node name="GAVETA" parent="mesaModel" index="1" unique_id=719159399]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0372996, 0.9868163, 4.492727)
 layers = 5
 
-[node name="StaticBody3D" parent="mesaModel/GAVETA" index="0" unique_id=986276353 node_paths=PackedStringArray("_mesh")]
+[node name="StaticBody3D" parent="mesaModel/GAVETA" index="0" unique_id=447532645 node_paths=PackedStringArray("_mesh")]
 collision_layer = 5
 script = ExtResource("18_isyof")
 _id = "125123523"

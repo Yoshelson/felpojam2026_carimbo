@@ -2,10 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://rvqk034i2ily" path="res://scenes/interactables/computer/window_base.tscn" id="1_qq1mr"]
 [ext_resource type="Script" uid="uid://ce5t8mygda5a5" path="res://scripts/pc/alert_window.gd" id="2_x540b"]
+[ext_resource type="Texture2D" uid="uid://iqq5jka8ftm" path="res://arts/images/PC/alert_icon.png" id="3_ujmo3"]
 
 [node name="Alert" unique_id=280367607 instance=ExtResource("1_qq1mr")]
 offset_bottom = 300.0
 script = ExtResource("2_x540b")
+window_icon = ExtResource("3_ujmo3")
 
 [node name="Content" parent="." index="1" unique_id=1185580226]
 layout_mode = 1

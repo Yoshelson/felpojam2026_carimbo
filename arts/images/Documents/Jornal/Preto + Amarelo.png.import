@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cclmlo551orp8"
-path="res://.godot/imported/Preto + Amarelo.png-d530bced8ce700d7c8fa3858d2b1bbc7.ctex"
+path="res://.godot/imported/Preto + Amarelo.png-28e00fb3cd45f38262701266e8e2753d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/images/Documents/Jornal/Preto + Amarelo.png"
-dest_files=["res://.godot/imported/Preto + Amarelo.png-d530bced8ce700d7c8fa3858d2b1bbc7.ctex"]
+source_file="res://arts/images/documents/Jornal/Preto + Amarelo.png"
+dest_files=["res://.godot/imported/Preto + Amarelo.png-28e00fb3cd45f38262701266e8e2753d.ctex"]
 
 [params]
 
