@@ -111,6 +111,10 @@ level_music = ExtResource("2_i6jx3")
 [node name="TESTE" type="Node" parent="." unique_id=318255686]
 script = ExtResource("3_1xxg6")
 
+[node name="Intro" type="Node" parent="." unique_id=299101364]
+script = ExtResource("13_517kj")
+som_porta = ExtResource("14_ot4hf")
+
 [node name="DeskPos" type="Marker3D" parent="." unique_id=1033451031]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3.515, 1.193, 2.88)
 
@@ -162,7 +166,7 @@ z_index = 5
 [node name="SubtitlesUI" parent="." unique_id=1123747730 instance=ExtResource("10_6irmp")]
 
 [node name="TesteFala1TV" type="StaticBody3D" parent="." unique_id=743430463 node_paths=PackedStringArray("_mesh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9339516, 1.7303303, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4110155, 0.9210936, 0.9585148)
 collision_layer = 5
 script = ExtResource("11_6irmp")
 _id = "2673526"
@@ -170,6 +174,7 @@ _mesh = NodePath("CSGBox3D")
 prompt_message = "TV"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TesteFala1TV" unique_id=532878736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.43710363)
 shape = SubResource("BoxShape3D_dmaw2")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="TesteFala1TV" unique_id=544904726]
@@ -177,10 +182,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.41026223)
 
 [node name="DocumentBoard" parent="." unique_id=977597654 instance=ExtResource("12_dmaw2")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3.9813704, 2.5411818, 5.228351)
-
-[node name="Intro" type="Node" parent="." unique_id=299101364]
-script = ExtResource("13_517kj")
-som_porta = ExtResource("14_ot4hf")
 
 [node name="Overlay" type="ColorRect" parent="." unique_id=868719040]
 visible = false
@@ -213,6 +214,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.41026223)
 
 [node name="PortaIntroTest" type="StaticBody3D" parent="." unique_id=524762901 node_paths=PackedStringArray("_mesh")]
 transform = Transform3D(1.3097181, 0, 0, 0, 2.385632, 0, 0, 0, 0.1228472, 3.6477408, 1.5244087, -8.287095)
+visible = false
 collision_layer = 5
 script = ExtResource("15_ot4hf")
 _id = "512315"
@@ -226,6 +228,7 @@ size = Vector3(1.3635254, 1.2723389, 1)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PortaIntroTest" unique_id=1215387610]
 transform = Transform3D(1, 0, 0, 0, 0.9999995, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_vciil")
+disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PortaIntroTest" unique_id=983720648]
 libraries/ = SubResource("AnimationLibrary_isyof")
@@ -249,6 +252,10 @@ shape = SubResource("BoxShape3D_ystrd")
 
 [node name="quarto_teste_col" parent="." unique_id=619317496 instance=ExtResource("20_uo6h6")]
 
+[node name="PORTA" parent="quarto_teste_col" index="26" unique_id=250610336]
+transform = Transform3D(-0.26741934, 0, 0.071495555, 0, 1.4298409, 0, 0.7769506, 0, 0.02460812, 2.8722875, 1.5127364, -8.170072)
+
 [editable path="player"]
 [editable path="ExemploInterativo"]
 [editable path="mesaModel"]
+[editable path="quarto_teste_col"]

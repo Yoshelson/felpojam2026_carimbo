@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://d141ex1uj0igd"]
+
+[ext_resource type="PackedScene" uid="uid://rvqk034i2ily" path="res://scenes/interactables/computer/window_base.tscn" id="1_nmsea"]
+[ext_resource type="Texture2D" uid="uid://dtckiexoicubj" path="res://arts/images/PC/Texto-export.png" id="2_0ex2t"]
+
+[node name="Text" unique_id=280367607 instance=ExtResource("1_nmsea")]
+window_icon = ExtResource("2_0ex2t")
+
+[node name="ColorRect" type="ColorRect" parent="Content" parent_id_path=PackedInt32Array(1185580226) index="0" unique_id=487433963]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Content" parent_id_path=PackedInt32Array(1185580226) index="1" unique_id=1060087990]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 33
+text = "   As distrações foram todas apagadas
+   Mantenha seus olhos centrados."

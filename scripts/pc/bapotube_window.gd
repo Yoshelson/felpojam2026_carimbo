@@ -36,6 +36,12 @@ func _trigger_alert():
 	alert.position = pc.get_center_spawn(alert)
 	pc.request_focus(alert)
 	alert.tree_exited.connect(_open_browser)
+	GameEvents.dialogue_requested.emit([
+	{speaker = "Você:", text = "Ah, me lembro desta senha."},
+	{speaker = "Você", text = "É da maleta no meu armário"},
+	])
+	await GameEvents.dialogue_finished
+	
 
 func _open_browser():
 	var pc := get_tree().get_first_node_in_group("pc_control") as PCControl

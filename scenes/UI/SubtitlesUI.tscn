@@ -55,3 +55,9 @@ mouse_filter = 2
 bbcode_enabled = true
 fit_content = true
 scroll_active = false
+
+[node name="ClickHint" type="Label" parent="Control/PanelContainer/MarginContainer/VBox" unique_id=109185418]
+visible = false
+layout_mode = 2
+text = "[ Clique para continuar ]"
+horizontal_alignment = 1

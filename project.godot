@@ -25,6 +25,7 @@ InventoryManager="*uid://bvhno70r6ldra"
 GameEvents="*uid://coruphvadhjed"
 MusicManager="*uid://bxhrqi604vf5a"
 PsxFilter="*uid://pivovmade6um"
+GameManager="*uid://nw7d4t2dw2g4"
 
 [display]
 

@@ -9,12 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://cjicl4epna208" path="res://scenes/interactables/computer/desktop_app_icons.tscn" id="6_rrfp6"]
 [ext_resource type="Texture2D" uid="uid://c1mhjj4wyahjf" path="res://arts/test/Off_test.png" id="7_hbrv6"]
 [ext_resource type="Script" uid="uid://c12ysu4qxad5" path="res://scripts/pc/login_screen.gd" id="7_m7g4r"]
-[ext_resource type="Texture2D" uid="uid://11wllttmf6s3" path="res://arts/test/arquivos_test.png" id="8_egac1"]
 [ext_resource type="Texture2D" uid="uid://b7v06o2apcbq0" path="res://arts/test/login_bg.png" id="8_j70bi"]
 [ext_resource type="Texture2D" uid="uid://b86mvvv7wltwv" path="res://arts/test/User_Test.png" id="8_qu3oj"]
+[ext_resource type="Texture2D" uid="uid://chi5f0mc843bk" path="res://arts/images/PC/Pasta export.png" id="9_8v45t"]
 [ext_resource type="PackedScene" uid="uid://cmor41gnd7hyr" path="res://scenes/interactables/computer/folder.tscn" id="9_q7ic0"]
+[ext_resource type="PackedScene" uid="uid://d141ex1uj0igd" path="res://scenes/interactables/computer/text_app.tscn" id="10_fpmpa"]
 [ext_resource type="PackedScene" uid="uid://dwj16qslll4f1" path="res://scenes/interactables/computer/audio_player.tscn" id="10_q7ic0"]
 [ext_resource type="PackedScene" uid="uid://ddvoeqv37mhyk" path="res://scenes/interactables/computer/video_player.tscn" id="11_0syfu"]
+[ext_resource type="Texture2D" uid="uid://dtckiexoicubj" path="res://arts/images/PC/Texto-export.png" id="11_fpmpa"]
 [ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="11_g0i7v"]
 [ext_resource type="StyleBox" uid="uid://dhoky5h165xju" path="res://scripts/pc/lineedit1classic.tres" id="15_77gr0"]
 [ext_resource type="Texture2D" uid="uid://c3epuxs7y77he" path="res://arts/images/PC/Confirmar1.png" id="15_q7ic0"]
@@ -175,7 +177,13 @@ columns = 10
 layout_mode = 2
 app_scene = ExtResource("9_q7ic0")
 app_name = "O REI"
-icon_texture = ExtResource("8_egac1")
+icon_texture = ExtResource("9_8v45t")
+
+[node name="TextApp" parent="Desktop_Root/Desktop_Icons" unique_id=1924461812 instance=ExtResource("6_rrfp6")]
+layout_mode = 2
+app_scene = ExtResource("10_fpmpa")
+app_name = "foco"
+icon_texture = ExtResource("11_fpmpa")
 
 [node name="VídeoPlayer" parent="Desktop_Root/Desktop_Icons" unique_id=184865588 instance=ExtResource("6_rrfp6")]
 layout_mode = 2
