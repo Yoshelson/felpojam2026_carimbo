@@ -12,7 +12,7 @@ func interact(_interactor: Node3D):
 		if (GameManager.maleta_aberta):
 			GameEvents.subtitle_requested.emit("Você", "Não preciso trocar de roupa.", 1)
 			await get_tree().create_timer(1.0).timeout
-		elif (true):
+		elif (GameManager.puzzle3_done):
 			_call_subtitles()
 			_give_rewards()
 			GameManager.maleta_aberta = true

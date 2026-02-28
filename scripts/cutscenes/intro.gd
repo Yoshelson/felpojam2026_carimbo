@@ -35,7 +35,7 @@ func _ready():
 	GameManager.set_flag("has_caixa_carimbo", true)
 	
 	GameEvents.emit_signal("add_item_to_inventory", load("res://resources/documents/Ficha_Criminal.tres"))
-	GameEvents.emit_signal("add_item_to_inventory", load("res://resources/documents/Fotos_Animais.tres"))
+	GameEvents.emit_signal("add_item_to_inventory", load("res://resources/documents/Fotos.tres"))
 	GameEvents.emit_signal("add_item_to_inventory", load("res://resources/stamps/BlackStamp.tres"))
 	
 	#
