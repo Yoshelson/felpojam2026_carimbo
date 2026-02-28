@@ -2,6 +2,8 @@ extends Interactable
 class_name SimpleInteractable
 
 var _original_prompt: String
+@export var speaker: String
+@export_multiline var dialogue_text: String
 @export var subtitle_dur: int = 4
 
 func _ready() -> void:
@@ -14,7 +16,7 @@ func interact(_interactor: Node3D):
 		_mesh.material_overlay = null
 		prompt_message = ""
 		
-		GameEvents.subtitle_requested.emit("Monique:", "A encomenda chegou?", subtitle_dur)
+		GameEvents.subtitle_requested.emit(speaker, dialogue_text, subtitle_dur)
 		play_sfx()
 		await get_tree().create_timer(subtitle_dur).timeout
 		
