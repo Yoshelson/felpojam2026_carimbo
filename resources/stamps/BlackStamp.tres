@@ -1,10 +1,14 @@
 [gd_resource type="Resource" script_class="StampData" format=3 uid="uid://big51ac8nfsrs"]
 
+[ext_resource type="Texture2D" uid="uid://dhcp56hmxipgl" path="res://arts/images/Stamp/preto_hover.png" id="1_4emb8"]
 [ext_resource type="Script" uid="uid://bhbswkhk13el6" path="res://scripts/inventory-system/stamps/StampsData.gd" id="1_a672j"]
-[ext_resource type="Texture2D" uid="uid://x3hs6fr68n5n" path="res://arts/test/Tinta3.png" id="1_ri36v"]
+[ext_resource type="Texture2D" uid="uid://des2ijop0sinn" path="res://arts/images/Stamp/preto.png" id="1_ri36v"]
+[ext_resource type="Texture2D" uid="uid://ebmbdi3dxjsj" path="res://arts/images/Stamp/preto_pressed.png" id="3_p64w8"]
 
 [resource]
 script = ExtResource("1_a672j")
 name = "Preto"
 image = ExtResource("1_ri36v")
+hover = ExtResource("1_4emb8")
+pressed = ExtResource("3_p64w8")
 metadata/_custom_type_script = "uid://bhbswkhk13el6"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="DocColorCombination" format=3 uid="uid://e4yir64gyght"]
+
+[ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="1_m6imc"]
+[ext_resource type="Texture2D" uid="uid://osjqai3b2hvb" path="res://arts/images/Documents/Jornal/Amarelo + Azul e preto.png" id="2_el2m6"]
+
+[resource]
+script = ExtResource("1_m6imc")
+colors_needed = Array[String](["Preto", "Amarelo", "Azul"])
+variant_sprite = ExtResource("2_el2m6")
+variant_transcription = "[center][bgcolor=#0B1F0B][b][font_size=60][color=#72BF6A]MIN[/color][/font_size][/b][/bgcolor][/center]
+
+[center][bgcolor=#0B1F0B][b][font_size=60][color=#72BF6A]GUAN[/color][/font_size][/b][/bgcolor][/center]
+
+[center][bgcolor=#0B1F0B][b][font_size=60][color=#72BF6A]TE[/color][/font_size][/b][/bgcolor][/center]"
+metadata/_custom_type_script = "uid://dhgwmkta7luru"

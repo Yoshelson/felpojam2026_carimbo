@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="DocColorCombination" format=3 uid="uid://b4v0qcu7s88tv"]
+
+[ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="1_0neiv"]
+[ext_resource type="Texture2D" uid="uid://cyn7nfw811y8d" path="res://arts/images/Documents/Autopsia/Azul.png" id="2_sfe6g"]
+
+[resource]
+script = ExtResource("1_0neiv")
+colors_needed = Array[String](["Azul"])
+variant_sprite = ExtResource("2_sfe6g")
+variant_transcription = "[u][color=#75C3FF]ME[/color][/u]
+
+
+[u][color=#75C3FF]U[/color][/u]                                                                              [u][color=#75C3FF]O[/color][/u]
+
+[u][color=#75C3FF]e[/color][/u]
+
+
+
+
+
+[u][color=#75C3FF]é[/color][/u]
+
+[u][color=#75C3FF]u[/color][/u]                        [u][color=#75C3FF]a[/color][/u]
+
+"
+metadata/_custom_type_script = "uid://dhgwmkta7luru"

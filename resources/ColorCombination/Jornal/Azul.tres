@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="DocColorCombination" format=3 uid="uid://cr48fai8ee0cl"]
+
+[ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="1_tti25"]
+[ext_resource type="Texture2D" uid="uid://cgbuf51wtdnil" path="res://arts/images/Documents/Jornal/Azul.png" id="2_dkr53"]
+
+[resource]
+script = ExtResource("1_tti25")
+colors_needed = Array[String](["Azul"])
+variant_sprite = ExtResource("2_dkr53")
+variant_transcription = "[u][color=#75C3FF]E[/color][/u]           [u][color=#75C3FF]U[/color][/u]
+
+
+[u][color=#75C3FF]o[/color][/u]
+[u][color=#75C3FF]e[/color][/u]
+
+
+
+
+[u][color=#75C3FF]é[/color][/u]                                 [u][color=#75C3FF]a[/color][/u]
+
+
+
+
+
+[u][color=#75C3FF]i[/color][/u]                 [u][color=#75C3FF]a[/color][/u]"
+metadata/_custom_type_script = "uid://dhgwmkta7luru"

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="DocumentData" format=3 uid="uid://drc0dujkuk3b5"]
+
+[ext_resource type="Script" uid="uid://b6irqck1wko0p" path="res://scripts/inventory-system/documents/DocumentsData.gd" id="1_hygvf"]
+[ext_resource type="Texture2D" uid="uid://b5mlotc36ruv6" path="res://arts/images/Documents/Jornal/Base.png" id="1_s8i0e"]
+[ext_resource type="PackedScene" uid="uid://dmw6gr1sus6lj" path="res://scenes/interactables/documents/doc_l_shaped.tscn" id="2_68gap"]
+[ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="2_grbwg"]
+[ext_resource type="Resource" uid="uid://cser215nfieyl" path="res://resources/ColorCombination/Jornal/Amarelo+Azul.tres" id="4_68gap"]
+[ext_resource type="Resource" uid="uid://bosg7ucevtuh" path="res://resources/ColorCombination/Jornal/Amarelo.tres" id="5_drmyd"]
+[ext_resource type="Resource" uid="uid://cr48fai8ee0cl" path="res://resources/ColorCombination/Jornal/Azul.tres" id="6_klq8q"]
+[ext_resource type="Resource" uid="uid://e4yir64gyght" path="res://resources/ColorCombination/Jornal/Preto+Amarelo+Azul.tres" id="7_rv7po"]
+[ext_resource type="Resource" uid="uid://wdo4fkobho26" path="res://resources/ColorCombination/Jornal/Preto+Amarelo.tres" id="8_74d6n"]
+[ext_resource type="Resource" uid="uid://bwrsdhn2t5jfv" path="res://resources/ColorCombination/Jornal/Preto+Azul.tres" id="9_e2o4r"]
+[ext_resource type="Resource" uid="uid://cbp3xmbxm56sg" path="res://resources/ColorCombination/Jornal/Preto.tres" id="10_rsufe"]
+
+[resource]
+script = ExtResource("1_hygvf")
+base_image = ExtResource("1_s8i0e")
+id = "jornal"
+base_transcripted_text = "[font_size=32][center]Documento Vazio[/center][/font_size]"
+variations = Array[ExtResource("2_grbwg")]([ExtResource("4_68gap"), ExtResource("5_drmyd"), ExtResource("6_klq8q"), ExtResource("7_rv7po"), ExtResource("8_74d6n"), ExtResource("9_e2o4r"), ExtResource("10_rsufe")])
+board_pos = Vector3(1.225, 0.342, 0.01)
+prefab_scene = ExtResource("2_68gap")
+metadata/_custom_type_script = "uid://b6irqck1wko0p"

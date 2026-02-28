@@ -3,7 +3,7 @@ class_name DocumentInteractable
 
 var _doc_id: String
 @onready var sprite: Sprite3D = $Sprite3D
-var max_world_size: float = 0.8
+var max_world_size: float = 0.6
 
 func _ready() -> void:
 	_id = "Document " + _doc_id

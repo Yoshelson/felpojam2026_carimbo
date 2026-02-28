@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="DocumentData" format=3 uid="uid://buvrpbrf0y7ex"]
+
+[ext_resource type="Texture2D" uid="uid://vxkmt5c6qq84" path="res://arts/images/Documents/Autopsia/Base.png" id="1_hpgyy"]
+[ext_resource type="Script" uid="uid://b6irqck1wko0p" path="res://scripts/inventory-system/documents/DocumentsData.gd" id="1_ii4ir"]
+[ext_resource type="PackedScene" uid="uid://bskh7cf5n0xvu" path="res://scenes/interactables/documents/doc_rect.tscn" id="2_mye07"]
+[ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="2_ufohu"]
+[ext_resource type="Resource" uid="uid://b4v0qcu7s88tv" path="res://resources/ColorCombination/Autopsia/Azul.tres" id="4_1mjfo"]
+[ext_resource type="Resource" uid="uid://oxie1tm2wypw" path="res://resources/ColorCombination/Autopsia/Preto.tres" id="5_mye07"]
+[ext_resource type="Resource" uid="uid://boorj34hk6igd" path="res://resources/ColorCombination/Autopsia/Amarelo.tres" id="6_sv020"]
+[ext_resource type="Resource" uid="uid://btphestrk3afg" path="res://resources/ColorCombination/Autopsia/Preto+Azul.tres" id="7_jsljq"]
+[ext_resource type="Resource" uid="uid://cffguu40ua5d6" path="res://resources/ColorCombination/Autopsia/Amarelo+Azul.tres" id="8_1mjfo"]
+[ext_resource type="Resource" uid="uid://cxf3dkj1khu48" path="res://resources/ColorCombination/Autopsia/Preto+Amarelo.tres" id="9_jmdxf"]
+[ext_resource type="Resource" uid="uid://c0o8hombtr57" path="res://resources/ColorCombination/Autopsia/Preto+Amarelo+Azul.tres" id="10_f47mr"]
+
+[resource]
+script = ExtResource("1_ii4ir")
+base_image = ExtResource("1_hpgyy")
+id = "autopsia"
+base_transcripted_text = "[font_size=32][center]Documento Vazio[/center][/font_size]"
+variations = Array[ExtResource("2_ufohu")]([ExtResource("4_1mjfo"), ExtResource("5_mye07"), ExtResource("6_sv020"), ExtResource("7_jsljq"), ExtResource("8_1mjfo"), ExtResource("9_jmdxf"), ExtResource("10_f47mr")])
+board_pos = Vector3(0, 0.502, 0.01)
+prefab_scene = ExtResource("2_mye07")
+metadata/_custom_type_script = "uid://b6irqck1wko0p"

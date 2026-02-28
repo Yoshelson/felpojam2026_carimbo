@@ -4,6 +4,8 @@ extends Control
 @onready var _stamps_wrapper = $Stamp_Wrapper
 @onready var _stamps_margin = $Stamp_Wrapper/MarginContainer
 @onready var _stamps_container = $Stamp_Wrapper/MarginContainer/Background/MarginContainer/Stamps
+@onready var hand_image: TextureRect = $"Hand Stamp"
+
 signal stamp_pressed(color: String)
 
 var _show_position: Vector2
@@ -60,16 +62,29 @@ func _animate_UI(target_pos: Vector2) -> Tween:
 				
 	return tween
 
+func stamped_pressed_anim() -> void:
+	hand_image.show()
+	
+	var tween = create_tween()
+	tween.tween_property(hand_image, "scale", Vector2(0.85, 0.85), 0.4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(hand_image, "scale", Vector2(1.0, 1.0), 0.2).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
+	
+	await tween.finished
+	hand_image.hide()
+
 func _instantiate_btn(stamp_data: StampData):
 	var btn_scene = _button_scene.instantiate()
 	_stamps_container.add_child(btn_scene)
 	
 	btn_scene.get_node("Stamp Button").texture_normal = stamp_data.image
+	btn_scene.get_node("Stamp Button").texture_pressed = stamp_data.hover
+	btn_scene.get_node("Stamp Button").texture_hover = stamp_data.pressed
 	#lembrar dessa funcao depois, ela eh bem interessante pra usar, o bind eh 
 	#um recurso que anexa uma variavel a quando uma funcao for chamada
 	btn_scene.get_node("Stamp Button").pressed.connect(_on_stamp_pressed.bind(stamp_data.name))
 
 func _on_stamp_pressed(stamp_id: String):
+	stamped_pressed_anim()
 	emit_signal("stamp_pressed", stamp_id)
 	disable_UI()
 

@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="DocColorCombination" format=3 uid="uid://6w260bauey44"]
+
+[ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="1_j8811"]
+[ext_resource type="Texture2D" uid="uid://dcc48f8jtxf4h" path="res://arts/images/Documents/Relatorio de Homicidio/Preto + Amarelo.png" id="2_vsr4y"]
+
+[resource]
+script = ExtResource("1_j8811")
+colors_needed = Array[String](["Preto", "Amarelo"])
+variant_sprite = ExtResource("2_vsr4y")
+variant_transcription = "[b][center]RELATÓRIO DE HO[u][color=#FFD700]M[/color][/u]ICÍDIO [/center][/b]
+[b]DEPARTAMENTO DE POLÍCIA[/b]
+
+[b]Nome da vítima:[/b] Maria Sales Barbosa
+[b]Raça:[/b] B | [b]sexo:[/b] M | [b]idade:[/b] 47
+[b]Residência da vítima:[/b] [bgcolor=black]                   [/bgcolor]
+[b]Registro do caso No.:[/b] [bgcolor=black]           [/bgcolor]
+
+[b]Reportado por:[/b] Midas Sales
+[b]Título ou relacionamento:[/b] Cônjuge
+[b]Raça:[/b] B | [b]sexo:[/b] H | [b]idade:[/b] 49
+[b]Residência de quem reporta:[/b] [bgcolor=black]                   [/bgcolor]
+[b]Telefone:[/b] [bgcolor=black]           [/bgcolor]
+
+[b]Tipo de crime reportado:[/b] Desaparecime[u][color=#FFD700]n[/color][/u]to
+[b]Após a investigação mudou para:[/b] Ho[u][color=#FFD700]m[/color][/u]icídio
+
+[b]Local do ocorrido (Rua e número ou interseção):[/b] [bgcolor=black]                                       [/bgcolor]
+[b]Departamento:[/b] PMESP
+[b]Oficial em cargo do relatório (Nome e No. Id):[/b] [bgcolor=black]                              [/bgcolor]
+
+[b]Dia da semana:[/b] Terça
+[b]Data do ocorrido:[/b] 15/07/2007 | [b]Horário do ocorrido:[/b] 12:30
+[b]Data do reporte:[/b] 14/07/07 | [b]Horário do reporte:[/b] 23:25
+[b]Reporte recebido por:[/b] [bgcolor=black]        [/bgcolor] | [b]Horário do recebimento:[/b] 23:25
+
+
+[center][b]Descrição da vítima[/b][/center]
+
+[b]Idade:[/b] 47 | [b]peso:[/b] 65kg | [b]altura:[/b] 1.65 | [b]olhos:[/b] azul | [b]cabelo:[/b] loiro
+[b]aparência:[/b] irresponsiva | [b]Marcas, cortes identificados:[/b] manchas de tinta preta ao redor do corpo
+
+[b]Autoridade notificada:[/b] DEIC e IML | [bgcolor=black]                                [/bgcolor] | [bgcolor=black]                                [/bgcolor]
+[b]Proclamado morto(a) por:[/b] Dr. Mahn Conha, Hospital Santa Luz
+[b]Filiações da vítima:[/b] Midas Sales e Emanuel Sales Barbosa
+
+[b]DETALHAMENTO DO CASO (Dadas as circunstâncias do ocorrido e investigação):[/b]
+Após o cônjuge perceber o atraso da vítima para desembarcar de seu voo e inúmeras tentativas de contato sem sucesso, Midas Sales reportou sua preocupação e ao departamento e pediu que fossem em sua residência para averiguar a situação.
+Ao chegarem no local, os oficiais na cena encontraram a porta da frente aberta e grandes rastros de tinta seguindo até o esc[u][color=#FFD700]r[/color][/u]itório da casa, onde Maria S. B. foi encontra[u][color=#FFD700]d[/color][/u]a deitada no chão sem vida. Apesar da extensa quantidade de manchas do líquido pelas paredes, chão e vestimentas da vítima; nenhuma digital ou pegadas foram localizadas dentro ou fora da residência. [u][color=#FFD700]B[/color][/u]em como nenhum item pa[u][color=#FFD700]M[/color][/u]ece ter sido roubado.
+
+
+Travou? - 20:30 de 14/07/2007"
+metadata/_custom_type_script = "uid://dhgwmkta7luru"

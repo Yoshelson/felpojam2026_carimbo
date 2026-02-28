@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="DocColorCombination" format=3 uid="uid://ijllvlt7cq3d"]
+
+[ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="1_637jt"]
+[ext_resource type="Texture2D" uid="uid://depd8ecdet2ht" path="res://arts/images/Documents/Relatorio de Homicidio/Amarelo.png" id="2_hitd4"]
+
+[resource]
+script = ExtResource("1_637jt")
+colors_needed = Array[String](["Amarelo"])
+variant_sprite = ExtResource("2_hitd4")
+variant_transcription = "[u][color=#FFD700]M[/color][/u]
+
+
+[u][color=#FFD700]n[/color][/u]                                                                                     [u][color=#FFD700]m[/color][/u]
+
+
+
+
+
+
+
+
+[u][color=#FFD700]r[/color][/u]                                                                [u][color=#FFD700]d[/color][/u]
+
+[u][color=#FFD700]B[/color][/u]                                            [u][color=#FFD700]r[/color][/u]"
+metadata/_custom_type_script = "uid://dhgwmkta7luru"

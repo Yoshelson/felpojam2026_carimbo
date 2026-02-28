@@ -1,11 +1,15 @@
 [gd_resource type="Resource" script_class="StampData" format=3 uid="uid://bcix6483rbpmv"]
 
-[ext_resource type="Texture2D" uid="uid://bvf2jsswjqnqk" path="res://arts/test/Tinta2.png" id="1_kfw55"]
+[ext_resource type="Texture2D" uid="uid://debxxttyp8sy0" path="res://arts/images/Stamp/branco_hover.png" id="1_fjhme"]
+[ext_resource type="Texture2D" uid="uid://djnffcu0r6gi8" path="res://arts/images/Stamp/branco.png" id="1_kfw55"]
 [ext_resource type="Script" uid="uid://bhbswkhk13el6" path="res://scripts/inventory-system/stamps/StampsData.gd" id="2_6f821"]
+[ext_resource type="Texture2D" uid="uid://b0bvetbrgkbhd" path="res://arts/images/Stamp/branco_pressed.png" id="3_pviun"]
 
 [resource]
 script = ExtResource("2_6f821")
 ui_pos = 4
 name = "Branco"
 image = ExtResource("1_kfw55")
+hover = ExtResource("1_fjhme")
+pressed = ExtResource("3_pviun")
 metadata/_custom_type_script = "uid://bhbswkhk13el6"
