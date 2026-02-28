@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c8kudlijksi80"]
 
 [ext_resource type="PackedScene" uid="uid://766jsikflxl" path="res://scenes/player.tscn" id="1_8rhti"]
-[ext_resource type="Script" path="res://scripts/MainLevel.gd" id="1_vqfsp"]
+[ext_resource type="Script" uid="uid://b32es5oq0huua" path="res://scripts/MainLevel.gd" id="1_vqfsp"]
 [ext_resource type="AudioStream" uid="uid://yt2iyk7nvx4j" path="res://arts/sounds/music/Quarto de Hotel 1.2.wav" id="2_i6jx3"]
 [ext_resource type="Script" uid="uid://uwqvtu5si77r" path="res://scripts/test/test_inventory.gd" id="3_1xxg6"]
 [ext_resource type="PackedScene" uid="uid://5y8rwm8yspg3" path="res://scenes/interactables/computer/PCScene.tscn" id="3_21bcp"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://bnyrk4uyrt2uy" path="res://scenes/test/caixa_teste.gd" id="15_vciil"]
 [ext_resource type="PackedScene" uid="uid://cwcoh4rau3ieo" path="res://scenes/test/mesa_model.tscn" id="17_ystrd"]
 [ext_resource type="Script" uid="uid://c147e6hm6frqw" path="res://scenes/test/gaveta.gd" id="18_isyof"]
+[ext_resource type="PackedScene" uid="uid://dqd6sulpprq7w" path="res://scenes/test/quarto_teste_col.tscn" id="20_uo6h6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tpea4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -137,8 +138,7 @@ computer = NodePath("../../../PCScene")
 visible = false
 
 [node name="PCScene" parent="." unique_id=794729469 instance=ExtResource("3_21bcp")]
-transform = Transform3D(-0.97993165, 0, 0.19933385, 0, 1, 0, -0.19933385, 0, -0.97993165, -2.575565, 1.4884229, 4.8839025)
-visible = false
+transform = Transform3D(-0.9998004, 0, 0.019982815, 0, 1, 0, -0.019982815, 0, -0.9998004, -3.140166, 1.7074635, 4.9046597)
 
 [node name="ExemploInterativo" parent="." unique_id=756309383 instance=ExtResource("5_40w10")]
 transform = Transform3D(-0.99999267, 0, 0.0038220552, 0, 1, 0, -0.0038220552, 0, -0.99999267, 4.3410978e-07, 0.63247085, 4.5179787)
@@ -147,6 +147,7 @@ _id = "gaveta"
 prompt_message = "Abrir Gaveta"
 
 [node name="Quarto" parent="." unique_id=1534463602 instance=ExtResource("5_xvvcp")]
+visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=509726374]
 layer = 2
@@ -245,6 +246,8 @@ prompt_message = "Abrir"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="mesaModel" unique_id=900837453]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.027928, 1.0244821, 4.417144)
 shape = SubResource("BoxShape3D_ystrd")
+
+[node name="quarto_teste_col" parent="." unique_id=619317496 instance=ExtResource("20_uo6h6")]
 
 [editable path="player"]
 [editable path="ExemploInterativo"]

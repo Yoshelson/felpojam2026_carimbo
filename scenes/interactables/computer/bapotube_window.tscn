@@ -198,7 +198,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "Cuidado com o que desejas.
 
-Para abrir os arquivos confidenciais utilize 125"
+"
 autowrap_mode = 2
 
 [node name="HSep1" type="HSeparator" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox" index="4" unique_id=2000000017]

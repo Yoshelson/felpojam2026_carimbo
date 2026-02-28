@@ -36,8 +36,8 @@ void fragment() {
 	color += (dither(uv) - 0.5) * dither_strength;
 
 	// scanlines animadas
-	float scan = sin(uv.y * scanline_count * PI + TIME * 2.0) * 0.5 + 0.5;
-	color *= 1.0 - scan * scanline_intensity;
+	//float scan = sin(uv.y * scanline_count * PI + TIME * 2.0) * 0.5 + 0.5;
+	//color *= 1.0 - scan * scanline_intensity;
 
 	COLOR = vec4(color, 1.0);
 }

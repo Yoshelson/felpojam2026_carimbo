@@ -31,7 +31,7 @@ func _trigger_alert():
 	var alert = scene.instantiate()
 	pc.window_layer.add_child(alert)
 	alert.set_title("Aviso")
-	alert.set_message("Cuidado com o que desejas.")
+	alert.set_message("A pista está na maleta dele, o código é 125.")
 	await get_tree().process_frame
 	alert.position = pc.get_center_spawn(alert)
 	pc.request_focus(alert)
