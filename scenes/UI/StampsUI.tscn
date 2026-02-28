@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cqlioob2vxlrm"]
 
 [ext_resource type="Script" uid="uid://b7yntnnuyu1w3" path="res://scripts/UI/StampUIController.gd" id="1_dr43n"]
-[ext_resource type="Texture2D" uid="uid://b5437dsuue46d" path="res://arts/test/Hand_Stamp.png" id="2_o3hse"]
+[ext_resource type="Texture2D" uid="uid://ur56x6jkonwg" path="res://arts/images/UI/Hand_Stamp.png" id="2_o3hse"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_plnnd"]
 bg_color = Color(1, 1, 1, 0.23529412)

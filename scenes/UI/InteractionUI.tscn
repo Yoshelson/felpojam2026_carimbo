@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://co6hr5m513oq6"]
+[gd_scene format=3 uid="uid://do5ewfy1brqr"]
 
-[ext_resource type="Script" uid="uid://cx1eoqq0qrnfn" path="res://scripts/UI/InteracUIController.gd" id="1_deck3"]
-[ext_resource type="Texture2D" uid="uid://da3q4d4broif5" path="res://arts/test/white_eye.png" id="2_xh4oc"]
+[ext_resource type="Script" path="res://scripts/UI/InteracUIController.gd" id="1_deck3"]
+[ext_resource type="Texture2D" uid="uid://bulwme0a8g0qs" path="res://arts/images/UI/olho.png" id="2_deck3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhqgy"]
 bg_color = Color(0.7529412, 0.7529412, 0.7529412, 0.39215687)
@@ -48,7 +48,7 @@ offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_xh4oc")
+texture = ExtResource("2_deck3")
 expand_mode = 1
 stretch_mode = 5
 
