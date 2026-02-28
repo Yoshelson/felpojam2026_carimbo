@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhqtpwedr4uwy"
-path="res://.godot/imported/Preto + Amarelo.png-c257ccd2b131e3134eb4b6c49420bed4.ctex"
+path="res://.godot/imported/Preto + Amarelo.png-89f9c97a29c6c189912a177d47ffde69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/images/Documents/Autopsia/Preto + Amarelo.png"
-dest_files=["res://.godot/imported/Preto + Amarelo.png-c257ccd2b131e3134eb4b6c49420bed4.ctex"]
+source_file="res://arts/images/documents/Autopsia/Preto + Amarelo.png"
+dest_files=["res://.godot/imported/Preto + Amarelo.png-89f9c97a29c6c189912a177d47ffde69.ctex"]
 
 [params]
 

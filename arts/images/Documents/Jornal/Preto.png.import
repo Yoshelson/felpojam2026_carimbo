@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csb12a6e2vkk5"
-path="res://.godot/imported/Preto.png-ca58f77460cc0d01fc09f2298d11a26e.ctex"
+path="res://.godot/imported/Preto.png-6e38ebf1c87363861d5632acac56ad90.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/images/Documents/Jornal/Preto.png"
-dest_files=["res://.godot/imported/Preto.png-ca58f77460cc0d01fc09f2298d11a26e.ctex"]
+source_file="res://arts/images/documents/Jornal/Preto.png"
+dest_files=["res://.godot/imported/Preto.png-6e38ebf1c87363861d5632acac56ad90.ctex"]
 
 [params]
 
