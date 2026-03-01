@@ -57,6 +57,10 @@ func _att_doc_UI(doc_id: String):
 			push_error("ERROR: Id de Documento enviado para UI não está no inventário")
 
 func _unhandled_input(event: InputEvent):
+	# Bloqueia toda interacao com o documento durante dialogo ativo
+	var subtitle_ui = get_tree().get_first_node_in_group("subtitle_ui")
+	if subtitle_ui and subtitle_ui.is_dialogue_active:
+		return
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 			if (_target_zoom + step_zoom) > max_zoom:
@@ -149,4 +153,3 @@ func _on_stamp_btn_pressed() -> void:
 
 func _on_transcription_btn_pressed() -> void:
 	transcript_UI.setup_UI()
-	

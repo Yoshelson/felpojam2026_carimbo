@@ -15,7 +15,6 @@ func _ready():
 	_apply_address_bar_style()
 
 func _apply_address_bar_style() -> void:
-	# Fundo geral da barra — mesma linguagem do browser
 	var bar_bg = StyleBoxFlat.new()
 	bar_bg.bg_color = Color(0.95, 0.95, 0.95, 1)
 	bar_bg.set_content_margin_all(6)
@@ -23,7 +22,6 @@ func _apply_address_bar_style() -> void:
 	bar_bg.border_width_bottom = 2
 	$Content/VBox/BrowserBar.add_theme_stylebox_override("panel", bar_bg)
 
-	# Estilo dos botoes (◄ ►)
 	var btn_normal = StyleBoxFlat.new()
 	btn_normal.bg_color = Color(1.0, 1.0, 1.0, 1)
 	btn_normal.set_corner_radius_all(4)
@@ -55,7 +53,6 @@ func _apply_address_bar_style() -> void:
 			btn.add_theme_color_override("font_hover_color", Color(0.0, 0.35, 0.9, 1))
 			btn.add_theme_font_size_override("font_size", 33)
 
-	# URLBar — LineEdit nao editavel (so mostra a URL atual)
 	var url_bar = $Content/VBox/BrowserBar/BarHBox.get_node_or_null("URLBar")
 	if url_bar:
 		var le_style = StyleBoxFlat.new()
@@ -83,6 +80,7 @@ func _trigger_alert():
 	var pc := get_tree().get_first_node_in_group("pc_control") as PCControl
 	if not pc:
 		return
+
 	var scene = preload("res://scenes/interactables/computer/alert_window.tscn")
 	pc.open_window(scene, "Aviso", Vector2(-1, -1))
 	await get_tree().process_frame
@@ -92,13 +90,18 @@ func _trigger_alert():
 	alert.minimize_button.disabled = true
 	alert.set_message("A pista está na maleta dele, o código é 125.")
 	alert.tree_exited.connect(_open_browser)
+
 	GameEvents.dialogue_requested.emit([
 	{speaker = "Você:", text = "Ah, me lembro desta senha."},
 	{speaker = "Você", text = "É da maleta no meu armário"},
+	{speaker = "[color=blue]Desconhecido[/color]", text = "Você sabe… o que quer fazer com ele."},
+	{speaker = "Você", text = "Ele jamais será melhor que eu."},
+	{speaker = "Você", text = "Como sabe tanto sobre mim?"},
+	{speaker = "Você", text = "Quem está falando?"},
+	{speaker = "Você", text = "..."},
 	])
 	await GameEvents.dialogue_finished
 	GameManager.set_flag("puzzle3_done", true)
-	
 
 func _open_browser():
 	var pc := get_tree().get_first_node_in_group("pc_control") as PCControl

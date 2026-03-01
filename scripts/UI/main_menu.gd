@@ -232,7 +232,11 @@ func _on_back_pressed():
 	_slide_to(current_panel, main_menu_panel, false)
 
 func _on_start_pressed():
-	_fade_to("res://scenes/base.tscn")
+	_fade_to("res://scenes/main_scene/main.tscn")
+
+
+
+
 
 func _on_quit_pressed():
 	_fade_out_and_quit()

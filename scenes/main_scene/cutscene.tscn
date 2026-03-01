@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bx15hfnypmxly"]
+
+[ext_resource type="PackedScene" uid="uid://bc1pig3jp06ir" path="res://scenes/main_scene/cutscene_scene.tscn" id="1_smq6b"]
+
+[node name="Cutscene" type="Node2D" unique_id=2113512233]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1668601444]
+
+[node name="Ending" parent="CanvasLayer" unique_id=2099150202 instance=ExtResource("1_smq6b")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1948699137]

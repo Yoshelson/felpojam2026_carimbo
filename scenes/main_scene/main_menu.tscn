@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://bwtxbpfg33bix"]
 
-[ext_resource type="PackedScene" uid="uid://dxsd108dci26y" path="res://scenes/test_csg.tscn" id="1_7qib0"]
 [ext_resource type="Script" uid="uid://3bi2ab77as2t" path="res://scripts/UI/menu_cam.gd" id="2_yk05y"]
 [ext_resource type="Script" uid="uid://cydne1y5g2a2m" path="res://scenes/main_scene/canvas_layer.gd" id="3_yk05y"]
 [ext_resource type="FontFile" uid="uid://dlyiu417bqwyb" path="res://arts/Unutterable-Regular.ttf" id="4_mwb2c"]
 [ext_resource type="Script" uid="uid://cgqy2gy58tbsm" path="res://scripts/UI/main_menu.gd" id="5_menu"]
+[ext_resource type="Texture2D" uid="uid://bnqc3verfaswx" path="res://arts/images/inprimt title.png" id="5_mgnue"]
 [ext_resource type="AudioStream" uid="uid://bt8htxx4ukppu" path="res://arts/sounds/music/Menu 1.2.wav" id="6_ns74n"]
+[ext_resource type="PackedScene" uid="uid://bojp7yjk600y6" path="res://arts/models/quarto_hotel_finalizado.tscn" id="7_bijdw"]
+[ext_resource type="PackedScene" uid="uid://jjj2un5t3etq" path="res://arts/models/CIDADE SEM COLISÃO.glb" id="8_mgnue"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7qib0"]
 sky_top_color = Color(0.21235585, 0.26064983, 0.32498953, 1)
@@ -23,7 +25,8 @@ tonemap_mode = 2
 [node name="MainMenu" type="Node3D" unique_id=463534159]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1976865124]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+transform = Transform3D(-0.8660254, -0.43301278, 0.24999999, 0.49997276, -0.74473184, 0.44204265, -0.0052271388, 0.5078134, 0.86145127, 0.47057873, 2.6450973, 7.775301)
+light_color = Color(0.0021157316, 0, 0.52901244, 1)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=621556404]
@@ -31,11 +34,8 @@ environment = SubResource("Environment_mwb2c")
 
 [node name="Node3D" type="Node3D" parent="." unique_id=152307255]
 
-[node name="Quarto" parent="Node3D" unique_id=1534463602 instance=ExtResource("1_7qib0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4114044, 0)
-
 [node name="Camera3D" type="Camera3D" parent="Node3D" unique_id=1594509389]
-transform = Transform3D(-0.9907336, -0.017102635, -0.13473831, 1.10084475e-08, 0.99204016, -0.12592195, 0.13581942, -0.12475511, -0.9828475, -2.7008684, 0, 2.0816402)
+transform = Transform3D(-0.9907336, -0.017102635, -0.13473831, 1.10084475e-08, 0.99204016, -0.12592195, 0.13581942, -0.12475511, -0.9828475, -2.5187695, 1.9027183, 2.0816402)
 fov = 67.37313
 script = ExtResource("2_yk05y")
 
@@ -81,6 +81,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Menu/PanelContainer/main_menu/VBoxContainer" unique_id=708717003]
+modulate = Color(1, 1, 0.13333334, 1)
+layout_mode = 2
+texture = ExtResource("5_mgnue")
 
 [node name="Button" type="Button" parent="CanvasLayer/Menu/PanelContainer/main_menu/VBoxContainer" unique_id=388241404]
 modulate = Color(1, 1, 0.26666668, 1)
@@ -322,3 +327,7 @@ theme_override_fonts/font = ExtResource("4_mwb2c")
 theme_override_font_sizes/font_size = 33
 text = "Voltar"
 flat = true
+
+[node name="QUARTO HOTEL FINALIZADO" parent="." unique_id=1696118365 instance=ExtResource("7_bijdw")]
+
+[node name="CIDADE SEM COLISÃO" parent="." unique_id=1166047221 instance=ExtResource("8_mgnue")]

@@ -5,6 +5,7 @@ var _stamp_inventory: Array[StampData]
 
 signal doc_inventory_changed(id: String)
 signal stamp_inventory_changed()
+signal stamp_applied(id: String, applied_stamps: Array[String])
 
 func _ready() -> void:
 	GameEvents.add_item_to_inventory.connect(handle_new_resource)
@@ -40,6 +41,7 @@ func stamp_doc(doc_id: String, new_color: String):
 		var img_changed = stamped_doc.add_new_color(new_color)
 		if img_changed:
 			emit_signal("doc_inventory_changed", doc_id)
+			emit_signal("stamp_applied", doc_id, stamped_doc._applied_colors)
 	
 func get_all_docs() -> Dictionary[String, DocumentState]:
 	return _documents_inventory

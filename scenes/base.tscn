@@ -13,7 +13,6 @@
 [ext_resource type="Script" uid="uid://cv00o1o2ylifc" path="res://scripts/test/teste_fala_1tv.gd" id="11_6irmp"]
 [ext_resource type="PackedScene" uid="uid://bur6e222wm402" path="res://scenes/interactables/Document Board.tscn" id="12_dmaw2"]
 [ext_resource type="Script" uid="uid://crthgse5je3ih" path="res://scripts/cutscenes/intro.gd" id="13_517kj"]
-[ext_resource type="AudioStream" uid="uid://bbf5687ki66ub" path="res://arts/sounds/sfx/door_sfx.mp3" id="14_ot4hf"]
 [ext_resource type="Script" uid="uid://lugfhpkx3kk3" path="res://scripts/interactable/doorEvent.gd" id="15_ot4hf"]
 [ext_resource type="Script" uid="uid://bnyrk4uyrt2uy" path="res://scenes/test/caixa_teste.gd" id="15_vciil"]
 [ext_resource type="PackedScene" uid="uid://cwcoh4rau3ieo" path="res://scenes/test/mesa_model.tscn" id="17_ystrd"]
@@ -28,6 +27,7 @@
 [ext_resource type="Resource" uid="uid://dtd72i2ttcytd" path="res://resources/documents/Relatorio_Homicidio.tres" id="25_vs80n"]
 [ext_resource type="Script" uid="uid://bhbswkhk13el6" path="res://scripts/inventory-system/stamps/StampsData.gd" id="26_s6kkj"]
 [ext_resource type="Resource" uid="uid://rws42boo75iu" path="res://resources/stamps/BlueStamp.tres" id="27_rtpsq"]
+[ext_resource type="PackedScene" uid="uid://crri6us3gig4" path="res://arts/models/QUARTO HOTEL FINALIZADO.glb" id="28_ntevj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tpea4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -124,7 +124,6 @@ script = ExtResource("3_1xxg6")
 
 [node name="Intro" type="Node" parent="." unique_id=299101364]
 script = ExtResource("13_517kj")
-som_porta = ExtResource("14_ot4hf")
 
 [node name="DeskPos" type="Marker3D" parent="." unique_id=1033451031]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3.3721156, 1.8137392, 3.3833268)
@@ -140,7 +139,7 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="player" parent="." unique_id=685818972 instance=ExtResource("1_8rhti")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.8917732, 1.056793, 3.3833268)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.9413546, 1.056793, 3.3833268)
 
 [node name="Desk State" parent="player/State Machine" parent_id_path=PackedInt32Array(685818972, 198868825) index="1" unique_id=458221997 node_paths=PackedStringArray("desk_pos", "walk_pos")]
 desk_pos = NodePath("../../../DeskPos")
@@ -274,6 +273,7 @@ document_rewards = Array[ExtResource("22_c8kgi")]([ExtResource("23_pmwj3"), ExtR
 stamp_rewards = Array[ExtResource("26_s6kkj")]([ExtResource("27_rtpsq")])
 
 [node name="quarto_teste_col" parent="." unique_id=619317496 instance=ExtResource("20_uo6h6")]
+visible = false
 
 [node name="tampa de cima" parent="quarto_teste_col" index="1" unique_id=1683949504]
 visible = false
@@ -305,6 +305,8 @@ prompt_message = "Sentar na Cadeira"
 [node name="CollisionShape3D" parent="quarto_teste_col/CADEIRA/StaticBody3D" index="0" unique_id=642592760]
 transform = Transform3D(1.0000008, 0, 0, 0, 1.0000002, 0, 0, 0, 1, 0.00012111664, -1.8015184, 0)
 shape = SubResource("BoxShape3D_0id1l")
+
+[node name="QUARTO HOTEL FINALIZADO" parent="." unique_id=1696118365 instance=ExtResource("28_ntevj")]
 
 [editable path="player"]
 [editable path="ExemploInterativo"]

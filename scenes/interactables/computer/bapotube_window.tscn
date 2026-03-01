@@ -196,6 +196,7 @@ theme_override_colors/font_color = Color(0.2, 0.4, 1, 1)
 theme_override_font_sizes/font_size = 33
 icon = ExtResource("3_qnkkg")
 flat = true
+icon_alignment = 1
 
 [node name="DescFullLabel" type="Label" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox/DescPanel/DescVBox/ExpandedVBox" index="1" unique_id=2000000101]
 layout_mode = 2

@@ -9,6 +9,10 @@ class_name PCStatic
 var _click_idx: int = 0
 
 func _on_mouse_click():
+	# Nao toca o som durante qualquer dialogo ativo (typewrite + espera de clique)
+	var subtitle_ui = get_tree().get_first_node_in_group("subtitle_ui")
+	if subtitle_ui and subtitle_ui.is_dialogue_active:
+		return
 	var player = click_players[_click_idx]
 	player.play()
 	_click_idx = (_click_idx + 1) % click_players.size()
@@ -47,9 +51,9 @@ func _ready() -> void:
 	pass
 
 func handle_mouse_mov(event: InputEventMouseMotion) :
-	# Bloqueia movimento do mouse enquanto um diálogo prioritário estiver ativo
+	# Bloqueia movimento enquanto qualquer dialogo estiver ativo
 	var subtitle_ui = get_tree().get_first_node_in_group("subtitle_ui")
-	if subtitle_ui and subtitle_ui.is_processing_input():
+	if subtitle_ui and subtitle_ui.is_dialogue_active:
 		return
 	
 	pc_control.pc_mouse_pos += event.relative
@@ -67,9 +71,9 @@ func handle_mouse_mov(event: InputEventMouseMotion) :
 	sub_viewport.push_input(motion_event)
 
 func handle_mouse_btn_press(event: InputEventMouseButton):
-	# Bloqueia cliques se dialogo com clique estiver ativo
+	# Bloqueia cliques durante qualquer dialogo ativo
 	var subtitle_ui = get_tree().get_first_node_in_group("subtitle_ui")
-	if subtitle_ui and subtitle_ui._waiting_click:
+	if subtitle_ui and subtitle_ui.is_dialogue_active:
 		return
 
 	if event.button_index == MOUSE_BUTTON_LEFT or event.button_index == MOUSE_BUTTON_WHEEL_DOWN or event.button_index == MOUSE_BUTTON_WHEEL_UP:

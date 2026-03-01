@@ -87,17 +87,17 @@ func play_glitch() -> void:
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
 	var vp = get_viewport_rect().size
-
+	
 	var artifact_layer = Control.new()
 	artifact_layer.set_anchors_preset(Control.PRESET_FULL_RECT)
 	artifact_layer.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	artifact_layer.z_index = 98
 	add_child(artifact_layer)
-
+	
 	var spawn_artifacts = func():
 		for child in artifact_layer.get_children():
 			child.queue_free()
-
+	
 		for i in range(rng.randi_range(4, 10)):
 			var bar = ColorRect.new()
 			var h = rng.randi_range(4, 28)
@@ -119,23 +119,23 @@ func play_glitch() -> void:
 			var colors = [Color(0.0, 0.0, 1.0, 0.6), Color(0,1,1,0.5), Color(1,1,1,0.4), Color(0,0,0,0.8)]
 			frag.color = colors[rng.randi_range(0, colors.size()-1)]
 			artifact_layer.add_child(frag)
-
+	
 	var frame_times = [0.04, 0.03, 0.05, 0.03, 0.06, 0.03, 0.04, 0.05, 0.03, 0.07, 0.04, 0.03]
-
+	
 	for t in frame_times:
 		spawn_artifacts.call()
 		glitch_overlay.color = Color(0, 0, 0, rng.randf_range(0.3, 0.75))
 		await get_tree().create_timer(t).timeout
-
+	
 	for child in artifact_layer.get_children():
 		child.queue_free()
 	glitch_overlay.color = Color(0, 0, 0, 1.0)
 	await get_tree().create_timer(0.12).timeout
-
+	
 	var tween = create_tween()
 	tween.tween_property(glitch_overlay, "color", Color(0, 0, 0, 0), 0.2)
 	await tween.finished
-
+	
 	artifact_layer.queue_free()
 	glitch_overlay.color = Color(0, 0, 0, 0)
 
@@ -149,6 +149,12 @@ func open_blocking_browser(scene: PackedScene, app_name: String):
 
 func _on_login_success():
 	login_active = false
+	GameEvents.dialogue_requested.emit([
+	{speaker = "Você:", text = "Monique, eu pensei que você era minimante inteligente."},
+	{speaker = "Você:", text = "Mas escolheu me trair e se juntar a ele."},
+	{speaker = "Você:", text = "Perceba no que isso te resultou… no desaparecimento."},
+	])
+	await GameEvents.dialogue_finished
 	print("Login realizado")
 
 func _on_exit_pressed():

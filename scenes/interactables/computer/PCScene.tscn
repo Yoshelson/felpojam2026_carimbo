@@ -46,6 +46,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.004, 0.42)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1309187984]
 transform = Transform3D(0.9843237, 0, 0, 0, 0.69565946, 0, 0, 0, 1, 0, 0, 0)
+visible = false
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=499894308]
@@ -90,7 +91,7 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=382032235]
-transform = Transform3D(0.09530847, -0.030270243, 0, 0.030270243, 0.09530847, 0, 0, 0, 1, -0.46196434, 0.25344107, 0)
+transform = Transform3D(0.09530847, -0.030270243, 0, 0.030270243, 0.09530847, 0, 0, 0, 1, -0.46196434, 0.25344107, 0.019971967)
 mesh = SubResource("QuadMesh_wm2ak")
 
 [node name="Label3D" type="Label3D" parent="MeshInstance3D" unique_id=1650074465]

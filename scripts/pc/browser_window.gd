@@ -13,7 +13,7 @@ class_name BrowserApp
 @onready var final_page: Control = $Content/VBox/PageScroll/PageVBox/FinalPage
 
 const PASSWORD = "aluaminguante"
-const CORRECT_SEQUENCE = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+const CORRECT_SEQUENCE = [9, 4, 8, 6, 2, 7, 3, 5, 1]
 
 const ANIMAL_TEXTURES = {
 	1: ["res://arts/images/PC/buttons_animals/animal1.png", "res://arts/images/PC/buttons_animals/animal1_on.png"],
@@ -114,15 +114,15 @@ func _apply_address_bar_style() -> void:
 			btn.add_theme_color_override("font_hover_color", Color(0.0, 0.35, 0.9, 1))
 			btn.add_theme_color_override("font_pressed_color", Color(0.0, 0.2, 0.75, 1))
 			btn.add_theme_font_size_override("font_size", 33)
-
+	
 	# URLPrefix — label cinza escuro, fonte maior
 	url_prefix.add_theme_color_override("font_color", Color(0.28, 0.28, 0.28, 1))
 	url_prefix.add_theme_font_size_override("font_size", 33)
-
+	
 	# URLFixed — texto preto apos navegar
 	url_fixed.add_theme_color_override("font_color", Color(0.08, 0.08, 0.08, 1))
 	url_fixed.add_theme_font_size_override("font_size", 33)
-
+	
 	# URLInput — LineEdit onde o jogador digita a senha do puzzle
 	var le_normal = StyleBoxFlat.new()
 	le_normal.bg_color = Color(1.0, 1.0, 1.0, 1)
@@ -130,14 +130,14 @@ func _apply_address_bar_style() -> void:
 	le_normal.set_content_margin_all(5)
 	le_normal.border_color = Color(0.7, 0.7, 0.7, 1)
 	le_normal.set_border_width_all(1)
-
+	
 	var le_focus = StyleBoxFlat.new()
 	le_focus.bg_color = Color(1.0, 1.0, 1.0, 1)
 	le_focus.set_corner_radius_all(4)
 	le_focus.set_content_margin_all(5)
 	le_focus.border_color = Color(0.25, 0.55, 1.0, 1)
 	le_focus.set_border_width_all(2)
-
+	
 	url_input.add_theme_stylebox_override("normal", le_normal)
 	url_input.add_theme_stylebox_override("focus", le_focus)
 	url_input.add_theme_stylebox_override("read_only", le_normal)
@@ -191,7 +191,7 @@ func _trigger_monochrome_alert():
 	var alert = scene.instantiate()
 	pc.blocking_layer.add_child(alert)
 	alert.set_title("")
-	alert.set_message("prossiga.")
+	alert.set_message("me encontre.")
 	await get_tree().process_frame
 	alert.position = pc.get_center_spawn(alert)
 	alert.tree_exited.connect(_show_puzzle)
@@ -202,29 +202,50 @@ func _show_puzzle():
 	url_fixed.text = "www.ocaminho.onde/sequencia"
 	page_scroll.scroll_vertical = 0
 	current_sequence = []
+	GameManager.set_flag("has_white_stamp", true)
+	GameEvents.emit_signal("add_item_to_inventory", load("res://resources/stamps/WhiteStamp.tres"))
+	GameEvents.dialogue_requested.emit([
+	{speaker = "", text = "A tinta Branca foi desbloqueada"},
+	])
 	_reset_all_animals()
 
 func _on_animal_pressed(index: int):
 	if puzzle_solved:
 		return
 	
+	if current_sequence.has(index):
+		return
+	
 	_set_animal_active(index, true)
 	current_sequence.append(index)
 	
-	for i in current_sequence.size():
-		if current_sequence[i] != CORRECT_SEQUENCE[i]:
-			await get_tree().create_timer(0.3).timeout
-			_reset_all_animals()
-			current_sequence = []
-			return
-
-	if current_sequence.size() == CORRECT_SEQUENCE.size():
+	if current_sequence.size() < CORRECT_SEQUENCE.size():
+		return
+	
+	if current_sequence == CORRECT_SEQUENCE:
+		await get_tree().create_timer(0.3).timeout
 		puzzle_solved = true
 		GameManager.set_flag("puzzle5_done", true)
 		puzzle_page.visible = false
 		final_page.visible = true
 		url_fixed.text = "www.pontodeencontro.aqui/fim"
 		page_scroll.scroll_vertical = 0
+		GameEvents.dialogue_requested.emit([
+		{speaker = "Você:", text = "Certo, \"carimbo\", e o que uma pessoa como eu poderia desejar?"},
+		{speaker = "Carimbo", text = "Você sabe o que quer com seu pai. Foi assim com a Monique também."},
+		{speaker = "Você", text = "Ele não é meu pai, nunca foi. "},
+		{speaker = "Você", text = "Eu vou trazer a ruína para tudo que ele construiu."},
+		{speaker = "Você", text = "E eu o ceifarei com minhas próprias mãos."},
+		{speaker = "Carimbo", text = "E nós tornaremos isso ser realidade."},
+		])
+		await GameEvents.dialogue_finished
+		await get_tree().create_timer(0.5).timeout
+		get_tree().change_scene_to_file("res://scenes/main_scene/cutscene.tscn")
+	else:
+		await get_tree().create_timer(0.5).timeout
+		_reset_all_animals()
+		current_sequence = []
+
 
 func _on_url_input_focus_entered() -> void:
 	puzzle_hint()

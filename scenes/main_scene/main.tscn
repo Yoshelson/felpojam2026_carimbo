@@ -1,13 +1,38 @@
 [gd_scene format=3 uid="uid://cehfwrvmmvf66"]
 
+[ext_resource type="Script" uid="uid://b32es5oq0huua" path="res://scripts/MainLevel.gd" id="1_b3nfv"]
 [ext_resource type="PackedScene" uid="uid://766jsikflxl" path="res://scenes/player.tscn" id="1_ib4vx"]
 [ext_resource type="PackedScene" uid="uid://buu3nnoihwga2" path="res://scenes/UI/pause.tscn" id="2_ec6ii"]
+[ext_resource type="AudioStream" uid="uid://yt2iyk7nvx4j" path="res://arts/sounds/music/Quarto de Hotel 1.2.wav" id="2_g8v81"]
+[ext_resource type="Shader" uid="uid://dyvd11yhqxfdp" path="res://scripts/shaders/CRT2.gdshader" id="3_mac6c"]
 [ext_resource type="PackedScene" uid="uid://5y8rwm8yspg3" path="res://scenes/interactables/computer/PCScene.tscn" id="3_owwxs"]
-[ext_resource type="PackedScene" uid="uid://c0gk0v22vsjes" path="res://scenes/objects/exemplo_interativo.tscn" id="4_5kb7d"]
-[ext_resource type="PackedScene" uid="uid://dxsd108dci26y" path="res://scenes/test_csg.tscn" id="5_7sxug"]
+[ext_resource type="PackedScene" uid="uid://dqd6sulpprq7w" path="res://scenes/test/quarto_teste_col.tscn" id="6_5kb7d"]
+[ext_resource type="Script" uid="uid://d2klyrrjjygpw" path="res://scripts/interactable/SimpleInteractable.gd" id="7_7sxug"]
+[ext_resource type="Script" uid="uid://blqjnsi3084eq" path="res://scripts/interactable/TeleportInteractable.gd" id="8_40f74"]
+[ext_resource type="Script" uid="uid://crthgse5je3ih" path="res://scripts/cutscenes/intro.gd" id="9_7sxug"]
+[ext_resource type="Script" uid="uid://bnyrk4uyrt2uy" path="res://scenes/test/caixa_teste.gd" id="10_40f74"]
+[ext_resource type="PackedScene" uid="uid://do5ewfy1brqr" path="res://scenes/UI/InteractionUI.tscn" id="11_5e1wh"]
+[ext_resource type="PackedScene" uid="uid://dd54j0okltw3d" path="res://scenes/UI/SubtitlesUI.tscn" id="11_g0xvp"]
+[ext_resource type="PackedScene" uid="uid://d1va66oo4rpjs" path="res://scenes/UI/DocumentsUI.tscn" id="12_h5lh5"]
+[ext_resource type="PackedScene" uid="uid://bur6e222wm402" path="res://scenes/interactables/Document Board.tscn" id="14_7km87"]
+[ext_resource type="PackedScene" uid="uid://cwcoh4rau3ieo" path="res://scenes/test/mesa_model.tscn" id="15_prgvr"]
+[ext_resource type="Script" uid="uid://c147e6hm6frqw" path="res://scenes/test/gaveta.gd" id="16_mac6c"]
+[ext_resource type="PackedScene" uid="uid://bojp7yjk600y6" path="res://arts/models/quarto_hotel_finalizado.tscn" id="17_mac6c"]
+[ext_resource type="Script" uid="uid://bis3scwk87mbp" path="res://scripts/ReactionSystem.gd" id="17_prgvr"]
+[ext_resource type="Script" uid="uid://bee40lo2bnsop" path="res://scripts/interactable/CabinetInteractable.gd" id="18_4wbmt"]
+[ext_resource type="Script" uid="uid://c6coawxtireix" path="res://scenes/test/mesa_model.gd" id="18_mac6c"]
+[ext_resource type="Script" uid="uid://b6irqck1wko0p" path="res://scripts/inventory-system/documents/DocumentsData.gd" id="19_rg1da"]
+[ext_resource type="Resource" uid="uid://buvrpbrf0y7ex" path="res://resources/documents/Autopsia.tres" id="20_vqf5j"]
+[ext_resource type="Resource" uid="uid://dtd72i2ttcytd" path="res://resources/documents/Relatorio_Homicidio.tres" id="21_b3nfv"]
+[ext_resource type="Resource" uid="uid://drc0dujkuk3b5" path="res://resources/documents/Jornal.tres" id="22_g8v81"]
+[ext_resource type="Script" uid="uid://bhbswkhk13el6" path="res://scripts/inventory-system/stamps/StampsData.gd" id="23_v7j50"]
+[ext_resource type="Resource" uid="uid://rws42boo75iu" path="res://resources/stamps/BlueStamp.tres" id="24_jjb6v"]
+[ext_resource type="PackedScene" uid="uid://c2o68nh53eb1o" path="res://scenes/interactables/objects/Armario.tscn" id="26_rg1da"]
+[ext_resource type="PackedScene" uid="uid://jjj2un5t3etq" path="res://arts/models/CIDADE SEM COLISÃO.glb" id="27_vqf5j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tpea4"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+sky_top_color = Color(0.120595895, 0.1530622, 0.19630834, 1)
+sky_horizon_color = Color(0.3783364, 0.38587996, 0.40097997, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
 [sub_resource type="Sky" id="Sky_42dj3"]
@@ -20,26 +45,295 @@ sky = SubResource("Sky_42dj3")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_g8v81"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v7j50"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_mac6c")
+shader_parameter/tex = SubResource("ViewportTexture_g8v81")
+shader_parameter/curvature = 0.030000001425
+shader_parameter/chroma_offset = 0.0
+shader_parameter/mask_strength = 0.30000001425
+shader_parameter/vignette_strength = 0.250000011875
+shader_parameter/power_on = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g0xvp"]
+size = Vector3(2.088623, 11.965332, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_loo4n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dt8cy"]
+size = Vector3(1.1005249, 0.37939453, 1.0830078)
+
 [node name="Main" type="Node3D" unique_id=959922866]
+script = ExtResource("1_b3nfv")
+level_music = ExtResource("2_g8v81")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2079104516]
 environment = SubResource("Environment_56f15")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1026549574]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+transform = Transform3D(-0.8660254, -0.43301278, 0.24999999, 0.48816887, -0.62412715, 0.6100464, -0.10812608, 0.65035784, 0.7518933, 0, 3.5519745, 7.842826)
+light_color = Color(0.09950829, 0.06691684, 0.59535587, 1)
+light_energy = 2.612
 shadow_enabled = true
 
 [node name="player" parent="." unique_id=685818972 instance=ExtResource("1_ib4vx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9025381, 1.1926475, 3.1636274)
 
+[node name="Desk State" parent="player/State Machine" parent_id_path=PackedInt32Array(685818972, 198868825) index="1" unique_id=458221997 node_paths=PackedStringArray("desk_pos", "walk_pos")]
+desk_pos = NodePath("../../../DeskPos")
+walk_pos = NodePath("../../../WalkPos")
+
+[node name="Computer State" parent="player/State Machine" parent_id_path=PackedInt32Array(685818972, 198868825) index="3" unique_id=519582346 node_paths=PackedStringArray("computer")]
+computer = NodePath("../../../PCScene")
+
+[node name="PCScene" parent="." unique_id=794729469 node_paths=PackedStringArray("_mesh") instance=ExtResource("3_owwxs")]
+transform = Transform3D(-0.99999934, 0, 0.0010470962, 0, 1, 0, -0.0010470953, 0, -0.9999994, -3.3199844, 1.7401148, 4.9612184)
+visible = false
+collision_layer = 9
+_mesh = NodePath("../QUARTO HOTEL FINALIZADO/tampa de cima")
+is_interactable = false
+
+[node name="PCScreenMesh" parent="PCScene" index="3" unique_id=1428759976]
+material_override = SubResource("ShaderMaterial_v7j50")
+
+[node name="quarto_teste_col" parent="." unique_id=619317496 instance=ExtResource("6_5kb7d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.3445396, 0)
+
+[node name="teclado" parent="quarto_teste_col" index="0" unique_id=87337645]
+visible = false
+
+[node name="tampa de cima" parent="quarto_teste_col" index="1" unique_id=1683949504]
+visible = false
+
+[node name="ARMARIO" parent="quarto_teste_col" index="2" unique_id=18458076]
+transform = Transform3D(-1.1846778, 0, -1.571831e-07, 0, 1.6862556, 0, 3.8601706e-07, 0, -0.48239148, -4.8193603, 2.127675, -2.6337702)
+
+[node name="StaticBody3D" parent="quarto_teste_col/ARMARIO" index="0" unique_id=1273875688 node_paths=PackedStringArray("_mesh")]
+collision_layer = 5
+script = ExtResource("7_7sxug")
+speaker = "Você: "
+dialogue_text = "Não preciso trocar de roupa."
+subtitle_dur = 3
+_id = "armario"
+_mesh = NodePath("..")
+prompt_message = "Abrir Guarda Roupa"
+
+[node name="PORTA L" parent="quarto_teste_col" index="3" unique_id=654891812]
+transform = Transform3D(-1.1472497, 0, -1.561987e-08, 0, 1.6058493, 0, 6.4734706e-07, 0, -0.027682047, -5.9674325, 2.6092634, -2.1241891)
+visible = true
+
+[node name="PORTA R" parent="quarto_teste_col" index="4" unique_id=26213439]
+transform = Transform3D(-1.1472497, 0, -1.561987e-08, 0, 1.6058493, 0, 6.4734706e-07, 0, -0.027682047, -3.671822, 3.1728754, -2.1241894)
+visible = true
+
+[node name="parede quarto" parent="quarto_teste_col" index="16" unique_id=1760589165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003317356, 2.011681, -8.284801)
+
+[node name="BATENTE DA PORTA 1" parent="quarto_teste_col" index="24" unique_id=610209998]
+transform = Transform3D(-8.439727e-09, 0, 0.11892872, 0, 1.5625916, 0, -0.19307844, 0, -5.1985394e-09, 3.6821506, 1.6411661, -8.296145)
+
+[node name="PORTA" parent="quarto_teste_col" index="25" unique_id=250610336]
+transform = Transform3D(-0.8216845, 0, 0, 0, 1.4298409, -6.6102106e-09, 0, 1.2500067e-07, 0.07561199, 2.8722875, 1.5127364, -8.170072)
+
+[node name="StaticBody3D" parent="quarto_teste_col/CADEIRA" parent_id_path=PackedInt32Array(619317496, 600156880) index="0" unique_id=934191473 node_paths=PackedStringArray("_mesh")]
+collision_layer = 5
+script = ExtResource("8_40f74")
+target_state = 1
+_id = "cadeira_computador"
+_mesh = NodePath("..")
+prompt_message = "Sentar na Cadeira"
+
+[node name="CollisionShape3D" parent="quarto_teste_col/CADEIRA/StaticBody3D" index="0" unique_id=642592760]
+transform = Transform3D(1.0000008, 0, 0, 0, 1.0000002, 0, 0, 0, 1, 0.00012111664, -1.8015184, 0)
+shape = SubResource("BoxShape3D_g0xvp")
+
+[node name="SWITCH 2" parent="quarto_teste_col" index="36" unique_id=1345967743]
+transform = Transform3D(-1.93808e-08, -0.0002148255, 0.015554696, 8.111384e-12, 0.05969829, 5.597389e-05, -0.02322542, 2.0011376e-10, -1.2979831e-08, 0.7516718, -0.43520105, 0.43952322)
+
+[node name="Intro" type="Node" parent="." unique_id=609767817]
+script = ExtResource("9_7sxug")
+
+[node name="CaixaTeste" type="StaticBody3D" parent="." unique_id=1411323473 node_paths=PackedStringArray("_mesh")]
+transform = Transform3D(0.7438451, 0, -0.66835207, 0, 1, 0, 0.66835207, 0, 0.7438451, 3.1049504, 0.6396131, -2.1247606)
+collision_layer = 5
+script = ExtResource("10_40f74")
+_id = "124123"
+_mesh = NodePath("CSGBox3D")
+prompt_message = "Pegar Caixa"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CaixaTeste" unique_id=1046366302]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011912465, 1.1920929e-07, 0.39753652)
+shape = SubResource("BoxShape3D_loo4n")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CaixaTeste" unique_id=1547197133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.41026223)
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=962738613]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Interaction UI" parent="." unique_id=628371208 instance=ExtResource("11_5e1wh")]
+
+[node name="DocumentsUi" parent="." unique_id=60002005 instance=ExtResource("12_h5lh5")]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1732400982]
 
 [node name="pause" parent="CanvasLayer" unique_id=887171936 instance=ExtResource("2_ec6ii")]
 
-[node name="PCScene" parent="." unique_id=794729469 instance=ExtResource("3_owwxs")]
-transform = Transform3D(-0.97993165, 0, 0.19933385, 0, 1, 0, -0.19933385, 0, -0.97993165, -2.575565, 1.4884229, 4.8839025)
+[node name="SubtitlesUI" parent="." unique_id=1123747730 instance=ExtResource("11_g0xvp")]
 
-[node name="ExemploInterativo" parent="." unique_id=756309383 instance=ExtResource("4_5kb7d")]
-transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 4.3410978e-07, 0.63247085, 4.5179787)
+[node name="DocumentBoard" parent="." unique_id=977597654 instance=ExtResource("14_7km87")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -3.9813704, 2.6199615, 5.3907084)
+collision_layer = 9
+is_interactable = false
 
-[node name="Quarto" parent="." unique_id=1534463602 instance=ExtResource("5_7sxug")]
+[node name="mesaModel" parent="." unique_id=1060498271 instance=ExtResource("15_prgvr")]
+visible = false
+
+[node name="StaticBody3D" parent="mesaModel/MESA" parent_id_path=PackedInt32Array(1060498271, 2138117484) index="0" unique_id=279445829 node_paths=PackedStringArray("_mesh")]
+collision_layer = 5
+script = ExtResource("8_40f74")
+target_state = 1
+_id = "mesa"
+_mesh = NodePath("..")
+prompt_message = "Usar a Mesa"
+
+[node name="GAVETA" parent="mesaModel" index="1" unique_id=719159399]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0372996, 0.9868163, 4.492727)
+layers = 5
+
+[node name="StaticBody3D" parent="mesaModel/GAVETA" index="0" unique_id=447532645 node_paths=PackedStringArray("_mesh")]
+collision_layer = 5
+script = ExtResource("16_mac6c")
+_id = "125123523"
+_mesh = NodePath("..")
+prompt_message = "Abrir"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mesaModel" unique_id=628029472]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.027928, 1.0244821, 4.417144)
+shape = SubResource("BoxShape3D_dt8cy")
+
+[node name="DeskPos" type="Marker3D" parent="." unique_id=2125451386]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3.3721156, 1.6806301, 3.3833268)
+
+[node name="WalkPos" type="Marker3D" parent="." unique_id=509815979]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2.2867286, 1.193, 2.88)
+
+[node name="ReactionSystem" type="Node" parent="." unique_id=1683620191]
+script = ExtResource("17_prgvr")
+
+[node name="QUARTO HOTEL FINALIZADO" parent="." unique_id=1696118365 instance=ExtResource("17_mac6c")]
+
+[node name="teclado" parent="QUARTO HOTEL FINALIZADO" index="0" unique_id=907707158]
+visible = false
+
+[node name="tampa de cima" parent="QUARTO HOTEL FINALIZADO" index="1" unique_id=315101185]
+visible = false
+
+[node name="ARMARIO" parent="QUARTO HOTEL FINALIZADO" index="2" unique_id=2047179789]
+visible = false
+
+[node name="StaticBody3D" parent="QUARTO HOTEL FINALIZADO/ARMARIO" index="0" unique_id=1944031328]
+collision_layer = 5
+script = ExtResource("18_4wbmt")
+document_rewards = Array[ExtResource("19_rg1da")]([ExtResource("20_vqf5j"), ExtResource("21_b3nfv"), ExtResource("22_g8v81")])
+stamp_rewards = Array[ExtResource("23_v7j50")]([ExtResource("24_jjb6v")])
+
+[node name="PORTA L" parent="QUARTO HOTEL FINALIZADO" index="3" unique_id=2014003363]
+visible = false
+
+[node name="GAVETA 1" parent="QUARTO HOTEL FINALIZADO" index="4" unique_id=781272630]
+visible = false
+
+[node name="GAVETA 2" parent="QUARTO HOTEL FINALIZADO" index="12" unique_id=1261294869]
+visible = false
+
+[node name="PORTA R" parent="QUARTO HOTEL FINALIZADO" index="13" unique_id=1957621156]
+visible = false
+
+[node name="StaticBody3D" parent="QUARTO HOTEL FINALIZADO/MESA" parent_id_path=PackedInt32Array(1696118365, 1543285758) index="0" unique_id=2015646859]
+script = ExtResource("18_mac6c")
+
+[node name="COBERTA ARRUMADA" parent="QUARTO HOTEL FINALIZADO" index="20" unique_id=1812880773]
+visible = false
+
+[node name="QUADRO DOCUMENTOS" parent="QUARTO HOTEL FINALIZADO" index="21" unique_id=1027726884]
+visible = false
+
+[node name="CAIXA" parent="QUARTO HOTEL FINALIZADO" index="22" unique_id=1585114226]
+transform = Transform3D(0.3059616, 0, 0.29871863, 0, 0.34349632, 0, -0.53896224, 0, 0.16957858, 2.0920966, 0.094593644, -2.707974)
+visible = false
+
+[node name="StaticBody3D" parent="QUARTO HOTEL FINALIZADO/CAIXA" index="0" unique_id=927701128 node_paths=PackedStringArray("_mesh")]
+collision_layer = 5
+script = ExtResource("10_40f74")
+_mesh = NodePath("..")
+prompt_message = "Abrir caixa"
+
+[node name="TAMPA 1" parent="QUARTO HOTEL FINALIZADO" index="23" unique_id=90367650]
+transform = Transform3D(0.3059616, 0, 0.29871863, 0, 0.34349632, 0, -0.53896224, 0, 0.16957858, 2.3984933, 0.78570867, -2.5340369)
+visible = false
+
+[node name="TAMPA 2col" parent="QUARTO HOTEL FINALIZADO" index="24" unique_id=1115453143]
+transform = Transform3D(-0.30596146, 0, -0.2987187, 0, 0.34349632, 0, 0.53896236, 0, -0.16957848, 1.783983, 0.78567827, -2.882886)
+visible = false
+
+[node name="StaticBody3D" parent="QUARTO HOTEL FINALIZADO/CADEIRA" parent_id_path=PackedInt32Array(1696118365, 1450024765) index="0" unique_id=108005417 node_paths=PackedStringArray("_mesh")]
+collision_layer = 17
+script = ExtResource("8_40f74")
+target_state = 1
+_id = "cadeira_computador"
+_mesh = NodePath("..")
+prompt_message = "Sentar"
+
+[node name="CAPA INTERRUPTOR 2" parent="QUARTO HOTEL FINALIZADO" index="43" unique_id=1616653655]
+transform = Transform3D(-9.042671e-08, 0, 0.010358268, 0, 0.12185509, 0, -0.09481928, 0, -9.8784145e-09, 0.7510576, -0.46558732, 0.43952322)
+
+[node name="SWITCH 2" parent="QUARTO HOTEL FINALIZADO" index="44" unique_id=779032949]
+transform = Transform3D(-1.93808e-08, -0.0002148255, 0.015554696, 8.111384e-12, 0.05969829, 5.597389e-05, -0.02322542, 2.0011376e-10, -1.2979831e-08, 0.7516718, -0.41844463, 0.43952322)
+
+[node name="PARTE DE BAIXO MALETA" parent="QUARTO HOTEL FINALIZADO" index="45" unique_id=628774747]
+visible = false
+
+[node name="PARTE DE CIMA MALETA" parent="QUARTO HOTEL FINALIZADO" index="46" unique_id=1424205177]
+visible = false
+
+[node name="ALÇA" parent="QUARTO HOTEL FINALIZADO" index="47" unique_id=1291710616]
+visible = false
+
+[node name="TAMPA DA CAIXA" parent="QUARTO HOTEL FINALIZADO" index="48" unique_id=1930347546]
+visible = false
+
+[node name="CAIXA CARIMBO" parent="QUARTO HOTEL FINALIZADO" index="49" unique_id=602391067]
+visible = false
+
+[node name="CARIMBO" parent="QUARTO HOTEL FINALIZADO" index="50" unique_id=469339855]
+visible = false
+
+[node name="BOLSA DE TINTA" parent="QUARTO HOTEL FINALIZADO" index="51" unique_id=668865946]
+visible = false
+
+[node name="TAMPA BOLSA DE TINTA" parent="QUARTO HOTEL FINALIZADO" index="52" unique_id=912785165]
+visible = false
+
+[node name="StaticBody3D" parent="." unique_id=380337635 instance=ExtResource("26_rg1da")]
+transform = Transform3D(-1.1846778, 0, -1.571831e-07, 0, 1.6862556, 0, 3.8601706e-07, 0, -0.48239148, -4.6805563, 1.9314964, -2.6241739)
+document_rewards = Array[ExtResource("19_rg1da")]([ExtResource("20_vqf5j"), ExtResource("22_g8v81"), ExtResource("21_b3nfv")])
+stamp_rewards = Array[ExtResource("23_v7j50")]([ExtResource("24_jjb6v")])
+
+[node name="CIDADE SEM COLISÃO" parent="." unique_id=1166047221 instance=ExtResource("27_vqf5j")]
+
+[editable path="player"]
+[editable path="PCScene"]
+[editable path="quarto_teste_col"]
+[editable path="mesaModel"]
+[editable path="QUARTO HOTEL FINALIZADO"]

@@ -38,16 +38,16 @@ var current_question := 0
 func _ready():
 	errorlabel.visible = false
 	password.secret = true
-
+	
 	recovery_panel.visible = false
 	recovery_error.visible = false
-
+	
 	if not confirm.pressed.is_connected(_on_confirm_pressed):
 		confirm.pressed.connect(_on_confirm_pressed)
 	recoverybutton.pressed.connect(_on_forgot_pressed)
 	confirm_recovery.pressed.connect(_on_confirm_recovery_pressed)
 	back_button.pressed.connect(_on_back_pressed)
-
+	
 	password.text_submitted.connect(func(_t): _on_confirm_pressed())
 	answer_field.text_submitted.connect(func(_t): _on_confirm_recovery_pressed())
 

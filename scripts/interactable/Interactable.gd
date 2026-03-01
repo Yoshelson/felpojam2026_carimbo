@@ -21,7 +21,7 @@ func interact(_interactor: Node3D):
 
 func on_focus_entered():
 	if (is_interactable):
-		_mesh.material_overlay = _material_overlay
+		_mesh.material_overlay = null
 
 func on_focus_exited():
 	_mesh.material_overlay = null

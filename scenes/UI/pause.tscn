@@ -174,11 +174,6 @@ text = "Modo Tela-cheia"
 layout_mode = 2
 text = "Filtro de PSX"
 
-[node name="Geral" type="VBoxContainer" parent="PanelContainer/settings_menu/settings_tab" unique_id=1257913691]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 2
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1216367356]
 libraries/ = SubResource("AnimationLibrary_8u653")
 
