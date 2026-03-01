@@ -71,6 +71,83 @@ func _ready():
 	hint_img.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	puzzle_page.get_node("PuzzleMargin").add_child(hint_img)
 
+	_apply_address_bar_style()
+
+func _apply_address_bar_style() -> void:
+	# Fundo geral da barra — cinza muito claro com borda inferior
+	var bar_bg = StyleBoxFlat.new()
+	bar_bg.bg_color = Color(0.95, 0.95, 0.95, 1)
+	bar_bg.set_content_margin_all(6)
+	bar_bg.border_color = Color(0.45, 0.45, 0.45, 1)
+	bar_bg.border_width_bottom = 2
+	$Content/VBox/BrowserBar.add_theme_stylebox_override("panel", bar_bg)
+
+	# Estilo dos botoes (◄ ► →) — fundo branco, borda cinza, hover azul claro
+	var btn_normal = StyleBoxFlat.new()
+	btn_normal.bg_color = Color(1.0, 1.0, 1.0, 1)
+	btn_normal.set_corner_radius_all(4)
+	btn_normal.set_content_margin_all(6)
+	btn_normal.border_color = Color(0.72, 0.72, 0.72, 1)
+	btn_normal.set_border_width_all(1)
+
+	var btn_hover = StyleBoxFlat.new()
+	btn_hover.bg_color = Color(0.88, 0.93, 1.0, 1)
+	btn_hover.set_corner_radius_all(4)
+	btn_hover.set_content_margin_all(6)
+	btn_hover.border_color = Color(0.35, 0.6, 1.0, 1)
+	btn_hover.set_border_width_all(1)
+
+	var btn_pressed = StyleBoxFlat.new()
+	btn_pressed.bg_color = Color(0.78, 0.88, 1.0, 1)
+	btn_pressed.set_corner_radius_all(4)
+	btn_pressed.set_content_margin_all(6)
+	btn_pressed.border_color = Color(0.2, 0.5, 0.95, 1)
+	btn_pressed.set_border_width_all(2)
+
+	for btn_name in ["BackBtn", "ForwardBtn", "SearchBtn"]:
+		var btn = $Content/VBox/BrowserBar/BarHBox.get_node_or_null(btn_name) as Button
+		if btn:
+			btn.add_theme_stylebox_override("normal", btn_normal)
+			btn.add_theme_stylebox_override("hover", btn_hover)
+			btn.add_theme_stylebox_override("pressed", btn_pressed)
+			btn.add_theme_color_override("font_color", Color(0.1, 0.1, 0.1, 1))
+			btn.add_theme_color_override("font_hover_color", Color(0.0, 0.35, 0.9, 1))
+			btn.add_theme_color_override("font_pressed_color", Color(0.0, 0.2, 0.75, 1))
+			btn.add_theme_font_size_override("font_size", 33)
+
+	# URLPrefix — label cinza escuro, fonte maior
+	url_prefix.add_theme_color_override("font_color", Color(0.28, 0.28, 0.28, 1))
+	url_prefix.add_theme_font_size_override("font_size", 33)
+
+	# URLFixed — texto preto apos navegar
+	url_fixed.add_theme_color_override("font_color", Color(0.08, 0.08, 0.08, 1))
+	url_fixed.add_theme_font_size_override("font_size", 33)
+
+	# URLInput — LineEdit onde o jogador digita a senha do puzzle
+	var le_normal = StyleBoxFlat.new()
+	le_normal.bg_color = Color(1.0, 1.0, 1.0, 1)
+	le_normal.set_corner_radius_all(4)
+	le_normal.set_content_margin_all(5)
+	le_normal.border_color = Color(0.7, 0.7, 0.7, 1)
+	le_normal.set_border_width_all(1)
+
+	var le_focus = StyleBoxFlat.new()
+	le_focus.bg_color = Color(1.0, 1.0, 1.0, 1)
+	le_focus.set_corner_radius_all(4)
+	le_focus.set_content_margin_all(5)
+	le_focus.border_color = Color(0.25, 0.55, 1.0, 1)
+	le_focus.set_border_width_all(2)
+
+	url_input.add_theme_stylebox_override("normal", le_normal)
+	url_input.add_theme_stylebox_override("focus", le_focus)
+	url_input.add_theme_stylebox_override("read_only", le_normal)
+	url_input.add_theme_color_override("font_color", Color(0.08, 0.08, 0.08, 1))
+	url_input.add_theme_color_override("font_placeholder_color", Color(0.3, 0.3, 0.3, 1))
+	url_input.add_theme_color_override("caret_color", Color(0.08, 0.08, 0.08, 1))
+	url_input.add_theme_color_override("selection_color", Color(0.25, 0.55, 1.0, 0.35))
+	url_input.add_theme_font_size_override("font_size", 33)
+	url_input.placeholder_text = "digite um endereco..."
+
 func _set_animal_active(index: int, active: bool) -> void:
 	var btn = puzzle_page.get_node("PuzzleMargin/PuzzleCenter/Grid/Animal%d" % index) as Button
 	if not btn:

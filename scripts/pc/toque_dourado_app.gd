@@ -11,6 +11,13 @@ const REVEAL_COVERAGE_THRESHOLD := 0.90
 var reveal_timers: Dictionary = {}
 var mirrors: Dictionary = {}
 
+# Controla se a lente esta ativa.
+# Desativa automaticamente quando nao ha mais hidden_icons para revelar.
+# Para reativar no futuro (easter eggs, novos itens escondidos):
+#   basta adicionar um DesktopAppIcon ao grupo "hidden_icons" antes de abrir o app.
+var _lens_active := true
+var _lens_exhausted_notified := false
+
 var mirror_shader := preload("res://scripts/shaders/mirror_clip.gdshader")
 
 func _ready():
@@ -20,12 +27,49 @@ func _ready():
 		particles.one_shot = false
 		particles.emitting = true
 
+	# Verifica imediatamente se ja existe algo para revelar.
+	# Se o puzzle3 ja foi feito e nao ha hidden_icons, desativa a lente de cara.
+	_check_lens_state()
+
+func _check_lens_state() -> void:
+	var hidden_icons = get_tree().get_nodes_in_group("hidden_icons")
+	if hidden_icons.is_empty():
+		_deactivate_lens()
+
+func _deactivate_lens() -> void:
+	if not _lens_active:
+		return
+	_lens_active = false
+
+	# Remove todos os mirrors visuais da lente imediatamente
+	for icon in mirrors.keys():
+		if is_instance_valid(mirrors[icon]):
+			mirrors[icon].queue_free()
+	mirrors.clear()
+	reveal_timers.clear()
+
+	lens.modulate.a = 0.3
+	lens.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	if particles:
+		particles.emitting = false
+	if not _lens_exhausted_notified:
+		_lens_exhausted_notified = true
+		GameEvents.subtitle_requested.emit("Você", "Não tem mais nada para encontrar aqui.", 2.5)
+
 func _process(delta):
+	if not _lens_active:
+		return
 	_update_lens(delta)
 
 func _update_lens(delta: float):
 	var lens_rect = lens.get_global_rect()
 	var hidden_icons = get_tree().get_nodes_in_group("hidden_icons")
+
+	# Se nao ha mais nada para revelar, desativa a lente
+	if hidden_icons.is_empty():
+		_deactivate_lens()
+		return
+
 	var blocking_rects = _get_blocking_window_rects()
 	
 	var shader_rects: Array[Vector4] = []
@@ -136,3 +180,6 @@ func _trigger_finish_effect():
 	particles.visible = false
 	if mat:
 		mat.color = Color(1.0, 0.9, 0.2, 1.0)
+	
+	# Apos revelar tudo, desativa a lente
+	_deactivate_lens()

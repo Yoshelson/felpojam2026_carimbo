@@ -24,7 +24,7 @@ modulate = Color(0.10796725, 0.10796725, 0.10796725, 1)
 
 [node name="Content" parent="." index="1" unique_id=1185580226]
 offset_left = 0.0
-offset_top = 48.0
+offset_top = 33.0
 offset_right = 1200.0
 offset_bottom = 900.0
 

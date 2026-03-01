@@ -24,7 +24,7 @@ modulate = Color(0.3143893, 0.3143893, 0.31438926, 1)
 
 [node name="Content" parent="." index="1" unique_id=1185580226]
 offset_left = 10.0
-offset_top = 58.0
+offset_top = 52.0
 offset_right = 888.0
 offset_bottom = 688.0
 
@@ -65,6 +65,9 @@ text = "►"
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 0.5019608)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 22
 text = "bapotube.com/watch?v=xX_r31n4m3"
 editable = false
@@ -177,8 +180,8 @@ text = "Publicado em ???"
 
 [node name="MostrarMaisBtn" type="Button" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox/DescPanel/DescVBox" index="1" unique_id=2000000098]
 layout_mode = 2
-theme_override_font_sizes/font_size = 22
-text = "Mostrar mais ▼"
+theme_override_font_sizes/font_size = 33
+text = "Mostrar mais"
 flat = true
 alignment = 0
 
@@ -193,12 +196,12 @@ theme_override_colors/font_color = Color(0.2, 0.4, 1, 1)
 theme_override_font_sizes/font_size = 33
 icon = ExtResource("3_qnkkg")
 flat = true
-icon_alignment = 1
 
 [node name="DescFullLabel" type="Label" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox/DescPanel/DescVBox/ExpandedVBox" index="1" unique_id=2000000101]
 layout_mode = 2
-theme_override_font_sizes/font_size = 22
-text = "Cuidado com o que desejas.
+theme_override_font_sizes/font_size = 33
+text = "Você quem os mandou.
+Você é o culpado.
 
 "
 autowrap_mode = 2
@@ -240,7 +243,7 @@ color = Color(0.1, 0.3, 0.9, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 22
-text = "NULL_USER_77:  assisti 1.000.000 de vezes. cada vez é diferente."
+text = "NULL_USER_77:  Por que você tomou essa decisão?"
 autowrap_mode = 2
 
 [node name="C3" type="HBoxContainer" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox" index="8" unique_id=2000000050]
@@ -256,7 +259,7 @@ color = Color(0.1, 0.3, 0.9, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 22
-text = "0xDEAD_FEFE:  por que a descrição me olha de volta"
+text = "0xDEAD_M: .  "
 autowrap_mode = 2
 
 [node name="C4" type="HBoxContainer" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox" index="9" unique_id=2000000060]
@@ -272,7 +275,7 @@ color = Color(0.1, 0.3, 0.9, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 22
-text = "sys.ghost:  meu favorito é quando termina"
+text = "sys.ghost:  Eu sinto. O cheiro. De tinta."
 autowrap_mode = 2
 
 [node name="C5" type="HBoxContainer" parent="Content/VBox/PageScroll/PageVBox/InfoMargin/InfoVBox" index="10" unique_id=2000000070]
@@ -288,7 +291,7 @@ color = Color(0.1, 0.3, 0.9, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 22
-text = "_VEJA_ME_:  vocÊ nÃo dEvEriA eStAr AquI"
+text = "_VEJA_ME_:  Azul."
 autowrap_mode = 2
 
 [node name="TopBar" parent="." index="2" unique_id=1516810741]

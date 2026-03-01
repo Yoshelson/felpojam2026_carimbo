@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cjicl4epna208" path="res://scenes/interactables/computer/desktop_app_icons.tscn" id="3_2aek1"]
 [ext_resource type="Texture2D" uid="uid://cs7jj14yn6wjo" path="res://arts/images/PC/lixo.png" id="3_a6npr"]
 [ext_resource type="PackedScene" uid="uid://ddvoeqv37mhyk" path="res://scenes/interactables/computer/video_player.tscn" id="5_f25ik"]
-[ext_resource type="Texture2D" uid="uid://drjssty00qf0p" path="res://arts/test/Ícone Pasta Img.png" id="6_a6npr"]
+[ext_resource type="Texture2D" uid="uid://y30mmqmwvovs" path="res://arts/test/Ícone Pasta Img-export.png" id="6_a6npr"]
 
 [node name="Lixo" unique_id=280367607 instance=ExtResource("1_fpgyo")]
 script = ExtResource("2_46ahv")

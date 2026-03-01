@@ -1,6 +1,6 @@
 extends Control
 
-
+var _mouse_mode_before_pause: Input.MouseMode = Input.MOUSE_MODE_CAPTURED
 
 func _ready():
 	hide()
@@ -14,12 +14,15 @@ func _ready():
 func resume():
 	get_tree().paused = false
 	$AnimationPlayer.play_backwards("blur")
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	# Restaura o mouse mode que estava antes de pausar
+	Input.set_mouse_mode(_mouse_mode_before_pause)
 	$PanelContainer/pause_menu.visible = true
 	$PanelContainer/settings_menu.visible = false
 	hide()
 
 func pause():
+	# Salva o mouse mode atual antes de sobrescrever
+	_mouse_mode_before_pause = Input.get_mouse_mode()
 	get_tree().paused = true
 	print("pausou")
 	$AnimationPlayer.play("blur")
@@ -52,8 +55,6 @@ func _on_configurations_pressed():
 func _on_back_pressed() -> void:
 	$PanelContainer/pause_menu.visible = true
 	$PanelContainer/settings_menu.visible = false
-
-
 
 # Opções de gráficos
 func _on_fullscreen_toggled(toggled_on: bool) -> void:

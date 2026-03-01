@@ -21,9 +21,9 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="LineEdit" type="LineEdit" parent="Content" parent_id_path=PackedInt32Array(1185580226) index="1" unique_id=20382054]
 layout_mode = 0
-offset_left = 275.0
+offset_left = 263.0
 offset_top = 195.0
-offset_right = 407.0
+offset_right = 408.0
 offset_bottom = 249.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 33
@@ -45,7 +45,7 @@ offset_top = 261.0
 offset_right = 393.0
 offset_bottom = 292.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 33
 
 [node name="TextureRect" type="TextureRect" parent="Content" parent_id_path=PackedInt32Array(1185580226) index="4" unique_id=1493846667]
 layout_mode = 0

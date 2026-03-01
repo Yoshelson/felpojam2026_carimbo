@@ -27,6 +27,17 @@ var caixa_inicial_aberta: bool = false
 var maleta_aberta: bool = false
 var guarda_roupa_aberto: bool = false
 
+# Configurações do jogador (persistem entre cenas)
+# sensitivity: multiplicador de rotação da câmera (base: 0.002)
+var sensitivity: float = 0.002
+# brightness: 0.0 = tela preta, 1.0 = padrão, 2.0 = muito claro
+var brightness: float = 1.0
+# subtitle_speed: intervalo entre caracteres do efeito typewrite (segundos)
+var subtitle_speed: float = 0.03
+# psx_enabled: estado do filtro PSX
+var psx_enabled: bool = false
+
+
 signal state_changed
 
 func set_flag(flag: String, value: bool) -> void:

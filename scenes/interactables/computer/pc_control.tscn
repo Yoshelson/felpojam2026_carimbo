@@ -2,12 +2,11 @@
 
 [ext_resource type="FontFile" uid="uid://ijumkgf31v2x" path="res://arts/m6x11plus.ttf" id="1_235xy"]
 [ext_resource type="Script" uid="uid://wdap24m0shlh" path="res://scripts/pc/pc_control.gd" id="1_236bd"]
-[ext_resource type="Texture2D" uid="uid://diae5xkiuusn7" path="res://arts/test/Mouse.png" id="2_2c1gn"]
 [ext_resource type="Texture2D" uid="uid://d3cbr6riwy1fj" path="res://arts/test/pcwallpaper_test.webp" id="2_236bd"]
 [ext_resource type="Script" uid="uid://satccet7bdls" path="res://scripts/pc/desktop_root.gd" id="3_pthp1"]
-[ext_resource type="Texture2D" uid="uid://do66cd84wpaht" path="res://arts/test/taskbar_teste.png" id="4_3d4qn"]
+[ext_resource type="Texture2D" uid="uid://5ji63t8lvwms" path="res://arts/images/PC/bg_pindows.png" id="5_8v45t"]
+[ext_resource type="Texture2D" uid="uid://dtj7ilty4t88f" path="res://arts/images/PC/taskbar.png" id="6_fpmpa"]
 [ext_resource type="PackedScene" uid="uid://cjicl4epna208" path="res://scenes/interactables/computer/desktop_app_icons.tscn" id="6_rrfp6"]
-[ext_resource type="Texture2D" uid="uid://c1mhjj4wyahjf" path="res://arts/test/Off_test.png" id="7_hbrv6"]
 [ext_resource type="Script" uid="uid://c12ysu4qxad5" path="res://scripts/pc/login_screen.gd" id="7_m7g4r"]
 [ext_resource type="Texture2D" uid="uid://b7v06o2apcbq0" path="res://arts/test/login_bg.png" id="8_j70bi"]
 [ext_resource type="Texture2D" uid="uid://b86mvvv7wltwv" path="res://arts/test/User_Test.png" id="8_qu3oj"]
@@ -19,6 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://c3epuxs7y77he" path="res://arts/images/PC/Confirmar1.png" id="15_q7ic0"]
 [ext_resource type="Texture2D" uid="uid://fgf5qfrj6jsb" path="res://arts/images/PC/EsqueciSenha.png" id="16_g0i7v"]
 [ext_resource type="Texture2D" uid="uid://bvw4ets4cciua" path="res://arts/images/PC/Voltar1.png" id="17_g0i7v"]
+[ext_resource type="Texture2D" uid="uid://b6kx5dmgfty52" path="res://arts/images/PC/Pindows_label.png" id="18_8v45t"]
+[ext_resource type="Texture2D" uid="uid://caj0i7115mslv" path="res://arts/images/PC/pindows_icon.png" id="19_fpmpa"]
+[ext_resource type="Texture2D" uid="uid://u8clgxwa2v3q" path="res://arts/images/PC/mouse.png" id="21_8v45t"]
 
 [sub_resource type="Theme" id="Theme_77gr0"]
 default_font = ExtResource("1_235xy")
@@ -105,10 +107,12 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 4.208008
+offset_bottom = -83.343994
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_236bd")
+texture = ExtResource("5_8v45t")
 expand_mode = 1
 
 [node name="Taskbar" type="Control" parent="Desktop_Root" unique_id=1096995476]
@@ -117,24 +121,17 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -80.0
+offset_top = -80.343994
+offset_right = 22.208008
+offset_bottom = -0.34399414
 grow_horizontal = 2
 grow_vertical = 0
 
 [node name="Bar" type="TextureRect" parent="Desktop_Root/Taskbar" unique_id=1062483664]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("4_3d4qn")
-
-[node name="OffButton" type="Button" parent="Desktop_Root/Taskbar" unique_id=760509438]
-layout_mode = 0
-offset_right = 80.0
+offset_right = 1780.0
 offset_bottom = 80.0
-icon = ExtResource("7_hbrv6")
-flat = true
-icon_alignment = 1
-expand_icon = true
+texture = ExtResource("6_fpmpa")
 
 [node name="Clock" type="Label" parent="Desktop_Root/Taskbar" unique_id=681408296]
 layout_mode = 1
@@ -154,9 +151,10 @@ vertical_alignment = 1
 z_index = 1
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 0
-offset_left = 104.0
-offset_right = 184.0
-offset_bottom = 80.0
+offset_left = 205.0
+offset_top = -0.34399414
+offset_right = 285.0
+offset_bottom = 79.656006
 theme_override_constants/separation = 8
 
 [node name="Desktop_Icons" type="GridContainer" parent="Desktop_Root" unique_id=1810797379]
@@ -223,10 +221,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 516.0
-offset_top = 489.83902
-offset_right = 644.0
-offset_bottom = 617.839
+offset_left = 695.0
+offset_top = 535.0
+offset_right = 823.0
+offset_bottom = 663.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
@@ -239,17 +237,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 675.00006
-offset_top = 473.83902
-offset_right = 915.0
-offset_bottom = 534.839
+offset_left = 850.0
+offset_top = 535.161
+offset_right = 1090.0
+offset_bottom = 596.161
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.002092, 0.99472225)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 44
 text = "Monique"
-horizontal_alignment = 1
 
 [node name="Password" type="LineEdit" parent="Login/LoginScreen" unique_id=1802271249]
 layout_mode = 1
@@ -258,10 +255,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 682.0
-offset_top = 561.77795
-offset_right = 902.0
-offset_bottom = 615.77795
+offset_left = 861.0
+offset_top = 606.93896
+offset_right = 1081.0
+offset_bottom = 660.93896
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.1, 1.1)
@@ -280,10 +277,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 931.0
-offset_top = 545.839
-offset_right = 1011.0
-offset_bottom = 625.839
+offset_left = 1110.0
+offset_top = 591.0
+offset_right = 1190.0
+offset_bottom = 671.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
@@ -297,10 +294,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 742.00006
-offset_top = 633.839
-offset_right = 842.00006
-offset_bottom = 664.839
+offset_left = 921.00006
+offset_top = 679.0
+offset_right = 1021.0
+offset_bottom = 710.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.5, 1.5)
@@ -310,14 +307,31 @@ horizontal_alignment = 1
 
 [node name="ForgotPassword" type="Button" parent="Login/LoginScreen" unique_id=109280586]
 layout_mode = 0
-offset_left = 1040.0
-offset_top = 590.839
-offset_right = 1090.0
-offset_bottom = 640.839
+offset_left = 1219.0
+offset_top = 636.0
+offset_right = 1269.0
+offset_bottom = 686.0
 scale = Vector2(1.1, 1.1)
 tooltip_text = "Esqueci a minha Senha."
 icon = ExtResource("16_g0i7v")
 flat = true
+
+[node name="TextureRect2" type="TextureRect" parent="Login/LoginScreen" unique_id=1865989825]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 508.0
+offset_right = 378.0
+offset_bottom = 668.0
+scale = Vector2(2, 2)
+texture = ExtResource("18_8v45t")
+
+[node name="TextureRect" type="TextureRect" parent="Login/LoginScreen" unique_id=168613488]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 427.0
+offset_right = 657.0
+offset_bottom = 675.0
+texture = ExtResource("19_fpmpa")
 
 [node name="RecoveryScreen" type="Control" parent="Login" unique_id=2013830963]
 visible = false
@@ -397,8 +411,8 @@ flat = true
 [node name="Mouse" type="Sprite2D" parent="." unique_id=200985795]
 top_level = true
 z_index = 100
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_2c1gn")
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("21_8v45t")
 centered = false
 
 [connection signal="pressed" from="Login/LoginScreen/Confirm" to="Login" method="_on_confirm_pressed"]

@@ -24,7 +24,10 @@ const CASCADE_MAX_Y  := 800.0
 var cascade_pos := CASCADE_START
 
 func is_typing() -> bool:
-	return get_viewport().gui_get_focus_owner() is LineEdit
+	# pc_control roda dentro do SubViewport, entao get_viewport() ja retorna
+	# o SubViewport correto — nao o viewport principal do jogo
+	var focused = get_viewport().gui_get_focus_owner()
+	return focused is LineEdit and focused.is_visible_in_tree()
 
 func _ready():
 	add_to_group("pc_control")

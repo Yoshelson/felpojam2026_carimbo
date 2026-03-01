@@ -27,6 +27,8 @@ var _waiting_click: bool = false
 
 func _ready() -> void:
 	add_to_group("subtitle_ui")
+	# PAUSABLE garante que os timers internos parem quando get_tree().paused = true
+	process_mode = Node.PROCESS_MODE_PAUSABLE
 	set_process_input(false)
 	control.modulate.a = 0.0
 	_apply_style()
@@ -84,8 +86,8 @@ func _show_next() -> void:
 	_show_next()
 
 func _typewrite() -> void:
-	await get_tree().process_frame
-	await get_tree().process_frame
+	await get_tree().create_timer(0.0).timeout
+	await get_tree().create_timer(0.0).timeout
 	var total = text_label.get_total_character_count()
 	for i in range(total):
 		text_label.visible_characters = i + 1
@@ -124,8 +126,8 @@ func _show_priority(lines: Array) -> void:
 func _typewrite_priority(full_text: String) -> void:
 	text_label.text = full_text
 	text_label.visible_characters = 0
-	await get_tree().process_frame
-	await get_tree().process_frame
+	await get_tree().create_timer(0.0).timeout
+	await get_tree().create_timer(0.0).timeout
 	var total = text_label.get_total_character_count()
 	for i in range(total):
 		text_label.visible_characters = i + 1
@@ -133,7 +135,7 @@ func _typewrite_priority(full_text: String) -> void:
 
 func _wait_for_click() -> void:
 	while _waiting_click:
-		await get_tree().process_frame
+		await get_tree().create_timer(0.05).timeout
 
 func _input(event: InputEvent) -> void:
 	if not _waiting_click:

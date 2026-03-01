@@ -5,7 +5,8 @@ signal login_success
 @export var recovery_questions := [
 	{
 		"question": "Data de Aniversário (xx/xx/xxxx)",
-		"answer": "16/02/1984"
+		"answer": "16/02/1984",
+		"answer_alt": "02/16/1984"
 	},
 	{
 		"question": "Cidade Natal",
@@ -14,7 +15,8 @@ signal login_success
 	},
 	{
 		"question": "O dia do meu maior arrependimento",
-		"answer": "13"
+		"answer": "13",
+		"answer_alt": "DIA 13"
 	}
 ]
 
@@ -99,7 +101,7 @@ func _on_confirm_recovery_pressed():
 	var q = recovery_questions[current_question]
 	var correct = q["answer"]
 	var correct_alt = q.get("answer_alt", "")
-
+	
 	if player_answer != correct and player_answer != correct_alt:
 		recovery_error.text = "Resposta errada, tente novamente."
 		recovery_error.visible = true

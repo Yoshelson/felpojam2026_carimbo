@@ -67,6 +67,7 @@ func handle_mouse_mov(event: InputEventMouseMotion) :
 	sub_viewport.push_input(motion_event)
 
 func handle_mouse_btn_press(event: InputEventMouseButton):
+	# Bloqueia cliques se dialogo com clique estiver ativo
 	var subtitle_ui = get_tree().get_first_node_in_group("subtitle_ui")
 	if subtitle_ui and subtitle_ui._waiting_click:
 		return
@@ -79,10 +80,16 @@ func handle_mouse_btn_press(event: InputEventMouseButton):
 		mouse_event.position = pc_control.pc_mouse_pos
 		mouse_event.global_position = pc_control.pc_mouse_pos
 		sub_viewport.push_input(mouse_event)
-		
-		
+
+		# Ao clicar com botao esquerdo, verifica se o clique foi fora do LineEdit
+		# focado — se sim, libera o foco para o jogador poder pressionar Q para sair
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			_on_mouse_click()
+			var focused = sub_viewport.gui_get_focus_owner()
+			if focused is LineEdit:
+				var focused_rect = focused.get_global_rect()
+				if not focused_rect.has_point(pc_control.pc_mouse_pos):
+					sub_viewport.gui_release_focus()
 
 func handle_key_press(event: InputEventKey) :
 	sub_viewport.push_input(event)
