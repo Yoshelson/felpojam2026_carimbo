@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="DocColorCombination" format=3 uid="uid://d2hrybtvt55td"]
 
 [ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="1_fpkeu"]
-[ext_resource type="Texture2D" uid="uid://0j1irhxes5v4" path="res://arts/images/Documents/Relatorio de Homicidio/Preto + Azul + Amarelo.png" id="2_nren4"]
+[ext_resource type="Texture2D" uid="uid://ctre0u87s6b5x" path="res://arts/images/documents/Relatorio de Homicidio/Preto + Azul + Amarelo.png" id="2_nren4"]
 
 [resource]
 script = ExtResource("1_fpkeu")

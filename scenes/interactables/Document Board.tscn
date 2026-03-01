@@ -1,9 +1,43 @@
-[gd_scene format=3 uid="uid://bvngn27lmrqjo"]
+[gd_scene format=4 uid="uid://bvngn27lmrqjo"]
 
 [ext_resource type="Script" uid="uid://drhj03b04ixf2" path="res://scripts/interactable/BoardInteractable.gd" id="1_ud8ji"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6m7nv"]
-size = Vector3(3.9199219, 2.385376, 0.29418945)
+size = Vector3(3.0208282, 1.871952, 0.29418945)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vy2nl"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jpanj"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -3.8799918, 2, 2, 4.8799915),
+"format": 34896613377,
+"index_count": 360,
+"index_data": PackedByteArray("HgAfACAAHgAIAB8AHwAIACEAAAAIAB4AAAAhAAgAHwAhAAoAHgAiAAAAIAAfAAkACQAfAAoAIAAFAB4AHgAFACIAIAAjAAUABQAkACIABQAjACQACwAjACAAIAAJAAsAIwAlACQAIwAmACUACwAmACMAJwAlACYACwAnACYAJwAoACUAJAAlACkAKAApACUAJAApACoAIgAkACoAKAArACkAIgAqACwAAAAiACwAKgApAC0AKwAtACkALAAqAC4AKgAtAC4ALAAuAAEAAAAsAC8ALwAsAAEALwAhAAAAAgABAC4ALwABAAIALwAwACEAAgAwAC8ACgAhADAAAgAuADEAMQAuAC0AAgAEADAAMQAEAAIAHAAwAAQACgAwABwAMQAaAAQAHAAEABoAMQAtAAYABgAaADEAHQAKABwAFwAcABoAHQAcABsAGwAcABcADQAdABsADQAKAB0AGwAXABkADQAbABkAFwAaABgABgAYABoAGQAYAAYAGQAXABgABgATABgAFwAYABMAFgAZABcADQAZABYAFwATABQAFgAXABQABgAyABMAMgAGAC0AMgASABMAFAATABIAFQAWABQADQAWABUAFQAUAA4ADQAVAA4AFAASADMADgAUADMAMgA0ABIANAAzABIAMgAtAAMANAAyAAMAKwADAC0ANAADABEANQADACsANQARAAMANgA0ABEANgARADUANAA2ADMANwA1ACsANwArACgAEAA2ADUAEAA1ADcANgA4ADMANgAQADgADgAzADgABwA3ACgABwAoACcAEAAPADgAOQAQADcAEAA5AA8AOQA3AAcAOgA4AA8AOQA6AA8AOgAOADgAOwA5AAcAOwAHACcAOQA7ADoACwA7ACcAOwAJADoAOwALAAkACQAOADoACwAJAAwACQAMAA4ACQAKAAwACwAMAA0ADQAOAAwADQAMAAoA"),
+"lods": [0.00071758777, PackedByteArray("AAABAAIAAgABAAMAAgAEAAAABQABAAAAAgADAAYABgAEAAIABwADAAEABwABAAUAAAAIAAUAAAAEAAgABQAIAAkACgAIAAQACQAIAAoABQAJAAsACwAHAAUABwALAAkACwAJAAwACQAKAAwACwAMAA0ADQAMAAoACQAMAA4ADQAOAAwABwAJAA8ACQAOAA8AEAAHAA8AEAARAAcAEQAQAA8ABwARAAMAEQAPABIADgASAA8AAwARABIAAwASABMADgAUABIAFAATABIAFQAUAA4ADQAVAA4ABgADABMAFQAWABQADQAWABUAFwATABQAFgAXABQABgATABgAFwAYABMADQAZABYAFgAZABcAGQAYAAYAGQAXABgABgAYABoAFwAaABgABgAaAAQAGwAXABkADQAbABkAFwAcABoAHAAEABoAGwAcABcACgAEABwADQAdABsADQAKAB0AHQAcABsAHQAKABwA")],
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 60,
+"vertex_data": PackedByteArray("//8qDBSXAAD///////8AAP////8UlwAAtQb/////AAD/////AAAAAP//AAD//wAA/3///xSXAAAAAAAA//8AAP//AAAAAAAA/38AAAAAAABJ+SoMAAAAAP9/AAAUlwAA/38qDAAAAAD/fyoMFJcAALUGKgwAAAAAAAAAAAAAAAAAACoMFJcAAAAA/////wAAAAD//wAAAAC1Bv//AAAAALUGW/MAAAAAtQYqDBSXAAC1BlvzFJcAAP9/W/MAAAAA/3///wAAAAD/f1vzFJcAAEn5//8AAAAASflb8xSXAABJ+VvzAAAAAEn5KgwUlwAA//8AABSXAABJ+QAAAAAAAEn5AAAUlwAA//8qDAAAAAD//yoM//8AAEn5AAD//wAASfkqDP//AAD/fyoM//8AAP9/AAD//wAAtQYAAP//AAC1BioM//8AAP9/W/P//wAASflb8///AAC1Blvz//8AAP//W/P//wAA/3//////AABJ+f////8AAP//W/MUlwAA//9b8wAAAABJ+f//FJcAALUG//8UlwAAAABb8wAAAAAAAP//FJcAAAAAW/P//wAAAABb8xSXAAAAACoM//8AAAAAKgwAAAAAAAAAABSXAAC1BgAAAAAAALUGAAAUlwAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ud8ji"]
+resource_name = "O  Q U A R T O (com colisao adeus pckkk)_Cube_035"
+_surfaces = [{
+"aabb": AABB(-1, -1, -3.8799918, 2, 2, 4.8799915),
+"attribute_data": PackedByteArray("7pl75f9/////f3vlOZv///9/Tb85m02/Sd975UnfTb8w7E2/5uxNv2PSTb/m7HvlY9L//+bs//+s0U2/rNH//0OXj4xRgcWXUYGPjEOXxZdRgVmBQ5dZgS7MH5mYs02/mLMfmS7MTb8d5hekxeTJpMXkF6Sz/hekHeaHl///yaTF5IeX//+Hl8Xk+Iqz/oeXHeb4irP++IrF5EaK//9Giv9/Tb/ljB+Z5YxNv/9/H5nLmU2/y5kfmT7u0Nnm7P//5uzQ2T7u//+ypk2/mLMfmZizTb+yph+Zy5kfmcuZTb9ztv//EMRNvxDEe+Vztk2/rNH//6zRTb+K79DZPu7//z7u0NmK7/////9Nv8XkTb/F5Ju+xeTJpP7/yaQntdDZOZtNv3O2Tb9ztv//OZv//8XkTb8uzB+ZxeQfmS7MTb9ztnvlKbdNvym3e+Upt///EMT///bQ///20Hvl9tBNv6zRe+VXgXvlV4H//1eBTb/umU2/7pn//zmbe+Uw7HvlMOz//0nf//9j0nvlrNF75R3me6XF5AuyxeR7pR3myaSz/smks/57pf7/e6Ud5guys/4Lsv7/C7L//5u+s/6bvrP+Tb8d5pu+HeZNvx3myaQd5kaKs/7JpP//F6Sz/kaK///4ipGc0NmRnE2/OZvQ2ZGc//8ntf//J7VNv3O20Nk="),
+"format": 34896613399,
+"index_count": 360,
+"index_data": PackedByteArray("UABRAFIAUAA7AFEAUgA4AFAAUgBRADkAUgBTADgAOgBTAFIAUgA5ADoAOgBUAFMAOgBVAFQAVgA6ADkAOgBWAFUAVgA8AFUAVgA5AFcAVgBYADwAWABWAFcAWABXAD0AWQABAAIAWQBaAAEAAgBbAFkAAgAEAFsAWQBbAFwAAABaAFkAWQBcAAAAAABcAAUAAABdAFoAAAAFAF4AXgBdAAAAXgADAF0ABgAIAF8AXwAIAAkABgAHAAgAXwAJAAsABgAKAAcACwBgAF8ACwANAGAAXwBgAGEAXwBhAAYABgBiAAoAYgAGAGEAYgAOAAoAYgBhAAwAYgBjAA4AYwBiAAwAYwAMAA8AZABlAGYAZwBmAEUAZwBkAGYAaABkAGcAaABpAGQARgBpAGgARgBqAGkAaQBrAGQAZABrAGUAagBsAGkAaQBsAGsAagBtAGwAbgBsAG0AbgBvAGwAbwBrAGwAQgBvAG4AQgBwAG8AbwBxAGsAcABxAG8AcQBlAGsAcAByAHEAcQBEAGUAcgBEAHEAcgBDAEQAEAARABIAEAATABEAEAASABQAEAAUABUAFgAXABgAFgAZABcAGgAbABwAGgBzABsAHgAaABwAHgAcACAAHQBzABoAHgAgACIAHgAiACQAJAAiACYAJAAmAHQAHQB1AHMAJQAkAHQAdgB1AB0AdgAfAHUAIQB2AB0AIQAdACMAIQAjACUAJQB0AHcAIQAlAHgAeAAlAHcAeAB3ACcAKAApACoAKAArACkALAAqACkALAApAC0ALgAvADAALgAxAC8AMgAzADQAMgA1ADMAMgA2ADUAMgA3ADYAPgA/AEAAPgBBAD8AeQBIAHoAeQB7AEgAewB5AHwAewB8AEsAeQB9AHwARwB5AHoAeQBHAH0ARwBKAH0ARwB6AH4ARwB/AEoAfwBHAH4AfwB+AEkATABNAE4ATABPAE0A"),
+"lods": [0.00071758777, PackedByteArray("AAABAAIAAwABAAAAAgAEAAAAAAAFAAMAAAAEAAUABgAHAAgABgAIAAkABgAKAAcABgAJAAsABgAMAAoACwAMAAYACwANAAwADAAOAAoADAAPAA4AEAARABIAEAATABEAEAASABQAEAAUABUAFgAXABgAFgAZABcAGgAbABwAHQAbABoAHgAaABwAHQAfABsAHgAcACAAIQAfAB0AHgAgACIAIQAdACMAHgAiACQAIQAjACUAJAAiACYAJQAkACYAIQAlACcAJQAmACcAKAApACoAKAArACkALAAqACkALAApAC0ALgAvADAALgAxAC8AMgAzADQAMgA1ADMAMgA2ADUAMgA3ADYAOAA5ADoAOAA7ADkAOgA8ADgAPAA6ADkAPAA5AD0APgA/AEAAPgBBAD8AQgBDAEQAQgBEAEUAQgBFAEYARwBIAEkARwBJAEoASABHAEoASABKAEsATABNAE4ATABPAE0A")],
+"material": SubResource("StandardMaterial3D_vy2nl"),
+"primitive": 3,
+"uv_scale": Vector4(1.9477115, 2, 0, 0),
+"vertex_count": 128,
+"vertex_data": PackedByteArray("//8qDBSXVNX///////9U1f////8Ul1TV//8AAP//VNX/////AABU1f//AAAAAFTV/3///xSX/7//f///AAD/v0n5//8AAP+//////wAA/7+1Bv//AAD/v/////8Ul/+/tQb//////7//////////vwAA//8AAP+/AAD//////7//fyoMFJf//0n5W/MUl////39b8xSX//9J+SoMFJf//7UGW/MUl///tQYqDBSX//9J+SoMFJdU1Un5W/MAAFTVSflb8xSXVNVJ+SoMAABU1Un5W/MAAP///////wAA//9J+f//AAD//0n5KgwAAP///39b8wAA/////wAAAAD///9///8AAP///38AAAAA//+1Bv//AAD///9/KgwAAP//tQZb8wAA//+1BioMAAD//wAA//8AAP//AAAAAAAA//9J+VvzFJf///9/W/MAAP///39b8xSX//9J+VvzAAD//7UGW/MUl///tQZb8wAA////f1vzFJdU1f9///8AAFTV/3///xSXVNX/f1vzAABU1f9/KgwUl/+/SfkqDAAA/79J+SoMFJf/v/9/KgwAAP+/tQYqDAAA/7+1BioMFJf/v///AAD//////38AAAAA////fwAAFJf/////AAAAAP//AAAAAP////8AAAAAAAD///9/AAAUl1TV/38qDAAAVNX/fyoMFJdU1f9/AAAAAFTVAAAAAP///78AAP//////v7UG//////+//////////7///wAA////vwAAKgwUl1TVAAD/////VNUAAAAA//9U1QAAAAAAAFTVAAD//wAAVNW1BioMFJdU1bUGW/MAAFTVtQYqDAAAVNW1BlvzFJdU1f//AAAUl///SfkAAAAA//9J+QAAFJf//0n5AAD//////38AAP////+1BgAA/////7UGAAAUl///tQYAAAAA//8AAAAAFJf/////W/MUl1TV//9b8///VNX//1vzAABU1f//KgwAAFTV//8qDP//VNX//wAAFJdU1Un5//8Ul/+/Sfn//////7//f///////v7UG//8Ul/+/AAD//xSX/79J+Vvz////v/9///////+/Sfn//////7///1vz////v///Kgz///+/SfkqDP///79J+QAA////v/9/W/P///+//38qDP///7//fwAA////v7UGAAD///+/tQYqDP///78AACoM////v7UGW/P///+/AABb8////7///1vzAAD//wAAW/MAAP////8qDAAA//9J+QAAAAD//wAAKgwAAP//tQYAAAAA//8AAFvzFJdU1QAAW/P//1TVAAD//xSXVNUAAFvzAABU1QAAKgwAAFTVAAAqDP//VNUAAAAAFJdU1aqqVVWqqlRVqqpUVaqqVFWqqlRVqqpUVf///3////9/////f////3////9/////f////3////9/////f////3//P/+//z//v/8//7//P/+//z//v/8//79UVaqqVFWqqlRVqqpUVaqq/z//v/8//7//P/+//z//v/8//7//P/+//z//v/8//7//P/+//z//v/8//7//P/+//z//v/8//7//f/8//3//P/9//z//f/8//3//P/9//z9UVaqqVFWqqlRVqqpUVaqq////f////3////9/////f////3////9//3//P/9//z//f/8//3//P/9//z//f/8/VFWqqlRVqqpUVaqqVFWqqv9//3//f/9//3//f/9//3//f/9/VFWqqlRVqqpUVaqqVFWqqlRVqqqqqlRVqqpVVaqqVVWqqlRV/3//P/9//z//f/8//3//P/9//z//f/8//3//P/9//z//f/8/qqpVVaqqVFWqqlRVqqpUVaqqVFWqqlRV////f////3////9/////f////3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//P/+//z//v/8//7//P/+//z//v/8//79UVaqqVFWqqlRVqqpUVaqqVFWqqlRVqapUVaqq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_jpanj")
 
 [node name="DocumentBoard" type="StaticBody3D" unique_id=977597654 node_paths=PackedStringArray("camera_target_pos", "_mesh")]
 collision_layer = 5
@@ -11,38 +45,36 @@ script = ExtResource("1_ud8ji")
 target_state = 2
 camera_target_pos = NodePath("Target Pos")
 _id = "doc_board"
-_mesh = NodePath("Visual Model")
+_mesh = NodePath("QUADRO DOCUMENTOS")
 prompt_message = "Ver Quadro de Documentos"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=765198054]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001953125, -0.0036010742, -0.008911133)
 shape = SubResource("BoxShape3D_6m7nv")
 
 [node name="Target Pos" type="Marker3D" parent="." unique_id=2083969742]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
 
-[node name="Visual Model" type="CSGBox3D" parent="." unique_id=1029841168]
-transform = Transform3D(3.8400002, 0, 0, 0, 2.3000002, 0, 0, 0, 0.19999999, 0, 0, 0)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Visual Model" unique_id=937501904]
-transform = Transform3D(0.9409332, 0, 0, 0, 0.9123568, 0, 0, 0, 0.99999994, 0, 0, 0.35271943)
-operation = 2
+[node name="QUADRO DOCUMENTOS" type="MeshInstance3D" parent="." unique_id=1427653304]
+transform = Transform3D(-1.410344, 0, -1.795234e-09, 0, 0.83263284, 0, 1.2329619e-07, 0, -0.020535083, 0, 0, 0)
+mesh = SubResource("ArrayMesh_ud8ji")
 
 [node name="DocumentsContainer" type="Node3D" parent="." unique_id=262668221]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05)
 
 [node name="Document Markers" type="Node3D" parent="." unique_id=1036490532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05)
 
 [node name="Marker3D" type="Marker3D" parent="Document Markers" unique_id=1693633658]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.225, 0.342, 0.01)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.753, 0.26, 0.01)
 
 [node name="Marker3D2" type="Marker3D" parent="Document Markers" unique_id=2090352867]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.502, 0.01)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29, 0.01)
 
 [node name="Marker3D3" type="Marker3D" parent="Document Markers" unique_id=1982462796]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.225, 0.342, 0.01)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.26, 0.01)
 
 [node name="Marker3D4" type="Marker3D" parent="Document Markers" unique_id=1946184531]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.596, -0.415, 0.01)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, -0.355, 0.01)
 
 [node name="Marker3D5" type="Marker3D" parent="Document Markers" unique_id=1308322876]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.596, -0.415, 0.01)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, -0.355, 0.01)

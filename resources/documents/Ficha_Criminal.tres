@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="DocumentData" format=3 uid="uid://cnbyqc6fh2k2p"]
 
-[ext_resource type="Texture2D" uid="uid://bm1rn4n340qmg" path="res://arts/images/Documents/Ficha Criminal/Base.png" id="1_lvtrs"]
+[ext_resource type="Texture2D" uid="uid://brg68red68lt2" path="res://arts/images/documents/Ficha Criminal/Base.png" id="1_lvtrs"]
 [ext_resource type="Script" uid="uid://b6irqck1wko0p" path="res://scripts/inventory-system/documents/DocumentsData.gd" id="1_n3ogy"]
 [ext_resource type="Script" uid="uid://dhgwmkta7luru" path="res://scripts/inventory-system/documents/ColorCombination.gd" id="2_2w23p"]
 [ext_resource type="PackedScene" uid="uid://cm3wtpatnl8ah" path="res://scenes/interactables/documents/doc_square.tscn" id="2_vqw3b"]
@@ -12,6 +12,6 @@ base_image = ExtResource("1_lvtrs")
 id = "ficha_criminal"
 base_transcripted_text = "[font_size=32][center]Documento Vazio[/center][/font_size]"
 variations = Array[ExtResource("2_2w23p")]([ExtResource("4_vqw3b")])
-board_pos = Vector3(-0.596, -0.415, 0.01)
+board_pos = Vector3(-0.45, -0.355, 0.01)
 prefab_scene = ExtResource("2_vqw3b")
 metadata/_custom_type_script = "uid://b6irqck1wko0p"

@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dd54j0okltw3d" path="res://scenes/UI/SubtitlesUI.tscn" id="10_6irmp"]
 [ext_resource type="PackedScene" uid="uid://do5ewfy1brqr" path="res://scenes/UI/InteractionUI.tscn" id="10_jn13j"]
 [ext_resource type="Script" uid="uid://cv00o1o2ylifc" path="res://scripts/test/teste_fala_1tv.gd" id="11_6irmp"]
-[ext_resource type="PackedScene" uid="uid://bur6e222wm402" path="res://scenes/interactables/Document Board.tscn" id="12_dmaw2"]
+[ext_resource type="PackedScene" uid="uid://bvngn27lmrqjo" path="res://scenes/interactables/Document Board.tscn" id="12_dmaw2"]
 [ext_resource type="Script" uid="uid://crthgse5je3ih" path="res://scripts/cutscenes/intro.gd" id="13_517kj"]
 [ext_resource type="AudioStream" uid="uid://bbf5687ki66ub" path="res://arts/sounds/sfx/door_sfx.mp3" id="14_ot4hf"]
 [ext_resource type="Script" uid="uid://lugfhpkx3kk3" path="res://scripts/interactable/doorEvent.gd" id="15_ot4hf"]
@@ -23,9 +23,9 @@
 [ext_resource type="PackedScene" uid="uid://c2o68nh53eb1o" path="res://scenes/interactables/objects/Armario.tscn" id="21_aomoi"]
 [ext_resource type="Script" uid="uid://d2klyrrjjygpw" path="res://scripts/interactable/SimpleInteractable.gd" id="22_33mrd"]
 [ext_resource type="Script" uid="uid://b6irqck1wko0p" path="res://scripts/inventory-system/documents/DocumentsData.gd" id="22_c8kgi"]
-[ext_resource type="Resource" path="res://resources/documents/Autopsia.tres" id="23_pmwj3"]
-[ext_resource type="Resource" path="res://resources/documents/Jornal.tres" id="24_82vju"]
-[ext_resource type="Resource" path="res://resources/documents/Relatorio_Homicidio.tres" id="25_vs80n"]
+[ext_resource type="Resource" uid="uid://buvrpbrf0y7ex" path="res://resources/documents/Autopsia.tres" id="23_pmwj3"]
+[ext_resource type="Resource" uid="uid://drc0dujkuk3b5" path="res://resources/documents/Jornal.tres" id="24_82vju"]
+[ext_resource type="Resource" uid="uid://dtd72i2ttcytd" path="res://resources/documents/Relatorio_Homicidio.tres" id="25_vs80n"]
 [ext_resource type="Script" uid="uid://bhbswkhk13el6" path="res://scripts/inventory-system/stamps/StampsData.gd" id="26_s6kkj"]
 [ext_resource type="Resource" uid="uid://rws42boo75iu" path="res://resources/stamps/BlueStamp.tres" id="27_rtpsq"]
 
@@ -190,7 +190,7 @@ shape = SubResource("BoxShape3D_dmaw2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.41026223)
 
 [node name="DocumentBoard" parent="." unique_id=977597654 instance=ExtResource("12_dmaw2")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3.9813704, 2.5411818, 5.228351)
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -3.9813704, 2.6199615, 5.3907084)
 collision_layer = 9
 
 [node name="Overlay" type="ColorRect" parent="." unique_id=868719040]
@@ -245,7 +245,7 @@ libraries/ = SubResource("AnimationLibrary_isyof")
 
 [node name="mesaModel" parent="." unique_id=1060498271 instance=ExtResource("17_ystrd")]
 
-[node name="StaticBody3D" parent="mesaModel/MESA" parent_id_path=PackedInt32Array(1060498271, 2138117484) index="0" unique_id=279445829 node_paths=PackedStringArray("_mesh")]
+[node name="StaticBody3D" parent="mesaModel/MESA" parent_id_path=PackedInt32Array(1060498271, 892598725) index="0" unique_id=1997724306 node_paths=PackedStringArray("_mesh")]
 collision_layer = 5
 script = ExtResource("19_b085t")
 target_state = 1
@@ -253,11 +253,11 @@ _id = "mesa"
 _mesh = NodePath("..")
 prompt_message = "Usar a Mesa"
 
-[node name="GAVETA" parent="mesaModel" index="1" unique_id=719159399]
+[node name="GAVETA" parent="mesaModel" index="1" unique_id=304895634]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0372996, 0.9868163, 4.492727)
 layers = 5
 
-[node name="StaticBody3D" parent="mesaModel/GAVETA" index="0" unique_id=447532645 node_paths=PackedStringArray("_mesh")]
+[node name="StaticBody3D" parent="mesaModel/GAVETA" index="0" unique_id=1754985407 node_paths=PackedStringArray("_mesh")]
 collision_layer = 5
 script = ExtResource("18_isyof")
 _id = "125123523"
@@ -275,6 +275,9 @@ stamp_rewards = Array[ExtResource("26_s6kkj")]([ExtResource("27_rtpsq")])
 
 [node name="quarto_teste_col" parent="." unique_id=619317496 instance=ExtResource("20_uo6h6")]
 
+[node name="tampa de cima" parent="quarto_teste_col" index="1" unique_id=1683949504]
+visible = false
+
 [node name="StaticBody3D" parent="quarto_teste_col/ARMARIO" parent_id_path=PackedInt32Array(619317496, 18458076) index="0" unique_id=1273875688 node_paths=PackedStringArray("_mesh")]
 collision_layer = 5
 script = ExtResource("22_33mrd")
@@ -284,6 +287,13 @@ subtitle_dur = 3
 _id = "armario"
 _mesh = NodePath("..")
 prompt_message = "Abrir Guarda Roupa"
+
+[node name="QUADRO DOCUMENTOS" parent="quarto_teste_col" index="15" unique_id=865938393]
+visible = false
+
+[node name="parede quarto" parent="quarto_teste_col" index="17" unique_id=1760589165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003317356, 2.011681, -8.284801)
+layers = 0
 
 [node name="PORTA" parent="quarto_teste_col" index="26" unique_id=250610336]
 transform = Transform3D(-0.26741934, 0, 0.071495555, 0, 1.4298409, 0, 0.7769506, 0, 0.02460812, 2.8722875, 1.5127364, -8.170072)

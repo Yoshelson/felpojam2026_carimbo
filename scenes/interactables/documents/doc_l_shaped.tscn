@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://bkv3q3ktkxy6u" path="res://arts/sounds/sfx/paper_sfx.wav" id="2_nelt1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c2ydx"]
-size = Vector3(0.6, 0.6, 0.2)
+size = Vector3(0.4, 0.6, 0.2)
 
 [node name="DocBase" type="StaticBody3D" unique_id=1947719615 node_paths=PackedStringArray("_mesh", "audio_player")]
 collision_layer = 16

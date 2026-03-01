@@ -79,7 +79,8 @@ func get_mouse_hit_node() -> Node3D:
 	var mouse_position = get_viewport().get_mouse_position()
 	
 	var origin = camera.project_ray_origin(mouse_position)
-	var end = camera.project_ray_normal(mouse_position) * 50
+	var normal = camera.project_ray_normal(mouse_position)
+	var end = origin + (normal * 50)
 	
 	var query = PhysicsRayQueryParameters3D.create(origin, end)
 	query.collision_mask = seecast.collision_mask
