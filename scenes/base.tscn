@@ -288,14 +288,10 @@ _id = "armario"
 _mesh = NodePath("..")
 prompt_message = "Abrir Guarda Roupa"
 
-[node name="QUADRO DOCUMENTOS" parent="quarto_teste_col" index="15" unique_id=865938393]
-visible = false
-
-[node name="parede quarto" parent="quarto_teste_col" index="17" unique_id=1760589165]
+[node name="parede quarto" parent="quarto_teste_col" index="16" unique_id=1760589165]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003317356, 2.011681, -8.284801)
-layers = 0
 
-[node name="PORTA" parent="quarto_teste_col" index="26" unique_id=250610336]
+[node name="PORTA" parent="quarto_teste_col" index="25" unique_id=250610336]
 transform = Transform3D(-0.26741934, 0, 0.071495555, 0, 1.4298409, 0, 0.7769506, 0, 0.02460812, 2.8722875, 1.5127364, -8.170072)
 
 [node name="StaticBody3D" parent="quarto_teste_col/CADEIRA" parent_id_path=PackedInt32Array(619317496, 600156880) index="0" unique_id=934191473 node_paths=PackedStringArray("_mesh")]
